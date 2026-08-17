@@ -36,21 +36,9 @@ key_labels = [
     "R\n(+0.5)",
     "O (Return)\n(0.0)",
 ]
-
 plt.scatter(key_t, key_work, color="darkred", s=50, zorder=5)
-
 for kt, kw, lbl in zip(key_t, key_work, key_labels):
     plt.text(kt, kw + 0.4, lbl, ha="center", fontsize=9, fontweight="bold")
-
-# Add text box indicating final net result
-plt.annotate(
-    "Net Loop Work = (+8.0) + (-8.0) = 0",
-    xy=(2, 8.0),
-    xytext=(1.2, 3.5),
-    arrowprops=dict(facecolor="black", shrink=0.05, width=1, headwidth=5),
-    fontsize=10,
-    bbox=dict(boxstyle="round,pad=0.3", facecolor="yellow", alpha=0.3),
-)
 
 plt.title(
     r"Cumulative Line Integral $\int_0^t \vec{F} \cdot d\vec{l}$ Around Loop",
@@ -61,6 +49,5 @@ plt.ylabel("Accumulated Line Integral (Work)")
 plt.xticks(key_t, ["O (0,0)", "P (1,1)", "Q (0,2)", "R (-1,1)", "O (0,0)"])
 plt.ylim(-1, 10)
 plt.grid(True, linestyle="--", alpha=0.4)
-
 plt.tight_layout()
 plt.show()
