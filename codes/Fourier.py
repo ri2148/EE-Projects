@@ -28,15 +28,12 @@ x_ideal = np.where(np.abs((t + T0/2) % T0 - T0/2) <= 1.0, 1.0, 0.0)
 
 # Plotting
 plt.figure(figsize=(9, 4))
-plt.plot(t, x_ideal, 'r--', label='Ideal Rectangular Signal $x(t)$', linewidth=2)
-plt.plot(t, x_reconstructed, 'b-', label=f'Reconstructed F.S. ($N={N}$)', alpha=0.8)
-
+plt.plot(t, x_ideal, 'r--', linewidth=2)
+plt.plot(t, x_reconstructed, 'b-', alpha=0.8)
 plt.xlabel('Time $t$ (seconds)')
 plt.ylabel('$x(t)$')
-plt.title(f'Fourier Series Reconstruction ($x(t)=1$ for $-1 \\leq t \\leq 1$, $T_0={T0}$)')
 plt.axhline(0, color='black', linewidth=0.5, linestyle=':')
 plt.ylim(-0.2, 1.3)
-plt.legend(loc='upper right')
 plt.grid(True)
 plt.tight_layout()
 plt.show()
