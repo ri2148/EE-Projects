@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex main.idx"] 1788260542.50613 "main.idx" "main.ind" "main" 1788411392.54256 0
-  "main.idx" 1788411389.64056 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main.idx"] 1788260542.50613 "main.idx" "main.ind" "main" 1788411614.36856 0
+  "main.idx" 1788411611.38694 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1788411388.58438 "main.tex" "main.pdf" "main" 1788411392.54275 0
+["pdflatex"] 1788411610.33996 "main.tex" "main.pdf" "main" 1788411614.36876 0
   "/etc/texmf/web2c/texmf.cnf" 1788154436.11865 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -301,7 +301,7 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1769369718 41603 27f93b3067076450172040dcd57ca8b3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1788154472 5541477 3118940318599480888143717dd32d64 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1788154543 3640701 b91f21e0ead506a6823806f5d4522794 ""
-  "chapters/ae-2026.tex" 1788411385.78555 36813 097791f984dce2770683bc3bdea0f9b7 ""
+  "chapters/ae-2026.tex" 1788411608.08493 36920 fd71f9ea414efb5742601a816f2b7b32 ""
   "figs/Circle.png" 1788155314.59872 62095 43033d58f3b8fa3bb716326ca5507b7f ""
   "figs/Eigenvectors.png" 1788155314.59942 46639 d22807650cac6b3f71e00d9559cbc4b8 ""
   "figs/Fourier.png" 1788155314.59998 38391 42589a3f9a7d302d95620b0c9308606e ""
@@ -314,11 +314,11 @@
   "figs/logo.jpg" 1788155314.60613 382648 cd8c4760ef18efd0782613502d16e226 ""
   "gvv-book.sty" 1788155314.60613 2364 972c828b0fdb5c1b2ef6ab44859ce8d3 ""
   "gvv.sty" 1788155314.60613 4374 e0265f3cc8fb087d2434efb730c546e4 ""
-  "main.aux" 1788411392.39856 3150 476bd0521c880f6abf6acb2e7b9d7172 "pdflatex"
+  "main.aux" 1788411614.20794 3150 476bd0521c880f6abf6acb2e7b9d7172 "pdflatex"
   "main.ind" 1788260542.69041 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.out" 1788411392.39856 109 b2fd9d0f63853382f8ccc76a054c4e00 "pdflatex"
+  "main.out" 1788411614.20894 109 b2fd9d0f63853382f8ccc76a054c4e00 "pdflatex"
   "main.tex" 1788410317.52336 8279 58deef074c47a115e8f06d5d9945dd1a ""
-  "main.toc" 1788411392.39956 68 c35c626f6e2f238d7262d802e0e3d7ec "pdflatex"
+  "main.toc" 1788411614.20894 68 c35c626f6e2f238d7262d802e0e3d7ec "pdflatex"
   (generated)
   "main.aux"
   "main.idx"

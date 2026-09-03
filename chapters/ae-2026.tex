@@ -236,17 +236,24 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
      \textbf{General method for construction:}
 
 \noindent Vertices of the square:
-$$\vec{W} = \myvec{0\\0}, \quad \vec{X} = \myvec{s\\0}, \quad \vec{Y} = \myvec{s\\s}, \quad \vec{V} = \myvec{0\\s}$$
-
+\begin{align}
+\vec{W} = \myvec{0\\0}, \quad \vec{X} = \myvec{s\\0}, \quad \vec{Y} = \myvec{s\\s}, \quad \vec{V} = \myvec{0\\s}
+\end{align}
 \noindent Circle $C_1$ ($r_1$):
-$$\vec{O}_1 = \myvec{r_1\\r_1}, \quad \vec{P} = \myvec{0\\r_1}, \quad \vec{Q} = \myvec{r_1\\0}$$
-
+\begin{align}
+\vec{O}_1 = \myvec{r_1\\r_1}, \quad \vec{P} = \myvec{0\\r_1}, \quad \vec{Q} = \myvec{r_1\\0}
+\end{align}
 \noindent Circle $C_2$ ($r_2$):
-$$\vec{O}_2 = \myvec{s-r_2\\s-r_2}, \quad \vec{S} = \myvec{s-r_2\\s}, \quad \vec{R} = \myvec{s\\s-r_2}$$
-
+\begin{align}
+\vec{O}_2 = \myvec{s-r_2\\s-r_2}, \quad \vec{S} = \myvec{s-r_2\\s}, \quad \vec{R} = \myvec{s\\s-r_2}
+\end{align}
 \noindent Line of centers and contact point $\vec{T}$:
-$$\vec{O}_2 - \vec{O}_1 = \myvec{s-r_2-r_1\\s-r_2-r_1} = (s-r_2-r_1)\myvec{1\\1}$$
-$$\vec{T} = \vec{O}_1 + \frac{r_1}{r_1+r_2}(\vec{O}_2 - \vec{O}_1)$$
+\begin{align}
+\vec{O}_2 - \vec{O}_1 = \myvec{s-r_2-r_1\\s-r_2-r_1} = (s-r_2-r_1)\myvec{1\\1}
+\end{align}
+\begin{align}
+\vec{T} = \vec{O}_1 + \frac{r_1}{r_1+r_2}(\vec{O}_2 - \vec{O}_1)
+\end{align}
 \begin{center}
 \url{https://github.com/ri2148/EE-Projects/blob/main/codes/Circle.py}
 \end{center}

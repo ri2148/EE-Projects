@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.8.31)  3 SEP 2026 10:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.8.31)  3 SEP 2026 10:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1348,131 +1348,131 @@ Underfull \hbox (badness 10000) in paragraph at lines 218--221
 <figs/Circle.png, id=113, 578.16pt x 433.62pt>
 File: figs/Circle.png Graphic file (type png)
 <use figs/Circle.png>
-Package pdftex.def Info: figs/Circle.png  used on input line 258.
+Package pdftex.def Info: figs/Circle.png  used on input line 265.
 (pdftex.def)             Requested size: 273.14647pt x 204.86006pt.
 [7] [8 <./figs/Circle.png>] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 406--407
+Underfull \hbox (badness 10000) in paragraph at lines 413--414
 
  []
 
-<figs/Line_integral.png, id=152, 578.16pt x 433.62pt>
+<figs/Line_integral.png, id=158, 578.16pt x 433.62pt>
 File: figs/Line_integral.png Graphic file (type png)
 <use figs/Line_integral.png>
-Package pdftex.def Info: figs/Line_integral.png  used on input line 412.
+Package pdftex.def Info: figs/Line_integral.png  used on input line 419.
 (pdftex.def)             Requested size: 273.14647pt x 204.86006pt.
 [10 <./figs/Line_integral.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 440--441
+Underfull \hbox (badness 10000) in paragraph at lines 447--448
 
  []
 
 [11]
-<figs/Fourier.png, id=185, 650.43pt x 289.08pt>
+<figs/Fourier.png, id=190, 650.43pt x 289.08pt>
 File: figs/Fourier.png Graphic file (type png)
 <use figs/Fourier.png>
-Package pdftex.def Info: figs/Fourier.png  used on input line 540.
+Package pdftex.def Info: figs/Fourier.png  used on input line 547.
 (pdftex.def)             Requested size: 273.14647pt x 121.39954pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 535--551
+Underfull \hbox (badness 10000) in paragraph at lines 542--558
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 554--556
+Underfull \hbox (badness 10000) in paragraph at lines 561--563
 
  []
 
 [12 <./figs/Fourier.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 591--593
+Underfull \hbox (badness 10000) in paragraph at lines 598--600
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 632--634
+Underfull \hbox (badness 10000) in paragraph at lines 639--641
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 662--663
+Underfull \hbox (badness 10000) in paragraph at lines 669--670
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 677--678
+Underfull \hbox (badness 10000) in paragraph at lines 684--685
 
  []
 
 [14]
-Overfull \hbox (10.1514pt too wide) detected at line 707
+Overfull \hbox (10.1514pt too wide) detected at line 714
 []
  []
 
-<figs/Satellite.png, id=222, 578.16pt x 578.16pt>
+<figs/Satellite.png, id=227, 578.16pt x 578.16pt>
 File: figs/Satellite.png Graphic file (type png)
 <use figs/Satellite.png>
-Package pdftex.def Info: figs/Satellite.png  used on input line 744.
+Package pdftex.def Info: figs/Satellite.png  used on input line 751.
 (pdftex.def)             Requested size: 273.14647pt x 273.14676pt.
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 766--767
+Underfull \hbox (badness 10000) in paragraph at lines 773--774
 
  []
 
 [16 <./figs/Satellite.png>]
-<figs/Eigenvectors.png, id=255, 505.89pt x 505.89pt>
+<figs/Eigenvectors.png, id=260, 505.89pt x 505.89pt>
 File: figs/Eigenvectors.png Graphic file (type png)
 <use figs/Eigenvectors.png>
-Package pdftex.def Info: figs/Eigenvectors.png  used on input line 795.
+Package pdftex.def Info: figs/Eigenvectors.png  used on input line 802.
 (pdftex.def)             Requested size: 273.14647pt x 273.15337pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 813--817
+Underfull \hbox (badness 10000) in paragraph at lines 820--824
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 813--817
+Underfull \hbox (badness 10000) in paragraph at lines 820--824
 
  []
 
 [17 <./figs/Eigenvectors.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 858--859
+Underfull \hbox (badness 10000) in paragraph at lines 865--866
 
  []
 
-<figs/Laplace.png, id=267, 650.43pt x 361.35pt>
+<figs/Laplace.png, id=272, 650.43pt x 361.35pt>
 File: figs/Laplace.png Graphic file (type png)
 <use figs/Laplace.png>
-Package pdftex.def Info: figs/Laplace.png  used on input line 865.
+Package pdftex.def Info: figs/Laplace.png  used on input line 872.
 (pdftex.def)             Requested size: 273.14647pt x 151.74942pt.
 [18] [19 <./figs/Laplace.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 949--951
+Underfull \hbox (badness 10000) in paragraph at lines 956--958
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--951
+Underfull \hbox (badness 10000) in paragraph at lines 956--958
 
  []
 
 [20]
-<figs/Modulus_function.png, id=315, 578.16pt x 433.62pt>
+<figs/Modulus_function.png, id=320, 578.16pt x 433.62pt>
 File: figs/Modulus_function.png Graphic file (type png)
 <use figs/Modulus_function.png>
-Package pdftex.def Info: figs/Modulus_function.png  used on input line 1010.
+Package pdftex.def Info: figs/Modulus_function.png  used on input line 1017.
 (pdftex.def)             Requested size: 273.14647pt x 204.86006pt.
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 1030--1060
+Underfull \hbox (badness 10000) in paragraph at lines 1037--1067
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1062--1063
+Underfull \hbox (badness 10000) in paragraph at lines 1069--1070
 
  []
 
 [22 <./figs/Modulus_function.png>]
-<figs/Spring.png, id=335, 650.43pt x 578.16pt>
+<figs/Spring.png, id=340, 650.43pt x 578.16pt>
 File: figs/Spring.png Graphic file (type png)
 <use figs/Spring.png>
-Package pdftex.def Info: figs/Spring.png  used on input line 1100.
+Package pdftex.def Info: figs/Spring.png  used on input line 1107.
 (pdftex.def)             Requested size: 236.72472pt x 210.42233pt.
 [23]) [24 <./figs/Spring.png>] (./main.aux)
  ***********
@@ -1483,8 +1483,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: B2FD9D0F63853382F8CCC76A054C4E00;109.
  ) 
 Here is how much of TeX's memory you used:
- 52866 strings out of 467533
- 1280400 string characters out of 5422138
+ 52871 strings out of 467533
+ 1280460 string characters out of 5422138
  1938370 words of memory out of 5000000
  80838 multiletter control sequences out of 15000+600000
  665905 words of font info for 116 fonts, out of 8000000 for 9000
@@ -1507,10 +1507,10 @@ ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on main.pdf (24 pages, 1008987 bytes).
+Output written on main.pdf (24 pages, 1009136 bytes).
 PDF statistics:
- 473 PDF objects out of 1000 (max. 8388607)
- 372 compressed objects within 4 object streams
- 198 named destinations out of 1000 (max. 500000)
+ 479 PDF objects out of 1000 (max. 8388607)
+ 378 compressed objects within 4 object streams
+ 203 named destinations out of 1000 (max. 500000)
  167 words of extra memory for PDF output out of 10000 (max. 10000000)
 
