@@ -13,8 +13,7 @@ How many 3-digit numbers can be formed using three distinct single digit prime n
  \begin{align}
 	 \perm{4}{3} = \frac{4!}{1!} = 24
  \end{align}
-\noindent Correct Answer: b) 24
-\newpage
+
 
 		\item
 In a group of students, 10 students like Mathematics, 12 students like English, 4 students like both Mathematics and English, and 6 students like neither Mathematics nor English. The number of students in the group is \underline{\hspace{1cm}}.
@@ -37,10 +36,13 @@ In a group of students, 10 students like Mathematics, 12 students like English, 
 
  \noindent The respective probabilities are expressed as:
 \begin{align}
-P\brak{M} &= \frac{10}{N} \\
-P\brak{E} &= \frac{12}{N} \\
-P\brak{ME} &= \frac{4}{N} \quad \text{(student likes both)} \\
-P\brak{\brak{M \cup E}'} &= \frac{6}{N} \quad \text{(student likes neither)}
+P\brak{M} &= \frac{10}{N}, \quad P\brak{E} = \frac{12}{N}
+\end{align}
+\begin{align}
+P\brak{ME} = \frac{4}{N} \quad \text{(student likes both)}
+\end{align}
+\begin{align}
+P\brak{\brak{M \cup E}'} = \frac{6}{N} \quad \text{(student likes neither)}
 \end{align}
 
 \noindent Since the total probability of the sample space is $1$:
@@ -65,7 +67,6 @@ P\brak{M} + P\brak{E} - P\brak{ME} + P\brak{\brak{M \cup E}'} = 1
 \frac{24}{N} = 1 \implies N = 24
 \end{align}
 \vspace{0.2cm}
-\noindent Correct Answer: c) 24\\
 \begin{center}
 \url{https://github.com/ri2148/EE-Projects/blob/main/codes/Probability.py}
 \end{center}
@@ -85,7 +86,7 @@ P\brak{M} + P\brak{E} - P\brak{ME} + P\brak{\brak{M \cup E}'} = 1
 \end{figure}
 
 
-\clearpage        
+   
 \item
 Consider two events $A$ and $B$ in a sample space $S$. We know the following data:
 \begin{align}
@@ -132,20 +133,15 @@ P\brak{A} = P\brak{AB + AB'} = P\brak{AB} + P\brak{AB'}
 \end{align}
 
 \vspace{0.3cm}
-\noindent Rearranging the equation from Step 3 to isolate $P\brak{AB'}$:
+\noindent Rearranging the equation (3.9) to isolate $P\brak{AB'}$:
 \begin{align}
 {P\brak{AB'} = P\brak{A} - P\brak{AB}}
 \end{align}
 
-\vspace{0.3cm}
-\noindent {Correct Answer:}
-\begin{align}
-\mathbf{P\brak{AB'} = P\brak{A} - P\brak{AB}}     
-\end{align}
-\newpage
+
 
 \item 
-Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_1=1\text{cm}$ and another with unknown radius $r_2$, such that both of them touch each other externally and also the square, find the value of $r_2$. Also describe how the figure in the problem can be drawn.\hfill (GATE AE 2026)
+Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_1=1\text{cm}$ and another with unknown radius $r_2$, such that both of them touch each other externally and also the square, find the value of $r_2$. Also describe how the figure in the problem can be constructed. \hfill (GATE~AE~2026)
 \begin{figure}[H]
 \begin{center}
 \begin{tikzpicture}[scale=1.5, >=Stealth]
@@ -237,7 +233,20 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
      \begin{align}
 	     r_2 = \brak{7-4\sqrt{2}}\text{cm} 
      \end{align}
-     \noindent Now to draw the figure, we assign coordinates to vertices of the square (say $\brak{0,0}$, $\brak{s,0}$, $\brak{s,s}$ and $\brak{s,0}$), the centre of the first circle $\brak{r_1,r_1}$ and the centre of the third circle $\brak{s-r_2,s-r_2}$ to get the plot.\\ \\
+     \textbf{General method for construction:}
+
+\noindent Vertices of the square:
+$$\vec{W} = \myvec{0\\0}, \quad \vec{X} = \myvec{s\\0}, \quad \vec{Y} = \myvec{s\\s}, \quad \vec{V} = \myvec{0\\s}$$
+
+\noindent Circle $C_1$ ($r_1$):
+$$\vec{O}_1 = \myvec{r_1\\r_1}, \quad \vec{P} = \myvec{0\\r_1}, \quad \vec{Q} = \myvec{r_1\\0}$$
+
+\noindent Circle $C_2$ ($r_2$):
+$$\vec{O}_2 = \myvec{s-r_2\\s-r_2}, \quad \vec{S} = \myvec{s-r_2\\s}, \quad \vec{R} = \myvec{s\\s-r_2}$$
+
+\noindent Line of centers and contact point $\vec{T}$:
+$$\vec{O}_2 - \vec{O}_1 = \myvec{s-r_2-r_1\\s-r_2-r_1} = (s-r_2-r_1)\myvec{1\\1}$$
+$$\vec{T} = \vec{O}_1 + \frac{r_1}{r_1+r_2}(\vec{O}_2 - \vec{O}_1)$$
 \begin{center}
 \url{https://github.com/ri2148/EE-Projects/blob/main/codes/Circle.py}
 \end{center}
@@ -255,13 +264,12 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
       \end{center}
       \vskip\belowcaptionskip}
     \makeatother
-    \caption{Figure Plotted}
+    \caption{Figure Constructed}
     \label{fig:3}
 \end{figure}
-\newpage
 
 \item
-\raggedbottom
+
 Consider the contour $C$ shown in the figure below. For the vector $\vec{F} = \brak{x + 2y}\hat{e}_x + \brak{2x + 4y}\hat{e}_y$, the integral $\oint_{C} \vec{F} \cdot d\vec{l} = \underline{\hspace{2cm}}$.
 \vspace{0.5em}
 \noindent Here $d\vec{l}$ represents an infinitesimal length along the contour $C$.\hfill (GATE~AE~2026)
@@ -274,7 +282,7 @@ Consider the contour $C$ shown in the figure below. For the vector $\vec{F} = \b
 
 \begin{figure}[H]
 \begin{center}
-\begin{tikzpicture}[scale=2, >=Stealth]
+\begin{tikzpicture}[scale=1.55, >=Stealth]
     \tikzset{
         segment arrow/.style={
             postaction={
@@ -330,6 +338,16 @@ Consider the contour $C$ shown in the figure below. For the vector $\vec{F} = \b
 \solution
 
 \noindent We can break the closed path $C$ into its four straight line paths: $O \to P \to Q \to R \to O$.
+
+\begin{align}
+\mathbf{F} \cdot d\mathbf{l} = \myvec{x + 2y \\ 2x + 4y} \cdot \myvec{dx \\ dy}
+\end{align}
+\begin{align}
+\mathbf{F}^T d\mathbf{l} = \myvec{x + 2y \\ 2x + 4y}^T \myvec{dx \\ dy} = \myvec{x + 2y & 2x + 4y} \myvec{dx \\ dy}
+\end{align}
+\begin{align}
+= \myvec{(x + 2y)dx + (2x + 4y)dy}
+\end{align}
 \noindent The general line integral expression to evaluate along any path is:
 \begin{align}
 \mathbf{I} = \int \brak{x + 2y}\,dx + \brak{2x + 4y}\,dy
@@ -379,7 +397,6 @@ Consider the contour $C$ shown in the figure below. For the vector $\vec{F} = \b
 \mathbf{I_4} = \left[ \frac{x^2}{2} \right]_{-1}^0 = 0 - \frac{1}{2} = -\frac{1}{2}
 \end{align}
 
-\noindent \textbf{Total Line Integral}\\
 \noindent Summing the integrals across all four line segments:
 \begin{align}
 \mathbf{I = I_1 + I_2 + I_3 + I_4}
@@ -387,7 +404,6 @@ Consider the contour $C$ shown in the figure below. For the vector $\vec{F} = \b
 \begin{align}
 \mathbf{I} = \frac{9}{2} + \frac{7}{2} - \frac{15}{2} - \frac{1}{2} = \frac{16 - 16}{2} = 0
 \end{align}\\
-\noindent Correct Answer: a) 0
 \begin{center}
 \url{https://github.com/ri2148/EE-Projects/blob/main/codes/Line_Integral.py}
 \end{center}
@@ -405,7 +421,7 @@ Consider the contour $C$ shown in the figure below. For the vector $\vec{F} = \b
     \caption{Visualising the Cancellation of Integrals}
     \label{fig:5}
 \end{figure}
-\clearpage
+
 \item 
 Consider $x\brak{t}$ to be defined as
 \begin{align}
@@ -445,10 +461,8 @@ Consider $x\brak{t}$ to be defined as
 &= \frac{-2j \sin\left(\frac{\pi k}{2}\right)}{-j 2\pi k} \\
 &= \frac{\sin\left(\frac{\pi k}{2}\right)}{\pi k}
 \end{align}
-\noindent \textbf{Correct Answer}: \quad $c_k = \dfrac{\sin\left(\frac{\pi k}{2}\right)}{\pi k}$
-\clearpage
+
 \item
-\raggedbottom
 
 	The Fourier series representation of a square wave is shown in the figure below. The fluctuations seen near $x = \pm 1$ are named after which one of the following scientists? \hfill(GATE~AE~2026)
 
@@ -520,8 +534,7 @@ Consider $x\brak{t}$ to be defined as
 
 \solution \\
 \noindent Gibbs phenomenon is the overshoot and high-frequency oscillation ("ringing") that occurs when approximating a function with jump discontinuities using a finite (truncated) Fourier series. Even as the number of terms $N$ approaches infinity, the overshoot near the jump discontinuity does not vanish; instead, it narrows in width while maintaining a fixed percentage height relative to the size of the jump.\\ \\
-\noindent \textbf{Reason:} When approximating a step function or square wave, Fourier series synthesize the shape using smooth, continuous sinusoids ($\sin$ and $\cos$). Because continuous functions cannot instantaneously step from one value to another, the Fourier series overcompensates near the vertical edge.\\ \\
-\noindent \textbf{Correct Answer:} c) Gibb's \\ 
+\noindent \textbf{Reason:} When approximating a step function or square wave, Fourier series synthesize the shape using smooth, continuous sinusoids ($\sin$ and $\cos$). Because continuous functions cannot instantaneously step from one value to another, the Fourier series overcompensates near the vertical edge. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Fourier.png}
@@ -533,10 +546,9 @@ Consider $x\brak{t}$ to be defined as
       \end{center}
       \vskip\belowcaptionskip}
     \makeatother
-    \caption{Gibb's Phenomenon}
+    \caption{Gibbs Phenomenon}
     \label{fig:7}
 \end{figure}
-\clearpage
 
 \item 
 If a matrix can be written as $\mathbf{A} = \mathbf{uv^T}$, where both $u$ and $v$ are $n$-dimensional real-valued non-zero column vectors, then the rank of the matrix $\mathbf{A}$ is \underline{\hspace{1cm}}.
@@ -579,8 +591,8 @@ If a matrix can be written as $\mathbf{A} = \mathbf{uv^T}$, where both $u$ and $
     \noindent 
 The rank of a matrix is equal to the number of non zero rows in its echeleon form. When we reduce the above matrix into the echeleon form, we notice that each row is a multiple of another as shown above. Therefore, when we apply elementary row transformations by multiplying the rows with the necessary constants and subtracting, all rows but one become non zero. Hence, the rank of the matrix becomes $1$. \\
 
-\noindent \textbf{Correct Answer:} $1$
-\clearpage	
+
+
 \item
 	An $n \times n$ square matrix $\mathbf{A}$ satisfies $\mathbf{A^T} = \mathbf{A^{-1}}$. The determinant of this matrix may take which of the following value(s)? \hfill (GATE AE 2026)
 \begin{enumerate}
@@ -601,11 +613,11 @@ The rank of a matrix is equal to the number of non zero rows in its echeleon for
 \mydet{\mathbf{A^T}} = \mydet{\mathbf{A^{-1}}}
 \end{align}
 
-\noindent Recall the fundamental properties of matrix determinants:
-\begin{itemize}
-        \item Transpose property: $\mydet{\mathbf{A^T}} = \mydet{\mathbf{A}}$
-        \item Inverse property: $\mydet{\mathbf{A^{-1}}} = \frac{1}{\mydet{\mathbf{A}}}$
-    \end{itemize} 
+\noindent Using the fundamental properties of matrix determinants:
+\begin{align}
+         \mydet{\mathbf{A^T}} = \mydet{\mathbf{A}}
+        \mydet{\mathbf{A^{-1}}} = \frac{1}{\mydet{\mathbf{A}}}
+    \end{align} 
 
 \noindent Replacing both sides using the above properties gives:
 \begin{align}
@@ -617,18 +629,13 @@ The rank of a matrix is equal to the number of non zero rows in its echeleon for
 \brak{\mydet{\mathbf{A}}}^2 = 1 \implies \mydet{\mathbf{A}} = \pm 1
 \end{align} 
 
-
-\noindent \textbf{Correct Answers:} a) $+1$ and b) $-1$ \\ \\
-\noindent \textbf{Proof that $\mydet{\mathbf{A^T}} = \mydet{\mathbf{A}}$} \\
+\noindent \textbf{Proof that $\mydet{\mathbf{A^T}} = \mydet{\mathbf{A}}$} \\ \\
 \noindent When expanding $\mydet{\mathbf{A}}$ along \textbf{Row 1}, you select entries across the top row and compute the determinants of their remaining submatrices.
-
-\vspace{0.3cm}
 
 \noindent When expanding $\mydet{\mathbf{A^T}}$ down \textbf{Column 1}, those exact same entries now sit vertically in the first column, and their corresponding submatrices are simply transposed.
 
-\vspace{0.8cm}
 
-\noindent \textbf{Visual Matrix Comparison}\\
+\noindent \textbf{Visual Matrix Comparison}
 
 \noindent
 Matrix $\mathbf{A}$ (Expand along Row 1):
@@ -652,8 +659,6 @@ Matrix $\mathbf{A^T}$ (Expand down Column 1):
 \end{vmatrix}
 \end{align}
 
-\vspace{0.5cm}
-
 \noindent \textbf {Submatrix Comparison for Entry $a_{12}$}\\
 
 When selecting $a_{12}$:
@@ -669,8 +674,7 @@ When selecting $a_{12}$:
     \end{align}
 \end{itemize}
 
-\noindent Notice that $\mathbf{N_{21}} = \brak{\mathbf{M_{12}}}^T$. Since $\mydet{\mathbf{M_{12}}} = \mydet{\brak{\mathbf{M_{12}}}^T}$, every term in the expansion of $\mydet{\mathbf{A}}$ is identically equal to the corresponding term in $\mydet{\mathbf{A^T}}$.
-\clearpage
+\noindent Notice that $\mathbf{N_{21}} = \brak{\mathbf{M_{12}}}^T$. Since $\mydet{\mathbf{M_{12}}} = \mydet{\brak{\mathbf{M_{12}}}^T}$, every term in the expansion of $\mydet{\mathbf{A}}$ is identically equal to the corresponding term in $\mydet{\mathbf{A^T}}$.\\
 
 \item
 	
@@ -697,7 +701,7 @@ Given the velocity and position vectors of a satellite along with its gravitatio
 
 \solution \\ 
 \noindent 
-The magnitude of the position vector $\vec{r}$is:
+The magnitude of the position vector $\vec{r}$ is:
 \begin{align}
 r = |\vec{r}| = \sqrt{8000^2 + 9000^2} = \sqrt{64 \times 10^6 + 81 \times 10^6} = \sqrt{145 \times 10^6} \approx 12041.59 \text{ km}
 \end{align}
@@ -734,7 +738,7 @@ The trajectory of an orbiting body is determined by the sign of its specific mec
 Since $E = +2.898 > 0$, the satellite follows a \textbf{Hyperbolic trajectory}.
 
 \vspace{0.3cm}
-\noindent \textbf{Correct Answer:} b) Hyperbola
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Satellite.png}
@@ -749,7 +753,7 @@ Since $E = +2.898 > 0$, the satellite follows a \textbf{Hyperbolic trajectory}.
     \caption{Trajectory of the Satellite}
     \label{fig:8}
 \end{figure}
-\newpage
+
 \item
 For the matrix $\textbf{A} = \myvec{ a & b \\ c & d }$, if the relation $a + b = c + d$ holds and $a, b, c, d \neq 0$, then which one of the following statements about $A$ is FALSE? \hfill (GATE AE 2026)
 \begin{enumerate}
@@ -786,15 +790,6 @@ a - c = d - b = -\brak{b - d} = k'
 
 \vspace{0.5cm}
 
-\noindent \textbf{Conclusion:}
-\begin{itemize}
-    \item Statement (1) is \textbf{TRUE}: $\myvec{ 1 \\ 1 }$ is an eigenvector.
-    \item Statement (2) is \textbf{TRUE}: $\lambda = a + b$ is an eigenvalue.
-    \item Statement (3) is \textbf{TRUE}: $\lambda = d - b$ is an eigenvalue.
-    \item Statement (4) is \textbf{FALSE}: $\lambda = d + b$ is not an eigenvalue.
-\end{itemize}
-
-\noindent \textbf{Correct Answer:} d) $\lambda = d + b$ is an eigenvalue.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Eigenvectors.png}
@@ -808,7 +803,7 @@ a - c = d - b = -\brak{b - d} = k'
     \caption{Eigen vectors plotted}
     \label{fig:9}
 \end{figure}
-\clearpage
+
 \item 
 
 
@@ -860,7 +855,7 @@ y\brak{x} = \mathcal{L}^{-1}\left\{\frac{1}{(s+1)^2}\right\} = x e^{-x}
 \end{align}
 
 
-\noindent Rounding off to three decimal places yields: \textbf{0.153} \\ 
+\noindent Rounding off to three decimal places yields: \textbf{0.153} \\
 
 
 \begin{center} \url{https://github.com/ri2148/EE-Projects/blob/main/codes/Laplace.py} \end{center}
@@ -879,7 +874,7 @@ y\brak{x} = \mathcal{L}^{-1}\left\{\frac{1}{(s+1)^2}\right\} = x e^{-x}
     \caption{Theoretical Plot vs Plot obtained with Euler's Forward Difference Method}
     \label{fig:13}
 \end{figure}
-\clearpage
+
 \item
 Consider a function $g\brak{t}$ and let $G\brak{s}$ be its Laplace transform. Show that:
 \begin{enumerate}
@@ -922,7 +917,7 @@ Consider a function $g\brak{t}$ and let $G\brak{s}$ be its Laplace transform. Sh
 \begin{align}
 \mathcal{L}\{g''\brak{t}\} = 0 - g'\brak{0} + s \brak{s G\brak{s}-g\brak{0}} = s^2 G\brak{s} -sg\brak{0}-g'\brak{0}
 \end{align}
-\clearpage
+
 \item
 Consider a function $u\brak{t}$ as defined below:
 \begin{align}
@@ -949,11 +944,7 @@ Apply the Laplace transform on $u\brak{t}$.
 &= \frac{1}{s}
 \end{align}
 
-\noindent \textbf{Final Answer}\\
-\begin{align}
-\mathcal{L}\{u\brak{t}\} = \frac{1}{s} \quad 
-\end{align}
-\newpage
+
 \item 
 Find the minimum value of the function $f\brak{x} = \abs{x} + \abs{2x+3}$ for real $x$. \hfill (GATE~AE~2026)\\ \\
 \solution \\ 
@@ -1010,7 +1001,7 @@ x + 3, & \text{if } -1.5 \le x < 0 \\
 \begin{align}
 f\brak{-1.5} = -1.5 + 3 = 1.5
 \end{align}
-\noindent \textbf{Final Answer:} \textbf{1.5}\\
+
 \begin{center}
 \url{https://github.com/ri2148/EE-Projects/blob/main/codes/Modulus_function.py}
 \end{center}
@@ -1028,7 +1019,7 @@ f\brak{-1.5} = -1.5 + 3 = 1.5
     \caption{Plot of the function}
     \label{fig:10}
 \end{figure}
-\newpage
+
 \item
 A bar, spring, and mass system is arranged in series.
 \begin{itemize}
@@ -1040,7 +1031,7 @@ Find the natural frequency of free vibration $\omega_n$ in $\text{rad/s}$.
 \hfill (GATE AE 2026)\\
 \begin{figure}[H]
 \begin{center}
-\begin{tikzpicture}[scale=1.2, >=Stealth]
+\begin{tikzpicture}[scale=1.0, >=Stealth]
     \draw[thick] (-0.2, 4) -- (1.2, 4);
 
     \draw[thick] (0, 0) rectangle (1, 4);
@@ -1101,13 +1092,12 @@ The natural frequency of free vibration is:
 \omega_n = \sqrt{\frac{k_{\text{eq}}}{M}} = \sqrt{\frac{10^8}{100}} = \sqrt{10^6} = 1000 \text{ rad/s}
 \end{align}
 
-\noindent \textbf{Correct Answer:} \textbf{1000} \\ 
 \begin{center}
 \url{https://github.com/ri2148/EE-Projects/blob/main/codes/Spring.py}
 \end{center}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{figs/Spring.png}
+    \includegraphics[width=0.65\linewidth]{figs/Spring.png}
     \makeatletter
     \long\def\@makecaption#1#2{%
       \vskip\abovecaptionskip

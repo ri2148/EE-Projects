@@ -1,46 +1,54 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Total students
-N = 24
-
-# Categories
-categories = np.array([
+# Categories and probabilities
+categories = [
     "Math Only\n(M ∩ E')",
     "English Only\n(M' ∩ E)",
     "Both\n(M ∩ E)",
     "Neither\n(M' ∩ E')"
-])
+]
+counts = [6, 8, 4, 6]
+total = 24
+probabilities = [c / total for c in counts]
+x = np.arange(len(categories))
 
-# Counts and probabilities using NumPy
-counts = np.array([6, 8, 4, 6])
-probabilities = counts / N
+# Single uniform color for all stems
+color = "#3498db"
 
-# Colors for visual clarity
-colors = ['#3498db', '#2ecc71', '#e74c3c', '#95a5a6']
+fig, ax = plt.subplots(figsize=(8.5, 5))
 
-# Create plot
-plt.figure(figsize=(8, 5))
-bars = plt.bar(categories, probabilities, color=colors, edgecolor='black', width=0.5)
+# Single stem plot call with unified color
+markerline, stemlines, baseline = ax.stem(x, probabilities, basefmt=" ")
+plt.setp(markerline, color=color, markersize=9, zorder=3)
+plt.setp(stemlines, color=color, linewidth=2.5, zorder=2)
 
-# Label heights with exact probability and fraction
-for bar, count, prob in zip(bars, counts, probabilities):
-    yval = bar.get_height()
-    plt.text(
-        bar.get_x() + bar.get_width() / 2.0, 
-        yval + 0.01, 
-        f'{prob:.3f}\n({count}/{N})', 
-        ha='center', 
-        va='bottom', 
-        fontsize=10, 
+# Value annotations above stems
+for i, (p, c) in enumerate(zip(probabilities, counts)):
+    ax.annotate(
+        f"{p:.3f}\n({c}/{total})",
+        (x[i], p + 0.015),
+        ha='center',
+        va='bottom',
+        fontsize=10,
         fontweight='bold'
     )
 
-plt.title("Probability Distribution ($N = 24$)", fontsize=13, fontweight='bold')
-plt.xlabel("Student Group / Event", fontsize=11)
-plt.ylabel("Probability $P(X)$", fontsize=11)
-plt.ylim(0, 0.42)
-plt.grid(axis='y', linestyle=':', alpha=0.7)
+# Formatting axes and labels
+ax.set_xticks(x)
+ax.set_xticklabels(categories, fontsize=10)
+ax.set_xlabel("Student Group / Event", fontsize=11, labelpad=8)
+ax.set_ylabel("Probability $P(X)$", fontsize=11)
+ax.set_title("Probability Distribution ($N = 24$)", fontsize=13, fontweight='bold', pad=12)
+
+ax.set_ylim(0, 0.42)
+ax.set_xlim(-0.5, 3.5)
+ax.grid(axis="y", linestyle=":", alpha=0.7)
+
+# Enclose plot in a full border frame
+for spine in ax.spines.values():
+    spine.set_visible(True)
+    spine.set_color('black')
 
 plt.tight_layout()
 plt.show()
