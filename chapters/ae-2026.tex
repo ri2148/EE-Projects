@@ -1,7 +1,7 @@
-\begin{enumerate}
+\begin{enumerate}[label=\thesubsection.\arabic*, ref=\thesubsection.\theenumi]
 	\item 
 How many 3-digit numbers can be formed using three distinct single digit prime numbers?
-\hfill (GATE AE 2026)
+\hfill (GATE~AE~2026)
 \begin{enumerate}
     \item $64$
     \item $24$
@@ -17,7 +17,7 @@ How many 3-digit numbers can be formed using three distinct single digit prime n
 
 		\item
 In a group of students, 10 students like Mathematics, 12 students like English, 4 students like both Mathematics and English, and 6 students like neither Mathematics nor English. The number of students in the group is \underline{\hspace{1cm}}.
-\hfill (GATE AE 2026)
+\hfill (GATE~AE~2026)
 \begin{enumerate}
     \item $18$
     \item $20$
@@ -67,9 +67,6 @@ P\brak{M} + P\brak{E} - P\brak{ME} + P\brak{\brak{M \cup E}'} = 1
 \frac{24}{N} = 1 \implies N = 24
 \end{align}
 \vspace{0.2cm}
-\begin{center}
-\url{https://github.com/ri2148/EE-Projects/blob/main/codes/Probability.py}
-\end{center}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Probability.png}
@@ -93,18 +90,10 @@ Consider two events $A$ and $B$ in a sample space $S$. We know the following dat
 P\brak{A}, \quad P\brak{B}, \quad P\brak{AB}, \quad P\brak{\brak{A \cup B}'}
 \end{align}
 
-\noindent Find the value of $P\brak{AB'}$ using the following formulae:
-    \begin{align}
-    A + A' = 1, \quad AA' = 0
-    \end{align}
-    \begin{align}P\brak{1} = 1, \quad P\brak{0} = 0 \implies P\brak{A + A'} = 1, \quad P\brak{AA'} = 0
-    \end{align}
-    \begin{align}
-    P\brak{A + A'} = P\brak{A} + P\brak{A'}
-    \end{align}
+\noindent Find the value of $P\brak{AB'}$ \\
 \solution \\ 
 
-\noindent Using the given identity that for any event $B$, $B + B' = 1$:
+\noindent Using \eqref{eq:Prob_1}
 \begin{align}
 A = A \cdot 1 = A\brak{B + B'}
 \end{align}
@@ -127,7 +116,7 @@ Thus, the events $AB$ and $AB'$ are mutually exclusive.
 
 \vspace{0.3cm}
 
-\noindent Since $A = AB + AB'$ and $\brak{AB}\brak{AB'} = 0$, we apply $P\brak{X + Y} = P\brak{X} + P\brak{Y}$:
+\noindent Since $A = AB + AB'$ and $\brak{AB}\brak{AB'} = 0$, from \eqref{eq:Prob_3}
 \begin{align}
 P\brak{A} = P\brak{AB + AB'} = P\brak{AB} + P\brak{AB'}
 \end{align}
@@ -254,10 +243,6 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
 \begin{align}
 \vec{T} = \vec{O}_1 + \frac{r_1}{r_1+r_2}(\vec{O}_2 - \vec{O}_1)
 \end{align}
-\begin{center}
-\url{https://github.com/ri2148/EE-Projects/blob/main/codes/Circle.py}
-\end{center}
-
 
 
 \begin{figure}[H]
@@ -411,9 +396,7 @@ Consider the contour $C$ shown in the figure below. For the vector $\vec{F} = \b
 \begin{align}
 \mathbf{I} = \frac{9}{2} + \frac{7}{2} - \frac{15}{2} - \frac{1}{2} = \frac{16 - 16}{2} = 0
 \end{align}\\
-\begin{center}
-\url{https://github.com/ri2148/EE-Projects/blob/main/codes/Line_Integral.py}
-\end{center}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Line_integral.png}
@@ -428,7 +411,8 @@ Consider the contour $C$ shown in the figure below. For the vector $\vec{F} = \b
     \caption{Visualising the Cancellation of Integrals}
     \label{fig:5}
 \end{figure}
-
+\item
+\begin{enumerate}
 \item 
 Consider $x\brak{t}$ to be defined as
 \begin{align}
@@ -441,7 +425,7 @@ Consider $x\brak{t}$ to be defined as
 
 \noindent Consider
 \begin{align}
-\mathbf{c_k} = f_0 \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-j 2\pi k f_0 t} \, dt
+c_k = f_0 \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-j 2\pi k f_0 t} \, dt
 \end{align}
 
 \noindent Taking frequency $f_0 = \frac{1}{4}$, solve for $c_k$. \\
@@ -454,20 +438,44 @@ Consider $x\brak{t}$ to be defined as
 
 \noindent Substituting $f_0 = \frac{1}{4}$ into the expression for $\mathbf{c_k}$:
 \begin{align}
-\mathbf{c_k} &= \frac{1}{4} \int_{-2}^{2} x(t) e^{-j \frac{\pi k t}{2}} \, dt
+c_k &= \frac{1}{4} \int_{-2}^{2} x(t) e^{-j \frac{\pi k t}{2}} \, dt
 \end{align}
 
 \noindent Since $x(t) = 1$ for $t \in (-1, 1)$ and $0$ otherwise, the non-zero range reduces to $[-1, 1]$:
 \begin{align}
-\mathbf{c_k} &= \frac{1}{4} \int_{-1}^{1} e^{-j \frac{\pi k t}{2}} \, dt
+c_k &= \frac{1}{4} \int_{-1}^{1} e^{-j \frac{\pi k t}{2}} \, dt
 \end{align}
 
 \begin{align}
-\mathbf{c_k} &= \frac{1}{4} \left[ \frac{e^{-j \frac{\pi k t}{2}}}{-j \frac{\pi k}{2}} \right]_{-1}^{1} \\
+c_k &= \frac{1}{4} \left[ \frac{e^{-j \frac{\pi k t}{2}}}{-j \frac{\pi k}{2}} \right]_{-1}^{1} \\
 &= \frac{1}{-j 2\pi k} \left( e^{-j \frac{\pi k}{2}} - e^{j \frac{\pi k}{2}} \right) \\
 &= \frac{-2j \sin\left(\frac{\pi k}{2}\right)}{-j 2\pi k} \\
 &= \frac{\sin\left(\frac{\pi k}{2}\right)}{\pi k}
 \end{align}
+
+\noindent Substituting $c_k$ into the following synthesis equation reconstructs the time-domain signal as an infinite sum of complex exponentials:
+\begin{align}
+\tilde{x}(t) = \sum_{k=-\infty}^{\infty} \left( \frac{\sin(k\pi/2)}{k\pi} \right) e^{j \frac{k\pi t}{2}}
+\end{align}
+
+\begin{align}
+\tilde{x}(t) = \frac{1}{2} + \frac{2}{\pi} \cos \left( \frac{\pi t}{2} \right) - \frac{2}{3\pi} \cos \left( \frac{3\pi t}{2} \right) + \frac{2}{5\pi} \cos \left( \frac{5\pi t}{2} \right) - \dots
+\end{align}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{figs/Fourier.png}
+	\makeatletter
+    \long\def\@makecaption#1#2{%
+      \vskip\abovecaptionskip
+      \begin{center}
+        #1 #2
+      \end{center}
+      \vskip\belowcaptionskip}
+    \makeatother
+    \caption{REpresentation of signal}
+    \label{fig:7}
+\end{figure}
+
 
 \item
 
@@ -542,21 +550,8 @@ Consider $x\brak{t}$ to be defined as
 \solution \\
 \noindent Gibbs phenomenon is the overshoot and high-frequency oscillation ("ringing") that occurs when approximating a function with jump discontinuities using a finite (truncated) Fourier series. Even as the number of terms $N$ approaches infinity, the overshoot near the jump discontinuity does not vanish; instead, it narrows in width while maintaining a fixed percentage height relative to the size of the jump.\\ \\
 \noindent \textbf{Reason:} When approximating a step function or square wave, Fourier series synthesize the shape using smooth, continuous sinusoids ($\sin$ and $\cos$). Because continuous functions cannot instantaneously step from one value to another, the Fourier series overcompensates near the vertical edge. 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figs/Fourier.png}
-	\makeatletter
-    \long\def\@makecaption#1#2{%
-      \vskip\abovecaptionskip
-      \begin{center}
-        #1 #2
-      \end{center}
-      \vskip\belowcaptionskip}
-    \makeatother
-    \caption{Gibbs Phenomenon}
-    \label{fig:7}
-\end{figure}
 
+\end{enumerate}
 \item 
 If a matrix can be written as $\mathbf{A} = \mathbf{uv^T}$, where both $u$ and $v$ are $n$-dimensional real-valued non-zero column vectors, then the rank of the matrix $\mathbf{A}$ is \underline{\hspace{1cm}}.
 \hfill (GATE~AE~2026)\\
@@ -596,12 +591,52 @@ If a matrix can be written as $\mathbf{A} = \mathbf{uv^T}$, where both $u$ and $
     
 
     \noindent 
-The rank of a matrix is equal to the number of non zero rows in its echeleon form. When we reduce the above matrix into the echeleon form, we notice that each row is a multiple of another as shown above. Therefore, when we apply elementary row transformations by multiplying the rows with the necessary constants and subtracting, all rows but one become non zero. Hence, the rank of the matrix becomes $1$. \\
+The rank of a matrix is equal to the number of non zero rows in its echeleon form. When we reduce the above matrix into the echeleon form, we notice that each row is a multiple of another as shown above. Therefore, when we apply elementary row transformations by multiplying the rows with the necessary constants and subtracting, all rows but one become non zero. Hence, the rank of the matrix becomes $1$. \\ \\
+\noindent Example: \\
+Consider $3$-dimensional non-zero vectors $\mathbf{u} = \myvec{1 \\ 2 \\ 3}$ and $\mathbf{v} = \myvec{1 \\ 4 \\ 2}$.
 
+\noindent
+The matrix $\mathbf{A}$ is formed as:
+\begin{align}
+\mathbf{A} = \mathbf{uv^T} &= \myvec{1 \\ 2 \\ 3} \myvec{1 & 4 & 2} \\
+&= \myvec{
+1 & 4 & 2 \\
+2 & 8 & 4 \\
+3 & 12 & 6
+}
+\end{align}
+
+\noindent
+Applying elementary row transformations step-by-step:
+
+\vspace{0.5em}
+\noindent
+Eliminate the non-zero entry in the second row using $R_2 \to R_2 - 2R_1$:
+\begin{align}
+\mathbf{A} \xrightarrow{R_2 \to R_2 - 2R_1} \myvec{
+1 & 4 & 2 \\
+0 & 0 & 0 \\
+3 & 12 & 6
+}
+\end{align}
+
+\vspace{0.5em}
+\noindent
+Eliminate the non-zero entry in the third row using $R_3 \to R_3 - 3R_1$:
+\begin{align}
+\xrightarrow{R_3 \to R_3 - 3R_1} \myvec{
+1 & 4 & 2 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+}
+\end{align}
+
+\noindent
+The matrix is now in row echelon form with only $1$ non-zero row. Hence, $\text{rank}\brak{\mathbf{A}} = 1$.\\
 
 
 \item
-	An $n \times n$ square matrix $\mathbf{A}$ satisfies $\mathbf{A^T} = \mathbf{A^{-1}}$. The determinant of this matrix may take which of the following value(s)? \hfill (GATE AE 2026)
+	An $n \times n$ square matrix $\mathbf{A}$ satisfies $\mathbf{A^T} = \mathbf{A^{-1}}$. The determinant of this matrix may take which of the following value(s)? \hfill (GATE~AE~2026)
 \begin{enumerate}
 	\item $1$
 	\item $-1$
@@ -620,9 +655,11 @@ The rank of a matrix is equal to the number of non zero rows in its echeleon for
 \mydet{\mathbf{A^T}} = \mydet{\mathbf{A^{-1}}}
 \end{align}
 
-\noindent Using the fundamental properties of matrix determinants:
+\noindent Using \eqref{eq:Matrices_1}:
 \begin{align}
          \mydet{\mathbf{A^T}} = \mydet{\mathbf{A}}
+\end{align}
+\begin{align}
         \mydet{\mathbf{A^{-1}}} = \frac{1}{\mydet{\mathbf{A}}}
     \end{align} 
 
@@ -635,53 +672,6 @@ The rank of a matrix is equal to the number of non zero rows in its echeleon for
  \begin{align}
 \brak{\mydet{\mathbf{A}}}^2 = 1 \implies \mydet{\mathbf{A}} = \pm 1
 \end{align} 
-
-\noindent \textbf{Proof that $\mydet{\mathbf{A^T}} = \mydet{\mathbf{A}}$} \\ \\
-\noindent When expanding $\mydet{\mathbf{A}}$ along \textbf{Row 1}, you select entries across the top row and compute the determinants of their remaining submatrices.
-
-\noindent When expanding $\mydet{\mathbf{A^T}}$ down \textbf{Column 1}, those exact same entries now sit vertically in the first column, and their corresponding submatrices are simply transposed.
-
-
-\noindent \textbf{Visual Matrix Comparison}
-
-\noindent
-Matrix $\mathbf{A}$ (Expand along Row 1):
-\begin{align}
-\mydet{\mathbf{A}} = 
-\begin{vmatrix}
-\mathbf{a_{11}} & \mathbf{a_{12}} & \mathbf{a_{13}} \\
-a_{21} & a_{22} & a_{23} \\
-a_{31} & a_{32} & a_{33}
-\end{vmatrix}
-\end{align}
-
-\noindent
-Matrix $\mathbf{A^T}$ (Expand down Column 1):
-\begin{align}
-\mydet{\mathbf{A^T}} = 
-\begin{vmatrix}
-\mathbf{a_{11}} & a_{21} & a_{31} \\
-\mathbf{a_{12}} & a_{22} & a_{32} \\
-\mathbf{a_{13}} & a_{23} & a_{33}
-\end{vmatrix}
-\end{align}
-
-\noindent \textbf {Submatrix Comparison for Entry $a_{12}$}\\
-
-When selecting $a_{12}$:
-\begin{itemize}
-    \item In $\mathbf{A}$ (Row 1, Column 2 deletion):
-    \begin{align}
-    \mathbf{M_{12}} = \myvec{ a_{21} & a_{23} \\ a_{31} & a_{33} }
-    \end{align}
-
-    \item In $\mathbf{A^T}$ (Row 2, Column 1 deletion):
-    \begin{align}
-    \mathbf{N_{21}} = \myvec{ a_{21} & a_{31} \\ a_{23} & a_{33} }
-    \end{align}
-\end{itemize}
-
-\noindent Notice that $\mathbf{N_{21}} = \brak{\mathbf{M_{12}}}^T$. Since $\mydet{\mathbf{M_{12}}} = \mydet{\brak{\mathbf{M_{12}}}^T}$, every term in the expansion of $\mydet{\mathbf{A}}$ is identically equal to the corresponding term in $\mydet{\mathbf{A^T}}$.\\
 
 \item
 	
@@ -762,7 +752,7 @@ Since $E = +2.898 > 0$, the satellite follows a \textbf{Hyperbolic trajectory}.
 \end{figure}
 
 \item
-For the matrix $\textbf{A} = \myvec{ a & b \\ c & d }$, if the relation $a + b = c + d$ holds and $a, b, c, d \neq 0$, then which one of the following statements about $A$ is FALSE? \hfill (GATE AE 2026)
+For the matrix $\textbf{A} = \myvec{ a & b \\ c & d }$, if the relation $a + b = c + d$ holds and $a, b, c, d \neq 0$, then which one of the following statements about $A$ is FALSE? \hfill (GATE~AE~2026)
 \begin{enumerate}
     \item $\myvec{ 1 \\ 1 }$ is an eigenvector
     \item $\lambda = a + b$ is an eigenvalue
@@ -819,7 +809,7 @@ Consider the differential equation:
 \frac{d^2 y}{dx^2} + 2\frac{dy}{dx} + y = 0
 \end{align}
 with initial conditions $\left.y\right|_{x=0} = 0$ and $\left.\frac{dy}{dx}\right|_{x=0} = 1$. Find the value of the slope $\frac{dy}{dx}$ at $x = \ln\brak{2}$ rounded off to three decimal places.
-\hfill (GATE AE 2026) \\ \\
+\hfill (GATE~AE~2026) \\ \\
 \solution \\ 
 
 Let $Y(s) = \mathcal{L}\{y\brak{x}\}$. Taking the Laplace transform on both sides:
@@ -827,7 +817,7 @@ Let $Y(s) = \mathcal{L}\{y\brak{x}\}$. Taking the Laplace transform on both side
 \mathcal{L}\left\{\frac{d^2 y}{dx^2}\right\} + 2\mathcal{L}\left\{\frac{dy}{dx}\right\} + \mathcal{L}\{y\} = 0
 \end{align}
 
-\noindent Using the standard operational properties:
+\noindent From equations \eqref{eq:Laplace_1} and \eqref{eq:Laplace_2}:
 \begin{align}
 \big[s^2 Y(s) - s y\brak{0} - y'\brak{0}\big] + 2\big[s Y(s) - y\brak{0}\big] + Y(s) = 0
 \end{align}
@@ -842,7 +832,7 @@ Let $Y(s) = \mathcal{L}\{y\brak{x}\}$. Taking the Laplace transform on both side
 \begin{align}
 Y(s) = \frac{1}{(s+1)^2}
 \end{align}
-\noindent Taking the inverse Laplace transform gives the solution $y\brak{x}$:
+\noindent Taking the inverse Laplace transform by applying the first frequency shift theorem(\eqref{eq:Laplace_3}) on \eqref{eq:Laplace_4} gives the solution $y\brak{x}$:
 \begin{align}
 y\brak{x} = \mathcal{L}^{-1}\left\{\frac{1}{(s+1)^2}\right\} = x e^{-x}
 \end{align}
@@ -862,10 +852,25 @@ y\brak{x} = \mathcal{L}^{-1}\left\{\frac{1}{(s+1)^2}\right\} = x e^{-x}
 \end{align}
 
 
-\noindent Rounding off to three decimal places yields: \textbf{0.153} \\
-
-
-\begin{center} \url{https://github.com/ri2148/EE-Projects/blob/main/codes/Laplace.py} \end{center}
+\noindent Rounding off to three decimal places yields: 0.153 \\ \\
+\noindent Solution with Euler's Method: \\
+\noindent Substituting equations \eqref{eq:ED_1} and \eqref{eq:ED_2} into our differential equation, we obtain:
+\begin{align}
+\frac{y_{n+2} - 2y_{n+1} + y_n}{h^2} + 2 \left( \frac{y_{n+1} - y_n}{h} \right) + y_n = 0
+\end{align}
+\noindent Rearranging, we get:
+\begin{align}
+y_{n+2} = 2(1 - h)y_{n+1} - (1 - h)^2 y_n
+\end{align}
+\noindent Our initial conditions are:
+\begin{align}
+y_0=y\brak{0}=0, y_1=y_0+h(y'\brak{0})
+\end{align}
+\noindent Assuming $ln2=0.7$ and $h=0.01$ and evaluating the forward difference at $n=70$, we get:
+\begin{align}
+	y_{70}'=0.145
+\end{align}
+\noindent This yields $\frac{dy}{dx}$ at $x=ln2$ as: $0.145$
 
 \begin{figure}[H]
     \centering
@@ -881,76 +886,6 @@ y\brak{x} = \mathcal{L}^{-1}\left\{\frac{1}{(s+1)^2}\right\} = x e^{-x}
     \caption{Theoretical Plot vs Plot obtained with Euler's Forward Difference Method}
     \label{fig:13}
 \end{figure}
-
-\item
-Consider a function $g\brak{t}$ and let $G\brak{s}$ be its Laplace transform. Show that:
-\begin{enumerate}
-    \item[(a)] Applying Laplace transform on $g'\brak{t}$ gives $s G\brak{s}-g\brak{0}$
-    \item[(b)] Applying Laplace transform on $g''\brak{t}$ gives $s^2 G\brak{s} -sg\brak{0} -g'\brak{0}$
-\end{enumerate}
-
-{(a) Proof for $g'\brak{t}$}
-
-\noindent Using the definition of the Laplace transform:
-\begin{align}
-\mathcal{L}\{g'\brak{t}\} = \int_{0}^{\infty} e^{-st} g'\brak{t} \, dt
-\end{align}
-
-\noindent Applying integration by parts with $u = e^{-st}$ and $dv = g'\brak{t} \, dt$ (giving $du = -s e^{-st} \, dt$ and $v = g\brak{t}$):
-\begin{align}
-\mathcal{L}\{g'\brak{t}\} &= \left[ e^{-st} g\brak{t} \right]_{0}^{\infty} - \int_{0}^{\infty} \brak{-s e^{-st}} g\brak{t} \, dt \\[1.5ex]
-&= \left( \lim_{t \to \infty} e^{-st} g\brak{t} - g\brak{0} \right) + s \int_{0}^{\infty} e^{-st} g\brak{t} \, dt
-\end{align}
-
-\noindent 
-\begin{align}
-\mathcal{L}\{g'\brak{t}\} = 0 - g\brak{0} + s G\brak{s} = s G\brak{s}-g\brak{0}
-\end{align}
-
-\subsection*{(b) Proof for $g''\brak{t}$}
-
-\noindent Using the definition for $g''\brak{t}$:
-\begin{align}
-\mathcal{L}\{g''\brak{t}\} = \int_{0}^{\infty} e^{-st} g''\brak{t} \, dt
-\end{align}
-
-\noindent Applying integration by parts with $u = e^{-st}$ and $dv = g''\brak{t} \, dt$ (giving $du = -s e^{-st} \, dt$ and $v = g'\brak{t}$):
-\begin{align}
-\mathcal{L}\{g''\brak{t}\} &= \left[ e^{-st} g'\brak{t} \right]_{0}^{\infty} - \int_{0}^{\infty} \brak{-s e^{-st}} g'\brak{t} \, dt \\[1.5ex]
-&= \left( \lim_{t \to \infty} e^{-st} g'\brak{t} - g'\brak{0} \right) + s \int_{0}^{\infty} e^{-st} g'\brak{t} \, dt
-\end{align}
-
-\noindent With $g'\brak{0} = 0$ and substituting the result from part (a), $\mathcal{L}\{g'\brak{t}\} = s G\brak{s}-g\brak{0}$:
-\begin{align}
-\mathcal{L}\{g''\brak{t}\} = 0 - g'\brak{0} + s \brak{s G\brak{s}-g\brak{0}} = s^2 G\brak{s} -sg\brak{0}-g'\brak{0}
-\end{align}
-
-\item
-Consider a function $u\brak{t}$ as defined below:
-\begin{align}
-u\brak{t} = \begin{cases} 
-1, & t > 0 \\ 
-0, & t < 0 \\ 
-\frac{1}{2}, & t = 0 
-\end{cases}
-\end{align}
-Apply the Laplace transform on $u\brak{t}$.
-
-\solution \\ 
-\noindent For $t > 0$, the function takes the value $u\brak{t} = 1$. Because altering a function's value at a single point ($t = 0$) does not affect the value of a definite integral:
-\begin{align}
-\mathcal{L}\{u\brak{t}\} = \int_{0}^{\infty} \brak{1} \cdot e^{-st} \, dt
-\end{align}
-
-
-\noindent Integrating with respect to $t$:
-\begin{align}
-\mathcal{L}\{u\brak{t}\} &= \left[ \frac{e^{-st}}{-s} \right]_{0}^{\infty} \\[1.5ex]
-&= \lim_{t \to \infty} \brak{ \frac{e^{-st}}{-s} } - \brak{ \frac{e^0}{-s} } \\[1.5ex]
-&= 0 - \brak{ -\frac{1}{s} } \\[1.5ex]
-&= \frac{1}{s}
-\end{align}
-
 
 \item 
 Find the minimum value of the function $f\brak{x} = \abs{x} + \abs{2x+3}$ for real $x$. \hfill (GATE~AE~2026)\\ \\
@@ -1009,9 +944,6 @@ x + 3, & \text{if } -1.5 \le x < 0 \\
 f\brak{-1.5} = -1.5 + 3 = 1.5
 \end{align}
 
-\begin{center}
-\url{https://github.com/ri2148/EE-Projects/blob/main/codes/Modulus_function.py}
-\end{center}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Modulus_function.png}
@@ -1034,8 +966,8 @@ A bar, spring, and mass system is arranged in series.
     \item Spring Stiffness: $k = 200\text{ kN/mm}$
     \item Mass: $M = 100\text{ kg}$
 \end{itemize}
-Find the natural frequency of free vibration $\omega_n$ in $\text{rad/s}$.
-\hfill (GATE AE 2026)\\
+\noindent Find the natural frequency of free vibration $\omega_n$ in $\text{rad/s}$. Also solve the differential equation obtained to obtain the position, velocity and accelaration of the system.
+\hfill (GATE~AE~2026)\\
 \begin{figure}[H]
 \begin{center}
 \begin{tikzpicture}[scale=1.0, >=Stealth]
@@ -1099,9 +1031,42 @@ The natural frequency of free vibration is:
 \omega_n = \sqrt{\frac{k_{\text{eq}}}{M}} = \sqrt{\frac{10^8}{100}} = \sqrt{10^6} = 1000 \text{ rad/s}
 \end{align}
 
-\begin{center}
-\url{https://github.com/ri2148/EE-Projects/blob/main/codes/Spring.py}
-\end{center}
+\noindent When the mass $M$ is at rest, let the system stretch by $\delta_{\text{st}}$
+\begin{align}
+\sum F = 0 \implies Mg - k_{\text{eq}}\delta_{\text{st}} = 0 \implies Mg = k_{\text{eq}}\delta_{\text{st}}
+\end{align}
+\noindent When the mass is displaced downward by $x(t)$, applying Newton's second law ($\sum F = M\ddot{x}$):
+\begin{align}
+M \frac{d^2 x}{d t^2} &= M g - k_{\text{eq}}(\delta_{\text{st}} + x) \\
+M \frac{d^2 x}{d t^2} &= M g - k_{\text{eq}}\delta_{\text{st}} - k_{\text{eq}}x
+\end{align}
+
+\noindent Substituting the static equilibrium condition $M g = k_{\text{eq}}\delta_{\text{st}}$:
+\begin{align}
+M \frac{d^2 x}{d t^2} &= (k_{\text{eq}}\delta_{\text{st}}) - k_{\text{eq}}\delta_{\text{st}} - k_{\text{eq}}x 
+\end{align}
+\begin{align}
+M \frac{d^2 x}{d t^2} &= -k_{\text{eq}}x 
+\end{align}
+\noindent Substituting the values of $M$ and $k_{eq}$, we get:
+\begin{align}
+\frac{d^2 x}{d t^2} + 10^6 x = 0
+\end{align}
+\noindent Let the initial displacement of the system be $x_0$ and inital velocity be $v_0$. Taking Laplace Transform on both sides, and using the operational property from \eqref{eq:Laplace_2}, we get:
+\begin{align}
+s^2 X(s) - s x_0 - v_0 + 10^6 X(s) = 0
+\end{align}
+\begin{align}
+X(s) = \frac{s x_0 + v_0}{s^2 + 10^6} 
+\end{align}
+\begin{align}
+X(s) = x_0 \brak{\frac{s}{s^2 + 1000^2}} + \frac{v_0}{1000} \brak{\frac{1000}{s^2 + 1000^2}}
+\end{align} 
+
+\noindent From results \eqref{eq:Laplace_5} and \eqref{eq:Laplace_6}, we get:
+\begin{align}
+\mathcal{L}^{-1}\brak{X(s)} = x(t) = x_0 \cos(1000t) + \frac{v_0}{1000} \sin(1000t)
+\end{align}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.65\linewidth]{figs/Spring.png}

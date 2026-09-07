@@ -1,55 +1,56 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Domain setup for stem plot
-x0, x_end = 0, 5
-h = 0.2  # Step size for discrete visualization
-N = int((x_end - x0) / h) + 1
+# Simulation parameters
+h = 0.1
+x_max = 5.0
+N = int(round(x_max / h))  # 50 steps -> 51 grid points
 
-x = np.linspace(x0, x_end, N)
+# Initialize arrays for numerical solution
+x_num = np.linspace(0, x_max, N + 1)
+y_num = np.zeros(N + 2)
 
-# 1. Euler Recurrence Relation: y_{n+1} = 2(1 - h) y_n - (1 - h)^2 y_{n-1}
-y_rec = np.zeros(N)
-y_rec[0] = 0.0          # y(0) = 0
-y_rec[1] = 0.0 + h * 1.0  # y_1 = y_0 + h * y'(0) = h
+# Initial conditions: y(0) = 0, y'(0) = 1 -> y_1 = y_0 + h*1 = h
+y_num[0] = 0.0
+y_num[1] = h
 
-for n in range(1, N - 1):
-    y_rec[n + 1] = 2.0 * (1.0 - h) * y_rec[n] - ((1.0 - h)**2) * y_rec[n - 1]
+# Second-order Euler Recurrence: y_{n+2} = 2(1-h)y_{n+1} - (1-h)^2 y_n
+for n in range(N):
+    y_num[n + 2] = 2 * (1 - h) * y_num[n + 1] - ((1 - h)**2) * y_num[n]
 
-# 2. Exact Theoretical Solution: y(x) = x * e^(-x)
-y_exact = x * np.exp(-x)
+# Numerical first derivative: y'_n = (y_{n+1} - y_n) / h
+v_num = (y_num[1:N + 2] - y_num[0:N + 1]) / h
 
-# 3. Stem Plot
-plt.figure(figsize=(9, 5))
+# Theoretical continuous curves
+x_fine = np.linspace(0, x_max, 500)
+y_exact = x_fine * np.exp(-x_fine)
+v_exact = (1 - x_fine) * np.exp(-x_fine)
 
-markerline, stemlines, baseline = plt.stem(
-    x,
-    y_rec,
-    linefmt='r-',
-    markerfmt='ro',
-    basefmt='k-',
-    label='Euler Recurrence ($y_n$)',
-)
-plt.setp(stemlines, linewidth=1.5)
-plt.setp(markerline, markersize=6)
-
-plt.plot(
-    x,
-    y_exact,
-    'b--',
-    linewidth=2,
-    label=r'Theoretical $y(x) = x e^{-x}$',
-)
-
-# Mark target point x = ln(2)
+# Target evaluation point x = ln(2)
 x_target = np.log(2)
-slope_target = (1.0 - np.log(2)) * 0.5
-plt.plot(x_target, x_target * np.exp(-x_target), 'go', markersize=8, label=f'Target Point $x = \\ln(2)$')
+y_target = x_target * np.exp(-x_target)
+v_target = (1 - x_target) * np.exp(-x_target)
 
-plt.xlabel('x')
-plt.ylabel('y(x)')
-plt.title(r'Stem Plot of Euler Recurrence Relation ($y_{n+1} = 2(1-h)y_n - (1-h)^2 y_{n-1}$)')
-plt.grid(True, linestyle='--', alpha=0.5)
-plt.legend()
+# Create stacked subplots
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8), sharex=True)
+
+# Top Subplot: y(x)
+ax1.plot(x_fine, y_exact, 'b--', label=r'Theoretical $y(x) = x e^{-x}$', linewidth=2)
+ax1.stem(x_num, y_num[:N + 1], linefmt='r-', markerfmt='ro', basefmt='k-', label=r'Euler Recurrence ($y_n$)')
+ax1.plot(x_target, y_target, 'go', markersize=8, label=r'Target Point $x = \ln(2)$')
+ax1.set_ylabel('$y(x)$')
+ax1.set_title(r'Euler Method Solution: $y(x)$ and $y^\prime(x)$ ($h = 0.1$)')
+ax1.grid(True, linestyle='--', alpha=0.5)
+ax1.legend(loc='upper right')
+
+# Bottom Subplot: y'(x)
+ax2.plot(x_fine, v_exact, 'b--', label=r'Theoretical $y^\prime(x) = (1-x) e^{-x}$', linewidth=2)
+ax2.stem(x_num, v_num, linefmt='r-', markerfmt='ro', basefmt='k-', label=r'Numerical Derivative ($y_n^\prime$)')
+ax2.plot(x_target, v_target, 'go', markersize=8, label=r'Target Point $x = \ln(2)$')
+ax2.set_xlabel('$x$')
+ax2.set_ylabel(r"$y^\prime(x)$")
+ax2.grid(True, linestyle='--', alpha=0.5)
+ax2.legend(loc='upper right')
+
 plt.tight_layout()
 plt.show()

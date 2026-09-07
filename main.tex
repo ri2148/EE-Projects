@@ -15,6 +15,11 @@
 \usepackage{gvv}
 %\setlength{\intextsep}{10pt} % Space between text and floats
 \raggedbottom
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=black % Changes text color instead of placing a box around it
+}
 \makeindex
 
 \begin{document}
@@ -88,6 +93,9 @@ In this edition, some incorrect solutions were removed.  All figures redrawn. Mo
 \renewcommand{\thetable}{\theenumi}
 
 \section{GATE AE 2026}
+\subsection{Formulae}
+\input{chapters/ae-2026_formulae.tex}
+\subsection{Problems}
 \input{chapters/ae-2026.tex}
 \iffalse
 \subsection{Formulae}
