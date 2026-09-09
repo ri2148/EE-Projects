@@ -42,17 +42,17 @@ P\brak{M} &= \frac{10}{N}, \quad P\brak{E} = \frac{12}{N}
 P\brak{ME} = \frac{4}{N} \quad \text{(student likes both)}
 \end{align}
 \begin{align}
-P\brak{\brak{M \cup E}'} = \frac{6}{N} \quad \text{(student likes neither)}
+P\brak{\brak{M+E}'} = \frac{6}{N} \quad \text{(student likes neither)}
 \end{align}
 
 \noindent Since the total probability of the sample space is $1$:
 \begin{align}
-P\brak{M \cup E} + P\brak{\brak{M \cup E}'} = 1
+P\brak{M \cup E} + P\brak{\brak{M+E}'} = 1
 \end{align}
 
-\noindent Applying the Addition Theorem of Probability:
+		\noindent From \eqref{eq:addition_theorem_probability}
 \begin{align}
-P\brak{M} + P\brak{E} - P\brak{ME} + P\brak{\brak{M \cup E}'} = 1
+P\brak{M} + P\brak{E} - P\brak{ME} + P\brak{\brak{M+E}'} = 1
 \end{align}
 
 \noindent Substitute the probabilities in terms of $N$:
@@ -66,68 +66,6 @@ P\brak{M} + P\brak{E} - P\brak{ME} + P\brak{\brak{M \cup E}'} = 1
 \begin{align}
 \frac{24}{N} = 1 \implies N = 24
 \end{align}
-\vspace{0.2cm}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figs/Probability.png}
-	\makeatletter
-    \long\def\@makecaption#1#2{%
-      \vskip\abovecaptionskip
-      \begin{center}
-        #1 #2
-      \end{center}
-      \vskip\belowcaptionskip}
-    \makeatother
-    \caption{Probability Distribution}
-    \label{fig:1}
-\end{figure}
-
-
-   
-\item
-Consider two events $A$ and $B$ in a sample space $S$. We know the following data:
-\begin{align}
-P\brak{A}, \quad P\brak{B}, \quad P\brak{AB}, \quad P\brak{\brak{A \cup B}'}
-\end{align}
-
-\noindent Find the value of $P\brak{AB'}$ \\
-\solution \\ 
-
-\noindent Using \eqref{eq:Prob_1}
-\begin{align}
-A = A \cdot 1 = A\brak{B + B'}
-\end{align}
-Applying the distributive law:
-\begin{align}
-A = AB + AB'
-\end{align}
-
-\vspace{0.3cm}
-
-\noindent To apply the additive property of probability, we check the intersection of $AB$ and $AB'$:
-\begin{align}
-\brak{AB}\brak{AB'} = A \cdot A \cdot B \cdot B' = A \cdot \brak{BB'}
-\end{align}
-Since $BB' = 0$:
-\begin{align}
-\brak{AB}\brak{AB'} = A \cdot 0 = 0
-\end{align}
-Thus, the events $AB$ and $AB'$ are mutually exclusive.
-
-\vspace{0.3cm}
-
-\noindent Since $A = AB + AB'$ and $\brak{AB}\brak{AB'} = 0$, from \eqref{eq:Prob_3}
-\begin{align}
-P\brak{A} = P\brak{AB + AB'} = P\brak{AB} + P\brak{AB'}
-\end{align}
-
-\vspace{0.3cm}
-\noindent Rearranging the equation (3.9) to isolate $P\brak{AB'}$:
-\begin{align}
-{P\brak{AB'} = P\brak{A} - P\brak{AB}}
-\end{align}
-
-
 
 \item 
 Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_1=1\text{cm}$ and another with unknown radius $r_2$, such that both of them touch each other externally and also the square, find the value of $r_2$. Also describe how the figure in the problem can be constructed. \hfill (GATE~AE~2026)
@@ -204,15 +142,16 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
     \label{fig:2}
 \end{center}
 \end{figure}
-\solution \\ 
+\begin{enumerate}
+\item \textbf{Solution:} \\ 
 \noindent Let the side of the square be $s$, radius of the first circle be $r_1$ and that of the unknown circle be $r_2$.\\ \\
     \noindent Clearly from figure:
      \begin{align}
-      \overline{WO_1}+ \overline{O_1T}+ \overline{TO_2} +\overline{O_2Y}= \sqrt{2}s 
+      WO_1+ O_1T+ TO_2 +O_2Y= \sqrt{2}s 
      \end{align}
      \noindent We know that:
      \begin{align}
-     \overline{WO_1} = \sqrt{2}r_1,    \overline{O_1T} = r_1, \overline{TO_2} = r_2 , \overline{O_2W} = \sqrt{2}r_2. 
+     WO_1= \sqrt{2}r_1,    O_1T = r_1, TO_2 = r_2 , O_2W = \sqrt{2}r_2. 
      \end{align}
      \noindent Substituting this in our result from point (4.2) we get:
      \begin{align}
@@ -222,7 +161,7 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
      \begin{align}
 	     r_2 = \brak{7-4\sqrt{2}}\text{cm} 
      \end{align}
-     \textbf{General method for construction:}
+\item \textbf{General method for construction:}
 
 \noindent Vertices of the square:
 \begin{align}
@@ -240,11 +179,18 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
 \begin{align}
 \vec{O}_2 - \vec{O}_1 = \myvec{s-r_2-r_1\\s-r_2-r_1} = (s-r_2-r_1)\myvec{1\\1}
 \end{align}
+\noindent Now, given that the circles are touching, we know that:
+\begin{align}
+	\frac{O_1T}{O_2T} = \frac{r_1}{r_2}
+\end{align}
+\begin{align}
+\frac{O_1T}{O_1O_2} = \frac{r_1}{r_1+r_2}
+\end{align}
+\noindent Hence, using the equation of line of centers obtained, we have:
 \begin{align}
 \vec{T} = \vec{O}_1 + \frac{r_1}{r_1+r_2}(\vec{O}_2 - \vec{O}_1)
 \end{align}
-
-
+\noindent\framebox[\textwidth][c]{codes/Circle.py}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Circle.png}
@@ -259,10 +205,10 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
     \caption{Figure Constructed}
     \label{fig:3}
 \end{figure}
+\end{enumerate}
 
-\item
 
-Consider the contour $C$ shown in the figure below. For the vector $\vec{F} = \brak{x + 2y}\hat{e}_x + \brak{2x + 4y}\hat{e}_y$, the integral $\oint_{C} \vec{F} \cdot d\vec{l} = \underline{\hspace{2cm}}$.
+\item Consider the contour $C$ shown in the figure below. For the vector $\vec{F} = \brak{x + 2y}\hat{e}_x + \brak{2x + 4y}\hat{e}_y$, the integral $\oint_{C} \vec{F} \cdot d\vec{l} = \underline{\hspace{2cm}}$.
 \vspace{0.5em}
 \noindent Here $d\vec{l}$ represents an infinitesimal length along the contour $C$.\hfill (GATE~AE~2026)
 \begin{enumerate}
@@ -396,7 +342,7 @@ Consider the contour $C$ shown in the figure below. For the vector $\vec{F} = \b
 \begin{align}
 \mathbf{I} = \frac{9}{2} + \frac{7}{2} - \frac{15}{2} - \frac{1}{2} = \frac{16 - 16}{2} = 0
 \end{align}\\
-
+\noindent\framebox[\textwidth][c]{codes/Line\_Integral.py}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Line_integral.png}
@@ -412,74 +358,8 @@ Consider the contour $C$ shown in the figure below. For the vector $\vec{F} = \b
     \label{fig:5}
 \end{figure}
 \item
-\begin{enumerate}
-\item 
-Consider $x\brak{t}$ to be defined as
-\begin{align}
-{x\brak{t}} = 
-\begin{cases} 
-1, & t \in \brak{-1, 1} \\ 
-0, & \text{otherwise} 
-\end{cases}
-\end{align}
 
-\noindent Consider
-\begin{align}
-c_k = f_0 \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-j 2\pi k f_0 t} \, dt
-\end{align}
-
-\noindent Taking frequency $f_0 = \frac{1}{4}$, solve for $c_k$. \\
-
-\solution \\ 
-\noindent Given $f_0 = \frac{1}{4}$, the limits of integration are:
-\begin{align}
-\pm \frac{1}{2f_0} = \pm \frac{1}{2(1/4)} = \pm 2
-\end{align}
-
-\noindent Substituting $f_0 = \frac{1}{4}$ into the expression for $\mathbf{c_k}$:
-\begin{align}
-c_k &= \frac{1}{4} \int_{-2}^{2} x(t) e^{-j \frac{\pi k t}{2}} \, dt
-\end{align}
-
-\noindent Since $x(t) = 1$ for $t \in (-1, 1)$ and $0$ otherwise, the non-zero range reduces to $[-1, 1]$:
-\begin{align}
-c_k &= \frac{1}{4} \int_{-1}^{1} e^{-j \frac{\pi k t}{2}} \, dt
-\end{align}
-
-\begin{align}
-c_k &= \frac{1}{4} \left[ \frac{e^{-j \frac{\pi k t}{2}}}{-j \frac{\pi k}{2}} \right]_{-1}^{1} \\
-&= \frac{1}{-j 2\pi k} \left( e^{-j \frac{\pi k}{2}} - e^{j \frac{\pi k}{2}} \right) \\
-&= \frac{-2j \sin\left(\frac{\pi k}{2}\right)}{-j 2\pi k} \\
-&= \frac{\sin\left(\frac{\pi k}{2}\right)}{\pi k}
-\end{align}
-
-\noindent Substituting $c_k$ into the following synthesis equation reconstructs the time-domain signal as an infinite sum of complex exponentials:
-\begin{align}
-\tilde{x}(t) = \sum_{k=-\infty}^{\infty} \left( \frac{\sin(k\pi/2)}{k\pi} \right) e^{j \frac{k\pi t}{2}}
-\end{align}
-
-\begin{align}
-\tilde{x}(t) = \frac{1}{2} + \frac{2}{\pi} \cos \left( \frac{\pi t}{2} \right) - \frac{2}{3\pi} \cos \left( \frac{3\pi t}{2} \right) + \frac{2}{5\pi} \cos \left( \frac{5\pi t}{2} \right) - \dots
-\end{align}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figs/Fourier.png}
-	\makeatletter
-    \long\def\@makecaption#1#2{%
-      \vskip\abovecaptionskip
-      \begin{center}
-        #1 #2
-      \end{center}
-      \vskip\belowcaptionskip}
-    \makeatother
-    \caption{REpresentation of signal}
-    \label{fig:7}
-\end{figure}
-
-
-\item
-
-	The Fourier series representation of a square wave is shown in the figure below. The fluctuations seen near $x = \pm 1$ are named after which one of the following scientists? \hfill(GATE~AE~2026)
+The Fourier series representation of a square wave is shown in the figure below. The fluctuations seen near $x = \pm 1$ are named after which one of the following scientists? \hfill(GATE~AE~2026)
 
 \begin{enumerate}
     \item Cauchy
@@ -548,10 +428,9 @@ c_k &= \frac{1}{4} \left[ \frac{e^{-j \frac{\pi k t}{2}}}{-j \frac{\pi k}{2}} \r
 
 
 \solution \\
-\noindent Gibbs phenomenon is the overshoot and high-frequency oscillation ("ringing") that occurs when approximating a function with jump discontinuities using a finite (truncated) Fourier series. Even as the number of terms $N$ approaches infinity, the overshoot near the jump discontinuity does not vanish; instead, it narrows in width while maintaining a fixed percentage height relative to the size of the jump.\\ \\
+\noindent Every periodic function can be expressed as a sum of sines and cosines, as seen from equation \eqref{eq:Fourier_1}. Gibbs phenomenon is the overshoot and high-frequency oscillation ("ringing") that occurs when approximating a function with jump discontinuities using a finite (truncated) Fourier series. Even as the number of terms $N$ approaches infinity, the overshoot near the jump discontinuity does not vanish; instead, it narrows in width while maintaining a fixed percentage height relative to the size of the jump.\\ \\
 \noindent \textbf{Reason:} When approximating a step function or square wave, Fourier series synthesize the shape using smooth, continuous sinusoids ($\sin$ and $\cos$). Because continuous functions cannot instantaneously step from one value to another, the Fourier series overcompensates near the vertical edge. 
 
-\end{enumerate}
 \item 
 If a matrix can be written as $\mathbf{A} = \mathbf{uv^T}$, where both $u$ and $v$ are $n$-dimensional real-valued non-zero column vectors, then the rank of the matrix $\mathbf{A}$ is \underline{\hspace{1cm}}.
 \hfill (GATE~AE~2026)\\
@@ -719,22 +598,91 @@ E = \frac{1}{2}v^2 - \frac{\mu}{r}
 
 \noindent Substituting the calculated values:
 \begin{align}
-E &= \frac{72}{2} - \frac{398600}{12041.59} \\ 
-&= 36 - 33.102 \\ 
+E &= \frac{72}{2} - \frac{398600}{12041.59} \\
 &= +2.898 \text{ km}^2/\text{s}^2
 \end{align}
+\noindent	
+Any conic section in a 2D plane \brak{p, q} is expressed by the general equation:
+\begin{align}
+S\brak{p, q} = ap^2 + 2hpq + bq^2 + 2gp + 2fq + c = 0
+\end{align}
 
-\noindent 
-The trajectory of an orbiting body is determined by the sign of its specific mechanical energy $E$:
-\begin{itemize}
-    \item $E < 0 \implies \text{Elliptic / Circular orbit (Bound)}$
-    \item $E = 0 \implies \text{Parabolic trajectory (Unbound)}$
-    \item $E > 0 \implies \text{Hyperbolic trajectory (Unbound)}$
-\end{itemize}
+For a satellite trajectory defined in polar coordinates by:
+\begin{align}
+r = \frac{p_{\text{orb}}}{1 + e \cos\theta}
+\end{align}
+where $p = r\cos\theta$ and $q = r\sin\theta$:
+\begin{align}
+r + ep = p_{\text{orb}} \implies r^2 = \brak{p_{\text{orb}} - ep}^2
+\end{align}
+Substituting $r^2 = p^2 + q^2$:
+\begin{align}
+p^2 + q^2 = p_{\text{orb}}^2 - 2e p_{\text{orb}} p + e^2 p^2
+\end{align}
+Rearranging into standard form $S\brak{p, q} = 0$:
+\begin{align}
+\brak{1 - e^2}p^2 + 0 \cdot pq + 1 \cdot q^2 + 2\brak{e p_{\text{orb}}}p + 0 \cdot q - p_{\text{orb}}^2 = 0
+\end{align}
 
-Since $E = +2.898 > 0$, the satellite follows a \textbf{Hyperbolic trajectory}.
+Comparing coefficients yields:
+\begin{align}
+a = 1 - e^2, \quad b = 1, \quad c = -p_{\text{orb}}^2, \quad h = 0, \quad g = e p_{\text{orb}}, \quad f = 0
+\end{align}
 
+\noindent The full 3D homogeneous quadratic form discriminant matrix $M$ is defined as:
+\begin{align}
+M = \myvec{a & h & g \\ h & b & f \\ g & f & c} = \myvec{1 - e^2 & 0 & e p_{\text{orb}} \\ 0 & 1 & 0 \\ e p_{\text{orb}} & 0 & -p_{\text{orb}}^2}
+\end{align}
+
+
+
+\noindent Expanding $\mydet{M}$ along the second row:
+\begin{align}
+\Delta = \mydet{M} = 1 \cdot \mydet{1 - e^2 & e p_{\text{orb}} \\ e p_{\text{orb}} & -p_{\text{orb}}^2} = -p_{\text{orb}}^2\brak{1 - e^2} - e^2 p_{\text{orb}}^2 = -p_{\text{orb}}^2
+\end{align}
+Since $p_{\text{orb}} \neq 0$, $\Delta \neq 0$. The curve is strictly a non-degenerate conic.\\
+
+\noindent Conic Family Test ($\mydet{A} = ab - h^2$):
+
+The principal 2$\times$2 submatrix $A = \myvec{a & h \\ h & b}$ gives:
+\begin{align}
+\mydet{A} = \brak{1 - e^2}\brak{1} - 0^2 = 1 - e^2
+\end{align}
+\noindent Specific Angular Momentum \brak{h_0}:
+\begin{align}
+h_0 = |r \times v| = |8000\brak{6} - 9000\brak{-6}| = 102000 \text{ km}^2/\text{s}
+\end{align}
+
+\noindent Eccentricity Squared \brak{e^2}:
+\begin{align}
+e^2 = 1 + \frac{2\varepsilon h_0^2}{\mu^2} = 1 + \frac{2\brak{2.898}\brak{102000}^2}{\brak{398600}^2} \approx 1 + 0.3795 = 1.3795
+\end{align}
+\begin{align}
+\mydet{A}=1-e^2=1-1.3795=-0.3795
+\end{align}
+
+
+\noindent From \eqref{eq:Matrices_3}, because $\mydet{A}< 0$, the two eigenvalues must have opposite signs—one strictly positive $\brak{\lambda_1 > 0}$ and one strictly negative $\brak{\lambda_2 < 0}$.
+\noindent A quadratic form whose matrix has eigenvalues of mixed signs is defined as indefinite \brak{\text{it can take both positive and negative values depending on the direction vector}}.\\
+
+
+\noindent By rotating the coordinate axes along the principal eigenvectors of $A$, the cross-term $2hxy$ vanishes, simplifying the second-degree terms to:
+\begin{align}
+\lambda_1 X^2 + \lambda_2 Y^2
+\end{align}
+
+Substituting $\lambda_2 = -|\lambda_2|$ \brak{\text{since } \lambda_2 < 0} yields:
+\begin{align}
+\lambda_1 X^2 - |\lambda_2| Y^2 + \text{linear terms} = C
+\end{align}
+
+Completing the square and shifting the origin brings the equation into the familiar standard form of a hyperbola:
+\begin{align}
+\frac{\brak{X - X_0}^2}{\alpha^2} - \frac{\brak{Y - Y_0}^2}{\beta^2} = 1
+\end{align}
+\noindent Hence, it can be said that the trajectory of the satellite is a hyperbola.
 \vspace{0.3cm}
+\noindent\framebox[\textwidth][c]{codes/Satellite.py}
 
 \begin{figure}[H]
     \centering
@@ -786,7 +734,7 @@ a - c = d - b = -\brak{b - d} = k'
 \noindent $\implies \myvec{ 1 \\ -1 }$ is an eigenvector and $d - b$ is the $2^{\text{nd}}$ eigenvalue.
 
 \vspace{0.5cm}
-
+\noindent\framebox[\textwidth][c]{codes/Eigenvectors.py}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Eigenvectors.png}
@@ -810,7 +758,8 @@ Consider the differential equation:
 \end{align}
 with initial conditions $\left.y\right|_{x=0} = 0$ and $\left.\frac{dy}{dx}\right|_{x=0} = 1$. Find the value of the slope $\frac{dy}{dx}$ at $x = \ln\brak{2}$ rounded off to three decimal places.
 \hfill (GATE~AE~2026) \\ \\
-\solution \\ 
+\begin{enumerate}
+\item \textbf{Solution:} \\ 
 
 Let $Y(s) = \mathcal{L}\{y\brak{x}\}$. Taking the Laplace transform on both sides:
 \begin{align}
@@ -853,7 +802,7 @@ y\brak{x} = \mathcal{L}^{-1}\left\{\frac{1}{(s+1)^2}\right\} = x e^{-x}
 
 
 \noindent Rounding off to three decimal places yields: 0.153 \\ \\
-\noindent Solution with Euler's Method: \\
+\item Solution with Euler's Method: \\
 \noindent Substituting equations \eqref{eq:ED_1} and \eqref{eq:ED_2} into our differential equation, we obtain:
 \begin{align}
 \frac{y_{n+2} - 2y_{n+1} + y_n}{h^2} + 2 \left( \frac{y_{n+1} - y_n}{h} \right) + y_n = 0
@@ -871,10 +820,10 @@ y_0=y\brak{0}=0, y_1=y_0+h(y'\brak{0})
 	y_{70}'=0.145
 \end{align}
 \noindent This yields $\frac{dy}{dx}$ at $x=ln2$ as: $0.145$
-
+\noindent\framebox[\textwidth][c]{codes/Euler.py}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{figs/Laplace.png}
+    \includegraphics[width=0.75\linewidth]{figs/Euler.png}
 	\makeatletter
     \long\def\@makecaption#1#2{%
       \vskip\abovecaptionskip
@@ -886,6 +835,7 @@ y_0=y\brak{0}=0, y_1=y_0+h(y'\brak{0})
     \caption{Theoretical Plot vs Plot obtained with Euler's Forward Difference Method}
     \label{fig:13}
 \end{figure}
+\end{enumerate}
 
 \item 
 Find the minimum value of the function $f\brak{x} = \abs{x} + \abs{2x+3}$ for real $x$. \hfill (GATE~AE~2026)\\ \\
@@ -943,6 +893,8 @@ x + 3, & \text{if } -1.5 \le x < 0 \\
 \begin{align}
 f\brak{-1.5} = -1.5 + 3 = 1.5
 \end{align}
+\noindent\framebox[\textwidth][c]{codes/Modulus\_Function.py}
+\noindent\framebox[\textwidth][c]{codes/Modulus\_cvxpy.py}
 
 \begin{figure}[H]
     \centering
@@ -1048,25 +1000,19 @@ M \frac{d^2 x}{d t^2} &= (k_{\text{eq}}\delta_{\text{st}}) - k_{\text{eq}}\delta
 \begin{align}
 M \frac{d^2 x}{d t^2} &= -k_{\text{eq}}x 
 \end{align}
-\noindent Substituting the values of $M$ and $k_{eq}$, we get:
 \begin{align}
-\frac{d^2 x}{d t^2} + 10^6 x = 0
+\frac{d^2 x}{d t^2} = \frac{-k_{\text{eq}}}{M}x = -w_n^2x
 \end{align}
-\noindent Let the initial displacement of the system be $x_0$ and inital velocity be $v_0$. Taking Laplace Transform on both sides, and using the operational property from \eqref{eq:Laplace_2}, we get:
-\begin{align}
-s^2 X(s) - s x_0 - v_0 + 10^6 X(s) = 0
-\end{align}
-\begin{align}
-X(s) = \frac{s x_0 + v_0}{s^2 + 10^6} 
-\end{align}
-\begin{align}
-X(s) = x_0 \brak{\frac{s}{s^2 + 1000^2}} + \frac{v_0}{1000} \brak{\frac{1000}{s^2 + 1000^2}}
-\end{align} 
+\noindent Let the initial displacement of the system be $x_0$ and inital velocity be $v_0$. From result \eqref{eq:Laplace_7}, we get:
 
-\noindent From results \eqref{eq:Laplace_5} and \eqref{eq:Laplace_6}, we get:
+\begin{align}
+\mathcal{L}^{-1}\brak{X(s)} = x(t) = x_0 \cos(w_nt) + \frac{v_0}{w_n} \sin(w_nt)
+\end{align}
+\noindent Substituting the value of $w_n$, 
 \begin{align}
 \mathcal{L}^{-1}\brak{X(s)} = x(t) = x_0 \cos(1000t) + \frac{v_0}{1000} \sin(1000t)
 \end{align}
+\noindent\framebox[\textwidth][c]{codes/Spring.py}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.65\linewidth]{figs/Spring.png}

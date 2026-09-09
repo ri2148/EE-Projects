@@ -1,3 +1,4 @@
+
 \begin{enumerate}[label=\thesubsection.\arabic*, ref=\thesubsection.\theenumi]
 \item Probability
 \begin{itemize}
@@ -6,7 +7,6 @@
 P\brak{M} + P\brak{E} - P\brak{ME} + P\brak{\brak{M \cup E}'} = 1 \label{eq:addition_theorem_probability}
 \end{align}
 
-\noindent\framebox[\linewidth][c]{\url{https://github.com/ri2148/EE-Projects/blob/main/codes/Probability.py}}
 
 \item Complement Laws in Boolean algebra
 \begin{align}
@@ -20,6 +20,45 @@ P\brak{M} + P\brak{E} - P\brak{ME} + P\brak{\brak{M \cup E}'} = 1 \label{eq:addi
 \begin{align}
 	P\brak{A + A'} = P\brak{A} + P\brak{A'} \label{eq:Prob_3}
 \end{align}
+\item Difference rule of probability
+	\begin{align}
+{P\brak{AB'} = P\brak{A} - P\brak{AB}}
+	\end{align}
+\noindent Proof: \\
+\noindent Using \eqref{eq:Prob_1}
+\begin{align}
+A = A \cdot 1 = A\brak{B + B'}
+\end{align}
+Applying the distributive law:
+\begin{align}
+A = AB + AB'
+\end{align}
+
+\vspace{0.3cm}
+
+\noindent To apply the additive property of probability, we check the intersection of $AB$ and $AB'$:
+\begin{align}
+\brak{AB}\brak{AB'} = A \cdot A \cdot B \cdot B' = A \cdot \brak{BB'}
+\end{align}
+Since $BB' = 0$:
+\begin{align}
+\brak{AB}\brak{AB'} = A \cdot 0 = 0
+\end{align}
+Thus, the events $AB$ and $AB'$ are mutually exclusive.
+
+\vspace{0.3cm}
+
+\noindent Since $A = AB + AB'$ and $\brak{AB}\brak{AB'} = 0$, from \eqref{eq:Prob_3}
+\begin{align}
+P\brak{A} = P\brak{AB + AB'} = P\brak{AB} + P\brak{AB'}
+\end{align}
+
+\vspace{0.3cm}
+\noindent Rearranging the equation (3.9) to isolate $P\brak{AB'}$:
+\begin{align}
+{P\brak{AB'} = P\brak{A} - P\brak{AB}}
+\end{align}
+
 \end{itemize}
 \item Laplace Transform
 \begin{itemize}
@@ -132,8 +171,26 @@ F\brak{s - a} = \int_{0}^{\infty} e^{-\brak{s - a}x} f\brak{x} \, dx
 	\mathcal{L}\brak{\sin(ax)} &= \frac{a}{s^2 + a^2} \implies \mathcal{L}^{-1}\brak{\frac{a}{s^2 + a^2}} = \sin(ax) \label{eq:Laplace_6}
 \end{align}
 
-\noindent\framebox[\linewidth][c]{\url{https://github.com/ri2148/EE-Projects/blob/main/codes/Spring.py}}
-
+\item Solving a differential equation of the form:
+\begin{align}
+	\frac{d^2 y}{d x^2}= -\alpha^2 y, \alpha^2 \in \mathbb{R}^+
+\end{align}
+\noindent Applying the Laplace Transform on both sides, and using \eqref{eq:Laplace_2}, we get:
+\begin{align}
+	s^2G(s)-sy(0)-y'(0)=-\alpha^2 G(s)
+\end{align}
+\noindent Let $y(0) = \beta$ and $y'(0)= \gamma$ \\
+\noindent Rearranging, we get:
+\begin{align}
+G(s)=\frac{s\beta + \gamma}{s^2 + \alpha^2}
+\end{align}
+\begin{align}
+G(s)=\frac{s\beta}{s^2 + \alpha^2}+\frac{\gamma}{s^2 + \alpha^2}
+\end{align}
+\noindent From results \eqref{eq:Laplace_5} and \eqref{eq:Laplace_6}, we get:
+\begin{align}
+	G(s)=\beta cos(\alpha x) + \frac{\gamma}{\alpha}sin(\alpha x) \label{eq:Laplace_7}
+\end{align}
 \end{itemize}
 \item Euler's Method of Forward Differences
 \begin{itemize}
@@ -208,9 +265,94 @@ y_1=y_0+mh
 	y_n''=\frac{y_{n+2}-2y_{n+1}+y_n}{h^2} \label{eq:ED_2}
 \end{align}
 
-\noindent\framebox[\linewidth][c]{\url{https://github.com/ri2148/EE-Projects/blob/main/codes/Laplace.py}}
 
 \end{itemize}
+\item The Fourier Series \\
+\noindent Consider a function $f(t)$ that is periodic. This function can be expressed as a sum of sines and cosines as shown below. This sum is called the Fourier series.
+\begin{align}
+	f(t) = \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos(n\omega_0 t) + \sum_{n=1}^{\infty} b_n \sin(n\omega_0 t) \label{eq:Fourier_1}
+\end{align}
+
+\noindent To find the unknown coefficients $a_0$, $a_n$, and $b_n$, we use the orthogonality properties of trigonometric functions over one full period $T$. \\ 
+
+\noindent Orthogonality Relationships: \\
+
+\noindent For any non-zero integers $m$ and $n$ evaluated over one period $\int_0^T dt$:
+
+\begin{itemize}
+    \item $\int_0^T \cos(m\omega_0 t) \, dt = 0$
+    \item $\int_0^T \sin(m\omega_0 t) \, dt = 0$
+    \item $\int_0^T \cos(m\omega_0 t) \sin(n\omega_0 t) \, dt = 0$
+    \item $\int_0^T \cos(m\omega_0 t) \cos(n\omega_0 t) \, dt = \begin{cases} 0, & m \neq n \\ \frac{T}{2}, & m = n \neq 0 \end{cases}$
+    \item $\int_0^T \sin(m\omega_0 t) \sin(n\omega_0 t) \, dt = \begin{cases} 0, & m \neq n \\ \frac{T}{2}, & m = n \neq 0 \end{cases}$
+\end{itemize}
+
+\noindent Deriving $a_0$ (DC Component): \\
+\noindent Integrate both sides of the expansion equation over one period $[0, T]$:
+
+\begin{align}
+\int_0^T f(t) \, dt = \int_0^T \frac{a_0}{2} \, dt + \sum_{n=1}^{\infty} a_n \int_0^T \cos(n\omega_0 t) \, dt + \sum_{n=1}^{\infty} b_n \int_0^T \sin(n\omega_0 t) \, dt
+\end{align}
+
+\noindent By orthogonality, every integral inside the summations equals zero:
+
+\begin{align}
+\int_0^T f(t) \, dt = \frac{a_0}{2} T \implies a_0 = \frac{2}{T} \int_0^T f(t) \, dt
+\end{align}
+
+\noindent Deriving $a_n$ (Cosine Coefficients): \\
+
+\noindent Multiply both sides of the expansion equation by $\cos(m\omega_0 t)$ and integrate over $[0, T]$:
+
+\begin{align}
+\int_0^T f(t) \cos(m\omega_0 t) \, dt &= \frac{a_0}{2} \int_0^T \cos(m\omega_0 t) \, dt  \notag\\
+&+ \sum_{n=1}^{\infty} a_n \int_0^T \cos(n\omega_0 t) \cos(m\omega_0 t) \, dt \notag \\
+&+ \sum_{n=1}^{\infty} b_n \int_0^T \sin(n\omega_0 t) \cos(m\omega_0 t) \, dt
+\end{align}
+
+\noindent Applying orthogonality:
+\begin{itemize}
+    \item The $a_0$ integral equals $0$.
+    \item The $b_n$ integrals equal $0$ for all $n$.
+    \item The $a_n$ integrals equal $0$ for every term except where $n = m$:
+\end{itemize}
+
+\begin{align}
+\int_0^T f(t) \cos(m\omega_0 t) \, dt = a_m \int_0^T \cos^2(m\omega_0 t) \, dt = a_m \left(\frac{T}{2}\right)
+\end{align}
+
+\noindent Replacing dummy index $m$ with $n$:
+
+\begin{align}
+a_n = \frac{2}{T} \int_0^T f(t) \cos(n\omega_0 t) \, dt
+\end{align}
+
+\noindent{Deriving $b_n$ (Sine Coefficients)} \\
+
+\noindent Multiply both sides of the expansion equation by $\sin(m\omega_0 t)$ and integrate over $[0, T]$:
+
+\begin{align}
+\int_0^T f(t) \sin(m\omega_0 t) \, dt &= \frac{a_0}{2} \int_0^T \sin(m\omega_0 t) \, dt \notag \\
+&+ \sum_{n=1}^{\infty} a_n \int_0^T \cos(n\omega_0 t) \sin(m\omega_0 t) \, dt \notag \\
+&+ \sum_{n=1}^{\infty} b_n \int_0^T \sin(n\omega_0 t) \sin(m\omega_0 t) \, dt
+\end{align}
+
+Applying orthogonality:
+\begin{itemize}
+    \item The $a_0$ integral equals $0$.
+    \item The $a_n$ integrals equal $0$ for all $n$.
+    \item The $b_n$ integrals equal $0$ for every term except where $n = m$:
+\end{itemize}
+
+\begin{align}
+\int_0^T f(t) \sin(m\omega_0 t) \, dt = b_m \int_0^T \sin^2(m\omega_0 t) \, dt = b_m \left(\frac{T}{2}\right)
+\end{align}
+
+\noindent Replacing dummy index $m$ with $n$:
+
+\begin{align}
+b_n = \frac{2}{T} \int_0^T f(t) \sin(n\omega_0 t) \, dt
+\end{align}
 \item Matrices
 \begin{itemize}
 	\item Fundamental property: 
@@ -262,7 +404,15 @@ When selecting $a_{12}$:
     \end{align}
 \end{itemize}
 
-\noindent Notice that $\mathbf{N_{21}} = \brak{\mathbf{M_{12}}}^T$. Since $\mydet{\mathbf{M_{12}}} = \mydet{\brak{\mathbf{M_{12}}}^T}$, every term in the expansion of $\mydet{\mathbf{A}}$ is identically equal to the corresponding term in $\mydet{\mathbf{A^T}}$.
+\noindent Notice that $\mathbf{N_{21}} = \brak{\mathbf{M_{12}}}^T$. Since $\mydet{\mathbf{M_{12}}} = \mydet{\brak{\mathbf{M_{12}}}^T}$, every term in the expansion of $\mydet{\mathbf{A}}$ is identically equal to the corresponding term in $\mydet{\mathbf{A^T}}$. \\
+\item A few relations on the eigenvalues of a matrix \\
+	\noindent Let $\lambda_1, \lambda_2, .... , \lambda_i$ be the eigenvalues of a matrix $\mathbf{A}$. Then, we have:
+\begin{align}
+	\sum_{i=1}^{n} \lambda_i = \text{Tr}\brak{\mathbf{A}} \label{eq:Matrices_2}
+\end{align}
+\begin{align}
+	\prod_{i=1}^{n} \lambda_i = \mydet{\mathbf{A}} \label{eq:Matrices_3}
+\end{align}
 \end{itemize}
 \end{enumerate}
 \clearpage
