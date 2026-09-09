@@ -660,33 +660,12 @@ e^2 = 1 + \frac{2\varepsilon h_0^2}{\mu^2} = 1 + \frac{2\brak{2.898}\brak{102000
 \begin{align}
 \mydet{A}=1-e^2=1-1.3795=-0.3795
 \end{align}
-
-
-\noindent From \eqref{eq:Matrices_3}, because $\mydet{A}< 0$, the two eigenvalues must have opposite signs—one strictly positive $\brak{\lambda_1 > 0}$ and one strictly negative $\brak{\lambda_2 < 0}$.
-\noindent A quadratic form whose matrix has eigenvalues of mixed signs is defined as indefinite \brak{\text{it can take both positive and negative values depending on the direction vector}}.\\
-
-
-\noindent By rotating the coordinate axes along the principal eigenvectors of $A$, the cross-term $2hxy$ vanishes, simplifying the second-degree terms to:
-\begin{align}
-\lambda_1 X^2 + \lambda_2 Y^2
-\end{align}
-
-Substituting $\lambda_2 = -|\lambda_2|$ \brak{\text{since } \lambda_2 < 0} yields:
-\begin{align}
-\lambda_1 X^2 - |\lambda_2| Y^2 + \text{linear terms} = C
-\end{align}
-
-Completing the square and shifting the origin brings the equation into the familiar standard form of a hyperbola:
-\begin{align}
-\frac{\brak{X - X_0}^2}{\alpha^2} - \frac{\brak{Y - Y_0}^2}{\beta^2} = 1
-\end{align}
-\noindent Hence, it can be said that the trajectory of the satellite is a hyperbola.
-\vspace{0.3cm}
+\noindent From \eqref{eq:Matrices_4}, we can say that the trajectory is a Hyperbola
 \noindent\framebox[\textwidth][c]{codes/Satellite.py}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{figs/Satellite.png}
+    \includegraphics[width=0.60\linewidth]{figs/Satellite.png}
 	\makeatletter
     \long\def\@makecaption#1#2{%
       \vskip\abovecaptionskip
