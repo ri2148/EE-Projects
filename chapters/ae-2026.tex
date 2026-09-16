@@ -431,7 +431,7 @@ The Fourier series representation of a square wave is shown in the figure below.
 \noindent Every periodic function can be expressed as a sum of sines and cosines. Gibbs phenomenon is the overshoot and high-frequency oscillation ("ringing") that occurs when approximating a function with jump discontinuities using a finite (truncated) Fourier series. Even as the number of terms $N$ approaches infinity, the overshoot near the jump discontinuity does not vanish; instead, it narrows in width while maintaining a fixed percentage height relative to the size of the jump.\\ \\
 \noindent \textbf{Reason:} When approximating a step function or square wave, Fourier series synthesize the shape using smooth, continuous sinusoids ($\sin$ and $\cos$). Because continuous functions cannot instantaneously step from one value to another, the Fourier series overcompensates near the vertical edge. \\ \\
 \item Finding the fourier coefficients for a square wave \\
-We will use the result \eqref{eq:Fourier_1}. Considering $f_0 = \frac{1}{4}$, $T_0 = 4$, and the integration interval is $\brak{-\frac{1}{2f_0}, \frac{1}{2f_0}} = \brak{-2, 2}$:
+We will use the result \eqref{eq:Fourier_1}. Considering $f_0 = \frac{1}{4}$, $T_0 = 4$, and the integration interval $\brak{-\frac{1}{2f_0}, \frac{1}{2f_0}} = \brak{-2, 2}$:
 
 \begin{align}
 c_k &= \frac{1}{4} \int_{-1}^{1} e^{-j \frac{\pi k t}{2}} \, dt
