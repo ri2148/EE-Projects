@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
-# Initialize figure and axis with appropriate width to accommodate legend
-fig, ax = plt.subplots(figsize=(8, 6))
+# Initialize figure with constrained layout to prevent legend clipping
+fig, ax = plt.subplots(figsize=(9, 6), layout='constrained')
 
 # Parameters
 s = 4.0
@@ -57,20 +57,21 @@ ax.set_ylim(-0.5, 4.5)
 ax.set_aspect('equal')
 ax.grid(True, linestyle='--', alpha=0.5)
 
+# Remove the outer plot box (spines)
+for spine in ax.spines.values():
+    spine.set_visible(False)
+
 # Axis labels
 ax.set_xlabel('X (cm)')
 ax.set_ylabel('Y (cm)')
 
-# Title fix: adjusted pad & fontsize to keep inside margins
+# Title
 ax.set_title(r'Square (s=4.0 cm) with Tangent Circles ($r_1=1.0$ cm, R=1.343 cm)', pad=12, fontsize=11)
 
-# Legend placed outside
-ax.legend(bbox_to_anchor=(1.03, 1), loc='upper left', borderaxespad=0.)
+# Legend placed outside with fully visible frame
+ax.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0., frameon=True)
 
-# Adjust layout automatically to ensure title and legend fit properly
-plt.tight_layout()
-
-# Save figure with tight bounding box to guarantee no cropping
+# Save figure with tight bounding box
 plt.savefig('circle_plot.png', dpi=300, bbox_inches='tight')
 
 plt.show()

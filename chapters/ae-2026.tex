@@ -190,7 +190,7 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
 \begin{align}
 \vec{T} = \vec{O}_1 + \frac{r_1}{r_1+r_2}(\vec{O}_2 - \vec{O}_1)
 \end{align}
-\noindent\framebox[\textwidth][c]{codes/Circle.py}
+\noindent\framebox[\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax][c]{codes/Circle.py}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Circle.png}
@@ -426,52 +426,54 @@ The Fourier series representation of a square wave is shown in the figure below.
     \label{fig:6}
 \end{figure}
 
+\begin{enumerate}
+	\item \textbf{Solution:} \\
+\noindent Every periodic function can be expressed as a sum of sines and cosines. Gibbs phenomenon is the overshoot and high-frequency oscillation ("ringing") that occurs when approximating a function with jump discontinuities using a finite (truncated) Fourier series. Even as the number of terms $N$ approaches infinity, the overshoot near the jump discontinuity does not vanish; instead, it narrows in width while maintaining a fixed percentage height relative to the size of the jump.\\ \\
+\noindent \textbf{Reason:} When approximating a step function or square wave, Fourier series synthesize the shape using smooth, continuous sinusoids ($\sin$ and $\cos$). Because continuous functions cannot instantaneously step from one value to another, the Fourier series overcompensates near the vertical edge. \\ \\
+\item Finding the fourier coefficients for a square wave \\
+We will use the result \eqref{eq:Fourier_1}. Considering $f_0 = \frac{1}{4}$, $T_0 = 4$, and the integration interval is $\brak{-\frac{1}{2f_0}, \frac{1}{2f_0}} = \brak{-2, 2}$:
 
-\solution \\
-\noindent Every periodic function can be expressed as a sum of sines and cosines, as seen from equation \eqref{eq:Fourier_1}. Gibbs phenomenon is the overshoot and high-frequency oscillation ("ringing") that occurs when approximating a function with jump discontinuities using a finite (truncated) Fourier series. Even as the number of terms $N$ approaches infinity, the overshoot near the jump discontinuity does not vanish; instead, it narrows in width while maintaining a fixed percentage height relative to the size of the jump.\\ \\
-\noindent \textbf{Reason:} When approximating a step function or square wave, Fourier series synthesize the shape using smooth, continuous sinusoids ($\sin$ and $\cos$). Because continuous functions cannot instantaneously step from one value to another, the Fourier series overcompensates near the vertical edge. 
+\begin{align}
+c_k &= \frac{1}{4} \int_{-1}^{1} e^{-j \frac{\pi k t}{2}} \, dt
+\end{align}
 
-\item 
-If a matrix can be written as $\mathbf{A} = \mathbf{uv^T}$, where both $u$ and $v$ are $n$-dimensional real-valued non-zero column vectors, then the rank of the matrix $\mathbf{A}$ is \underline{\hspace{1cm}}.
+For $k = 0$:
+\begin{align}
+c_0 &= \frac{1}{4} \int_{-1}^{1} 1 \, dt = \frac{1}{4} \brak{1 - \brak{-1}} = \frac{1}{2} 
+\end{align}
+
+For $k \neq 0$:
+\begin{align}
+c_k &= \frac{1}{4} \left[ \frac{e^{-j \frac{\pi k t}{2}}}{-j \frac{\pi k}{2}} \right]_{-1}^{1}
+\end{align}
+\begin{align}
+= \frac{1}{-j 2\pi k} \brak{e^{-j \frac{\pi k}{2}} - e^{j \frac{\pi k}{2}}} 
+\end{align}
+\begin{align}
+= \frac{-2j \sin\brak{\frac{\pi k}{2}}}{-j 2\pi k} = \frac{\sin\brak{\frac{\pi k}{2}}}{\pi k} 
+\end{align}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{figs/Fourier.png}
+	\makeatletter
+    \long\def\@makecaption#1#2{%
+      \vskip\abovecaptionskip
+      \begin{center}
+        #1 #2
+      \end{center}
+      \vskip\belowcaptionskip}
+    \makeatother
+    \caption{Plot Generated}
+    \label{fig:5}
+\end{figure}
+
+\end{enumerate}
+\item If a matrix can be written as $\mathbf{A} = \mathbf{uv^T}$, where both $u$ and $v$ are $n$-dimensional real-valued non-zero column vectors, then the rank of the matrix $\mathbf{A}$ is \underline{\hspace{1cm}}.
 \hfill (GATE~AE~2026)\\
 
 \solution 
 
-
-    \noindent
-    The matrix $\mathbf{A}$ is formed by taking the outer product of two $n \times 1$ non-zero column vectors $\mathbf{u}$ and $\mathbf{v}$:
-    \begin{align}
-    \mathbf{A = uv^T}
-    \end{align}
-    Writing $\mathbf{u}$ and $\mathbf{v^T}$ explicitly:
-    \begin{align}
-    \mathbf{u}= \myvec{ u_1 \\ u_2 \\ \vdots \\ u_n }, \quad
-    \mathbf{v^T} = \myvec{ v_1 & v_2 & \dots & v_n }
-    \end{align}
-
-    \noindent
-    Multiplying $\mathbf{u}$ and $\mathbf{v^T}$ gives the $n \times n$ matrix $\mathbf{A}$:
-    \begin{align}
-    \mathbf{A} = \myvec{ 
-    u_1 v_1 & u_1 v_2 & \dots & u_1 v_n \\ 
-    u_2 v_1 & u_2 v_2 & \dots & u_2 v_n \\ 
-    \vdots & \vdots & \ddots & \vdots \\ 
-    u_n v_1 & u_n v_2 & \dots & u_n v_n 
-    }
-    \end{align}
-
-    \noindent 
-    Notice that each column of $\mathbf{A}$ can be written as a scalar multiple of vector $\mathbf{u}$:
-    \begin{itemize}
-        \item 1st column: $v_1 \mathbf{u}$
-        \item 2nd column: $v_2 \mathbf{u}$
-        \item $j^{\text{th}}$ column: $v_j \mathbf{u}$
-    \end{itemize}
-    
-
-    \noindent 
-The rank of a matrix is equal to the number of non zero rows in its echeleon form. When we reduce the above matrix into the echeleon form, we notice that each row is a multiple of another as shown above. Therefore, when we apply elementary row transformations by multiplying the rows with the necessary constants and subtracting, all rows but one become non zero. Hence, the rank of the matrix becomes $1$. \\ \\
-\noindent Example: \\
+\noindent We will solve it with an example: \\
 Consider $3$-dimensional non-zero vectors $\mathbf{u} = \myvec{1 \\ 2 \\ 3}$ and $\mathbf{v} = \myvec{1 \\ 4 \\ 2}$.
 
 \noindent
@@ -575,25 +577,27 @@ Given the velocity and position vectors of a satellite along with its gravitatio
     \mu = 398600 \text{ km}^3/\text{s}^2
     \end{align}
 
-\solution \\ 
-\noindent 
-The magnitude of the position vector $\vec{r}$ is:
+\solution \\
+\noindent We are given :
 \begin{align}
-r = |\vec{r}| = \sqrt{8000^2 + 9000^2} = \sqrt{64 \times 10^6 + 81 \times 10^6} = \sqrt{145 \times 10^6} \approx 12041.59 \text{ km}
+	\vec{r}=\myvec{8000\\9000}, \vec{v}=\myvec{-6\\6}
 \end{align}
-
-\noindent The square of the velocity magnitude $v^2$ is:
+\noindent Finding the norms:
 \begin{align}
-v^2 = |\vec{v}|^2 = \brak{-6}^2 + \brak{6}^2 = 36 + 36 = 72 \text{ (km/s)}^2
+\norm{\vec{r}} = \sqrt{8000^2 + 9000^2} = \sqrt{64 \times 10^6 + 81 \times 10^6} = \sqrt{145 \times 10^6} \approx 12041.59 \text{ km}
 \end{align}
-
+\begin{align}
+\norm{\vec{v}} = \sqrt{-6^2 + 6^2} = \sqrt{36 + 36} = \sqrt{72} \text{ (km/s)}
+\end{align}
+\begin{align}
+\norm{\vec{v}}^2=72 \text{ (km/s)}^2
+\end{align}
 \noindent The specific mechanical energy (energy per unit mass) is given by:
-\noindent
 \begin{align}
 E = \text{Kinetic Energy per unit mass} + \text{Potential Energy per unit mass}
 \end{align}
 \begin{align}
-E = \frac{1}{2}v^2 - \frac{\mu}{r}
+	E = \frac{1}{2}\norm{\vec{v}}^2 - \frac{\mu}{\norm{\vec{r}}}
 \end{align}
 
 \noindent Substituting the calculated values:
@@ -601,52 +605,35 @@ E = \frac{1}{2}v^2 - \frac{\mu}{r}
 E &= \frac{72}{2} - \frac{398600}{12041.59} \\
 &= +2.898 \text{ km}^2/\text{s}^2
 \end{align}
-\noindent	
-Any conic section in a 2D plane \brak{p, q} is expressed by the general equation:
+The polar trajectory of a satellite with eccentricity vector $\mathbf{e}$ and semi-latus rectum $p_{\text{orb}}$ is given by:
 \begin{align}
-S\brak{p, q} = ap^2 + 2hpq + bq^2 + 2gp + 2fq + c = 0
+r = \frac{p_{\text{orb}}}{1 + e \cos \theta}
 \end{align}
 
-For a satellite trajectory defined in polar coordinates by:
+In vector form, $e \cos \theta = \frac{\mathbf{e}^\top \mathbf{x}}{r}$, where $\mathbf{x} = \begin{pmatrix} p \\ q \end{pmatrix}$.
 \begin{align}
-r = \frac{p_{\text{orb}}}{1 + e \cos\theta}
-\end{align}
-where $p = r\cos\theta$ and $q = r\sin\theta$:
-\begin{align}
-r + ep = p_{\text{orb}} \implies r^2 = \brak{p_{\text{orb}} - ep}^2
-\end{align}
-Substituting $r^2 = p^2 + q^2$:
-\begin{align}
-p^2 + q^2 = p_{\text{orb}}^2 - 2e p_{\text{orb}} p + e^2 p^2
-\end{align}
-Rearranging into standard form $S\brak{p, q} = 0$:
-\begin{align}
-\brak{1 - e^2}p^2 + 0 \cdot pq + 1 \cdot q^2 + 2\brak{e p_{\text{orb}}}p + 0 \cdot q - p_{\text{orb}}^2 = 0
+r + \mathbf{e}^\top \mathbf{x} = p_{\text{orb}} \implies r = p_{\text{orb}} - \mathbf{e}^\top \mathbf{x}
 \end{align}
 
-Comparing coefficients yields:
+Squaring both sides ($r^2 = \mathbf{x}^\top \mathbf{x}$):
 \begin{align}
-a = 1 - e^2, \quad b = 1, \quad c = -p_{\text{orb}}^2, \quad h = 0, \quad g = e p_{\text{orb}}, \quad f = 0
+\mathbf{x}^\top \mathbf{x} = (p_{\text{orb}} - \mathbf{e}^\top \mathbf{x})^2 = p_{\text{orb}}^2 - 2 p_{\text{orb}} \mathbf{e}^\top \mathbf{x} + (\mathbf{e}^\top \mathbf{x})^2
 \end{align}
 
-\noindent The full 3D homogeneous quadratic form discriminant matrix $M$ is defined as:
+Since $(\mathbf{e}^\top \mathbf{x})^2 = \mathbf{x}^\top (\mathbf{e}\mathbf{e}^\top)\mathbf{x}$, rearranging yields:
 \begin{align}
-M = \myvec{a & h & g \\ h & b & f \\ g & f & c} = \myvec{1 - e^2 & 0 & e p_{\text{orb}} \\ 0 & 1 & 0 \\ e p_{\text{orb}} & 0 & -p_{\text{orb}}^2}
+\mathbf{x}^\top (\mathbf{I} - \mathbf{e}\mathbf{e}^\top)\mathbf{x} + 2(p_{\text{orb}}\mathbf{e})^\top \mathbf{x} - p_{\text{orb}}^2 = 0
 \end{align}
 
-
-
-\noindent Expanding $\mydet{M}$ along the second row:
+Comparing this with $g(\mathbf{x}) = \mathbf{x}^\top \mathbf{V}\mathbf{x} + 2\mathbf{u}^\top \mathbf{x} + f = 0$:
+\begin{itemize}
+    \item Matrix $\mathbf{V}$: $\mathbf{V} = \mathbf{I} - \mathbf{e}\mathbf{e}^\top$
+    \item Vector $\mathbf{u}$: $\mathbf{u} = p_{\text{orb}}\mathbf{e}$
+    \item Scalar $f$: $f = -p_{\text{orb}}^2$
+\end{itemize}
+\noindent From result \eqref{eq:mat_det_lemma}, we have:
 \begin{align}
-\Delta = \mydet{M} = 1 \cdot \mydet{1 - e^2 & e p_{\text{orb}} \\ e p_{\text{orb}} & -p_{\text{orb}}^2} = -p_{\text{orb}}^2\brak{1 - e^2} - e^2 p_{\text{orb}}^2 = -p_{\text{orb}}^2
-\end{align}
-Since $p_{\text{orb}} \neq 0$, $\Delta \neq 0$. The curve is strictly a non-degenerate conic.\\
-
-\noindent Conic Family Test ($\mydet{A} = ab - h^2$):
-
-The principal 2$\times$2 submatrix $A = \myvec{a & h \\ h & b}$ gives:
-\begin{align}
-\mydet{A} = \brak{1 - e^2}\brak{1} - 0^2 = 1 - e^2
+\mydet{\mathbf{V}}=1-\mathbf{e^Te}=1-e^2
 \end{align}
 \noindent Specific Angular Momentum \brak{h_0}:
 \begin{align}
@@ -657,10 +644,12 @@ h_0 = |r \times v| = |8000\brak{6} - 9000\brak{-6}| = 102000 \text{ km}^2/\text{
 \begin{align}
 e^2 = 1 + \frac{2\varepsilon h_0^2}{\mu^2} = 1 + \frac{2\brak{2.898}\brak{102000}^2}{\brak{398600}^2} \approx 1 + 0.3795 = 1.3795
 \end{align}
+\noindent Therefore we have,
 \begin{align}
-\mydet{A}=1-e^2=1-1.3795=-0.3795
+\mydet{\mathbf{V}}<0 
 \end{align}
-\noindent From \eqref{eq:Matrices_4}, we can say that the trajectory is a Hyperbola
+\noindent From \ref{item:Hyperbola}, we can conclude that the trajectory of the satellite is a Hyperbola.
+
 \noindent\framebox[\textwidth][c]{codes/Satellite.py}
 
 \begin{figure}[H]
@@ -771,12 +760,12 @@ y\brak{x} = \mathcal{L}^{-1}\left\{\frac{1}{(s+1)^2}\right\} = x e^{-x}
 
 \noindent Substituting $x = \ln\brak{2}$:
 \begin{align}
-\left.\frac{dy}{dx}\right|_{x=\ln\brak{2}} = \brak{1 - \ln\brak{2}} e^{-\ln\brak{2}}
+y'\brak{ln\brak{2}}= \brak{1 - \ln\brak{2}} e^{-\ln\brak{2}}
 \end{align}
 
 \noindent Since $e^{-\ln\brak{2}} = \frac{1}{2}$:
 \begin{align}
-\left.\frac{dy}{dx}\right|_{x=\ln\brak{2}} = \frac{1 - \ln\brak{2}}{2} \approx \frac{1 - 0.693147}{2} = 0.153426
+= \frac{1 - \ln\brak{2}}{2} \approx \frac{1 - 0.693147}{2} = 0.153426
 \end{align}
 
 
@@ -798,8 +787,7 @@ y_0=y\brak{0}=0, y_1=y_0+h(y'\brak{0})
 \begin{align}
 	y_{70}'=0.145
 \end{align}
-\noindent This yields $\frac{dy}{dx}$ at $x=ln2$ as: $0.145$
-\noindent\framebox[\textwidth][c]{codes/Euler.py}
+\noindent\framebox[\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax][c]{codes/Euler.py}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Euler.png}
@@ -873,7 +861,6 @@ x + 3, & \text{if } -1.5 \le x < 0 \\
 f\brak{-1.5} = -1.5 + 3 = 1.5
 \end{align}
 \noindent\framebox[\textwidth][c]{codes/Modulus\_Function.py}
-\noindent\framebox[\textwidth][c]{codes/Modulus\_cvxpy.py}
 
 \begin{figure}[H]
     \centering
