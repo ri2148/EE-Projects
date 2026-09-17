@@ -61,7 +61,6 @@ ax1.plot(r0[0], r0[1], 'ro', markersize=8, label=r'Initial Position $\vec{r}_0$'
 ax1.quiver(r0[0], r0[1], v0[0], v0[1], angles='xy', scale_units='xy', scale=0.001,
            color='darkred', width=0.008, label=r'Velocity $\vec{v}_0$')
 
-ax1.set_title('Near-Earth Trajectory (Primary Branch)', fontsize=13, pad=12)
 ax1.set_xlabel('Perifocal $p$-axis (km)', fontsize=11)
 ax1.set_ylabel('Perifocal $q$-axis (km)', fontsize=11)
 ax1.grid(True, linestyle=':', alpha=0.7)
@@ -88,7 +87,6 @@ ax2.plot(r0[0], r0[1], 'ro', markersize=8, label=r'Initial Position $\vec{r}_0$'
 ax2.quiver(r0[0], r0[1], v0[0], v0[1], angles='xy', scale_units='xy', scale=0.0003,
            color='darkred', width=0.006, label=r'Velocity $\vec{v}_0$')
 
-ax2.set_title('Global Orbit View (Both Hyperbolic Branches)', fontsize=13, pad=12)
 ax2.set_xlabel('Perifocal $p$-axis (km)', fontsize=11)
 ax2.set_ylabel('Perifocal $q$-axis (km)', fontsize=11)
 ax2.grid(True, linestyle=':', alpha=0.7)

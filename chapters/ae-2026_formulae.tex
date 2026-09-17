@@ -3,68 +3,70 @@
 \begin{itemize}
 \item Addition Theorem of Probability:
 \begin{align}
-P\brak{M} + P\brak{E} - P\brak{ME} + P\brak{\brak{M \cup E}'} = 1 \label{eq:addition_theorem_probability}
+P\brak{M} + P\brak{E} - P\brak{ME} + P\brak{\brak{M + E}^{\prime}} = 1 \label{eq:addition_theorem_probability}
 \end{align}
 
 
 \item Complement Laws in Boolean algebra
 \begin{align}
-	A + A' = 1, \quad AA' = 0 \label{eq:Prob_1}
+	A + A^{\prime} = 1, \quad AA^{\prime} = 0 \label{eq:Prob_1}
 \end{align}
 \item Probability of Certain and Impossible Events
 \begin{align}
-	P\brak{1} = 1, \quad P\brak{0} = 0 \implies P\brak{A + A'} = 1, \quad P\brak{AA'} = 0 \label{eq:Prob_2}
+	P\brak{1} = 1, \quad P\brak{0} = 0 \implies P\brak{A + A^{\prime}} = 1 \label{eq:Prob_2}, \quad P\brak{AA^{\prime}} = 0
 \end{align}
 \item Addition Law of Probability for Mutually Exclusive Events
 \begin{align}
-	P\brak{A + A'} = P\brak{A} + P\brak{A'} \label{eq:Prob_3}
+	P\brak{A + A^{\prime}} = P\brak{A} + P\brak{A^{\prime}} \label{eq:Prob_3}
 \end{align}
 \item Difference rule of probability
 	\begin{align}
-{P\brak{AB'} = P\brak{A} - P\brak{AB}}
+{P\brak{AB^{\prime}} = P\brak{A} - P\brak{AB}}
 	\end{align}
-Proof: \\
-Using \eqref{eq:Prob_1}
+\solution
+
+From \eqref{eq:Prob_1}
 \begin{align}
-A = A \cdot 1 = A\brak{B + B'}
+A = A \cdot 1 = A\brak{B + B^{\prime}}
 \end{align}
 Applying the distributive law:
 \begin{align}
-A = AB + AB'
+A = AB + AB^{\prime}
 \end{align}
 
 
-To apply the additive property of probability, we check the intersection of $AB$ and $AB'$:
+To apply the additive property of probability, we check the intersection of $AB$ and $AB^{\prime}$:
 \begin{align}
-\brak{AB}\brak{AB'} = A \cdot A \cdot B \cdot B' = A \cdot \brak{BB'}
+\brak{AB}\brak{AB^{\prime}} = A \cdot A \cdot B \cdot B^{\prime} = A \cdot \brak{BB^{\prime}}
 \end{align}
-Since $BB' = 0$:
 \begin{align}
-\brak{AB}\brak{AB'} = A \cdot 0 = 0
+=A \cdot \brak{0} 
 \end{align}
-Thus, the events $AB$ and $AB'$ are mutually exclusive.
-
-
-Since $A = AB + AB'$ and $\brak{AB}\brak{AB'} = 0$, from \eqref{eq:Prob_3}
 \begin{align}
-P\brak{A} = P\brak{AB + AB'} = P\brak{AB} + P\brak{AB'}
+\brak{AB}\brak{AB^{\prime}} = A \cdot 0 = 0
+\end{align}
+Thus, the events $AB$ and $AB^{\prime}$ are mutually exclusive. From \eqref{eq:Prob_3}
+\begin{align}
+P\brak{A} = P\brak{AB + AB^{\prime}} = P\brak{AB} + P\brak{AB^{\prime}}
 \end{align}
 
-Rearranging, we get;'
+Rearranging, we get:
 \begin{align}
-{P\brak{AB'} = P\brak{A} - P\brak{AB}}
+{P\brak{AB^{\prime}} = P\brak{A} - P\brak{AB}}
 \end{align}
 
 \end{itemize}
 \item Laplace Transform
 \begin{itemize}
-\item Laplace transform on $g'\brak{t}$ \\ \\
-Using the definition of the Laplace transform: 
+\item Laplace transform on $g'\brak{t}$ - Using the definition of the Laplace transform: 
 \begin{align}
 \mathcal{L}\{g'\brak{t}\} = \int_{0}^{\infty} e^{-st} g'\brak{t} \, dt
 \end{align}
 
-Applying integration by parts with $u = e^{-st}$ and $dv = g'\brak{t} \, dt$ (giving $du = -s e^{-st} \, dt$ and $v = g\brak{t}$):
+Applying integration by parts with:
+\begin{align}
+u = e^{-st}, dv = g'\brak{t} \, dt
+\end{align}
 \begin{align}
 \mathcal{L}\{g'\brak{t}\} &= \left[ e^{-st} g\brak{t} \right]_{0}^{\infty} - \int_{0}^{\infty} \brak{-s e^{-st}} g\brak{t} \, dt \\
 &= \left( \lim_{t \to \infty} e^{-st} g\brak{t} - g\brak{0} \right) + s \int_{0}^{\infty} e^{-st} g\brak{t} \, dt 
@@ -75,25 +77,29 @@ Applying integration by parts with $u = e^{-st}$ and $dv = g'\brak{t} \, dt$ (gi
 = 0 - g\brak{0} + s G\brak{s}
 \end{align}
 \begin{align}
-	g'\brak{t} \system{L}s G\brak{s}-g\brak{0} \label{eq:Laplace_1}
+\implies g'\brak{t} \system{L}s G\brak{s}-g\brak{0} \label{eq:Laplace_1}
 \end{align}
 \item Laplace transform on $g''\brak{t}$ - Using the definition for $g''\brak{t}$:
 \begin{align}
 \mathcal{L}\{g''\brak{t}\} = \int_{0}^{\infty} e^{-st} g''\brak{t} \, dt
 \end{align}
 
-Applying integration by parts with $u = e^{-st}$ and $dv = g''\brak{t} \, dt$ (giving $du = -s e^{-st} \, dt$ and $v = g'\brak{t}$):
+Applying integration by parts with:
+\begin{align}
+u = e^{-st}, dv = g''\brak{t} \, dt
+\end{align}
+
 \begin{align}
 \mathcal{L}\{g''\brak{t}\} &= \left[ e^{-st} g'\brak{t} \right]_{0}^{\infty} - \int_{0}^{\infty} \brak{-s e^{-st}} g'\brak{t} \, dt \\
 &= \left( \lim_{t \to \infty} e^{-st} g'\brak{t} - g'\brak{0} \right) + s \int_{0}^{\infty} e^{-st} g'\brak{t} \, dt
 \end{align}
 
-With $g'\brak{0} = 0$ and substituting the result from part (a), $\mathcal{L}\{g'\brak{t}\} = s G\brak{s}-g\brak{0}$:
+From \eqref{eq:Laplace_1}, we have:
 \begin{align} 
 \mathcal{L}\{g''\brak{t}\} = 0 - g'\brak{0} + s \brak{s G\brak{s}-g\brak{0}}
 \end{align}
 \begin{align}
-g''\brak{t} \system{L} s^2 G\brak{s} -sg\brak{0}-g'\brak{0} \label{eq:Laplace_2}
+\implies g''\brak{t} \system{L} s^2 G\brak{s} -sg\brak{0}-g'\brak{0} \label{eq:Laplace_2}
 \end{align}
 
 \item The First Frequency Shift Theorem:
@@ -101,7 +107,9 @@ g''\brak{t} \system{L} s^2 G\brak{s} -sg\brak{0}-g'\brak{0} \label{eq:Laplace_2}
 \begin{align}
 	e^{ax} f\brak{x} \system{L} F\brak{s-a} \label{eq:Laplace_3}
 \end{align}
-Proof: By definition, the Laplace transform of a function $g\brak{x}$ is:
+\solution
+
+By definition, the Laplace transform of a function $g\brak{x}$ is:
 \begin{align}
 \mathcal{L}\{g\brak{x}\} = \int_{0}^{\infty} e^{-sx} g\brak{x} \, dx
 \end{align}
@@ -132,7 +140,8 @@ e^{ax} f\brak{x} \system{L} F\brak{s-a}
 \begin{align}
 	x \system{L} \frac{1}{s^2} \label{eq:Laplace_4}
 \end{align}
-Proof: 
+\solution
+
 \begin{align}
 \mathcal{L}\brak{x} &= \int_{0}^{\infty} x e^{-sx} \, dx 
 \end{align}
@@ -145,16 +154,17 @@ Proof:
 \begin{align}
 \implies x \system{L} \frac{1}{s^2} 
 \end{align}
+
 \item Inverse Laplace Transform to produce the cosine and sine functions
 \begin{align}
-\mathcal{L}\brak{e^{iax}} &= \int_{0}^{\infty} e^{-sx} e^{iax} \, dx = \int_{0}^{\infty} e^{-(s-ia)x} \, dx \\
-&= \brak{-\frac{e^{-(s-ia)x}}{s-ia}}_{0}^{\infty} = \frac{1}{s-ia} \\
-&= \frac{s + ia}{(s - ia)(s + ia)} = \frac{s}{s^2 + a^2} + i\frac{a}{s^2 + a^2}
+\mathcal{L}\brak{e^{\j ax}} &= \int_{0}^{\infty} e^{-sx} e^{\j ax} \, dx = \int_{0}^{\infty} e^{-(s-\j a)x} \, dx \\
+&= \brak{-\frac{e^{-(s-\j a)x}}{s-\j a}}_{0}^{\infty} = \frac{1}{s-\j a} \\
+&= \frac{s + \j a}{(s - \j a)(s + \j a)} = \frac{s}{s^2 + a^2} + \j \frac{a}{s^2 + a^2}
 \end{align}
 
 We know that
 \begin{align}
-\mathcal{L}\brak{\cos(ax) + i\sin(ax)} = \mathcal{L}\brak{\cos(ax)} + i\,\mathcal{L}\brak{\sin(ax)}:
+\mathcal{L}\brak{\cos(ax) + \j\sin(ax)} = \mathcal{L}\brak{\cos(ax)} + \j \mathcal{L}\brak{\sin(ax)}:
 \end{align}
 Equating the real and imaginary parts, we get:
 \begin{align}
@@ -172,7 +182,10 @@ Applying the Laplace Transform on both sides, and using \eqref{eq:Laplace_2}, we
 \begin{align}
 	s^2G(s)-sy(0)-y'(0)=-\alpha^2 G(s)
 \end{align}
-Let $y(0) = \beta$ and $y'(0)= \gamma$ \\
+Consider: 
+\begin{align}
+y\brak{0} = \beta, y'\brak{0} = \gamma
+\end{align}
 Rearranging, we get:
 \begin{align}
 G(s)=\frac{s\beta + \gamma}{s^2 + \alpha^2}
@@ -191,7 +204,7 @@ From results \eqref{eq:Laplace_5} and \eqref{eq:Laplace_6}, we get:
 \begin{align}
 	\frac{dy}{dx}=f\brak{x,y}, y\brak{x_0}=y_0
 \end{align}
-The slope of the tangent $m$ at $x=x_0$ is given by:
+The slope of the tangent $m$ at $\brak{x_0, y_0}$ is given by:
 \begin{align}
 m=f\brak{x_0,y_0}
 \end{align}
@@ -219,12 +232,11 @@ Consider the above diagram, the equation of line is:
 \begin{align}
 y_1=y_0+mh
 \end{align}
-Here, $h=x_1-x_0$ is the step size(or small increment in $x$). Generalising the above result, we get the derivative $y'_n$:
+Here, $h$ is the step size(or small increment in $x$). Generalising the above result, we get the derivative $y'_n$:
 \begin{align}
 	y'_n=\frac{y_{n+1}-y_n}{h} \label{eq:ED_1}
 \end{align}
-\item Second Forward Difference: \\ \\
-	Differentiating the equation \eqref{eq:ED_1}, we obtain:
+\item Second Forward Difference - Differentiating the equation \eqref{eq:ED_1}, we obtain:
 \begin{align}
 	y_n''=\frac{y_{n+1}'-y_n'}{h}
 \end{align}
@@ -239,26 +251,25 @@ Substituting, we get:
 
 
 \end{itemize}
-\item The Fourier Series \\
-Any continuous or piecewise-continuous periodic function can be expressed as an infinite sum of complex exponentials.
+\item The Fourier Series - Any continuous or piecewise-continuous periodic function can be expressed as an infinite sum of complex exponentials.
 \begin{align}
-x\brak{t} &= \sum_{k=-\infty}^{\infty} c_k e^{j 2\pi k f_0 t} 
+x\brak{t} &= \sum_{k=-\infty}^{\infty} c_k e^{\j 2\pi k f_0 t} 
 \end{align}
-Multiply both sides by $e^{-j2\pi m f_0 t}$ (where $m$ is an integer) and integrate over the interval
+Multiply both sides by $e^{-\j 2\pi m f_0 t}$ (where $m$ is an integer) and integrate over the interval
 $\left[-\frac{1}{2f_0}, \frac{1}{2f_0}\right]$
 \begin{align}
-\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-j 2\pi m f_0 t} \, dt
+\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-\j 2\pi m f_0 t} \, dt
 \end{align}
 \begin{align}
-= \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} \brak{\sum_{k=-\infty}^{\infty} c_k e^{j 2\pi k f_0 t}} e^{-j 2\pi m f_0 t} \, dt 
+= \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} \brak{\sum_{k=-\infty}^{\infty} c_k e^{\j 2\pi k f_0 t}} e^{-\j 2\pi m f_0 t} \, dt 
 \end{align}
 \begin{align}
-=\sum_{k=-\infty}^{\infty} c_k \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} e^{j 2\pi \brak{k - m} f_0 t} \, dt
+=\sum_{k=-\infty}^{\infty} c_k \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} e^{\j 2\pi \brak{k - m} f_0 t} \, dt
 \end{align}
 
-Using the orthogonality property over the period $T_0 = \frac{1}{f_0}$:
+Using the orthogonality property over the period $T_0$
 \begin{align}
-\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} e^{j 2\pi \brak{k - m} f_0 t} \, dt &= 
+\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} e^{\j 2\pi \brak{k - m} f_0 t} \, dt &= 
 \begin{cases} 
 \frac{1}{f_0}, & k = m \\ 
 0, & k \neq m 
@@ -267,69 +278,135 @@ Using the orthogonality property over the period $T_0 = \frac{1}{f_0}$:
 
 Substituting this back into the sum isolates the term for $k = m$:
 \begin{align}
-\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-j 2\pi m f_0 t} \, dt &= c_m \cdot \frac{1}{f_0} 
+\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-\j 2\pi m f_0 t} \, dt &= c_m \cdot \frac{1}{f_0} 
 \end{align}
 \begin{align}
-	c_k &= f_0 \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-j 2\pi k f_0 t} \, dt \label{eq:Fourier_1}
+	c_k &= f_0 \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-\j 2\pi k f_0 t} \, dt \label{eq:Fourier_1}
 \end{align}
 
 \item Matrices
 \begin{itemize}
 	\item Fundamental property: 
 	\begin{align}
-	\mydet{\mathbf{A^T}} = \mydet{\mathbf{A}} \label{eq:Matrices_1} 
+	\mydet{\vec{A^{\top}}} = \mydet{\vec{A}} \label{eq:Matrices_1} 
 	\end{align}
-	Proof: When expanding $\mydet{\mathbf{A}}$ along Row 1, you select entries across the top row and compute the determinants of their remaining submatrices.
+\solution
 
-When expanding $\mydet{\mathbf{A^T}}$ down Column 1, those exact same entries now sit vertically in the first column, and their corresponding submatrices are simply transposed.
+When expanding $\mydet{\vec{A}}$ along Row 1, you select entries across the top row and compute the determinants of their remaining submatrices. When expanding $\mydet{\vec{A^{\top}}}$ down Column 1, those exact same entries now sit vertically in the first column, and their corresponding submatrices are simply transposed.
 
-
-Visual Matrix Comparison:
-
-Matrix $\mathbf{A}$ (Expand along Row 1):
+\begin{itemize}
+	\item Matrix $\vec{A}$ (Expand along Row 1):
 \begin{align}
-\mydet{\mathbf{A}} = 
+\mydet{\vec{A}} = 
 \myvec{
-\mathbf{a_{11}} & \mathbf{a_{12}} & \mathbf{a_{13}} \\
+\vec{a_{11}} & \vec{a_{12}} & \vec{a_{13}} \\
 a_{21} & a_{22} & a_{23} \\
 a_{31} & a_{32} & a_{33}
 }
 \end{align}
 
-\noindent
-Matrix $\mathbf{A^T}$ (Expand down Column 1):
+\item Matrix $\vec{A^{\top}}$ (Expand down Column 1):
 \begin{align}
-\mydet{\mathbf{A^T}} = 
+\mydet{\vec{A^{\top}}} = 
 \myvec{
-\mathbf{a_{11}} & a_{21} & a_{31} \\
-\mathbf{a_{12}} & a_{22} & a_{32} \\
-\mathbf{a_{13}} & a_{23} & a_{33}
+\vec{a_{11}} & a_{21} & a_{31} \\
+\vec{a_{12}} & a_{22} & a_{32} \\
+\vec{a_{13}} & a_{23} & a_{33}
 }
 \end{align}
- Submatrix Comparison for Entry $a_{12}$:\\
-
-When selecting $a_{12}$:
+\end{itemize}
+Submatrix Comparison for Entry $a_{12}$ - When selecting $a_{12}$:
 \begin{itemize}
-    \item In $\mathbf{A}$ (Row 1, Column 2 deletion):
+    \item In $\vec{}{A}$ (Row 1, Column 2 deletion):
     \begin{align}
-    \mathbf{M_{12}} = \myvec{ a_{21} & a_{23} \\ a_{31} & a_{33} }
+    \vec{M_{12}} = \myvec{ a_{21} & a_{23} \\ a_{31} & a_{33} }
     \end{align}
 
-    \item In $\mathbf{A^T}$ (Row 2, Column 1 deletion):
+    \item In $\vec{A^{\top}}$ (Row 2, Column 1 deletion):
     \begin{align}
-    \mathbf{N_{21}} = \myvec{ a_{21} & a_{31} \\ a_{23} & a_{33} }
+    \vec{N_{21}} = \myvec{ a_{21} & a_{31} \\ a_{23} & a_{33} }
     \end{align}
 \end{itemize}
 
-Notice that $\mathbf{N_{21}} = \brak{\mathbf{M_{12}}}^T$. Since $\mydet{\mathbf{M_{12}}} = \mydet{\brak{\mathbf{M_{12}}}^T}$, every term in the expansion of $\mydet{\mathbf{A}}$ is identically equal to the corresponding term in $\mydet{\mathbf{A^T}}$. \\
-\item A few relations on the eigenvalues of a matrix \\
-	Let $\lambda_1, \lambda_2, .... , \lambda_i$ be the eigenvalues of a matrix $\mathbf{A}$. Then, we have:
+Notice that:
 \begin{align}
-	\sum_{i=1}^{n} \lambda_i = \text{Tr}\brak{\mathbf{A}} \label{eq:Matrices_2}
+\vec{N_{21}} = \brak{\vec{M_{12}}}^{\top}
+\end{align}
+Since:
+\begin{align}
+\mydet{\vec{M_{12}}} = \mydet{\brak{\vec{M_{12}}}^{\top}}
+\end{align}
+Every term in the expansion of $\mydet{\vec{A}}$ is identically equal to the corresponding term in $\mydet{\vec{A^{\top}}}$. 
+\item \mydet{\vec{AB}} = \mydet{\vec{A}}\mydet{\vec{B}} 
+
+\solution
+
+If $\vec{A}$ is invertible ($\mydet{\vec{A}} \neq 0$), it can be factored as a product of elementary matrices:
+\begin{align}
+\vec{A} = \vec{E}_1 \vec{E}_2 \cdots \vec{E}_k
+\end{align}
+
+For any single elementary matrix $\vec{E}$, multiplying $\vec{E}\vec{B}$ applies a single elementary row operation to $\vec{B}$:
+\begin{align}
+\mydet{\vec{E}\vec{B}} = \mydet{\vec{E}}\mydet{\vec{B}}
+\end{align}
+
+Applying this property iteratively to the product $\vec{A}\vec{B}$:
+\begin{align}
+\mydet{\vec{A}\vec{B}} &= \mydet{\vec{E}_1 \vec{E}_2 \cdots \vec{E}_k \vec{B}} \\
+&= \mydet{\vec{E}_1} \mydet{\vec{E}_2 \cdots \vec{E}_k \vec{B}} \\
+&= \mydet{\vec{E}_1} \mydet{\vec{E}_2} \cdots \mydet{\vec{E}_k} \mydet{\vec{B}}
+\end{align}
+
+Setting $\vec{B}$ as the identity matrix $\vec{I}$ :
+\begin{align}
+\mydet{\vec{A}} = \mydet{\vec{E}_1} \mydet{\vec{E}_2} \cdots \mydet{\vec{E}_k}
+\end{align}
+
+Substituting $\mydet{\vec{A}}$ back into the expansion yields:
+\begin{align}
+	\mydet{\vec{A}\vec{B}} = \mydet{\vec{A}}\mydet{\vec{B}} \label{eq:product_determinant}
+\end{align}
+
+\item Determinant of $\vec{A^{-1}}$, where $\vec{A}$ is an invertible square matrix
+\begin{align}\vec{A} 
+	\vec{A^{-1}}= \vec{I}
+\end{align}
+
+Taking the determinant of both sides:
+\begin{align}
+\mydet{\vec{A} \vec{A^{-1}}} = \mydet{\vec{I}}
+\end{align}
+From \eqref{eq:product_determinant}:
+\begin{align}
+\mydet{\vec{A}} \mydet{\vec{A}^{-1}} = 1
+\end{align}
+Dividing both sides by $\mydet{\vec{A}}$ yields:
+\begin{align}
+\mydet{\vec{A^{-1}}} = \frac{1}{\mydet{\vec{A}}} \label{eq:Matrices_inverse}
+\end{align}
+
+\item A few relations on the eigenvalues of a matrix - 	Let $\lambda_1, \lambda_2, .... , \lambda_i$ be the eigenvalues of a matrix $\vec{A}$. Then, we have:
+\begin{align}
+	\sum_{i=1}^{n} \lambda_i = \text{Tr}\brak{\vec{A}} \label{eq:Matrices_2}
 \end{align}
 \begin{align}
-	\prod_{i=1}^{n} \lambda_1 = \mydet{\mathbf{A}} \label{eq:Matrices_3}
+	\prod_{i=1}^{n} \lambda_1 = \mydet{\vec{A}} \label{eq:Matrices_3}
 \end{align}
+\item Eigenvalues of a square matrix $\vec{A}$ and its transpose $\vec{A}^{\top}$ - The characteristic polynomial of matrix $\vec{A}$ is defined as:
+\begin{align}
+p_{\vec{A}}\brak{\lambda} = \mydet{\vec{A} - \lambda \vec{I}}
+\end{align}
+
+From \eqref{eq:Matrices_1}:
+\begin{align}
+p_{\vec{A}}\brak{\lambda} &= \mydet{\brak{\vec{A} - \lambda \vec{I}}^\top} \\
+&= \mydet{\vec{A}^\top - \brak{\lambda \vec{I}}^\top} \\
+&= \mydet{\vec{A}^\top - \lambda \vec{I}} \\
+&= p_{\vec{A}^\top}\brak{\lambda} \label{eq:eigenvalues}
+\end{align}
+
+Since $\vec{A}$ and $\vec{A}^\top$ share the exact same characteristic polynomial, their eigenvalues are identical.
 \item Results on the conic sections
 \begin{enumerate}
 \item
@@ -349,18 +426,19 @@ where
 \label{eq:app-conic_quad_form_f}
 f &= \norm{\vec{n}}^2\norm{\vec{F}}^2-c^2e^2
     \end{align}
-Proof:
+\solution
+
 \begin{align}
-\|\mathbf{x} - \mathbf{F}\|^2 &= e^2 \frac{(\mathbf{n}^\top \mathbf{x} - c)^2}{\|\mathbf{n}\|^2} 
+\|\vec{x} - \vec{F}\|^2 &= e^2 \frac{(\vec{n}^\top \vec{x} - c)^2}{\|\vec{n}\|^2} 
 \end{align}
 \begin{align}
-\implies \|\mathbf{n}\|^2 (\mathbf{x} - \mathbf{F})^\top (\mathbf{x} - \mathbf{F}) &= e^2 \left(\mathbf{n}^\top \mathbf{x} - c\right)^2 
+\implies \|\vec{n}\|^2 (\vec{x} - \vec{F})^\top (\vec{x} - \vec{F}) &= e^2 \left(\vec{n}^\top \vec{x} - c\right)^2 
 \end{align}
 \begin{align}
-\implies \|\mathbf{n}\|^2 \left(\mathbf{x}^\top \mathbf{x} - 2\mathbf{F}^\top \mathbf{x} + \|\mathbf{F}\|^2\right) &= e^2 \left(c^2 + \left(\mathbf{n}^\top \mathbf{x}\right)^2 - 2c\mathbf{n}^\top \mathbf{x}\right) 
+\implies \|\vec{n}\|^2 \left(\vec{x}^\top \vec{x} - 2\vec{F}^\top \vec{x} + \|\vec{F}\|^2\right) &= e^2 \left(c^2 + \left(\vec{n}^\top \vec{x}\right)^2 - 2c\vec{n}^\top \vec{x}\right) 
 \end{align}
 \begin{align}
-= e^2 \left(c^2 + \left(\mathbf{x}^\top \mathbf{n}\mathbf{n}^\top \mathbf{x}\right) - 2c\mathbf{n}^\top \mathbf{x}\right)
+= e^2 \left(c^2 + \left(\vec{x}^\top \vec{n}\vec{n}^\top \vec{x}\right) - 2c\vec{n}^\top \vec{x}\right)
 \end{align}
 which can be expressed as \eqref{eq:app-conic_quad_form} after simplification.
 \item
@@ -369,10 +447,12 @@ which can be expressed as \eqref{eq:app-conic_quad_form} after simplification.
   \label{eq:app-conic_quad_form_e} 
   e&= \sqrt{1-\frac{\lambda_1}{\lambda_2}}
 \end{align} 
-		Here, $\lambda_1$ and $\lambda_2$ are the eigenvalues of $\mathbf{V}$ \\
+Here, $\lambda_1$ and $\lambda_2$ are the eigenvalues of $\vec{V}$ 
 	\label{app:conic-parameters}
-Proof: \\
-From \eqref{eq:app-conic_quad_form_v}, using the fact that $\vec{V}$ is symmetric with $\vec{V} = \vec{V}^{\top}$,
+
+\solution
+
+From \eqref{eq:app-conic_quad_form_v}, using the fact that $\vec{V}$ is symmetric, 
   \begin{align}
 	  \vec{V}^{\top} \vec{V}&=\brak{\norm{\vec{n}}^2\vec{I}-e^2\vec{n}\vec{n}^{\top}}^{\top}
 	  \brak{\norm{\vec{n}}^2\vec{I}-e^2\vec{n}\vec{n}^{\top}}
@@ -416,29 +496,25 @@ which can be expressed as
 		\item ellipse for $\mydet{\vec{V}} > 0 $ and 
 		\item hyperbola for $\mydet{\vec{V}} < 0 $. \label{item:Hyperbola}
 	\end{enumerate}
-This is a direct result of the following two equations: \\
-From \eqref{eq:app-conic_quad_form_e}, we have
+This is a direct result of the following two equations - From \eqref{eq:app-conic_quad_form_e}, we have
 \begin{align}
 \frac{\lambda_1}{\lambda_2}=1-e^2
 \end{align}
 From \eqref{eq:Matrices_3}, we have
 \begin{align}
-\mydet{\mathbf{V}}=\lambda_1 \lambda_2
+\mydet{\vec{V}}=\lambda_1 \lambda_2
 \end{align}
 \end{enumerate}
-\item Matrix Determinant Lemma \\
-Consider two column vectors $\mathbf{u}$ and $\mathbf{v}$
+\item Matrix Determinant Lemma - Consider two column vectors $\vec{u}$ and $\vec{v}$
 \begin{align}
-	\mydet{\mathbf{I+uv^T}}=1+\mathbf{v^Tu}	\label{eq:mat_det_lemma}
+	\mydet{\vec{I+uv^{\top}}}=1+\vec{v^{\top}u}	\label{eq:mat_det_lemma}
 \end{align}
 \end{itemize}
 \item SHM
 \begin{itemize}
-\item Springs in series: For two springs connected in series under an applied tensile force $F$:
-
-By Hooke's Law, the individual displacements are given by:
+\item Springs in series: For $ n$ springs with spring constants $k_1, k_2, ....., k_{n}$ connected in series under an applied tensile force $F$ - By Hooke's Law, the individual displacements are given by:
 \begin{align}
-x_1 &= \frac{F}{k_1}, x_2 &= \frac{F}{k_2}
+x_i = \frac{F}{k_{i}} \forall i \in \{1, 2, \dots, n\}
 \end{align}
 
 The total displacement in terms of the equivalent spring constant $k_{\text{eq}}$ is:
@@ -447,13 +523,13 @@ x_{\text{total}} &= \frac{F}{k_{\text{eq}}}
 \end{align}
 We know that
 \begin{align}
-	x_{\text{total}} = x_1 + x_2 \label{eq:displacement_relation}
+	x_{\text{total}} = \sum_{i=1}^{n} x_{i} \label{eq:displacement_relation}
 \end{align}
-		Substituting $x_1$, $x_2$, and $x_{\text{total}}$ into \eqref{eq:displacement_relation}
+Substituting $x_1$, $x_2$, .... , $x_{n}$ and $x_{\text{total}}$ into \eqref{eq:displacement_relation}
 \begin{align}
-\frac{F}{k_{\text{eq}}} &= \frac{F}{k_1} + \frac{F}{k_2} \\
-F \brak{\frac{1}{k_{\text{eq}}}} &= F \brak{\frac{1}{k_1} + \frac{1}{k_2}} \\
-	\frac{1}{k_{\text{eq}}} &= \frac{1}{k_1} + \frac{1}{k_2} \label{eq:springs_series}
+\frac{F}{k_{\text{eq}}} &=\sum_{i=1}^{n}\frac{F}{k_{i}} \\
+F \brak{\frac{1}{k_{\text{eq}}}} &= F \sum_{i=1}^{n} \brak{\frac{1}{k_i}} \\
+\frac{1}{k_{\text{eq}}} &= \sum_{i=1}^{n}\frac{1}{k_{i}} \label{eq:springs_series}
 \end{align}
 \item General case of vertical SHM: Consider the following diagram. We need to find out the equation of SHM.
 When the mass $M$ is at rest, let the system stretch by $\delta_{\text{st}}$. Let $w$ be the angular frequency of oscillation.
@@ -477,13 +553,20 @@ When the mass $M$ is at rest, let the system stretch by $\delta_{\text{st}}$. Le
 \begin{align}
 \sum F = 0 \implies Mg - k\delta_{\text{st}} = 0 \implies Mg = k\delta_{\text{st}}
 \end{align}
-When the mass is displaced downward by $x(t)$, applying Newton's second law ($\sum F = Ma$):
+When the mass is displaced downward by $x(t)$, applying Newton's second law, 
 \begin{align}
-M \frac{d^2 x}{d t^2} &= M g - k(\delta_{\text{st}} + x) \\
-M \frac{d^2 x}{d t^2} &= M g - k\delta_{\text{st}} - k_{\text{eq}}x
+\sum F = Ma
+\end{align}
+\begin{align}
+\implies M \frac{d^2 x}{d t^2} &= M g - k(\delta_{\text{st}} + x) \\
+\implies M \frac{d^2 x}{d t^2} &= M g - k\delta_{\text{st}} - kx \label{eq:spring_eqn}
 \end{align}
 
-Substituting the static equilibrium condition $M g = k_{\text{eq}}\delta_{\text{st}}$:
+The static equilibrium condition is:
+\begin{align}
+M g =k\delta_{\text{st}}
+\end{align}
+Substituting this into \eqref{eq:spring_eqn}
 \begin{align}
 M \frac{d^2 x}{d t^2} &= (k\delta_{\text{st}}) - k\delta_{\text{st}} - kx 
 \end{align}
@@ -497,46 +580,54 @@ M \frac{d^2 x}{d t^2} &= -kx
 \end{itemize}
 \item Results on Gravitation
 \begin{itemize}
-\item Specific angular momentum: Consider a satellite with position vector $\vec{\mathbf{r}}$ and velocity vector $\vec{\mathbf{v}}$
+\item Specific angular momentum - Consider a satellite with position vector $\vec{\vec{r}}$ and velocity vector $\vec{\vec{v}}$
 \begin{align}
-	h_0 = |r \times v| \label{eq:Gravitation_1}
+	h_0 = |\vec{r} \times \vec{v}| \label{eq:Gravitation_1}
 \end{align}
 \item Eccentricity of trajectory
 \begin{align}
 	e^2 = 1 + \frac{2\varepsilon h_0^2}{\mu^2} \label{eq:Gravitation_2}
 \end{align}
 
-\item Trajectory of a satellite given its position vector, velocity vector, and gravitational parameter $\mu=GM$: The polar trajectory of a satellite with eccentricity vector $\mathbf{e}$ and semi-latus rectum $p_{\text{orb}}$ is given by:
+\item Trajectory of a satellite given its position vector, velocity vector, and gravitational parameter $\mu$: The polar trajectory of a satellite with eccentricity vector $\vec{e}$ and semi-latus rectum $p_{\text{orb}}$ is given by:
 \begin{align}
-r = \frac{p_{\text{orb}}}{1 + e \cos \theta}
+	r = \frac{p_{\text{orb}}}{1 + e \cos \theta} \label{eq:traj_1}
 \end{align}
 
-		In vector form, $e \cos \theta = \frac{\mathbf{e}^\top \mathbf{x}}{r}$, where $\mathbf{x} = \begin{pmatrix} r\cos{\theta} \\ r\sin{\theta} \end{pmatrix}$.
+In vector form: 
 \begin{align}
-r + \mathbf{e}^\top \mathbf{x} = p_{\text{orb}} \implies r = p_{\text{orb}} - \mathbf{e}^\top \mathbf{x}
+	e \cos \theta = \frac{\vec{e}^\top \vec{x}}{r} \label{eq:traj_2}
+\end{align}
+Where: 
+\begin{align}
+\vec{x} = \myvec{r\cos{\theta} \\ r\sin{\theta}}.
+\end{align}
+From \eqref{eq:traj_1} and \eqref{eq:traj_2}, we have:
+\begin{align}
+r + \vec{e}^\top \vec{x} = p_{\text{orb}} \implies r = p_{\text{orb}} - \vec{e}^\top \vec{x}
 \end{align}
 
-Squaring both sides ($r^2 = \mathbf{x}^\top \mathbf{x}$):
+Squaring both sides :
 \begin{align}
-\mathbf{x}^\top \mathbf{x} = (p_{\text{orb}} - \mathbf{e}^\top \mathbf{x})^2 = p_{\text{orb}}^2 - 2 p_{\text{orb}} \mathbf{e}^\top \mathbf{x} + (\mathbf{e}^\top \mathbf{x})^2
+r^2 = \vec{x}^\top \vec{x} = (p_{\text{orb}} - \vec{e}^\top \vec{x})^2 = p_{\text{orb}}^2 - 2 p_{\text{orb}} \vec{e}^\top \vec{x} + (\vec{e}^\top \vec{x})^2
 \end{align}
 
-Since $(\mathbf{e}^\top \mathbf{x})^2 = \mathbf{x}^\top (\mathbf{e}\mathbf{e}^\top)\mathbf{x}$, rearranging yields:
+Rearranging yields:
 \begin{align}
-\mathbf{x}^\top (\mathbf{I} - \mathbf{e}\mathbf{e}^\top)\mathbf{x} + 2(p_{\text{orb}}\mathbf{e})^\top \mathbf{x} - p_{\text{orb}}^2 = 0
+\vec{x}^\top (\vec{I} - \vec{e}\vec{e}^\top)\vec{x} + 2(p_{\text{orb}}\vec{e})^\top \vec{x} - p_{\text{orb}}^2 = 0
 \end{align}
 
-Comparing this with $g(\mathbf{x}) = \mathbf{x}^\top \mathbf{V}\mathbf{x} + 2\mathbf{u}^\top \mathbf{x} + f = 0$:
+Comparing this with \eqref{eq:app-conic_quad_form}:
 \begin{itemize}
-    \item Matrix $\mathbf{V}$: $\mathbf{V} = \mathbf{I} - \mathbf{e}\mathbf{e}^\top$
-    \item Vector $\mathbf{u}$: $\mathbf{u} = p_{\text{orb}}\mathbf{e}$
+    \item Matrix $\vec{V}$: $\vec{V} = \vec{I} - \vec{e}\vec{e}^\top$
+    \item Vector $\vec{u}$: $\vec{u} = p_{\text{orb}}\vec{e}$
     \item Scalar $f$: $f = -p_{\text{orb}}^2$
 \end{itemize}
 From result \eqref{eq:mat_det_lemma}, we have:
 \begin{align}
-	\mydet{\mathbf{V}}=1-\mathbf{e^Te}=1-e^2 \label{eq:Gravitation_3}
+	\mydet{\vec{V}}=1-\vec{e^{\top}e}=1-e^2 \label{eq:Gravitation_3}
 \end{align}
-From the sign of $\mydet{\mathbf{V}}$, we get the trajectory.
+From the sign of $\mydet{\vec{V}}$, we get the trajectory.
 
 \end{itemize}
 \end{enumerate}
