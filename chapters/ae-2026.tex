@@ -9,7 +9,6 @@ How many 3-digit numbers can be formed using three distinct single digit prime n
     \item $4$
 \end{enumerate} 
 \solution
- 
 There are 4 single digit prime numbers: 2,3,5 and 7. The desired numbers are given by
  \begin{align}
 	 \perm{4}{3} = \frac{4!}{1!} = 24
@@ -23,9 +22,7 @@ In a group of students, 10 students like Mathematics, 12 students like English, 
     \item $24$
     \item $32$
 \end{enumerate} 
-
 \solution 
-
 Let $N$ be the total number of students in the group. If one student is chosen uniformly at random from the group, we define:
 \begin{itemize}
     \item $M$: The event that the student likes Mathematics.
@@ -43,7 +40,7 @@ P\brak{ME} = \frac{4}{N} \quad \text{(student likes both)}
 P\brak{\brak{M+E}^{\prime}} = \frac{6}{N} \quad \text{(student likes neither)}
 \end{align}
 
-From \eqref{eq:Prob_2}:
+From \eqref{eq:Prob_2}
 \begin{align}
 P\brak{M + E} + P\brak{\brak{M+E}^{\prime}} = 1
 \end{align}
@@ -66,19 +63,12 @@ Substitute the probabilities in terms of $N$:
 \end{align}
 
 
+
 \item 
 Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_1=1\text{cm}$ and another with unknown radius $r_2$, such that both of them touch each other externally and also the square, find the value of $r_2$. Also describe how the figure in the problem can be constructed. \hfill (GATE~AE~2026)
 \begin{figure}[H]
 \begin{center}
 \input{figs/Circle.tex}
-\makeatletter
-    \long\def\@makecaption#1#2{%
-      \vskip\abovecaptionskip
-      \begin{center}
-        #1 #2
-      \end{center}
-      \vskip\belowcaptionskip}
-\caption{Touching Circles and Square}
     \label{fig:2}
 \end{center}
 \end{figure}
@@ -127,20 +117,13 @@ Hence, using \eqref{eq:Circles_1} in \eqref{eq:line} gives us:
 \begin{align}
 \vec{T} = \vec{O}_1 + \frac{r_1}{r_1+r_2}(\vec{O}_2 - \vec{O}_1)
 \end{align}
+The following code simulates the construction.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Circle.py}@*)
 \end{lstlisting}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Circle.png}
-	\makeatletter
-    \long\def\@makecaption#1#2{%
-      \vskip\abovecaptionskip
-      \begin{center}
-        #1 #2
-      \end{center}
-      \vskip\belowcaptionskip}
-    \makeatother
     \caption{Square with Tangent Circles}
     \label{fig:3}
 \end{figure}
@@ -160,20 +143,11 @@ Here $d\vec{l}$ represents an infinitesimal length along the contour $C$.\hfill 
 \begin{figure}[H]
 \begin{center}
 \input{figs/Line_Integral.tex}
-\makeatletter
-    \long\def\@makecaption#1#2{%
-      \vskip\abovecaptionskip
-      \begin{center}
-        #1 #2
-      \end{center}
-      \vskip\belowcaptionskip}
-    \makeatother
    \caption{Contour C}
     \label{fig:4}
 \end{center}
 \end{figure}
 \solution
-
 We can break the closed path $C$ into its four straight line paths: $O \to P \to Q \to R \to O$.
 
 \begin{align}
@@ -253,21 +227,13 @@ I = I_1 + I_2 + I_3 + I_4
 \begin{align}
 I = \frac{9}{2} + \frac{7}{2} - \frac{15}{2} - \frac{1}{2} = \frac{16 - 16}{2} = 0
 \end{align}
-
+The following code simulates the result.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Line\_Integral.py}@*)
 \end{lstlisting}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Line_Integral.png}
-	\makeatletter
-    \long\def\@makecaption#1#2{%
-      \vskip\abovecaptionskip
-      \begin{center}
-        #1 #2
-      \end{center}
-      \vskip\belowcaptionskip}
-    \makeatother
     \caption{Visualising the Cancellation of Integrals}
     \label{fig:5}
 \end{figure}
@@ -282,14 +248,6 @@ I = \frac{9}{2} + \frac{7}{2} - \frac{15}{2} - \frac{1}{2} = \frac{16 - 16}{2} =
 \begin{figure}[H]
     \centering
 	\input{figs/Fourier.tex}
-    	\makeatletter
-    \long\def\@makecaption#1#2{%
-      \vskip\abovecaptionskip
-      \begin{center}
-        #1 #2
-      \end{center}
-      \vskip\belowcaptionskip}
-    \makeatother
     \caption{Fourier Square Wave Representation}
     \label{fig:6}
 \end{figure}
@@ -328,30 +286,22 @@ c_k =
     \frac{1}{4} \left[ \frac{e^{-j \frac{\pi k t}{2}}}{-j \frac{\pi k}{2}} \right]_{-1}^{1} = \frac{1}{2} \sinc\brak{\frac{\pi k}{2}}, & k \neq 0
 \end{cases}
 \end{align}
+The following code verifies the result.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Fourier.py}@*)
 \end{lstlisting}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Fourier.png}
-	\makeatletter
-    \long\def\@makecaption#1#2{%
-      \vskip\abovecaptionskip
-      \begin{center}
-        #1 #2
-      \end{center}
-      \vskip\belowcaptionskip}
-    \makeatother
     \caption{Verification With Plot}
     \label{fig:7}
 \end{figure}
 
 \end{enumerate}
-\item If a matrix can be written as $\vec{A} = \vec{uv^{\top}}$, where both $u$ and $v$ are $n$-dimensional real-valued non-zero column vectors, then the rank of the matrix $\vec{A}$ is 
+\item If a matrix can be written as $\vec{A} = \vec{uv^{\top}}$, where both $u$ and $v$ are $n$-dimensional real-valued non-zero column vectors, then the rank of the matrix $\vec{A}$ is? 
 \hfill (GATE~AE~2026)
 
 \solution 
-
 We will solve the above problem with an example. Consider $3$-dimensional non-zero vectors:
 \begin{align}
 \vec{u} = \myvec{1 \\ 2 \\ 3} , \vec{v} = \myvec{1 \\ 4 \\ 2}
@@ -401,7 +351,6 @@ An $n \times n$ square matrix $\vec{A}$ satisfies $\vec{A^{\top}} = \vec{A^{-1}}
 \end{enumerate}
 
 \solution 
-
 We are given that matrix $A$ satisfies:
 \begin{align}
 \vec{A^{\top} = A^{-1}} 
@@ -416,7 +365,7 @@ Taking the determinant of both sides of the given matrix equation:
 	\mydet{\vec{A^{\top}}} = \mydet{\vec{A^{-1}}} \label{eq:transpose}
 \end{align}
 
-Substiuting results \eqref{eq:Matrices_1} and \eqref{eq:Matrices_inverse} in \eqref{eq:transpose}, we get:
+Substituting results \eqref{eq:Matrices_1} and \eqref{eq:Matrices_inverse} in \eqref{eq:transpose}, we get:
 \begin{align}
 \mydet{\vec{A}} = \frac{1}{\mydet{\vec{A}}}
 \end{align}
@@ -450,7 +399,6 @@ Gravitational parameter:
     \end{align}
 
 \solution 
-
 We are given :
 \begin{align}
 	\vec{r}=\myvec{8000\\9000}, \vec{v}=\myvec{-6\\6}
@@ -468,7 +416,7 @@ From \eqref{eq:Gravitation_3}, we have:
 \begin{align}
 \mydet{\vec{V}}=1-1.3795=-0.3795
 \end{align}
-From \ref{item:Hyperbola}, we can conclude that the trajectory of the satellite is a Hyperbola.
+From \ref{item:Hyperbola}, we can conclude that the trajectory of the satellite is a Hyperbola. The following code simulates the result.
 
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Satellite.py}@*)
@@ -476,14 +424,6 @@ From \ref{item:Hyperbola}, we can conclude that the trajectory of the satellite 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\linewidth]{figs/Satellite.png}
-	\makeatletter
-    \long\def\@makecaption#1#2{%
-      \vskip\abovecaptionskip
-      \begin{center}
-        #1 #2
-      \end{center}
-      \vskip\belowcaptionskip}
-    \makeatother
     \caption{Trajectory of the Satellite}
     \label{fig:8}
 \end{figure}
@@ -498,7 +438,6 @@ For the matrix $\vec{A} = \myvec{ a & b \\ c & d }$, if the relation $a + b = c 
 \end{enumerate}
 
 \solution 
-
 Given:
 \begin{align}
 a + b = c + d = k \label{eq:matrices_relation}
@@ -514,15 +453,14 @@ $\implies \myvec{ 1 \\ 1 }$ is an eigenvector and $a + b$ is an eigenvalue.
 
 From \eqref{eq:matrices_relation}, 
 \begin{align}
-a - c = d - b = -\brak{b - d} = k'
+a - c = d - b = -\brak{b - d} = l
 \end{align}
 
 Evaluating the matrix-vector multiplication:
 \begin{align}
-\myvec{ a & c \\ b & d } \myvec{ 1 \\ -1 } &= \myvec{ a - c \\ b - d } = \myvec{ k' \\ -k' } = k' \myvec{ 1 \\ -1 }
+\myvec{ a & c \\ b & d } \myvec{ 1 \\ -1 } &= \myvec{ a - c \\ b - d } = \myvec{ l \\ -l } = l \myvec{ 1 \\ -1 }
 \end{align}
-From \eqref{eq:eigenvalues}, $\myvec{ 1 \\ -1 }$ is an eigenvector and $d - b$ is the $2^{\text{nd}}$ eigenvalue.
-
+From \eqref{eq:eigenvalues}, $\myvec{ 1 \\ -1 }$ is an eigenvector and $d - b$ is the $2^{\text{nd}}$ eigenvalue. The following code simulates the result by plotting the eigenvectors.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Eigenvectors.py}@*)
 \end{lstlisting}
@@ -530,14 +468,6 @@ From \eqref{eq:eigenvalues}, $\myvec{ 1 \\ -1 }$ is an eigenvector and $d - b$ i
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.60\linewidth]{figs/Eigenvectors.png}
-	\makeatletter
-    \long\def\@makecaption#1#2{%
-      \vskip\abovecaptionskip
-      \begin{center}
-        #1 #2
-      \end{center}
-      \vskip\belowcaptionskip}
-    \caption{Eigenvectors plotted}
     \label{fig:9}
 \end{figure}
 
@@ -613,6 +543,7 @@ We assume the following:
 \begin{align}
 ln2=0.7, h=0.01
 \end{align}
+Then:
 \begin{align}
 	y_1=0+0.01\brak{1}=0.01
 \end{align}
@@ -622,22 +553,15 @@ Now, we continue this process until we find $y_{69}$ and $y_{70}$
 \end{align}
 From \eqref{eq:ED_1}, we get:
 \begin{align}
-	y_{70}^{\prime}=\frac{y_{70}-y_{69}}{h} \approx 0.145
+	y_{70}'=\frac{y_{70}-y_{69}}{h} \approx 0.145
 \end{align}
+The following code simulates the difference between the numerical and theoretical solutions.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Euler.py}@*)
 \end{lstlisting}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{figs/Euler.png}
-	\makeatletter
-    \long\def\@makecaption#1#2{%
-      \vskip\abovecaptionskip
-      \begin{center}
-        #1 #2
-      \end{center}
-      \vskip\belowcaptionskip}
-    \makeatother
+    \includegraphics[width=0.60\linewidth]{figs/Euler.png}
     \caption{Theoretical Plot vs Plot obtained with Euler's Forward Difference Method}
     \label{fig:13}
 \end{figure}
@@ -647,7 +571,6 @@ From \eqref{eq:ED_1}, we get:
 Find the minimum value of the function $f\brak{x} = \abs{x} + \abs{2x+3}$ for real $x$. \hfill (GATE~AE~2026)
 
 \solution 
-
 The critical points occur where the expressions inside the absolute values equal zero:
 \begin{align}
 x &= 0 \\[0.5ex]
@@ -697,20 +620,13 @@ Since $f\brak{x}$ decreases for $x < -1.5$ and increases for $x > -1.5$, the min
 \begin{align}
 f\brak{-1.5} = -1.5 + 3 = 1.5
 \end{align}
+The following code plots the function.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Modulus\_function.py}@*)
 \end{lstlisting}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Modulus_function.png}
-	\makeatletter
-    \long\def\@makecaption#1#2{%
-      \vskip\abovecaptionskip
-      \begin{center}
-        #1 #2
-      \end{center}
-      \vskip\belowcaptionskip}
-    \makeatother
     \caption{Plot of the function}
     \label{fig:10}
 \end{figure}
@@ -727,21 +643,12 @@ Find the natural frequency of free vibration $\omega_n$ in $\text{rad/s}$. Also 
 \begin{figure}[H]
 \begin{center}
 	\input{figs/Spring.tex}
-\makeatletter
-    \long\def\@makecaption#1#2{%
-      \vskip\abovecaptionskip
-      \begin{center}
-        #1 #2
-      \end{center}
-      \vskip\belowcaptionskip}
-    \makeatother
 \caption{Diagram of the system}
 \label{fig:11}
 \end{center}
 \end{figure}
 
 \solution 
-
 The axial stiffness of the uniform bar is:
 \begin{align}
 k_{\text{bar}} = \frac{AE}{L}
@@ -782,21 +689,13 @@ Differentiating again to get the accelaration:
 \begin{align}
    a(t) &= -10^6x_0 \cos(1000t) - 1000v_0 \sin(1000t)
 \end{align}
-
+The following code simulates the result.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Spring.py}@*)
 \end{lstlisting}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.65\linewidth]{figs/Spring.png}
-    \makeatletter
-    \long\def\@makecaption#1#2{%
-      \vskip\abovecaptionskip
-      \begin{center}
-        #1 #2
-      \end{center}
-      \vskip\belowcaptionskip}
-    \makeatother
     \caption{Accelaration, Velocity and Position of the System}
     \label{fig:12}
 \end{figure}

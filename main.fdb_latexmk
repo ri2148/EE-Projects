@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex main.idx"] 1789662405.32565 "main.idx" "main.ind" "main" 1789662500.59875 0
-  "main.idx" 1789662497.22388 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main.idx"] 1789662405.32565 "main.idx" "main.ind" "main" 1789668928.46431 0
+  "main.idx" 1789668925.04997 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1789662496.14563 "main.tex" "main.pdf" "main" 1789662500.59892 0
+["pdflatex"] 1789668923.91426 "main.tex" "main.pdf" "main" 1789668928.46446 0
   "/etc/texmf/web2c/texmf.cnf" 1788154436.11865 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -199,6 +199,9 @@
   "/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty" 1748806692 4474 c510a88aa5f51b8c773b50a7ee92befd ""
   "/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty" 1748806692 2444 9983e1d0683f102e3b190c64a49313aa ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty" 1748806692 5525 1593ca62a2554dd7423fc8a4e5a82125 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty" 1696191071 56128 c2ccf1a29d78c33bc553880402e4fb9a ""
+  "/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty" 1696191071 72619 ee90b6612147680fd73c3b1406a74245 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty" 1645391520 7418 021d7c4eb11bde94592761855a3d046e ""
   "/usr/share/texlive/texmf-dist/tex/latex/cases/cases.sty" 1586645561 9865 f4184f7819aee103905908cd33492412 ""
   "/usr/share/texlive/texmf-dist/tex/latex/chngcntr/chngcntr.sty" 1525297854 4336 84bc4a8edb126e69abec1a67dc0c36cf ""
   "/usr/share/texlive/texmf-dist/tex/latex/circuitikz/circuitikz.sty" 1767818079 13862 a232b340e0e1cf5a316532ab64cbd9e2 ""
@@ -315,8 +318,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1769369718 41603 27f93b3067076450172040dcd57ca8b3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1788154472 5541477 3118940318599480888143717dd32d64 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1788154543 3640701 b91f21e0ead506a6823806f5d4522794 ""
-  "chapters/ae-2026.tex" 1789662377.23024 25397 6ae5413ded6a22cc16e8a3799e0f3b90 ""
-  "chapters/ae-2026_formulae.tex" 1789662482.6798 21509 9a7e536bead99b8acc92af1ce8a227d9 ""
+  "chapters/ae-2026.tex" 1789668921.37998 23588 e07ba26519ff476220264289dd1144b2 ""
+  "chapters/ae-2026_formulae.tex" 1789668711.62811 21169 35730d6916a25a65a64533beea3df128 ""
   "figs/Circle.png" 1789541185.84124 59379 6d4576df150848bd771ece3531958841 ""
   "figs/Circle.tex" 1789539217.38157 2055 3581aee755b03583170acf9717507e1d ""
   "figs/Eigenvectors.png" 1789541436.41468 30383 0c4a4a5853d84ba90a98013ce0f29cee ""
@@ -334,11 +337,11 @@
   "figs/spring_deriv.tex" 1789588176.85313 533 1dadcc5192d3f0debe32cc14bd1ce0d0 ""
   "gvv-book.sty" 1788155314.60613 2364 972c828b0fdb5c1b2ef6ab44859ce8d3 ""
   "gvv.sty" 1788155314.60613 4374 e0265f3cc8fb087d2434efb730c546e4 ""
-  "main.aux" 1789662500.4269 7060 b60e5443ea80b2beaf965faa05480090 "pdflatex"
-  "main.ind" 1789662405.48839 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.out" 1789662500.4279 303 4d3b30d4ac28d882cd32a064f1ec2a5c "pdflatex"
-  "main.tex" 1789619650.65122 8566 3902a8ab12de237b0500ec9660ab1226 ""
-  "main.toc" 1789662500.4289 217 bc2abdf0a170ff5f72c1a08c40bfa6a2 "pdflatex"
+  "main.aux" 1789668928.29897 7026 5c73cc0705606c98b111f998431ad844 "pdflatex"
+  "main.ind" 1789667819.53239 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
+  "main.out" 1789668928.30097 303 4d3b30d4ac28d882cd32a064f1ec2a5c "pdflatex"
+  "main.tex" 1789664825.82866 8596 2dc9f98868e40702ce2e43b037d0a95e ""
+  "main.toc" 1789668928.30097 217 2ea0b4516934d260d4ae65b10ad6cb30 "pdflatex"
   (generated)
   "main.aux"
   "main.idx"
