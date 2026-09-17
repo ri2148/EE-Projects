@@ -9,13 +9,13 @@ How many 3-digit numbers can be formed using three distinct single digit prime n
     \item $4$
 \end{enumerate} 
 \solution
- There are 4 single digit prime numbers: 2,3,5 and 7. The desired numbers are given by
+ There are 4 	single digit prime numbers: 2,3,5 and 7. The desired numbers are given by
  \begin{align}
 	 \perm{4}{3} = \frac{4!}{1!} = 24
  \end{align}
 
 
-		\item
+\item
 In a group of students, 10 students like Mathematics, 12 students like English, 4 students like both Mathematics and English, and 6 students like neither Mathematics nor English. The number of students in the group is \underline{\hspace{1cm}}.
 \hfill (GATE~AE~2026)
 \begin{enumerate}
@@ -25,16 +25,14 @@ In a group of students, 10 students like Mathematics, 12 students like English, 
     \item $32$
 \end{enumerate} 
 
-\solution \\ 
-\noindent Let $N$ be the total number of students in the group. 
-
-\noindent If one student is chosen uniformly at random from the group, define:
+\solution 
+Let $N$ be the total number of students in the group. If one student is chosen uniformly at random from the group, we define:
 \begin{itemize}
     \item $M$: The event that the student likes Mathematics.
     \item $E$: The event that the student likes English.
 \end{itemize}
 
- \noindent The respective probabilities are expressed as:
+The respective probabilities are expressed as:
 \begin{align}
 P\brak{M} &= \frac{10}{N}, \quad P\brak{E} = \frac{12}{N}
 \end{align}
@@ -45,17 +43,17 @@ P\brak{ME} = \frac{4}{N} \quad \text{(student likes both)}
 P\brak{\brak{M+E}'} = \frac{6}{N} \quad \text{(student likes neither)}
 \end{align}
 
-\noindent Since the total probability of the sample space is $1$:
+Since the total probability of the sample space is $1$:
 \begin{align}
 P\brak{M \cup E} + P\brak{\brak{M+E}'} = 1
 \end{align}
 
-		\noindent From \eqref{eq:addition_theorem_probability}
+From \eqref{eq:addition_theorem_probability}
 \begin{align}
 P\brak{M} + P\brak{E} - P\brak{ME} + P\brak{\brak{M+E}'} = 1
 \end{align}
 
-\noindent Substitute the probabilities in terms of $N$:
+Substitute the probabilities in terms of $N$:
 \begin{align}
 \frac{10}{N} + \frac{12}{N} - \frac{4}{N} + \frac{6}{N} = 1
 \end{align}
@@ -71,66 +69,7 @@ P\brak{M} + P\brak{E} - P\brak{ME} + P\brak{\brak{M+E}'} = 1
 Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_1=1\text{cm}$ and another with unknown radius $r_2$, such that both of them touch each other externally and also the square, find the value of $r_2$. Also describe how the figure in the problem can be constructed. \hfill (GATE~AE~2026)
 \begin{figure}[H]
 \begin{center}
-\begin{tikzpicture}[scale=1.5, >=Stealth]
-    \pgfmathsetmacro{\side}{4.0}
-    \pgfmathsetmacro{\rone}{1.0}
-    \pgfmathsetmacro{\rtwo}{7 - 4*sqrt(2)}
-
-    \coordinate (W) at (0, 0);
-    \coordinate (X) at (\side, 0);
-    \coordinate (Y) at (\side, \side);
-    \coordinate (V) at (0, \side);
-
-    \draw[thick] (W) -- (X) -- (Y) -- (V) -- cycle;
-
-    \draw[thick] (\side-0.25, \side) -- (\side-0.25, \side-0.25) -- (\side, \side-0.25);
-    \draw[thick] (\side-0.25, 0) -- (\side-0.25, 0.25) -- (\side, 0.25);
-
-    \coordinate (O1) at (\rone, \rone);
-    \coordinate (O2) at (\side-\rtwo, \side-\rtwo);
-
-    \coordinate (P) at (0, \rone);
-    \coordinate (Q) at (\rone, 0);
-    \coordinate (S) at (\side-\rtwo, \side);
-    \coordinate (R) at (\side, \side-\rtwo);
-
-    \pgfmathsetmacro{\Tx}{\rone + \rone*cos(45)}
-    \pgfmathsetmacro{\Ty}{\rone + \rone*sin(45)}
-    \coordinate (T) at (\Tx, \Ty);
-
-    \draw[thick] (O1) circle (\rone);
-    \draw[thick] (O2) circle (\rtwo);
-
-    \draw[dotted, thick, ->] (O1) -- (2*\rone, \rone) 
-        node[midway, above=-1pt] {\small $r_1 = 1\text{ cm}$};
-
-    \draw[dotted, thick, ->] (O2) -- (\side-2*\rtwo, \side-\rtwo) 
-        node[midway, above=-1pt] {\small $r_2$};
-
-    \node[left=2pt] at (V) {$V$};
-    \node[left=2pt] at (W) {$W$};
-    \node[right=2pt] at (X) {$X$};
-    \node[right=2pt] at (Y) {$Y$};
-
-    \node[left=2pt] at (P) {$P$};
-    \node[below=2pt] at (Q) {$Q$};
-    \node[above=2pt] at (S) {$S$};
-    \node[right=2pt] at (R) {$R$};
-    \node[below left=1pt] at (T) {$T$};
-
-    \node[below left=1pt] at (O1) {$O_1$};
-    \node[below right=1pt] at (O2) {$O_2$};
-
-    \node[below right] at (1.6, 0.3) {$C_1$};
-    \node[below right] at (\side-0.5, \side-1.5) {$C_2$};
-
-    \draw[dotted, thick, <->] (0, \side+0.5) -- (\side, \side+0.5) 
-        node[midway, fill=white, inner sep=2pt] {\small $\overline{VY} = 4\text{ cm}$};
-
-    \draw[dotted, thick, <->] (-0.5, 0) -- (-0.5, \side) 
-        node[midway, fill=white, inner sep=2pt, rotate=90] {\small $\overline{VW} = 4\text{ cm}$};
-
-\end{tikzpicture}
+\input{figs/Circle.tex}
 \makeatletter
     \long\def\@makecaption#1#2{%
       \vskip\abovecaptionskip
@@ -142,55 +81,57 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
     \label{fig:2}
 \end{center}
 \end{figure}
+\solution
 \begin{enumerate}
-\item \textbf{Solution:} \\ 
-\noindent Let the side of the square be $s$, radius of the first circle be $r_1$ and that of the unknown circle be $r_2$.\\ \\
-    \noindent Clearly from figure:
+\item Solving for $r_2$
+Let the side of the square be $s$, radius of the first circle be $r_1$ and that of the unknown circle be $r_2$. Clearly from figure:
      \begin{align}
       WO_1+ O_1T+ TO_2 +O_2Y= \sqrt{2}s 
      \end{align}
-     \noindent We know that:
+     We know that:
      \begin{align}
      WO_1= \sqrt{2}r_1,    O_1T = r_1, TO_2 = r_2 , O_2W = \sqrt{2}r_2. 
      \end{align}
-     \noindent Substituting this in our result from point (4.2) we get:
+     Substituting this in our result from point (4.2) we get:
      \begin{align}
      r_2 = \frac{\sqrt{2}s - \brak{\sqrt{2} + 1}r_1}{\sqrt{2} + 1}.
      \end{align}  
-     \noindent Substituting the values of $s$ and $r_1$, we get:
+     Substituting the values of $s$ and $r_1$, we get:
      \begin{align}
 	     r_2 = \brak{7-4\sqrt{2}}\text{cm} 
      \end{align}
 \item \textbf{General method for construction:}
 
-\noindent Vertices of the square:
+Vertices of the square:
 \begin{align}
 \vec{W} = \myvec{0\\0}, \quad \vec{X} = \myvec{s\\0}, \quad \vec{Y} = \myvec{s\\s}, \quad \vec{V} = \myvec{0\\s}
 \end{align}
-\noindent Circle $C_1$ ($r_1$):
+Circle $C_1$ ($r_1$):
 \begin{align}
 \vec{O}_1 = \myvec{r_1\\r_1}, \quad \vec{P} = \myvec{0\\r_1}, \quad \vec{Q} = \myvec{r_1\\0}
 \end{align}
-\noindent Circle $C_2$ ($r_2$):
+Circle $C_2$ ($r_2$):
 \begin{align}
 \vec{O}_2 = \myvec{s-r_2\\s-r_2}, \quad \vec{S} = \myvec{s-r_2\\s}, \quad \vec{R} = \myvec{s\\s-r_2}
 \end{align}
-\noindent Line of centers and contact point $\vec{T}$:
+Line of centers and contact point $\vec{T}$:
 \begin{align}
 \vec{O}_2 - \vec{O}_1 = \myvec{s-r_2-r_1\\s-r_2-r_1} = (s-r_2-r_1)\myvec{1\\1}
 \end{align}
-\noindent Now, given that the circles are touching, we know that:
+Now, given that the circles are touching, we know that:
 \begin{align}
 	\frac{O_1T}{O_2T} = \frac{r_1}{r_2}
 \end{align}
 \begin{align}
 \frac{O_1T}{O_1O_2} = \frac{r_1}{r_1+r_2}
 \end{align}
-\noindent Hence, using the equation of line of centers obtained, we have:
+Hence, using the equation of line of centers obtained, we have:
 \begin{align}
 \vec{T} = \vec{O}_1 + \frac{r_1}{r_1+r_2}(\vec{O}_2 - \vec{O}_1)
 \end{align}
-\noindent\framebox[\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax][c]{codes/Circle.py}
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Circle.py}@*)
+\end{lstlisting}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Circle.png}
@@ -202,15 +143,15 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
       \end{center}
       \vskip\belowcaptionskip}
     \makeatother
-    \caption{Figure Constructed}
+    \caption{Square with Tangent Circles}
     \label{fig:3}
 \end{figure}
 \end{enumerate}
 
 
 \item Consider the contour $C$ shown in the figure below. For the vector $\vec{F} = \brak{x + 2y}\hat{e}_x + \brak{2x + 4y}\hat{e}_y$, the integral $\oint_{C} \vec{F} \cdot d\vec{l} = \underline{\hspace{2cm}}$.
-\vspace{0.5em}
-\noindent Here $d\vec{l}$ represents an infinitesimal length along the contour $C$.\hfill (GATE~AE~2026)
+
+Here $d\vec{l}$ represents an infinitesimal length along the contour $C$.\hfill (GATE~AE~2026)
 \begin{enumerate}
     \item $0$
     \item $2$
@@ -220,47 +161,7 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
 
 \begin{figure}[H]
 \begin{center}
-\begin{tikzpicture}[scale=1.55, >=Stealth]
-    \tikzset{
-        segment arrow/.style={
-            postaction={
-                decorate,
-                decoration={
-                    markings,
-                    mark=at position 0.55 with {\arrow[scale=1.2]{Stealth[length=6pt, width=5pt]}}
-                }
-            }
-        }
-    }
-
-    \draw[thick, ->] (-2.2, 0) -- (2.2, 0) node[right] {$x$};
-    \draw[thick, ->] (0, -0.8) -- (0, 2.6) node[left] {$y$};
-
-    \coordinate (O) at (0, 0);
-    \coordinate (P) at (1, 1);
-    \coordinate (Q) at (0, 2);
-    \coordinate (R) at (-1, 1);
-
-    \draw[line width=1.5pt, segment arrow] (O) -- (P);
-    \draw[line width=1.5pt, segment arrow] (P) -- (Q);
-    \draw[line width=1.5pt, segment arrow] (Q) -- (R);
-    \draw[line width=1.5pt, segment arrow] (R) -- (O);
-
-    \node[below right=2pt] at (0.5, 0.5) {$C$};
-
-    \node[below left=1pt] at (O) {$\mathbf{O}$};
-    \node[below right=1pt] at (O) {$(0,0)$};
-
-    \node[above right=1pt] at (P) {$\mathbf{P}$};
-    \node[below right=1pt] at (P) {$(1,1)$};
-
-    \node[above left=1pt] at (Q) {$\mathbf{Q}$};
-    \node[above right=1pt] at (Q) {$(0,2)$};
-
-    \node[above left=1pt] at (R) {$\mathbf{R}$};
-    \node[below left=1pt] at (R) {$(-1,1)$};
-
-\end{tikzpicture}
+\input{figs/Line_Integral.tex}
 \makeatletter
     \long\def\@makecaption#1#2{%
       \vskip\abovecaptionskip
@@ -275,7 +176,7 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
 \end{figure}
 \solution
 
-\noindent We can break the closed path $C$ into its four straight line paths: $O \to P \to Q \to R \to O$.
+We can break the closed path $C$ into its four straight line paths: $O \to P \to Q \to R \to O$.
 
 \begin{align}
 \mathbf{F} \cdot d\mathbf{l} = \myvec{x + 2y \\ 2x + 4y} \cdot \myvec{dx \\ dy}
@@ -286,11 +187,11 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
 \begin{align}
 = \myvec{(x + 2y)dx + (2x + 4y)dy}
 \end{align}
-\noindent The general line integral expression to evaluate along any path is:
+The general line integral expression to evaluate along any path is:
 \begin{align}
 \mathbf{I} = \int \brak{x + 2y}\,dx + \brak{2x + 4y}\,dy
 \end{align}
-\noindent{Path $O\brak{0,0} \to P\brak{1,1}$}
+Path $O\brak{0,0} \to P\brak{1,1}$
 \begin{itemize}
     \item Equation of line: $y = x \implies dy = dx$
     \item Limits: $x$ goes from $0$ to $1$
@@ -299,7 +200,7 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
 \mathbf{I_1} = \int_0^1 \brak{x + 2x}\,dx + \brak{2x + 4x}\,dx = \int_0^1 9x\,dx = \left[ \frac{9x^2}{2} \right]_0^1 = \frac{9}{2}
 \end{align}
 
-\noindent{Path $P\brak{1,1} \to Q\brak{0,2}$}
+Path $P\brak{1,1} \to Q\brak{0,2}$
 \begin{itemize}
     \item Equation of line: $y = 2 - x \implies dy = -dx$
     \item Limits: $x$ goes from $1$ to $0$
@@ -311,7 +212,7 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
 \mathbf{I_2} = \int_1^0 \left[ \brak{4-x} - \brak{8-2x} \right]\,dx = \int_1^0 \brak{x-4}\,dx = \left[ \frac{x^2}{2} - 4x \right]_1^0 = \frac{7}{2}
 \end{align}
 
-\noindent{Path $Q\brak{0,2} \to R\brak{-1,1}$}
+Path $Q\brak{0,2} \to R\brak{-1,1}$
 \begin{itemize}
     \item Equation of line: $y = x + 2 \implies dy = dx$
     \item Limits: $x$ goes from $0$ to $-1$
@@ -323,7 +224,7 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
 \mathbf{I_3} = \left[ \frac{9x^2}{2} + 12x \right]_0^{-1} = \brak{\frac{9}{2} - 12} - 0 = -\frac{15}{2}
 \end{align}
 
-\noindent{Path $R\brak{-1,1} \to O\brak{0,0}$}
+Path $R\brak{-1,1} \to O\brak{0,0}$
 \begin{itemize}
     \item Equation of line: $y = -x \implies dy = -dx$
     \item Limits: $x$ goes from $-1$ to $0$
@@ -335,17 +236,19 @@ Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_
 \mathbf{I_4} = \left[ \frac{x^2}{2} \right]_{-1}^0 = 0 - \frac{1}{2} = -\frac{1}{2}
 \end{align}
 
-\noindent Summing the integrals across all four line segments:
+Summing the integrals across all four line segments:
 \begin{align}
 \mathbf{I = I_1 + I_2 + I_3 + I_4}
 \end{align}
 \begin{align}
 \mathbf{I} = \frac{9}{2} + \frac{7}{2} - \frac{15}{2} - \frac{1}{2} = \frac{16 - 16}{2} = 0
 \end{align}\\
-\noindent\framebox[\textwidth][c]{codes/Line\_Integral.py}
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Line\_Integral.py}@*)
+\end{lstlisting}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{figs/Line_integral.png}
+    \includegraphics[width=0.75\linewidth]{figs/Line_Integral.png}
 	\makeatletter
     \long\def\@makecaption#1#2{%
       \vskip\abovecaptionskip
@@ -369,52 +272,8 @@ The Fourier series representation of a square wave is shown in the figure below.
 \end{enumerate}
 \begin{figure}[H]
     \centering
-    \begin{tikzpicture}[x=2.1cm, y=2.8cm]
-        % Background Grid
-        \draw[gray!30, line width=0.2pt, step=0.1] (-1.6,-0.2) grid (1.6,1.25);
-        \draw[gray!60, line width=0.4pt, xstep=0.5, ystep=0.4] (-1.6,-0.2) grid (1.6,1.25);
-
-        % Outer Bounding Box
-        \draw[thick] (-1.6,-0.2) rectangle (1.6,1.25);
-
-        % X-Axis Ticks & Labels
-        \foreach \x in {-1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5} {
-            \draw[thick] (\x,-0.2) -- (\x,-0.24);
-            \draw[thick] (\x,1.25) -- (\x,1.29);
-            \node[below, font=\small] at (\x,-0.24) {\pgfmathprintnumber[fixed,precision=1,zerofill]{\x}};
-        }
-
-        % Y-Axis Ticks & Labels
-        \foreach \y in {0.0, 0.4, 0.8, 1.2} {
-            \draw[thick] (-1.6,\y) -- (-1.64,\y);
-            \draw[thick] (1.6,\y) -- (1.64,\y);
-            \node[left, font=\small] at (-1.64,\y) {\pgfmathprintnumber[fixed,precision=1,zerofill]{\y}};
-        }
-
-        % Axis Label
-        \node[below=14pt, font=\small] at (0,-0.24) {$X$};
-
-        % Fourier Square Wave Plot
-        \draw[thick, black, declare function={
-            f(\x) = 0.5 + (2/pi)*(
-                sin(deg(pi*\x)) 
-                + (1/3)*sin(deg(3*pi*\x)) 
-                + (1/5)*sin(deg(5*pi*\x)) 
-                + (1/7)*sin(deg(7*pi*\x)) 
-                + (1/9)*sin(deg(9*pi*\x)) 
-                + (1/11)*sin(deg(11*pi*\x)) 
-                + (1/13)*sin(deg(13*pi*\x)) 
-                + (1/15)*sin(deg(15*pi*\x)) 
-                + (1/17)*sin(deg(17*pi*\x)) 
-                + (1/19)*sin(deg(19*pi*\x)) 
-                + (1/21)*sin(deg(21*pi*\x)) 
-                + (1/23)*sin(deg(23*pi*\x)) 
-                + (1/25)*sin(deg(25*pi*\x))
-            );
-        }] 
-        plot[domain=-1.6:1.6, samples=150, smooth] (\x, {f(\x)});
-    \end{tikzpicture}
-	\makeatletter
+	\input{figs/Fourier.tex}
+    	\makeatletter
     \long\def\@makecaption#1#2{%
       \vskip\abovecaptionskip
       \begin{center}
@@ -425,33 +284,28 @@ The Fourier series representation of a square wave is shown in the figure below.
     \caption{Fourier Square Wave Representation}
     \label{fig:6}
 \end{figure}
-
+\solution
 \begin{enumerate}
-	\item \textbf{Solution:} \\
-\noindent Every periodic function can be expressed as a sum of sines and cosines. Gibbs phenomenon is the overshoot and high-frequency oscillation ("ringing") that occurs when approximating a function with jump discontinuities using a finite (truncated) Fourier series. Even as the number of terms $N$ approaches infinity, the overshoot near the jump discontinuity does not vanish; instead, it narrows in width while maintaining a fixed percentage height relative to the size of the jump.\\ \\
-\noindent \textbf{Reason:} When approximating a step function or square wave, Fourier series synthesize the shape using smooth, continuous sinusoids ($\sin$ and $\cos$). Because continuous functions cannot instantaneously step from one value to another, the Fourier series overcompensates near the vertical edge. \\ \\
-\item Finding the fourier coefficients for a square wave \\
+\item Gibbs Phenomenon
+\begin{itemize}
+	\item Explanation of Gibbs Phenomenon: Every periodic function can be expressed as a sum of sines and cosines. Gibbs phenomenon is the overshoot and high-frequency oscillation ("ringing") that occurs when approximating a function with jump discontinuities using a finite (truncated) Fourier series. Even as the number of terms $N$ approaches infinity, the overshoot near the jump discontinuity does not vanish; instead, it narrows in width while maintaining a fixed percentage height relative to the size of the jump.
+	\item Reason: When approximating a step function or square wave, Fourier series synthesize the shape using smooth, continuous sinusoids ($\sin$ and $\cos$). Because continuous functions cannot instantaneously step from one value to another, the Fourier series overcompensates near the vertical edge.
+\end{itemize}
+\item Finding the fourier coefficients for a square wave 
 We will use the result \eqref{eq:Fourier_1}. Considering $f_0 = \frac{1}{4}$, $T_0 = 4$, and the integration interval $\brak{-\frac{1}{2f_0}, \frac{1}{2f_0}} = \brak{-2, 2}$:
-
 \begin{align}
 c_k &= \frac{1}{4} \int_{-1}^{1} e^{-j \frac{\pi k t}{2}} \, dt
 \end{align}
-
-For $k = 0$:
 \begin{align}
-c_0 &= \frac{1}{4} \int_{-1}^{1} 1 \, dt = \frac{1}{4} \brak{1 - \brak{-1}} = \frac{1}{2} 
+c_k = 
+\begin{dcases}
+    \frac{1}{4} \int_{-1}^{1} 1 \, dt = \frac{1}{2}, & k = 0 \\[12pt]
+    \frac{1}{4} \left[ \frac{e^{-j \frac{\pi k t}{2}}}{-j \frac{\pi k}{2}} \right]_{-1}^{1} = \frac{1}{2} \sinc\brak{\frac{\pi k}{2}}, & k \neq 0
+\end{dcases}
 \end{align}
-
-For $k \neq 0$:
-\begin{align}
-c_k &= \frac{1}{4} \left[ \frac{e^{-j \frac{\pi k t}{2}}}{-j \frac{\pi k}{2}} \right]_{-1}^{1}
-\end{align}
-\begin{align}
-= \frac{1}{-j 2\pi k} \brak{e^{-j \frac{\pi k}{2}} - e^{j \frac{\pi k}{2}}} 
-\end{align}
-\begin{align}
-= \frac{-2j \sin\brak{\frac{\pi k}{2}}}{-j 2\pi k} = \frac{\sin\brak{\frac{\pi k}{2}}}{\pi k} 
-\end{align}
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Fourier.py}@*)
+\end{lstlisting}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Fourier.png}
@@ -464,19 +318,17 @@ c_k &= \frac{1}{4} \left[ \frac{e^{-j \frac{\pi k t}{2}}}{-j \frac{\pi k}{2}} \r
       \vskip\belowcaptionskip}
     \makeatother
     \caption{Plot Generated}
-    \label{fig:5}
+    \label{fig:7}
 \end{figure}
 
 \end{enumerate}
 \item If a matrix can be written as $\mathbf{A} = \mathbf{uv^T}$, where both $u$ and $v$ are $n$-dimensional real-valued non-zero column vectors, then the rank of the matrix $\mathbf{A}$ is \underline{\hspace{1cm}}.
-\hfill (GATE~AE~2026)\\
+\hfill (GATE~AE~2026)
 
 \solution 
 
-\noindent We will solve it with an example: \\
-Consider $3$-dimensional non-zero vectors $\mathbf{u} = \myvec{1 \\ 2 \\ 3}$ and $\mathbf{v} = \myvec{1 \\ 4 \\ 2}$.
+We will solve the above problem with an example. Consider $3$-dimensional non-zero vectors $\mathbf{u} = \myvec{1 \\ 2 \\ 3}$ and $\mathbf{v} = \myvec{1 \\ 4 \\ 2}$.
 
-\noindent
 The matrix $\mathbf{A}$ is formed as:
 \begin{align}
 \mathbf{A} = \mathbf{uv^T} &= \myvec{1 \\ 2 \\ 3} \myvec{1 & 4 & 2} \\
@@ -487,11 +339,8 @@ The matrix $\mathbf{A}$ is formed as:
 }
 \end{align}
 
-\noindent
 Applying elementary row transformations step-by-step:
 
-\vspace{0.5em}
-\noindent
 Eliminate the non-zero entry in the second row using $R_2 \to R_2 - 2R_1$:
 \begin{align}
 \mathbf{A} \xrightarrow{R_2 \to R_2 - 2R_1} \myvec{
@@ -501,8 +350,6 @@ Eliminate the non-zero entry in the second row using $R_2 \to R_2 - 2R_1$:
 }
 \end{align}
 
-\vspace{0.5em}
-\noindent
 Eliminate the non-zero entry in the third row using $R_3 \to R_3 - 3R_1$:
 \begin{align}
 \xrightarrow{R_3 \to R_3 - 3R_1} \myvec{
@@ -511,13 +358,10 @@ Eliminate the non-zero entry in the third row using $R_3 \to R_3 - 3R_1$:
 0 & 0 & 0
 }
 \end{align}
-
-\noindent
-The matrix is now in row echelon form with only $1$ non-zero row. Hence, $\text{rank}\brak{\mathbf{A}} = 1$.\\
-
+The matrix is now in row echelon form with only $1$ non-zero row. Hence, $\text{rank}\brak{\mathbf{A}} = 1$.
 
 \item
-	An $n \times n$ square matrix $\mathbf{A}$ satisfies $\mathbf{A^T} = \mathbf{A^{-1}}$. The determinant of this matrix may take which of the following value(s)? \hfill (GATE~AE~2026)
+An $n \times n$ square matrix $\mathbf{A}$ satisfies $\mathbf{A^T} = \mathbf{A^{-1}}$. The determinant of this matrix may take which of the following value(s)? \hfill (GATE~AE~2026)
 \begin{enumerate}
 	\item $1$
 	\item $-1$
@@ -525,18 +369,18 @@ The matrix is now in row echelon form with only $1$ non-zero row. Hence, $\text{
 	\item $0$
 \end{enumerate}
 
-\solution \\ 
-\noindent We are given that matrix $A$ satisfies:
+\solution 
+We are given that matrix $A$ satisfies:
 \begin{align}
 \mathbf{A^T = A^{-1}}
 \end{align}
 
-\noindent Taking the determinant of both sides of the given matrix equation:
+Taking the determinant of both sides of the given matrix equation:
 \begin{align}
 \mydet{\mathbf{A^T}} = \mydet{\mathbf{A^{-1}}}
 \end{align}
 
-\noindent Using \eqref{eq:Matrices_1}:
+Using \eqref{eq:Matrices_1}:
 \begin{align}
          \mydet{\mathbf{A^T}} = \mydet{\mathbf{A}}
 \end{align}
@@ -544,12 +388,12 @@ The matrix is now in row echelon form with only $1$ non-zero row. Hence, $\text{
         \mydet{\mathbf{A^{-1}}} = \frac{1}{\mydet{\mathbf{A}}}
     \end{align} 
 
-\noindent Replacing both sides using the above properties gives:
+Replacing both sides using the above properties gives:
 \begin{align}
 \mydet{\mathbf{A}} = \frac{1}{\mydet{\mathbf{A}}}
 \end{align}
 
-\noindent Multiplying both sides by $\mydet{\mathbf{A}}$:
+Multiplying both sides by $\mydet{\mathbf{A}}$:
  \begin{align}
 \brak{\mydet{\mathbf{A}}}^2 = 1 \implies \mydet{\mathbf{A}} = \pm 1
 \end{align} 
@@ -564,97 +408,45 @@ Given the velocity and position vectors of a satellite along with its gravitatio
     \item Straight Line
 \end{enumerate} 
 
-    \noindent Position vector: 
+Position vector: 
     \begin{align}
     \vec{r} = 8000\hat{p} + 9000\hat{q} \text{ km}
     \end{align}
-    \noindent Velocity vector:
+Velocity vector:
     \begin{align}
     \vec{v} = -6\hat{p} + 6\hat{q} \text{ km/s}
     \end{align}
-    \noindent Gravitational parameter: 
+Gravitational parameter: 
     \begin{align}
     \mu = 398600 \text{ km}^3/\text{s}^2
     \end{align}
 
-\solution \\
-\noindent We are given :
+\solution 
+We are given :
 \begin{align}
 	\vec{r}=\myvec{8000\\9000}, \vec{v}=\myvec{-6\\6}
 \end{align}
-\noindent Finding the norms:
+From \eqref{eq:Gravitation_1}, Specific Angular Momentum \brak{h_0}:
 \begin{align}
-\norm{\vec{r}} = \sqrt{8000^2 + 9000^2} = \sqrt{64 \times 10^6 + 81 \times 10^6} = \sqrt{145 \times 10^6} \approx 12041.59 \text{ km}
-\end{align}
-\begin{align}
-\norm{\vec{v}} = \sqrt{-6^2 + 6^2} = \sqrt{36 + 36} = \sqrt{72} \text{ (km/s)}
-\end{align}
-\begin{align}
-\norm{\vec{v}}^2=72 \text{ (km/s)}^2
-\end{align}
-\noindent The specific mechanical energy (energy per unit mass) is given by:
-\begin{align}
-E = \text{Kinetic Energy per unit mass} + \text{Potential Energy per unit mass}
-\end{align}
-\begin{align}
-	E = \frac{1}{2}\norm{\vec{v}}^2 - \frac{\mu}{\norm{\vec{r}}}
+= |8000\brak{6} - 9000\brak{-6}| = 102000 \text{ km}^2/\text{s}
 \end{align}
 
-\noindent Substituting the calculated values:
+From \eqref{eq:Gravitation_2}, eccentricity squared \brak{e^2}:
 \begin{align}
-E &= \frac{72}{2} - \frac{398600}{12041.59} \\
-&= +2.898 \text{ km}^2/\text{s}^2
+= 1 + \frac{2\brak{2.898}\brak{102000}^2}{\brak{398600}^2} \approx 1 + 0.3795 = 1.3795
 \end{align}
-The polar trajectory of a satellite with eccentricity vector $\mathbf{e}$ and semi-latus rectum $p_{\text{orb}}$ is given by:
+From \eqref{eq:Gravitation_3}, we have:
 \begin{align}
-r = \frac{p_{\text{orb}}}{1 + e \cos \theta}
+\mydet{\mathbf{V}}=1-1.3795=-0.3795
 \end{align}
+From \ref{item:Hyperbola}, we can conclude that the trajectory of the satellite is a Hyperbola.
 
-In vector form, $e \cos \theta = \frac{\mathbf{e}^\top \mathbf{x}}{r}$, where $\mathbf{x} = \begin{pmatrix} p \\ q \end{pmatrix}$.
-\begin{align}
-r + \mathbf{e}^\top \mathbf{x} = p_{\text{orb}} \implies r = p_{\text{orb}} - \mathbf{e}^\top \mathbf{x}
-\end{align}
-
-Squaring both sides ($r^2 = \mathbf{x}^\top \mathbf{x}$):
-\begin{align}
-\mathbf{x}^\top \mathbf{x} = (p_{\text{orb}} - \mathbf{e}^\top \mathbf{x})^2 = p_{\text{orb}}^2 - 2 p_{\text{orb}} \mathbf{e}^\top \mathbf{x} + (\mathbf{e}^\top \mathbf{x})^2
-\end{align}
-
-Since $(\mathbf{e}^\top \mathbf{x})^2 = \mathbf{x}^\top (\mathbf{e}\mathbf{e}^\top)\mathbf{x}$, rearranging yields:
-\begin{align}
-\mathbf{x}^\top (\mathbf{I} - \mathbf{e}\mathbf{e}^\top)\mathbf{x} + 2(p_{\text{orb}}\mathbf{e})^\top \mathbf{x} - p_{\text{orb}}^2 = 0
-\end{align}
-
-Comparing this with $g(\mathbf{x}) = \mathbf{x}^\top \mathbf{V}\mathbf{x} + 2\mathbf{u}^\top \mathbf{x} + f = 0$:
-\begin{itemize}
-    \item Matrix $\mathbf{V}$: $\mathbf{V} = \mathbf{I} - \mathbf{e}\mathbf{e}^\top$
-    \item Vector $\mathbf{u}$: $\mathbf{u} = p_{\text{orb}}\mathbf{e}$
-    \item Scalar $f$: $f = -p_{\text{orb}}^2$
-\end{itemize}
-\noindent From result \eqref{eq:mat_det_lemma}, we have:
-\begin{align}
-\mydet{\mathbf{V}}=1-\mathbf{e^Te}=1-e^2
-\end{align}
-\noindent Specific Angular Momentum \brak{h_0}:
-\begin{align}
-h_0 = |r \times v| = |8000\brak{6} - 9000\brak{-6}| = 102000 \text{ km}^2/\text{s}
-\end{align}
-
-\noindent Eccentricity Squared \brak{e^2}:
-\begin{align}
-e^2 = 1 + \frac{2\varepsilon h_0^2}{\mu^2} = 1 + \frac{2\brak{2.898}\brak{102000}^2}{\brak{398600}^2} \approx 1 + 0.3795 = 1.3795
-\end{align}
-\noindent Therefore we have,
-\begin{align}
-\mydet{\mathbf{V}}<0 
-\end{align}
-\noindent From \ref{item:Hyperbola}, we can conclude that the trajectory of the satellite is a Hyperbola.
-
-\noindent\framebox[\textwidth][c]{codes/Satellite.py}
-
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Satellite.py}@*)
+\end{lstlisting}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.60\linewidth]{figs/Satellite.png}
+    \includegraphics[width=1.0\linewidth]{figs/Satellite.png}
 	\makeatletter
     \long\def\@makecaption#1#2{%
       \vskip\abovecaptionskip
@@ -676,36 +468,35 @@ For the matrix $\textbf{A} = \myvec{ a & b \\ c & d }$, if the relation $a + b =
     \item $\lambda = d + b$ is an eigenvalue
 \end{enumerate}
 
-\solution \\ 
+\solution 
 
-\noindent Given that $a + b = c + d = k$:
+Given that $a + b = c + d = k$:
 \begin{align}
 \myvec{ a & b } \myvec{ 1 \\ 1 } &= k = \myvec{ c & d } \myvec{ 1 \\ 1 } \\
 \implies \myvec{ a & b \\ c & d } \myvec{ 1 \\ 1 } &= \myvec{ k \\ k } \\
 \implies \myvec{ a & b \\ c & d } \myvec{ 1 \\ 1 } &= k \myvec{ 1 \\ 1 }
 \end{align}
 
-\noindent $\implies \myvec{ 1 \\ 1 }$ is an eigenvector and $k = a + b$ is an eigenvalue.
+$\implies \myvec{ 1 \\ 1 }$ is an eigenvector and $k = a + b$ is an eigenvalue.
 
-\vspace{0.5cm}
-
-\noindent From the given relation $a + b = c + d$:
+From the given relation $a + b = c + d$:
 \begin{align}
 a - c = d - b = -\brak{b - d} = k'
 \end{align}
 
-\noindent Evaluating the matrix-vector multiplication:
+Evaluating the matrix-vector multiplication:
 \begin{align}
 \myvec{ a & b \\ c & d } \myvec{ 1 \\ -1 } &= \myvec{ a - b \\ c - d } = \myvec{ k' \\ -k' } = k' \myvec{ 1 \\ -1 }
 \end{align}
+$\implies \myvec{ 1 \\ -1 }$ is an eigenvector and $d - b$ is the $2^{\text{nd}}$ eigenvalue.
 
-\noindent $\implies \myvec{ 1 \\ -1 }$ is an eigenvector and $d - b$ is the $2^{\text{nd}}$ eigenvalue.
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Eigenvectors.py}@*)
+\end{lstlisting}
 
-\vspace{0.5cm}
-\noindent\framebox[\textwidth][c]{codes/Eigenvectors.py}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{figs/Eigenvectors.png}
+    \includegraphics[width=0.60\linewidth]{figs/Eigenvectors.png}
 	\makeatletter
     \long\def\@makecaption#1#2{%
       \vskip\abovecaptionskip
@@ -725,21 +516,22 @@ Consider the differential equation:
 \frac{d^2 y}{dx^2} + 2\frac{dy}{dx} + y = 0
 \end{align}
 with initial conditions $\left.y\right|_{x=0} = 0$ and $\left.\frac{dy}{dx}\right|_{x=0} = 1$. Find the value of the slope $\frac{dy}{dx}$ at $x = \ln\brak{2}$ rounded off to three decimal places.
-\hfill (GATE~AE~2026) \\ \\
-\begin{enumerate}
-\item \textbf{Solution:} \\ 
+\hfill (GATE~AE~2026) 
 
+\solution
+\begin{enumerate}
+\item Theoretical solution
 Let $Y(s) = \mathcal{L}\{y\brak{x}\}$. Taking the Laplace transform on both sides:
 \begin{align}
 \mathcal{L}\left\{\frac{d^2 y}{dx^2}\right\} + 2\mathcal{L}\left\{\frac{dy}{dx}\right\} + \mathcal{L}\{y\} = 0
 \end{align}
 
-\noindent From equations \eqref{eq:Laplace_1} and \eqref{eq:Laplace_2}:
+From equations \eqref{eq:Laplace_1} and \eqref{eq:Laplace_2}:
 \begin{align}
 \big[s^2 Y(s) - s y\brak{0} - y'\brak{0}\big] + 2\big[s Y(s) - y\brak{0}\big] + Y(s) = 0
 \end{align}
 
-\noindent Substituting the given initial conditions $y\brak{0} = 0$ and $y'\brak{0} = 1$:
+Substituting the given initial conditions $y\brak{0} = 0$ and $y'\brak{0} = 1$:
 \begin{align}
 (s^2 Y(s) - 1) + 2s Y(s) + Y(s) = 0
 \end{align}
@@ -749,45 +541,45 @@ Let $Y(s) = \mathcal{L}\{y\brak{x}\}$. Taking the Laplace transform on both side
 \begin{align}
 Y(s) = \frac{1}{(s+1)^2}
 \end{align}
-\noindent Taking the inverse Laplace transform by applying the first frequency shift theorem(\eqref{eq:Laplace_3}) on \eqref{eq:Laplace_4} gives the solution $y\brak{x}$:
+Taking the inverse Laplace transform by applying the first frequency shift theorem(\eqref{eq:Laplace_3}) on \eqref{eq:Laplace_4} gives the solution $y\brak{x}$:
 \begin{align}
-y\brak{x} = \mathcal{L}^{-1}\left\{\frac{1}{(s+1)^2}\right\} = x e^{-x}
+y\brak{x} = x e^{-x}
 \end{align}
-\noindent Differentiating $y\brak{x}$ with respect to $x$:
+Differentiating $y\brak{x}$ with respect to $x$:
 \begin{align}
 \frac{dy}{dx} = \frac{d}{dx}\brak{x e^{-x}} = \brak{1 - x}e^{-x}
 \end{align}
 
-\noindent Substituting $x = \ln\brak{2}$:
+Substituting $x = \ln\brak{2}$:
 \begin{align}
 y'\brak{ln\brak{2}}= \brak{1 - \ln\brak{2}} e^{-\ln\brak{2}}
 \end{align}
 
-\noindent Since $e^{-\ln\brak{2}} = \frac{1}{2}$:
+Since $e^{-\ln\brak{2}} = \frac{1}{2}$:
 \begin{align}
 = \frac{1 - \ln\brak{2}}{2} \approx \frac{1 - 0.693147}{2} = 0.153426
 \end{align}
 
-
-\noindent Rounding off to three decimal places yields: 0.153 \\ \\
-\item Solution with Euler's Method: \\
-\noindent Substituting equations \eqref{eq:ED_1} and \eqref{eq:ED_2} into our differential equation, we obtain:
+\item Numerical Solution
+Substituting equations \eqref{eq:ED_1} and \eqref{eq:ED_2} into our differential equation, we obtain:
 \begin{align}
 \frac{y_{n+2} - 2y_{n+1} + y_n}{h^2} + 2 \left( \frac{y_{n+1} - y_n}{h} \right) + y_n = 0
 \end{align}
-\noindent Rearranging, we get:
+Rearranging, we get:
 \begin{align}
 y_{n+2} = 2(1 - h)y_{n+1} - (1 - h)^2 y_n
 \end{align}
-\noindent Our initial conditions are:
+Our initial conditions are:
 \begin{align}
 y_0=y\brak{0}=0, y_1=y_0+h(y'\brak{0})
 \end{align}
-\noindent Assuming $ln2=0.7$ and $h=0.01$ and evaluating the forward difference at $n=70$, we get:
+Assuming $ln2=0.7$ and $h=0.01$ and evaluating the forward difference at $n=70$, we get:
 \begin{align}
 	y_{70}'=0.145
 \end{align}
-\noindent\framebox[\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax][c]{codes/Euler.py}
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Euler.py}@*)
+\end{lstlisting}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Euler.png}
@@ -805,36 +597,34 @@ y_0=y\brak{0}=0, y_1=y_0+h(y'\brak{0})
 \end{enumerate}
 
 \item 
-Find the minimum value of the function $f\brak{x} = \abs{x} + \abs{2x+3}$ for real $x$. \hfill (GATE~AE~2026)\\ \\
-\solution \\ 
+Find the minimum value of the function $f\brak{x} = \abs{x} + \abs{2x+3}$ for real $x$. \hfill (GATE~AE~2026)
 
-\noindent The critical points occur where the expressions inside the absolute values equal zero:
+\solution 
+
+The critical points occur where the expressions inside the absolute values equal zero:
 \begin{align}
 x &= 0 \\[0.5ex]
 2x + 3 = 0 &\implies x = -\frac{3}{2} = -1.5
 \end{align}
 
-\noindent These two critical points divide the real line into three sub-intervals:
+These two critical points divide the real line into three sub-intervals:
 \begin{align}
 \brak{-\infty, -1.5}, \quad [-1.5, 0), \quad \text{and} \quad [0, \infty)
 \end{align}
 
 
 \begin{itemize}
-    \item For $x < -1.5$: \\
-    Both expressions inside the absolute values are negative, so $\abs{x} = -x$ and $\abs{2x+3} = -\brak{2x+3}$:
+    \item For $x < -1.5$, bo0th expressions inside the absolute values are negative, so $\abs{x} = -x$ and $\abs{2x+3} = -\brak{2x+3}$:
     \begin{align}
     f\brak{x} = -x - \brak{2x + 3} = -3x - 3
     \end{align}
 
-    \item For $-1.5 \le x < 0$: \\
-    The term $x$ is negative ($\abs{x} = -x$) while $2x+3$ is non-negative ($\abs{2x+3} = 2x+3$):
+    \item For $-1.5 \le x < 0$, the term $x$ is negative ($\abs{x} = -x$) while $2x+3$ is non-negative ($\abs{2x+3} = 2x+3$):
     \begin{align}
     f\brak{x} = -x + \brak{2x + 3} = x + 3
     \end{align}
 
-    \item For $x \ge 0$: \\
-    Both expressions are non-negative, so $\abs{x} = x$ and $\abs{2x+3} = 2x+3$:
+    \item For $x \ge 0$, both expressions are non-negative, so $\abs{x} = x$ and $\abs{2x+3} = 2x+3$:
     \begin{align}
     f\brak{x} = x + \brak{2x + 3} = 3x + 3
     \end{align}
@@ -849,19 +639,20 @@ x + 3, & \text{if } -1.5 \le x < 0 \\
 \end{cases}
 \end{align}
 
-\noindent Analyzing the behavior of each linear segment:
+Analyzing the behavior of each linear segment:
 \begin{itemize}
     \item On $\brak{-\infty, -1.5}$, the line $f\brak{x} = -3x - 3$ has a negative slope ($-3$), so $f\brak{x}$ strictly decreases as $x$ approaches $-1.5$.
     \item On $[-1.5, 0)$, the line $f\brak{x} = x + 3$ has a positive slope ($+1$), so $f\brak{x}$ strictly increases as $x$ moves away from $-1.5$.
     \item On $[0, \infty)$, the line $f\brak{x} = 3x + 3$ has a positive slope ($+3$), so $f\brak{x}$ continues to increase.
 \end{itemize}
 
-\noindent Since $f\brak{x}$ decreases for $x < -1.5$ and increases for $x > -1.5$, the minimum value occurs at $x = -1.5$:
+Since $f\brak{x}$ decreases for $x < -1.5$ and increases for $x > -1.5$, the minimum value occurs at $x = -1.5$:
 \begin{align}
 f\brak{-1.5} = -1.5 + 3 = 1.5
 \end{align}
-\noindent\framebox[\textwidth][c]{codes/Modulus\_Function.py}
-
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Modulus\_function.py}@*)
+\end{lstlisting}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Modulus_function.png}
@@ -884,25 +675,11 @@ A bar, spring, and mass system is arranged in series.
     \item Spring Stiffness: $k = 200\text{ kN/mm}$
     \item Mass: $M = 100\text{ kg}$
 \end{itemize}
-\noindent Find the natural frequency of free vibration $\omega_n$ in $\text{rad/s}$. Also solve the differential equation obtained to obtain the position, velocity and accelaration of the system.
-\hfill (GATE~AE~2026)\\
+Find the natural frequency of free vibration $\omega_n$ in $\text{rad/s}$. Also solve the differential equation obtained to obtain the position, velocity and accelaration of the system.
+\hfill (GATE~AE~2026)
 \begin{figure}[H]
 \begin{center}
-\begin{tikzpicture}[scale=1.0, >=Stealth]
-    \draw[thick] (-0.2, 4) -- (1.2, 4);
-
-    \draw[thick] (0, 0) rectangle (1, 4);
-    \node at (0.5, 2.5) {E, A};
-
-    \draw[thick, <->] (-0.4, 0) -- (-0.4, 4);
-    \node[left] at (-0.4, 2) {L};
-
-    \draw[thick, decorate, decoration={zigzag, segment length=3mm, amplitude=2.5mm, pre length=5mm, post length=5mm}] (0.5, 0) -- (0.5, -1.8);
-    \node[right=3pt] at (0.7, -0.9) {k};
-
-    \draw[thick] (0.1, -1.8) rectangle (0.9, -2.6);
-    \node at (0.5, -2.2) {M};
-\end{tikzpicture}
+	\input{figs/Spring.tex}
 \makeatletter
     \long\def\@makecaption#1#2{%
       \vskip\abovecaptionskip
@@ -916,69 +693,40 @@ A bar, spring, and mass system is arranged in series.
 \end{center}
 \end{figure}
 
-\solution \\ 
+\solution 
 
-\noindent The axial stiffness of the uniform bar is:
+The axial stiffness of the uniform bar is:
 \begin{align}
 k_{\text{bar}} = \frac{AE}{L}
 \end{align}
-
-\noindent Converting parameters to standard SI units:
-\begin{align}
-E &= 200 \times 10^9 \text{ N/m}^2 \\
-A &= 100 \times 10^{-6} \text{ m}^2 = 10^{-4} \text{ m}^2 \\
-L &= 100 \times 10^{-3} \text{ m} = 0.1 \text{ m}
-\end{align}
-
 \begin{align}
 k_{\text{bar}} = \frac{10^{-4} \times 200 \times 10^9}{0.1} = 2 \times 10^8 \text{ N/m}
 \end{align}
-\noindent The bar and the helical spring are connected in series. Therefore:
-\begin{align}
-\frac{1}{k_{\text{eq}}} = \frac{1}{k_{\text{bar}}} + \frac{1}{k}
-\end{align}
-
-\noindent With $k = 200 \text{ kN/mm} = 2 \times 10^8 \text{ N/m}$:
+With $k = 200 \text{ kN/mm} = 2 \times 10^8 \text{ N/m}$, from \eqref{eq:springs_series}
 \begin{align}
 k_{\text{eq}} = \frac{k_{\text{bar}} \cdot k}{k_{\text{bar}} + k} = \frac{\brak{2 \times 10^8}\brak{2 \times 10^8}}{2 \times 10^8 + 2 \times 10^8} = 10^8 \text{ N/m}
 \end{align}
 
-\noindent
 The natural frequency of free vibration is:
 \begin{align}
 \omega_n = \sqrt{\frac{k_{\text{eq}}}{M}} = \sqrt{\frac{10^8}{100}} = \sqrt{10^6} = 1000 \text{ rad/s}
 \end{align}
-
-\noindent When the mass $M$ is at rest, let the system stretch by $\delta_{\text{st}}$
+Now, to find the position of the system as a function of time, from \eqref{eq:vertical_shm}, we have:
 \begin{align}
-\sum F = 0 \implies Mg - k_{\text{eq}}\delta_{\text{st}} = 0 \implies Mg = k_{\text{eq}}\delta_{\text{st}}
+\frac{d^2 x}{d t^2} = \frac{-k}{M}x = -w_n^2x
 \end{align}
-\noindent When the mass is displaced downward by $x(t)$, applying Newton's second law ($\sum F = M\ddot{x}$):
-\begin{align}
-M \frac{d^2 x}{d t^2} &= M g - k_{\text{eq}}(\delta_{\text{st}} + x) \\
-M \frac{d^2 x}{d t^2} &= M g - k_{\text{eq}}\delta_{\text{st}} - k_{\text{eq}}x
-\end{align}
-
-\noindent Substituting the static equilibrium condition $M g = k_{\text{eq}}\delta_{\text{st}}$:
-\begin{align}
-M \frac{d^2 x}{d t^2} &= (k_{\text{eq}}\delta_{\text{st}}) - k_{\text{eq}}\delta_{\text{st}} - k_{\text{eq}}x 
-\end{align}
-\begin{align}
-M \frac{d^2 x}{d t^2} &= -k_{\text{eq}}x 
-\end{align}
-\begin{align}
-\frac{d^2 x}{d t^2} = \frac{-k_{\text{eq}}}{M}x = -w_n^2x
-\end{align}
-\noindent Let the initial displacement of the system be $x_0$ and inital velocity be $v_0$. From result \eqref{eq:Laplace_7}, we get:
+Let the initial displacement of the system be $x_0$ and inital velocity be $v_0$. From result \eqref{eq:Laplace_7}, we get:
 
 \begin{align}
-\mathcal{L}^{-1}\brak{X(s)} = x(t) = x_0 \cos(w_nt) + \frac{v_0}{w_n} \sin(w_nt)
+x(t) = x_0 \cos(w_nt) + \frac{v_0}{w_n} \sin(w_nt)
 \end{align}
-\noindent Substituting the value of $w_n$, 
+Substituting the value of $w_n$, 
 \begin{align}
-\mathcal{L}^{-1}\brak{X(s)} = x(t) = x_0 \cos(1000t) + \frac{v_0}{1000} \sin(1000t)
+x(t) = x_0 \cos(1000t) + \frac{v_0}{1000} \sin(1000t)
 \end{align}
-\noindent\framebox[\textwidth][c]{codes/Spring.py}
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Spring.py}@*)
+\end{lstlisting}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.65\linewidth]{figs/Spring.png}
@@ -994,5 +742,4 @@ M \frac{d^2 x}{d t^2} &= -k_{\text{eq}}x
     \label{fig:12}
 \end{figure}
 \end{enumerate}
-
 

@@ -1,0 +1,42 @@
+\begin{tikzpicture}[scale=1.55, >=Stealth]
+    \tikzset{
+        segment arrow/.style={
+            postaction={
+                decorate,
+                decoration={
+                    markings,
+                    mark=at position 0.55 with {\arrow[scale=1.2]{Stealth[length=6pt, width=5pt]}}
+                }
+            }
+        }
+    }
+
+    \draw[thick, ->] (-2.2, 0) -- (2.2, 0) node[right] {$x$};
+    \draw[thick, ->] (0, -0.8) -- (0, 2.6) node[left] {$y$};
+
+    \coordinate (O) at (0, 0);
+    \coordinate (P) at (1, 1);
+    \coordinate (Q) at (0, 2);
+    \coordinate (R) at (-1, 1);
+
+    \draw[line width=1.5pt, segment arrow] (O) -- (P);
+    \draw[line width=1.5pt, segment arrow] (P) -- (Q);
+    \draw[line width=1.5pt, segment arrow] (Q) -- (R);
+    \draw[line width=1.5pt, segment arrow] (R) -- (O);
+
+    \node[below right=2pt] at (0.5, 0.5) {$C$};
+
+    \node[below left=1pt] at (O) {$\mathbf{O}$};
+    \node[below right=1pt] at (O) {$(0,0)$};
+
+    \node[above right=1pt] at (P) {$\mathbf{P}$};
+    \node[below right=1pt] at (P) {$(1,1)$};
+
+    \node[above left=1pt] at (Q) {$\mathbf{Q}$};
+    \node[above right=1pt] at (Q) {$(0,2)$};
+
+    \node[above left=1pt] at (R) {$\mathbf{R}$};
+    \node[below left=1pt] at (R) {$(-1,1)$};
+
+\end{tikzpicture}
+

@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+    % Fixed Ceiling Support
+    \draw[line width=1.2pt] (-1.2, 0) -- (1.2, 0);
+    \fill[pattern=north east lines] (-1.2, 0) rectangle (1.2, 0.25);
+
+    % Vertical Spring with Stiffness Label k
+    \draw[thick, decorate, decoration={zigzag, segment length=8pt, amplitude=6pt, pre length=8pt, post length=8pt}] 
+        (0, 0) -- (0, -2.5) node[midway, right=8pt] {$k$};
+
+    % Suspended Mass Box M
+    \draw[thick, fill=gray!20] (-0.6, -3.3) rectangle (0.6, -2.5);
+    \node at (0, -2.9) {$M$};
+\end{tikzpicture}

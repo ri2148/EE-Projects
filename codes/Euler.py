@@ -39,7 +39,6 @@ ax1.plot(x_fine, y_exact, 'b--', label=r'Theoretical $y(x) = x e^{-x}$', linewid
 ax1.stem(x_num, y_num[:N + 1], linefmt='r-', markerfmt='ro', basefmt='k-', label=r'Euler Recurrence ($y_n$)')
 ax1.plot(x_target, y_target, 'go', markersize=8, label=r'Target Point $x = \ln(2)$')
 ax1.set_ylabel('$y(x)$')
-ax1.set_title(r'Euler Method Solution: $y(x)$ and $y^\prime(x)$ ($h = 0.1$)')
 ax1.grid(True, linestyle='--', alpha=0.5)
 ax1.legend(loc='upper right')
 

@@ -1,0 +1,60 @@
+\begin{tikzpicture}[scale=1.5, >=Stealth]
+    \pgfmathsetmacro{\side}{4.0}
+    \pgfmathsetmacro{\rone}{1.0}
+    \pgfmathsetmacro{\rtwo}{7 - 4*sqrt(2)}
+
+    \coordinate (W) at (0, 0);
+    \coordinate (X) at (\side, 0);
+    \coordinate (Y) at (\side, \side);
+    \coordinate (V) at (0, \side);
+
+    \draw[thick] (W) -- (X) -- (Y) -- (V) -- cycle;
+
+    \draw[thick] (\side-0.25, \side) -- (\side-0.25, \side-0.25) -- (\side, \side-0.25);
+    \draw[thick] (\side-0.25, 0) -- (\side-0.25, 0.25) -- (\side, 0.25);
+
+    \coordinate (O1) at (\rone, \rone);
+    \coordinate (O2) at (\side-\rtwo, \side-\rtwo);
+
+    \coordinate (P) at (0, \rone);
+    \coordinate (Q) at (\rone, 0);
+    \coordinate (S) at (\side-\rtwo, \side);
+    \coordinate (R) at (\side, \side-\rtwo);
+
+    \pgfmathsetmacro{\Tx}{\rone + \rone*cos(45)}
+    \pgfmathsetmacro{\Ty}{\rone + \rone*sin(45)}
+    \coordinate (T) at (\Tx, \Ty);
+
+    \draw[thick] (O1) circle (\rone);
+    \draw[thick] (O2) circle (\rtwo);
+
+    \draw[dotted, thick, ->] (O1) -- (2*\rone, \rone) 
+        node[midway, above=-1pt] {\small $r_1 = 1\text{ cm}$};
+
+    \draw[dotted, thick, ->] (O2) -- (\side-2*\rtwo, \side-\rtwo) 
+        node[midway, above=-1pt] {\small $r_2$};
+
+    \node[left=2pt] at (V) {$V$};
+    \node[left=2pt] at (W) {$W$};
+    \node[right=2pt] at (X) {$X$};
+    \node[right=2pt] at (Y) {$Y$};
+
+    \node[left=2pt] at (P) {$P$};
+    \node[below=2pt] at (Q) {$Q$};
+    \node[above=2pt] at (S) {$S$};
+    \node[right=2pt] at (R) {$R$};
+    \node[below left=1pt] at (T) {$T$};
+
+    \node[below left=1pt] at (O1) {$O_1$};
+    \node[below right=1pt] at (O2) {$O_2$};
+
+    \node[below right] at (1.6, 0.3) {$C_1$};
+    \node[below right] at (\side-0.5, \side-1.5) {$C_2$};
+
+    \draw[dotted, thick, <->] (0, \side+0.5) -- (\side, \side+0.5) 
+        node[midway, fill=white, inner sep=2pt] {\small $\overline{VY} = 4\text{ cm}$};
+
+    \draw[dotted, thick, <->] (-0.5, 0) -- (-0.5, \side) 
+        node[midway, fill=white, inner sep=2pt, rotate=90] {\small $\overline{VW} = 4\text{ cm}$};
+
+\end{tikzpicture}

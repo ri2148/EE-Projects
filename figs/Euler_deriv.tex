@@ -1,0 +1,21 @@
+\begin{tikzpicture}[scale=0.75]
+    % Axes
+    \draw[->, >=stealth, thick] (-0.5, 0) -- (5.5, 0) node[right] {$x$};
+    \draw[->, >=stealth, thick] (0, -0.5) -- (0, 4.5) node[above] {$y$};
+
+    % Define Point Coordinates
+    \coordinate (P0) at (1.5, 1.5);
+    \coordinate (P1) at (4.5, 3.5);
+
+    % Dashed reference lines to axes
+    \draw[dashed] (0, 1.5) node[left] {$y_0$} -- (P0) -- (1.5, 0) node[below] {$x_0$};
+    \draw[dashed] (0, 3.5) node[left] {$y_1$} -- (P1) -- (4.5, 0) node[below] {$x_1$};
+
+    % Solid line connecting points with slope 'm'
+    \draw[very thick] (P0) -- (P1) node[midway, below right] {$m$};
+
+    % Data point markers
+    \fill (P0) circle (2.5pt);
+    \fill (P1) circle (2.5pt);
+\end{tikzpicture}
+

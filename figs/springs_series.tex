@@ -1,0 +1,39 @@
+\begin{tikzpicture}[>=stealth]
+    % Fixed Wall Support
+    \draw[line width=1.2pt] (0, -0.8) -- (0, 0.8);
+    \fill[pattern=north west lines] (-0.3, -0.8) rectangle (0, 0.8);
+
+    % Spring 1 (k1) - placed close to the spring
+    \draw[thick, decorate, decoration={zigzag, segment length=6pt, amplitude=5pt, pre length=6pt, post length=6pt}] 
+        (0,0) -- (3,0) node[midway, above=2pt] {$k_1$};
+
+    % Force F1 - shifted higher (y = 0.55) so it sits cleanly above k1
+    \draw[->, red, thick] (1.0, 0.55) -- (2.0, 0.55) node[midway, above=1pt] {$F_1$};
+
+    % Connecting Node
+    \fill (3,0) circle (3pt);
+
+    % Spring 2 (k2) - placed close to the spring
+    \draw[thick, decorate, decoration={zigzag, segment length=6pt, amplitude=5pt, pre length=6pt, post length=6pt}] 
+        (3,0) -- (6,0) node[midway, above=2pt] {$k_2$};
+
+    % Force F2 - shifted higher (y = 0.55) so it sits cleanly above k2
+    \draw[->, red, thick] (4.0, 0.55) -- (5.0, 0.55) node[midway, above=1pt] {$F_2$};
+
+    % Mass Block (M)
+    \draw[thick, fill=gray!20] (6, -0.4) rectangle (6.8, 0.4);
+    \node at (6.4, 0) {$M$};
+
+    % External Applied Force F
+    \draw[->, ultra thick] (6.8, 0) -- (7.8, 0) node[right] {$F$};
+
+    % Projection Lines for Dimensioning
+    \draw[gray, dashed] (0, 0) -- (0, -1.6);
+    \draw[gray, dashed] (3, 0) -- (3, -1.0);
+    \draw[gray, dashed] (6.4, -0.4) -- (6.4, -1.6);
+
+    % Displacement Dimensions
+    \draw[<->] (0, -0.8) -- (3, -0.8) node[midway, fill=white, inner sep=2pt] {$x_1$};
+    \draw[<->] (3, -0.8) -- (6.4, -0.8) node[midway, fill=white, inner sep=2pt] {$x_2$};
+    \draw[<->] (0, -1.4) -- (6.4, -1.4) node[midway, fill=white, inner sep=2pt] {$x_{\text{total}}$};
+\end{tikzpicture}

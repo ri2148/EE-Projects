@@ -32,7 +32,6 @@ ax.plot(crit_x, crit_y, 'ro', markersize=8, zorder=5)
 ax.axhline(1.5, color='r', linestyle='--', alpha=0.7, label='Min Value = 1.5')
 
 # Labels and Grid
-ax.set_title(r'Graph of $f(x) = |x| + |2x + 3|$', fontsize=14, pad=15)
 ax.set_xlabel('$x$', fontsize=12)
 ax.set_ylabel('$f(x)$', fontsize=12)
 ax.grid(True, linestyle=':', alpha=0.7)

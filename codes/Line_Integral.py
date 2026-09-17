@@ -40,10 +40,6 @@ plt.scatter(key_t, key_work, color="darkred", s=50, zorder=5)
 for kt, kw, lbl in zip(key_t, key_work, key_labels):
     plt.text(kt, kw + 0.4, lbl, ha="center", fontsize=9, fontweight="bold")
 
-plt.title(
-    r"Cumulative Line Integral $\int_0^t \vec{F} \cdot d\vec{l}$ Around Loop",
-    fontsize=12,
-)
 plt.xlabel("Path Segment Sequence")
 plt.ylabel("Accumulated Line Integral (Work)")
 plt.xticks(key_t, ["O (0,0)", "P (1,1)", "Q (0,2)", "R (-1,1)", "O (0,0)"])

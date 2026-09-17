@@ -65,9 +65,6 @@ for spine in ax.spines.values():
 ax.set_xlabel('X (cm)')
 ax.set_ylabel('Y (cm)')
 
-# Title
-ax.set_title(r'Square (s=4.0 cm) with Tangent Circles ($r_1=1.0$ cm, R=1.343 cm)', pad=12, fontsize=11)
-
 # Legend placed outside with fully visible frame
 ax.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0., frameon=True)
 

@@ -21,10 +21,9 @@ ax.axvline(0, color='black', linewidth=0.8, linestyle='--')
 ax.set_aspect('equal')
 ax.grid(True, linestyle=':', alpha=0.6)
 
-# Labels and title
+# Labels
 ax.set_xlabel('X')
 ax.set_ylabel('Y')
-ax.set_title('Vector Plot')
 ax.legend(loc='upper left')
 
 plt.show()
