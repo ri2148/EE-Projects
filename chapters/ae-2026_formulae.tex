@@ -1,59 +1,42 @@
 \begin{enumerate}[label=\thesubsection.\arabic*, ref=\thesubsection.\theenumi]
-\item Probability
-\begin{itemize}
-\item Addition Theorem of Probability:
+\item 
 \begin{align}
-P\brak{M} + P\brak{E} - P\brak{ME} + P\brak{\brak{M + E}^{\prime}} = 1 \label{eq:addition_theorem_probability}
+\pr{M} + \pr{E} - \pr{ME} + \pr{M + E}^{\prime} = 1 \label{eq:addition_theorem_probability}
 \end{align}
-
-
-\item Complement Laws in Boolean algebra
+\item 
 \begin{align}
-	A + A^{\prime} = 1, \quad AA^{\prime} = 0 \label{eq:Prob_1}
+	A + A^{\prime} &= 1, \quad AA^{\prime} = 0 \label{eq:Prob_1}
+	\\
+	\implies \pr{A + A^{\prime}} = \pr{1}&= 1  \quad \pr{AA^{\prime}} =\pr{0}= 0
+\label{eq:Prob_2}
 \end{align}
-\item Probability of Certain and Impossible Events
+\item 
 \begin{align}
-	P\brak{1} = 1, \quad P\brak{0} = 0 \implies P\brak{A + A^{\prime}} = 1 \label{eq:Prob_2}, \quad P\brak{AA^{\prime}} = 0
-\end{align}
-\item Addition Law of Probability for Mutually Exclusive Events
-\begin{align}
-	P\brak{A + A^{\prime}} = P\brak{A} + P\brak{A^{\prime}} \label{eq:Prob_3}
+	\pr{A + A^{\prime}} = \pr{A} + \pr{A^{\prime}} \label{eq:Prob_3}
 \end{align}
 \item Difference rule of probability
 	\begin{align}
-{P\brak{AB^{\prime}} = P\brak{A} - P\brak{AB}}
+{\pr{AB^{\prime}} = \pr{A} - \pr{AB}}
 	\end{align}
 \solution
 From \eqref{eq:Prob_1}
 \begin{align}
 A = A \cdot 1 = A\brak{B + B^{\prime}}
+ = AB + AB^{\prime}
 \end{align}
-Applying the distributive law:
+Also, 
 \begin{align}
-A = AB + AB^{\prime}
+\brak{AB}\brak{AB^{\prime}} = 0
 \end{align}
-
-
-To apply the additive property of probability, we check the intersection of $AB$ and $AB^{\prime}$:
+From \eqref{eq:Prob_3},
 \begin{align}
-\brak{AB}\brak{AB^{\prime}} = A \cdot A \cdot B \cdot B^{\prime} = A \cdot \brak{BB^{\prime}}
-\end{align}
-\begin{align}
-=A \cdot \brak{0} 
-\end{align}
-\begin{align}
-\brak{AB}\brak{AB^{\prime}} = A \cdot 0 = 0
-\end{align}
-Thus, the events $AB$ and $AB^{\prime}$ are mutually exclusive. From \eqref{eq:Prob_3}
-\begin{align}
-P\brak{A} = P\brak{AB + AB^{\prime}} = P\brak{AB} + P\brak{AB^{\prime}}
+\pr{A} = \pr{AB + AB^{\prime}} = \pr{AB} + \pr{AB^{\prime}}
 \end{align}
 
 Rearranging, we get:
 \begin{align}
 {P\brak{AB^{\prime}} = P\brak{A} - P\brak{AB}}
 \end{align}
-\end{itemize}
 
 \item Laplace transform
 \begin{itemize}
