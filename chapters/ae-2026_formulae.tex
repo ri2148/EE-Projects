@@ -68,37 +68,32 @@ g''\brak{t} \system{L} s^2 G\brak{s} -sg\brak{0}-g'\brak{0} \label{eq:Laplace_2}
 	e^{at} g\brak{t} \system{L} G\brak{s-a} \label{eq:Laplace_3}
 \end{align}
 \solution
-By definition, the Laplace transform of a function $g\brak{t}$ is:
 \begin{align}
-g\brak{t}\ \system{L} \int_{0}^{\infty} e^{-st} g\brak{t} \, dt
+	\implies e^{at} g\brak{t} &\system{L} \int_{0}^{\infty} e^{-st} \brak{e^{at} g\brak{t}} dt
+	\\
+				  &= \int_{0}^{\infty} e^{-\brak{s - a}t} g\brak{t} \, dt
 \end{align}
+yielding
+\eqref{eq:Laplace_3}.
+\item The unit step function is defined as
 \begin{align}
-\implies e^{at} g\brak{t} \system{L} \int_{0}^{\infty} e^{-st} \brak{e^{at} g\brak{t}} dt
+	u(t) = 
+	\begin{cases}
+		1 & t > 0
+		\\
+		0 & t < 0
+	\end{cases}\label{eq:step-func}
 \end{align}
-
+\item 
 \begin{align}
-= \int_{0}^{\infty} e^{-\brak{s - a}x} g\brak{t} \, dt
+	u(t) \system{L} \frac{1}{s} \label{eq:Laplace_4.1}
 \end{align}
-
-
-Recall that $G\brak{s}$ is defined as:
+\item 
 \begin{align}
-G\brak{s} = \int_{0}^{\infty} e^{-st} g\brak{t} \, dt
-\end{align}
-Replacing $s$ with $\brak{s - a}$:
-\begin{align}
-F\brak{s - a} = \int_{0}^{\infty} e^{-\brak{s - a}x} g\brak{t} \, dt
-\end{align}
-Therefore:
-\begin{align}
-e^{at} g\brak{t} \system{L} G\brak{s-a}
+	tu(t) \system{L} \frac{1}{s^2} \label{eq:Laplace_4}
 \end{align}
 
 \begin{itemize}
-\item Laplace transform on $x$:
-\begin{align}
-	x \system{L} \frac{1}{s^2} \label{eq:Laplace_4}
-\end{align}
 \solution
 \begin{align}
 x \system{L} \int_{0}^{\infty} x e^{-st} \, dt 
