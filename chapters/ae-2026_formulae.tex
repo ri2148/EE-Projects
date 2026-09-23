@@ -38,98 +38,77 @@ Rearranging, we get:
 {P\brak{AB^{\prime}} = P\brak{A} - P\brak{AB}}
 \end{align}
 
-\item Laplace transform
-\begin{itemize}
-\item Laplace transform on $g'\brak{t}$ - Using the definition of the Laplace transform: 
+\item The Laplace transform is defined as
+\begin{align}
+g\brak{t} \system{L} G(s) = \int_{0}^{\infty} e^{-st} g\brak{t} \, dt
+\end{align}
+\item \begin{align}
+g'\brak{t} \system{L}s G\brak{s}-g\brak{0} \label{eq:Laplace_1}
+\end{align}
+\solution 
 \begin{align}
 g'\brak{t} \system{L} \int_{0}^{\infty} e^{-st} g'\brak{t} \, dt
 \end{align}
-
-Applying integration by parts with:
+Applying integration by parts, 
 \begin{align}
-u = e^{-st}, dv = g'\brak{t} \, dt 
+	u &= e^{-st}, dv = g'\brak{t} \, dt 
+\\
+\implies \int_{0}^{\infty} e^{-st} g'\brak{t} \, dt
+	  &=
+ \left[ e^{-st} g\brak{t} \right]_{0}^{\infty} - \int_{0}^{\infty} \brak{-s e^{-st}} g\brak{t} \, dt \\
+	  &=   - g\brak{0}  + s \int_{0}^{\infty} e^{-st} g\brak{t} \, dt 
 \end{align}
+yielding \eqref{eq:Laplace_1}.
+\item 
 \begin{align}
-g'\brak{t} \system{L} \left[ e^{-st} g\brak{t} \right]_{0}^{\infty} - \int_{0}^{\infty} \brak{-s e^{-st}} g\brak{t} \, dt \\
-= \left( \lim_{t \to \infty} e^{-st} g\brak{t} - g\brak{0} \right) + s \int_{0}^{\infty} e^{-st} g\brak{t} \, dt 
+g''\brak{t} \system{L} s^2 G\brak{s} -sg\brak{0}-g'\brak{0} \label{eq:Laplace_2}
 \end{align}
+\item 
 \begin{align}
-0 - g\brak{0} + s G\brak{s}
-\end{align}
-\begin{align}
-\implies g'\brak{t} \system{L}s G\brak{s}-g\brak{0} \label{eq:Laplace_1}
-\end{align}
-\item Laplace transform on $g''\brak{t}$ - Using the definition for $g''\brak{t}$:
-\begin{align}
-g''\brak{t} \system{L} \int_{0}^{\infty} e^{-st} g''\brak{t} \, dt
-\end{align}
-
-Applying integration by parts with:
-\begin{align}
-u = e^{-st}, dv = g''\brak{t} \, dt 
-\end{align}
-\begin{align}
-g''\brak{t} \system{L} \left[ e^{-st} g'\brak{t} \right]_{0}^{\infty} - \int_{0}^{\infty} \brak{-s e^{-st}} g'\brak{t} \, dt \\
-= \left( \lim_{t \to \infty} e^{-st} g'\brak{t} - g'\brak{0} \right) + s \int_{0}^{\infty} e^{-st} g'\brak{t} \, dt
-\end{align}
-
-From \eqref{eq:Laplace_1}, we have:
-\begin{align} 
-\mathcal{L}\{g''\brak{t}\} = 0 - g'\brak{0} + s \brak{s G\brak{s}-g\brak{0}}
-\end{align}
-\begin{align}
-\implies g''\brak{t} \system{L} s^2 G\brak{s} -sg\brak{0}-g'\brak{0} \label{eq:Laplace_2}
-\end{align}
-
-\item The First Frequency Shift Theorem - It states that if :
-\begin{align}
- f(x) \system{L} F\brak{s} 
-\end{align}
-Then,
-\begin{align}
-	e^{ax} f\brak{x} \system{L} F\brak{s-a} \label{eq:Laplace_3}
+	e^{at} g\brak{t} \system{L} G\brak{s-a} \label{eq:Laplace_3}
 \end{align}
 \solution
-By definition, the Laplace transform of a function $g\brak{x}$ is:
+By definition, the Laplace transform of a function $g\brak{t}$ is:
 \begin{align}
-g\brak{x}\ \system{L} \int_{0}^{\infty} e^{-sx} g\brak{x} \, dx
+g\brak{t}\ \system{L} \int_{0}^{\infty} e^{-st} g\brak{t} \, dt
 \end{align}
 \begin{align}
-\implies e^{ax} f\brak{x} \system{L} \int_{0}^{\infty} e^{-sx} \brak{e^{ax} f\brak{x}} dx
+\implies e^{at} g\brak{t} \system{L} \int_{0}^{\infty} e^{-st} \brak{e^{at} g\brak{t}} dt
 \end{align}
 
 \begin{align}
-= \int_{0}^{\infty} e^{-\brak{s - a}x} f\brak{x} \, dx
+= \int_{0}^{\infty} e^{-\brak{s - a}x} g\brak{t} \, dt
 \end{align}
 
 
-Recall that $F\brak{s}$ is defined as:
+Recall that $G\brak{s}$ is defined as:
 \begin{align}
-F\brak{s} = \int_{0}^{\infty} e^{-sx} f\brak{x} \, dx
+G\brak{s} = \int_{0}^{\infty} e^{-st} g\brak{t} \, dt
 \end{align}
 Replacing $s$ with $\brak{s - a}$:
 \begin{align}
-F\brak{s - a} = \int_{0}^{\infty} e^{-\brak{s - a}x} f\brak{x} \, dx
+F\brak{s - a} = \int_{0}^{\infty} e^{-\brak{s - a}x} g\brak{t} \, dt
 \end{align}
 Therefore:
 \begin{align}
-e^{ax} f\brak{x} \system{L} F\brak{s-a}
+e^{at} g\brak{t} \system{L} G\brak{s-a}
 \end{align}
 
+\begin{itemize}
 \item Laplace transform on $x$:
 \begin{align}
 	x \system{L} \frac{1}{s^2} \label{eq:Laplace_4}
 \end{align}
 \solution
 \begin{align}
-x \system{L} \int_{0}^{\infty} x e^{-sx} \, dx 
+x \system{L} \int_{0}^{\infty} x e^{-st} \, dt 
 \end{align}
 \begin{align}
-= \brak{-\frac{x}{s}e^{-sx}}_{0}^{\infty} + \frac{1}{s}\int_{0}^{\infty} e^{-sx} \, dx 
+= \brak{-\frac{x}{s}e^{-st}}_{0}^{\infty} + \frac{1}{s}\int_{0}^{\infty} e^{-st} \, dt 
 \end{align}
 Here, we assume $\operatorname{re}\brak{s}>0$
 \begin{align}
-= 0 + \frac{1}{s}\brak{-\frac{1}{s}e^{-sx}}_{0}^{\infty} = \frac{1}{s^2} 
+= 0 + \frac{1}{s}\brak{-\frac{1}{s}e^{-st}}_{0}^{\infty} = \frac{1}{s^2} 
 \end{align}
 \begin{align}
 \implies x \system{L} \frac{1}{s^2} 
@@ -137,7 +116,7 @@ Here, we assume $\operatorname{re}\brak{s}>0$
 
 \item Laplace transform of the cosine and sine functions
 \begin{align}
-e^{\j ax} \system{L} \int_{0}^{\infty} e^{-sx} e^{\j ax} \, dx = \int_{0}^{\infty} e^{-(s-\j a)x} \, dx 
+e^{\j at} \system{L} \int_{0}^{\infty} e^{-st} e^{\j at} \, dt = \int_{0}^{\infty} e^{-(s-\j a)x} \, dt 
 \end{align}
 \begin{align}
 &= \brak{-\frac{e^{-(s-\j a)x}}{s-\j a}}_{0}^{\infty} = \frac{1}{s-\j a} \brak{\text{Note that here $\operatorname{re}\brak{s}>a$}} \\
