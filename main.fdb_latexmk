@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex main.idx"] 1789662405.32565 "main.idx" "main.ind" "main" 1790143786.68449 0
-  "main.idx" 1790143782 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main.idx"] 1789662405.32565 "main.idx" "main.ind" "main" 1790231802.35562 0
+  "main.idx" 1790231798 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1790143779.65518 "main.tex" "main.pdf" "main" 1790143786.68514 0
+["pdflatex"] 1790231795.53696 "main.tex" "main.pdf" "main" 1790231802.35658 0
   "/data/data/com.termux/files/usr/share/texlive/2026.0/texmf-dist/web2c/texmf.cnf" 1773808578 43838 788b409ca7f6d70214933fbc221adf76 ""
   "/data/data/com.termux/files/usr/share/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/data/data/com.termux/files/usr/share/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -317,7 +317,7 @@
   "/data/data/com.termux/files/usr/share/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1777904363 5573092 dde630300984a90ef415ac975d126ae6 ""
   "/data/data/com.termux/files/usr/share/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1777904360 3648643 fdf108452feb6e7eb41d3118e18221a0 ""
   "chapters/ae-2026.tex" 1789971565 23588 e07ba26519ff476220264289dd1144b2 ""
-  "chapters/ae-2026_formulae.tex" 1790143768 19377 e1e1051a7a323819fc8a09c410da301e ""
+  "chapters/ae-2026_formulae.tex" 1790231785 19108 a8964eb0d9e42f255b72645edcb5cce7 ""
   "figs/Circle.png" 1789620820 59379 6d4576df150848bd771ece3531958841 ""
   "figs/Circle.tex" 1789620820 2055 3581aee755b03583170acf9717507e1d ""
   "figs/Eigenvectors.png" 1789620820 30383 0c4a4a5853d84ba90a98013ce0f29cee ""
@@ -335,11 +335,11 @@
   "figs/spring_deriv.tex" 1789620820 533 1dadcc5192d3f0debe32cc14bd1ce0d0 ""
   "gvv-book.sty" 1787130938 2364 972c828b0fdb5c1b2ef6ab44859ce8d3 ""
   "gvv.sty" 1787130938 4374 e0265f3cc8fb087d2434efb730c546e4 ""
-  "main.aux" 1790143786 7222 2c3a9ded7a724fa49f50afe690bf814c "pdflatex"
+  "main.aux" 1790231802 7220 c061ec8902a34cf9504d0148bfe01462 "pdflatex"
   "main.ind" 1788154310 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.out" 1790143786 303 4d3b30d4ac28d882cd32a064f1ec2a5c "pdflatex"
+  "main.out" 1790231802 303 4d3b30d4ac28d882cd32a064f1ec2a5c "pdflatex"
   "main.tex" 1789971565 8596 2dc9f98868e40702ce2e43b037d0a95e ""
-  "main.toc" 1790143786 217 2ea0b4516934d260d4ae65b10ad6cb30 "pdflatex"
+  "main.toc" 1790231802 217 4b16af3313336dfb925cd05b30f649a8 "pdflatex"
   (generated)
   "main.aux"
   "main.idx"

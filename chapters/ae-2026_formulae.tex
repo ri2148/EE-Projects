@@ -43,17 +43,19 @@ Rearranging, we get:
 g\brak{t} \system{L} G(s) = \int_{0}^{\infty} e^{-st} g\brak{t} \, dt
 \end{align}
 \item \begin{align}
-g'\brak{t} \system{L}s G\brak{s}-g\brak{0} \label{eq:Laplace_1}
+g^{\prime}\brak{t} \system{L}s G\brak{s}-g\brak{0} \label{eq:Laplace_1}
 \end{align}
 \solution 
+\iffalse
 \begin{align}
-g'\brak{t} \system{L} \int_{0}^{\infty} e^{-st} g'\brak{t} \, dt
+g^{\prime}\brak{t} \system{L} \int_{0}^{\infty} e^{-st} g^{\prime}\brak{t} \, dt
 \end{align}
+\fi
 Applying integration by parts, 
 \begin{align}
-	u &= e^{-st}, dv = g'\brak{t} \, dt 
+	u &= e^{-st}, dv = g^{\prime}\brak{t} \, dt 
 \\
-\implies \int_{0}^{\infty} e^{-st} g'\brak{t} \, dt
+\implies \int_{0}^{\infty} e^{-st} g^{\prime}\brak{t} \, dt
 	  &=
  \left[ e^{-st} g\brak{t} \right]_{0}^{\infty} - \int_{0}^{\infty} \brak{-s e^{-st}} g\brak{t} \, dt \\
 	  &=   - g\brak{0}  + s \int_{0}^{\infty} e^{-st} g\brak{t} \, dt 
@@ -61,7 +63,7 @@ Applying integration by parts,
 yielding \eqref{eq:Laplace_1}.
 \item 
 \begin{align}
-g''\brak{t} \system{L} s^2 G\brak{s} -sg\brak{0}-g'\brak{0} \label{eq:Laplace_2}
+g^{\prime \prime}\brak{t} \system{L} s^2 G\brak{s} -sg\brak{0}-g^{\prime}\brak{0} \label{eq:Laplace_2}
 \end{align}
 \item 
 \begin{align}
@@ -88,58 +90,51 @@ yielding
 \begin{align}
 	u(t) \system{L} \frac{1}{s} \label{eq:Laplace_4.1}
 \end{align}
+\solution
+\begin{align}
+ \int_{0}^{\infty}  e^{-st} \, dt 
+ = \brak{-\frac{e^{-st}}{s}}_{0}^{\infty}  = \frac{1}{s} \quad \Re\brak{s} > 0
+\label{eq:Laplace_4.1-step}
+\end{align}
 \item 
 \begin{align}
 	tu(t) \system{L} \frac{1}{s^2} \label{eq:Laplace_4}
 \end{align}
-
-\begin{itemize}
+\solution Differentiating
+\eqref{eq:Laplace_4.1-step}
+with respect to $s$ results in 
+\eqref{eq:Laplace_4}.
+\begin{align}
+\begin{split}
+	\cos(at) u(t)\system{L} \frac{s}{s^2 + a^2} 
+	\\
+	\sin(at) u(t)\system{L} \frac{a}{s^2 + a^2}  
+\end{split}
+\quad 
+\Re\brak{s}>a 
+\label{eq:Laplace_5}
+\end{align}
 \solution
+From \eqref{eq:Laplace_3} and \eqref{eq:Laplace_4.1},
 \begin{align}
-x \system{L} \int_{0}^{\infty} x e^{-st} \, dt 
+	e^{\j at} u(t)&\system{L}  \frac{1}{s-\j a}, \quad  \Re\brak{s}>a \\
+	\implies {\cos(at)u(t) + \j\sin(at)u(t)} &\system{L}
+	\frac{s + \j a}{(s - \j a)(s + \j a)} 
+						 \\
+						 &= \frac{s}{s^2 + a^2} + \j \frac{a}{s^2 + a^2}
 \end{align}
-\begin{align}
-= \brak{-\frac{x}{s}e^{-st}}_{0}^{\infty} + \frac{1}{s}\int_{0}^{\infty} e^{-st} \, dt 
-\end{align}
-Here, we assume $\operatorname{re}\brak{s}>0$
-\begin{align}
-= 0 + \frac{1}{s}\brak{-\frac{1}{s}e^{-st}}_{0}^{\infty} = \frac{1}{s^2} 
-\end{align}
-\begin{align}
-\implies x \system{L} \frac{1}{s^2} 
-\end{align}
-
-\item Laplace transform of the cosine and sine functions
-\begin{align}
-e^{\j at} \system{L} \int_{0}^{\infty} e^{-st} e^{\j at} \, dt = \int_{0}^{\infty} e^{-(s-\j a)x} \, dt 
-\end{align}
-\begin{align}
-&= \brak{-\frac{e^{-(s-\j a)x}}{s-\j a}}_{0}^{\infty} = \frac{1}{s-\j a} \brak{\text{Note that here $\operatorname{re}\brak{s}>a$}} \\
-&= \frac{s + \j a}{(s - \j a)(s + \j a)} = \frac{s}{s^2 + a^2} + \j \frac{a}{s^2 + a^2}
-\end{align}
-We know that:
-\begin{align}
-\mathcal{L}\brak{\cos(ax) + \j\sin(ax)} = \mathcal{L}\brak{\cos(ax)} + \j \mathcal{L}\brak{\sin(ax)}:
-\end{align}
-Equating the real and imaginary parts, we get:
-\begin{align}
-	\cos(ax) \system{L} \frac{s}{s^2 + a^2} \label{eq:Laplace_5}
-\end{align}
-\begin{align}
-	\sin(ax) \system{L} \frac{a}{s^2 + a^2}  \label{eq:Laplace_6}
-\end{align}
-
+resulting in \eqref{eq:Laplace_5}.
 \item Solving a differential equation of the form:
 \begin{align}
 	\frac{d^2 y}{d x^2}= -\alpha^2 y, \alpha \neq 0
 \end{align}
 Applying the Laplace transform on both sides, and using \eqref{eq:Laplace_2}, we get:
 \begin{align}
-	s^2G(s)-sy(0)-y'(0)=-\alpha^2 G(s)
+	s^2G(s)-sy(0)-y^{\prime}(0)=-\alpha^2 G(s)
 \end{align}
 Consider: 
 \begin{align}
-y\brak{0} = \beta, y'\brak{0} = \gamma
+y\brak{0} = \beta, y^{\prime}\brak{0} = \gamma
 \end{align}
 Rearranging, we get:
 \begin{align}
@@ -148,11 +143,10 @@ G(s)=\frac{s\beta + \gamma}{s^2 + \alpha^2}
 \begin{align}
 G(s)=\frac{s\beta}{s^2 + \alpha^2}+\frac{\gamma}{s^2 + \alpha^2}
 \end{align}
-From results \eqref{eq:Laplace_5} and \eqref{eq:Laplace_6}, we get:
+From results \eqref{eq:Laplace_5}, we get:
 \begin{align}
 	G(s)=\beta cos(\alpha x) + \frac{\gamma}{\alpha}sin(\alpha x) \label{eq:Laplace_7}
 \end{align}
-\end{itemize}
 \item Euler's Method of Forward Differences
 \begin{itemize}
 	\item First Forward Difference - Consider a differential equation:
@@ -179,21 +173,21 @@ Consider the above diagram, the equation of line is:
 \begin{align}
 y_1=y_0+mh
 \end{align}
-Here, $h$ is the step size(or small increment in $x$). Generalising the above result, we get the derivative $y'_n$:
+Here, $h$ is the step size(or small increment in $x$). Generalising the above result, we get the derivative $y^{\prime}_n$:
 \begin{align}
-	y'_n=\frac{y_{n+1}-y_n}{h} \label{eq:ED_1}
+	y^{\prime}_n=\frac{y_{n+1}-y_n}{h} \label{eq:ED_1}
 \end{align}
 \item Second Forward Difference - Differentiating the equation \eqref{eq:ED_1}, we obtain:
 \begin{align}
-	y_n''=\frac{y_{n+1}'-y_n'}{h}
+	y_n^{\prime \prime}=\frac{y_{n+1}^{\prime}-y_n^{\prime}}{h}
 \end{align}
 		From equation \eqref{eq:ED_1}, we obtain:
 		\begin{align}
-			y_{n+1}'=\frac{y_{n+2}-y_{n+1}}{h} &, y_n'=\frac{y_{n+1}-y_n}{h}
+			y_{n+1}^{\prime}=\frac{y_{n+2}-y_{n+1}}{h} &, y_n^{\prime}=\frac{y_{n+1}-y_n}{h}
 		\end{align}
 Substituting, we get: 
 \begin{align}
-	y_n''=\frac{y_{n+2}-2y_{n+1}+y_n}{h^2} \label{eq:ED_2}
+	y_n^{\prime \prime}=\frac{y_{n+2}-2y_{n+1}+y_n}{h^2} \label{eq:ED_2}
 \end{align}
 
 
