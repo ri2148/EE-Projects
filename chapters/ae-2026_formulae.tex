@@ -124,35 +124,47 @@ From \eqref{eq:Laplace_3} and \eqref{eq:Laplace_4.1},
 						 &= \frac{s}{s^2 + a^2} + \j \frac{a}{s^2 + a^2}
 \end{align}
 resulting in \eqref{eq:Laplace_5}.
-\item Solving a differential equation of the form:
+\item Solve 
 \begin{align}
 	\frac{d^2 y}{d x^2}= -\alpha^2 y, \alpha \neq 0
+\label{eq:Laplace_5-diff}
 \end{align}
-Applying the Laplace transform on both sides, and using \eqref{eq:Laplace_2}, we get:
+\solution 
+Applying the Laplace transform on both sides, and using \eqref{eq:Laplace_2},
 \begin{align}
-	s^2G(s)-sy(0)-y^{\prime}(0)=-\alpha^2 G(s)
+	s^2Y(s)-sy(0)-y^{\prime}(0)=-\alpha^2 Y(s)
+\label{eq:Laplace_5-diff-1}
 \end{align}
-Consider: 
+Substituting
 \begin{align}
 y\brak{0} = \beta, y^{\prime}\brak{0} = \gamma
 \end{align}
-Rearranging, we get:
+in \eqref{eq:Laplace_5-diff-1},
 \begin{align}
-G(s)=\frac{s\beta + \gamma}{s^2 + \alpha^2}
+	Y(s)&=\frac{s\beta + \gamma}{s^2 + \alpha^2}
+\\
+	    &=\frac{s\beta}{s^2 + \alpha^2}+\frac{\gamma}{s^2 + \alpha^2}
 \end{align}
+yielding
 \begin{align}
-G(s)=\frac{s\beta}{s^2 + \alpha^2}+\frac{\gamma}{s^2 + \alpha^2}
+	y(t)=\beta \cos(\alpha t) + \frac{\gamma}{\alpha}\sin(\alpha t) \label{eq:Laplace_7}
 \end{align}
-From results \eqref{eq:Laplace_5}, we get:
-\begin{align}
-	G(s)=\beta cos(\alpha x) + \frac{\gamma}{\alpha}sin(\alpha x) \label{eq:Laplace_7}
-\end{align}
-\item Euler's Method of Forward Differences
-\begin{itemize}
-	\item First Forward Difference - Consider a differential equation:
+from \eqref{eq:Laplace_5}.
+\item Euler's Method of Forward Differences.  Numerically solve 
 \begin{align}
 	\frac{dy}{dx}=f\brak{x,y}, y\brak{x_0}=y_0
 \end{align}
+\solution By definition,
+\begin{align}
+	\rabs{\frac{dy}{dx}}_{x = x_0}= \lim_{h \to 0}\frac{y(x_0+h)-y(x_0)}{h}
+\end{align}
+which can be expressed using the notation
+\begin{align}
+	y^{\prime}_0=\frac{y_{1}-y_0}{h} \label{eq:ED_1}
+\end{align}
+\iffalse
+\begin{itemize}
+	\item First Forward Difference - Consider a differential equation:
 The slope of the tangent $m$ at $\brak{x_0, y_0}$ is given by:
 \begin{align}
 m=f\brak{x_0,y_0}
@@ -177,54 +189,50 @@ Here, $h$ is the step size(or small increment in $x$). Generalising the above re
 \begin{align}
 	y^{\prime}_n=\frac{y_{n+1}-y_n}{h} \label{eq:ED_1}
 \end{align}
-\item Second Forward Difference - Differentiating the equation \eqref{eq:ED_1}, we obtain:
+\end{itemize}
+\fi
+%\item Second Forward Difference - Differentiating the equation \eqref{eq:ED_1}, we obtain:
+Similarly,
 \begin{align}
 	y_n^{\prime \prime}=\frac{y_{n+1}^{\prime}-y_n^{\prime}}{h}
 \end{align}
-		From equation \eqref{eq:ED_1}, we obtain:
+		From \eqref{eq:ED_1}, 
 		\begin{align}
-			y_{n+1}^{\prime}=\frac{y_{n+2}-y_{n+1}}{h} &, y_n^{\prime}=\frac{y_{n+1}-y_n}{h}
+			y_{n+1}^{\prime}=\frac{y_{n+2}-y_{n+1}}{h}, y_n^{\prime}=\frac{y_{n+1}-y_n}{h}
 		\end{align}
-Substituting, we get: 
+		yielding
 \begin{align}
 	y_n^{\prime \prime}=\frac{y_{n+2}-2y_{n+1}+y_n}{h^2} \label{eq:ED_2}
 \end{align}
+upon simplification.
 
-
-\end{itemize}
-\item The Fourier Series - Any continuous or piecewise-continuous periodic function can be expressed as an infinite sum of complex exponentials.
+\item The Fourier Series. Any continuous or piecewise-continuous periodic function can be expressed as an infinite sum of complex exponentials.
 \begin{align}
 x\brak{t} &= \sum_{k=-\infty}^{\infty} c_k e^{\j 2\pi k f_0 t} 
 \end{align}
-Multiply both sides by $e^{-\j 2\pi m f_0 t}$ (where $m$ is an integer) and integrate over the interval
-$\left[-\frac{1}{2f_0}, \frac{1}{2f_0}\right]$
+Obtain $c_k$ in terms of $x(t)$.
+\\
+\solution
 \begin{align}
 \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-\j 2\pi m f_0 t} \, dt
+&= \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} \brak{\sum_{k=-\infty}^{\infty} c_k e^{\j 2\pi k f_0 t}} e^{-\j 2\pi m f_0 t} \, dt 
+\\
+&=\sum_{k=-\infty}^{\infty} c_k \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} e^{\j 2\pi \brak{k - m} f_0 t} \, dt
 \end{align}
+Since
 \begin{align}
-= \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} \brak{\sum_{k=-\infty}^{\infty} c_k e^{\j 2\pi k f_0 t}} e^{-\j 2\pi m f_0 t} \, dt 
-\end{align}
-\begin{align}
-=\sum_{k=-\infty}^{\infty} c_k \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} e^{\j 2\pi \brak{k - m} f_0 t} \, dt
-\end{align}
-
-Using the orthogonality property over the period $T_0$
-\begin{align}
-\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} e^{\j 2\pi \brak{k - m} f_0 t} \, dt &= 
+\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} e^{\j 2\pi \brak{k - m} f_0 t} \, dt = 
 \begin{cases} 
 \frac{1}{f_0}, & k = m \\ 
 0, & k \neq m 
 \end{cases}
+,
+\\
+\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-\j 2\pi m f_0 t} \, dt = \frac{c_m}{f_0} 
+\\
+\implies	c_k = f_0 \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-\j 2\pi k f_0 t} \, dt \label{eq:Fourier_1}
 \end{align}
-
-Substituting this back into the sum isolates the term for $k = m$:
-\begin{align}
-\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-\j 2\pi m f_0 t} \, dt &= c_m \cdot \frac{1}{f_0} 
-\end{align}
-\begin{align}
-	c_k &= f_0 \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-\j 2\pi k f_0 t} \, dt \label{eq:Fourier_1}
-\end{align}
-
+%
 \item Matrices
 \begin{itemize}
 	\item Fundamental property: 

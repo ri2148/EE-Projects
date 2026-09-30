@@ -606,9 +606,6 @@ INPUT ./chapters/ae-2026_formulae.tex
 INPUT chapters/ae-2026_formulae.tex
 INPUT /data/data/com.termux/files/usr/share/texlive/2026/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
 INPUT /data/data/com.termux/files/usr/share/texlive/2026/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
-INPUT ./figs/Euler_deriv.tex
-INPUT ./figs/Euler_deriv.tex
-INPUT figs/Euler_deriv.tex
 INPUT ./figs/spring_deriv.tex
 INPUT ./figs/spring_deriv.tex
 INPUT figs/spring_deriv.tex
