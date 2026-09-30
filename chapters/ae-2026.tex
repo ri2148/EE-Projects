@@ -260,10 +260,9 @@ The following code simulates the result.
 \end{itemize}
 \item Finding the fourier coefficients for a square wave defined as- 
 \begin{align}
-u\brak{t} = \begin{cases} 
-1, & \text{if } t > 0\\
-\frac{1}{2}, & \text{if } t=0 \\
-0, & \text{if } t<0
+x\brak{t} = \begin{cases}
+1 & t \in (-1, 1) \\ 
+0 & \text{otherwise}	
 \end{cases} \label{eq:step_function}
 \end{align}
 Consider:
@@ -273,7 +272,7 @@ f_0 = \frac{1}{4}
 
 We will use the result \eqref{eq:Fourier_1}. Considering the interval $\brak{-\frac{1}{2f_0},\frac{1}{2f_0}}$
 \begin{align}
-c_k &= \frac{1}{4} \int_{-2}^{2} u\brak{t} e^{-j \frac{\pi k t}{2}} \, dt
+c_k &= \frac{1}{4} \int_{-2}^{2} x\brak{t} e^{-j \frac{\pi k t}{2}} \, dt
 \end{align}
 From \eqref{eq:step_function}, we have
 \begin{align}
@@ -547,13 +546,13 @@ Then:
 \begin{align}
 	y_1=0+0.01\brak{1}=0.01
 \end{align}
-Now, we continue this process until we find $y_{69}$ and $y_{70}$
+Now, we continue this process until we find $y_{70}$ and $y_{71}$
 \begin{align}
-	y_{69}=0.3483, y_{70}=0.3499
+	y_{70}=0.3483, y_{71}=0.3499
 \end{align}
 From \eqref{eq:ED_1}, we get:
 \begin{align}
-	y_{70}'=\frac{y_{70}-y_{69}}{h} \approx 0.145
+	y_{70}'=\frac{y_{71}-y_{70}}{h} \approx 0.145
 \end{align}
 The following code simulates the difference between the numerical and theoretical solutions.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
