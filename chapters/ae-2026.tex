@@ -1,7 +1,7 @@
 \begin{enumerate}[label=\thesubsection.\arabic*, ref=\thesubsection.\theenumi]
 	\item 
 How many 3-digit numbers can be formed using three distinct single digit prime numbers?
-\hfill (GATE~AE~2026)
+\hfill (AE~2026)
 \begin{enumerate}
 	\begin{multicols}{4}
     \item $64$
@@ -17,39 +17,34 @@ There are 4 single digit prime numbers: 2,3,5 and 7. The desired numbers are giv
  \end{align}
 \item
 In a group of students, 10 students like Mathematics, 12 students like English, 4 students like both Mathematics and English, and 6 students like neither Mathematics nor English. The number of students in the group is \underline{\hspace{1cm}}.
-\hfill (GATE~AE~2026)
+\hfill (AE~2026)
 \begin{enumerate}
+	\begin{multicols}{4}
     \item $18$
     \item $20$
     \item $24$
     \item $32$
+	\end{multicols}
 \end{enumerate} 
 \solution 
-Let $N$ be the total number of students in the group. If one student is chosen uniformly at random from the group, we define:
+Let $N$ be the total number of students in the group and
 \begin{itemize}
     \item $M$: The event that the student likes Mathematics.
     \item $E$: The event that the student likes English.
 \end{itemize}
-
-The respective probabilities are expressed as:
+The respective probabilities are expressed as
 \begin{align}
-P\brak{M} &= \frac{10}{N}, \quad P\brak{E} = \frac{12}{N}
+\pr{M} = \frac{10}{N}, \quad \pr{E} = \frac{12}{N},
+\pr{ME} = \frac{4}{N},
+\pr{\brak{M+E}^{\prime}} = \frac{6}{N} 
 \end{align}
-\begin{align}
-P\brak{ME} = \frac{4}{N} \quad \text{(student likes both)}
-\end{align}
-\begin{align}
-P\brak{\brak{M+E}^{\prime}} = \frac{6}{N} \quad \text{(student likes neither)}
-\end{align}
-
 From \eqref{eq:Prob_2}
 \begin{align}
-P\brak{M + E} + P\brak{\brak{M+E}^{\prime}} = 1
+\pr{M + E} + \pr{\brak{M+E}^{\prime}} = 1
 \end{align}
-
 From \eqref{eq:addition_theorem_probability}
 \begin{align}
-P\brak{M} + P\brak{E} - P\brak{ME} + P\brak{\brak{M+E}^{\prime}} = 1
+\pr{M} + \pr{E} - \pr{ME} + \pr{\brak{M+E}^{\prime}} = 1
 \end{align}
 
 Substitute the probabilities in terms of $N$:
@@ -67,7 +62,7 @@ Substitute the probabilities in terms of $N$:
 
 
 \item 
-Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_1=1\text{cm}$ and another with unknown radius $r_2$, such that both of them touch each other externally and also the square, find the value of $r_2$. Also describe how the figure in the problem can be constructed. \hfill (GATE~AE~2026)
+Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_1=1\text{cm}$ and another with unknown radius $r_2$, such that both of them touch each other externally and also the square, find the value of $r_2$. Also describe how the figure in the problem can be constructed. \hfill (AE~2026)
 \begin{figure}[H]
 \begin{center}
 \input{figs/Circle.tex}
@@ -134,12 +129,14 @@ The following code simulates the construction.
 
 \item Consider the contour $C$ shown in the figure below. For the vector $\vec{F} = \brak{x + 2y}\hat{e}_x + \brak{2x + 4y}\hat{e}_y$, the integral $\oint_{C} \vec{F} \cdot d\vec{l} = \underline{\hspace{2cm}}$.
 
-Here $d\vec{l}$ represents an infinitesimal length along the contour $C$.\hfill (GATE~AE~2026)
+Here $d\vec{l}$ represents an infinitesimal length along the contour $C$.\hfill (AE~2026)
 \begin{enumerate}
+	\begin{multicols}{4}
     \item $0$
     \item $2$
     \item $4$
     \item $6$
+    \end{multicols}
 \end{enumerate} 
 
 \begin{figure}[H]
@@ -239,7 +236,7 @@ The following code simulates the result.
     \caption{Visualising the Cancellation of Integrals}
     \label{fig:5}
 \end{figure}
-\item The Fourier series representation of a square wave is shown in the figure below. The fluctuations seen near $x = \pm 1$ are named after which one of the following scientists? \hfill(GATE~AE~2026)
+\item The Fourier series representation of a square wave is shown in the figure below. The fluctuations seen near $x = \pm 1$ are named after which one of the following scientists? \hfill(AE~2026)
 
 \begin{enumerate}
     \item Cauchy
@@ -300,7 +297,7 @@ The following code verifies the result.
 
 \end{enumerate}
 \item If a matrix can be written as $\vec{A} = \vec{uv^{\top}}$, where both $u$ and $v$ are $n$-dimensional real-valued non-zero column vectors, then the rank of the matrix $\vec{A}$ is? 
-\hfill (GATE~AE~2026)
+\hfill (AE~2026)
 
 \solution 
 We will solve the above problem with an example. Consider $3$-dimensional non-zero vectors:
@@ -343,7 +340,7 @@ The matrix is now in row echelon form with only $1$ non-zero row. Hence,
 \text{rank}\brak{\vec{A}} = 1
 \end{align}
 \item
-An $n \times n$ square matrix $\vec{A}$ satisfies $\vec{A^{\top}} = \vec{A^{-1}}$. The determinant of this matrix may take which of the following value(s)? \hfill (GATE~AE~2026)
+An $n \times n$ square matrix $\vec{A}$ satisfies $\vec{A^{\top}} = \vec{A^{-1}}$. The determinant of this matrix may take which of the following value(s)? \hfill (AE~2026)
 \begin{enumerate}
 	\item $1$
 	\item $-1$
@@ -430,7 +427,7 @@ From \ref{item:Hyperbola}, we can conclude that the trajectory of the satellite 
 \end{figure}
 
 \item
-For the matrix $\vec{A} = \myvec{ a & b \\ c & d }$, if the relation $a + b = c + d$ holds and $a, b, c, d \neq 0$, then which one of the following statements about $A$ is FALSE? \hfill (GATE~AE~2026)
+For the matrix $\vec{A} = \myvec{ a & b \\ c & d }$, if the relation $a + b = c + d$ holds and $a, b, c, d \neq 0$, then which one of the following statements about $A$ is FALSE? \hfill (AE~2026)
 \begin{enumerate}
     \item $\myvec{ 1 \\ 1 }$ is an eigenvector
     \item $\lambda = a + b$ is an eigenvalue
@@ -480,7 +477,7 @@ Consider the differential equation:
 	\frac{d^2 y}{dx^2} + 2\frac{dy}{dx} + y = 0 \label{eq:DE}
 \end{align}
 with initial conditions $\left.y\right|_{x=0} = 0$ and $\left.\frac{dy}{dx}\right|_{x=0} = 1$. Find the value of the slope $\frac{dy}{dx}$ at $x = \ln\brak{2}$ rounded off to three decimal places.
-\hfill (GATE~AE~2026) 
+\hfill (AE~2026) 
 
 \solution
 \begin{enumerate}
@@ -569,7 +566,7 @@ The following code simulates the difference between the numerical and theoretica
 \end{enumerate}
 
 \item 
-Find the minimum value of the function $f\brak{x} = \abs{x} + \abs{2x+3}$ for real $x$. \hfill (GATE~AE~2026)
+Find the minimum value of the function $f\brak{x} = \abs{x} + \abs{2x+3}$ for real $x$. \hfill (AE~2026)
 
 \solution 
 The critical points occur where the expressions inside the absolute values equal zero:
@@ -640,7 +637,7 @@ A bar, spring, and mass system is arranged in series.
     \item Mass: $M = 100\text{ kg}$
 \end{itemize}
 Find the natural frequency of free vibration $\omega_n$ in $\text{rad/s}$. Also solve the differential equation obtained to obtain the position, velocity and accelaration of the system.
-\hfill (GATE~AE~2026)
+\hfill (AE~2026)
 \begin{figure}[H]
 \begin{center}
 	\input{figs/Spring.tex}
