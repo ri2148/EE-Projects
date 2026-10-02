@@ -233,127 +233,62 @@ Since
 \implies	c_k = f_0 \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-\j 2\pi k f_0 t} \, dt \label{eq:Fourier_1}
 \end{align}
 %
-\item Matrices
-\begin{itemize}
-	\item Fundamental property: 
+	\item 
 	\begin{align}
 	\mydet{\vec{A^{\top}}} = \mydet{\vec{A}} \label{eq:Matrices_1} 
 	\end{align}
+\item 
+	\begin{align}
+	\mydet{\vec{AB}} = \mydet{\vec{A}}\mydet{\vec{B}} 
+	\end{align}
 \solution
-When expanding $\mydet{\vec{A}}$ along Row 1, you select entries across the top row and compute the determinants of their remaining submatrices. When expanding $\mydet{\vec{A^{\top}}}$ down Column 1, those exact same entries now sit vertically in the first column, and their corresponding submatrices are simply transposed.
-
-\begin{itemize}
-	\item Matrix $\vec{A}$ (Expand along Row 1):
-\begin{align}
-\mydet{\vec{A}} = 
-\myvec{
-\vec{a_{11}} & \vec{a_{12}} & \vec{a_{13}} \\
-a_{21} & a_{22} & a_{23} \\
-a_{31} & a_{32} & a_{33}
-}
-\end{align}
-
-\item Matrix $\vec{A^{\top}}$ (Expand down Column 1):
-\begin{align}
-\mydet{\vec{A^{\top}}} = 
-\myvec{
-\vec{a_{11}} & a_{21} & a_{31} \\
-\vec{a_{12}} & a_{22} & a_{32} \\
-\vec{a_{13}} & a_{23} & a_{33}
-}
-\end{align}
-\end{itemize}
-Submatrix Comparison for Entry $a_{12}$ - When selecting $a_{12}$:
-\begin{itemize}
-    \item In $\vec{}{A}$ (Row 1, Column 2 deletion):
-    \begin{align}
-    \vec{M_{12}} = \myvec{ a_{21} & a_{23} \\ a_{31} & a_{33} }
-    \end{align}
-
-    \item In $\vec{A^{\top}}$ (Row 2, Column 1 deletion):
-    \begin{align}
-    \vec{N_{21}} = \myvec{ a_{21} & a_{31} \\ a_{23} & a_{33} }
-    \end{align}
-\end{itemize}
-
-Notice that:
-\begin{align}
-\vec{N_{21}} = \brak{\vec{M_{12}}}^{\top}
-\end{align}
-Since:
-\begin{align}
-\mydet{\vec{M_{12}}} = \mydet{\brak{\vec{M_{12}}}^{\top}}
-\end{align}
-Every term in the expansion of $\mydet{\vec{A}}$ is identically equal to the corresponding term in $\mydet{\vec{A^{\top}}}$. 
-\item \mydet{\vec{AB}} = \mydet{\vec{A}}\mydet{\vec{B}} 
-
-\solution
-If $\vec{A}$ is invertible ($\mydet{\vec{A}} \neq 0$), it can be factored as a product of elementary matrices:
+If $\vec{A}$ is invertible 
 \begin{align}
 \vec{A} = \vec{E}_1 \vec{E}_2 \cdots \vec{E}_k
 \end{align}
-
-For any single elementary matrix $\vec{E}$, multiplying $\vec{E}\vec{B}$ applies a single elementary row operation to $\vec{B}$:
+where $\vec{E}_i$ are invertible matrices.
+For any single elementary matrix $\vec{E}$, it is easy to verify that  
 \begin{align}
-\mydet{\vec{E}\vec{B}} = \mydet{\vec{E}}\mydet{\vec{B}}
-\end{align}
-
-Applying this property iteratively to the product $\vec{A}\vec{B}$:
-\begin{align}
+	\mydet{\vec{E}\vec{B}} &= \mydet{\vec{E}}\mydet{\vec{B}}.
+\\
+\therefore
 \mydet{\vec{A}\vec{B}} &= \mydet{\vec{E}_1 \vec{E}_2 \cdots \vec{E}_k \vec{B}} \\
 &= \mydet{\vec{E}_1} \mydet{\vec{E}_2 \cdots \vec{E}_k \vec{B}} \\
 &= \mydet{\vec{E}_1} \mydet{\vec{E}_2} \cdots \mydet{\vec{E}_k} \mydet{\vec{B}}
+\label{eq:Matrices_1-AB} 
 \end{align}
-
-Setting $\vec{B}$ as the identity matrix $\vec{I}$ :
+For $\vec{B}=\vec{I}$, 
 \begin{align}
 \mydet{\vec{A}} = \mydet{\vec{E}_1} \mydet{\vec{E}_2} \cdots \mydet{\vec{E}_k}
 \end{align}
-
-Substituting $\mydet{\vec{A}}$ back into the expansion yields:
+which upon substituting in 
+\eqref{eq:Matrices_1-AB} 
+yields
 \begin{align}
 	\mydet{\vec{A}\vec{B}} = \mydet{\vec{A}}\mydet{\vec{B}} \label{eq:product_determinant}
 \end{align}
-
-\item Determinant of $\vec{A^{-1}}$, where $\vec{A}$ is an invertible square matrix
-\begin{align}\vec{A} 
-	\vec{A^{-1}}= \vec{I}
-\end{align}
-
-Taking the determinant of both sides:
-\begin{align}
-\mydet{\vec{A} \vec{A^{-1}}} = \mydet{\vec{I}}
-\end{align}
-From \eqref{eq:product_determinant}:
-\begin{align}
-\mydet{\vec{A}} \mydet{\vec{A}^{-1}} = 1
-\end{align}
-Dividing both sides by $\mydet{\vec{A}}$ yields:
+\item 
 \begin{align}
 \mydet{\vec{A^{-1}}} = \frac{1}{\mydet{\vec{A}}} \label{eq:Matrices_inverse}
 \end{align}
-
-\item A few relations on the eigenvalues of a matrix - 	Let $\lambda_1, \lambda_2, .... , \lambda_i$ be the eigenvalues of a matrix $\vec{A}$. Then, we have:
+\item Let $\lambda_1, \lambda_2, .... , \lambda_i$ be the eigenvalues of a matrix $\vec{A}$. Then, 
 \begin{align}
-	\sum_{i=1}^{n} \lambda_i = \text{Tr}\brak{\vec{A}} \label{eq:Matrices_2}
+	\sum_{i=1}^{n} \lambda_i &= \text{Tr}\brak{\vec{A}} \label{eq:Matrices_2}
+	\\
+	\prod_{i=1}^{n} \lambda_1 &= \mydet{\vec{A}} \label{eq:Matrices_3}
 \end{align}
+\item $\vec{A}$ and $\vec{A}^{\top}$ have the same eigenvalues.
+	\\
+	\solution From  \eqref{eq:Matrices_inverse},
 \begin{align}
-	\prod_{i=1}^{n} \lambda_1 = \mydet{\vec{A}} \label{eq:Matrices_3}
+\mydet{\vec{A} - \lambda \vec{I}}
+&=
+\mydet{\brak{\vec{A} - \lambda \vec{I}}^{\top}}
+\\
+&=
+\mydet{\vec{A}^{\top} - \lambda \vec{I}},
 \end{align}
-\item Eigenvalues of a square matrix $\vec{A}$ and its transpose $\vec{A}^{\top}$ - The characteristic polynomial of matrix $\vec{A}$ is defined as:
-\begin{align}
-p_{\vec{A}}\brak{\lambda} = \mydet{\vec{A} - \lambda \vec{I}}
-\end{align}
-
-From \eqref{eq:Matrices_1}:
-\begin{align}
-p_{\vec{A}}\brak{\lambda} &= \mydet{\brak{\vec{A} - \lambda \vec{I}}^\top} \\
-&= \mydet{\vec{A}^\top - \brak{\lambda \vec{I}}^\top} \\
-&= \mydet{\vec{A}^\top - \lambda \vec{I}} \\
-&= p_{\vec{A}^\top}\brak{\lambda} \label{eq:eigenvalues}
-\end{align}
-
-Since $\vec{A}$ and $\vec{A}^\top$ share the exact same characteristic polynomial, their eigenvalues are identical.
+completing the proof.
 \item Results on the conic sections
 \begin{enumerate}
 \item
@@ -456,7 +391,6 @@ From \eqref{eq:Matrices_3}, we have
 \begin{align}
 	\mydet{\vec{I+uv^{\top}}}=1+\vec{v^{\top}u}	\label{eq:mat_det_lemma}
 \end{align}
-\end{itemize}
 \item SHM
 \begin{itemize}
 \item Springs in series: For $ n$ springs with spring constants $k_1, k_2, ....., k_{n}$ connected in series under an applied tensile force $F$. - By Hooke's Law, the individual displacements are given by:
