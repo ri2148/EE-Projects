@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex main.idx"] 1789662405.32565 "main.idx" "main.ind" "main" 1790922373.00902 0
-  "main.idx" 1790922368.95586 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main.idx"] 1789662405.32565 "main.idx" "main.ind" "main" 1791006944.25839 0
+  "main.idx" 1791006940.15887 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1790922366.08849 "main.tex" "main.pdf" "main" 1790922373.00977 0
+["pdflatex"] 1791006936.81631 "main.tex" "main.pdf" "main" 1791006944.25916 0
   "/data/data/com.termux/files/usr/share/texlive/2026.0/texmf-dist/web2c/texmf.cnf" 1789653563 43838 788b409ca7f6d70214933fbc221adf76 ""
   "/data/data/com.termux/files/usr/share/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/data/data/com.termux/files/usr/share/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -318,8 +318,8 @@
   "/data/data/com.termux/files/usr/share/texlive/2026/texmf-dist/tex/latex/xpatch/xpatch.sty" 1585258158 8314 7803f78066c4f9d008405191a4b43073 ""
   "/data/data/com.termux/files/usr/share/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1777904363 5573092 dde630300984a90ef415ac975d126ae6 ""
   "/data/data/com.termux/files/usr/share/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1777904360 3648643 fdf108452feb6e7eb41d3118e18221a0 ""
-  "chapters/ae-2026.tex" 1790922356.96786 23394 9ed0d63c22424baae85edd547c380b44 ""
-  "chapters/ae-2026_formulae.tex" 1790919326.56786 16538 def95b78366441a7d66f5e154a444184 ""
+  "chapters/ae-2026.tex" 1791006926.78287 22436 e94d84cc1accb717979904c02eae20b1 ""
+  "chapters/ae-2026_formulae.tex" 1791006701.47887 17086 68b81110d0780e65c080cfe5760189f6 ""
   "figs/Circle.png" 1789620820.45637 59379 6d4576df150848bd771ece3531958841 ""
   "figs/Circle.tex" 1789620820.46037 2055 3581aee755b03583170acf9717507e1d ""
   "figs/Eigenvectors.png" 1789620820.47237 30383 0c4a4a5853d84ba90a98013ce0f29cee ""
@@ -336,11 +336,11 @@
   "figs/spring_deriv.tex" 1789620820.53637 533 1dadcc5192d3f0debe32cc14bd1ce0d0 ""
   "gvv-book.sty" 1790836244.99532 2363 72dd097fc960842e38a2d2c1f2d93726 ""
   "gvv.sty" 1790762033.38777 4434 bde4aa22cab0cf1e9425c3111a94b6d2 ""
-  "main.aux" 1790922372.77186 7120 b01cd4b840d029c86dca61d83c72bc67 "pdflatex"
+  "main.aux" 1791006943.99487 7538 116c27ae26036cfc8122b0c700f46cd6 "pdflatex"
   "main.ind" 1788154310.59606 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
-  "main.out" 1790922372.77586 303 4d3b30d4ac28d882cd32a064f1ec2a5c "pdflatex"
+  "main.out" 1791006943.99887 303 4d3b30d4ac28d882cd32a064f1ec2a5c "pdflatex"
   "main.tex" 1789971565.34592 8596 2dc9f98868e40702ce2e43b037d0a95e ""
-  "main.toc" 1790922372.77586 217 e1c40025a588d54e8674c6946a47ffbb "pdflatex"
+  "main.toc" 1791006943.99887 217 e1c40025a588d54e8674c6946a47ffbb "pdflatex"
   (generated)
   "main.aux"
   "main.idx"

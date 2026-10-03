@@ -37,84 +37,58 @@ The respective probabilities are expressed as
 \pr{M} = \frac{10}{N}, \quad \pr{E} = \frac{12}{N},
 \pr{ME} = \frac{4}{N},
 \pr{\brak{M+E}^{\prime}} = \frac{6}{N} 
+\label{eq:202-Prob_2-1}
 \end{align}
-From \eqref{eq:Prob_2}
+From \eqref{eq:202-Prob_2}
 \begin{align}
 \pr{M + E} + \pr{\brak{M+E}^{\prime}} = 1
 \end{align}
-From \eqref{eq:addition_theorem_probability}
+From \eqref{eq:202-addition_theorem_probability}
 \begin{align}
 \pr{M} + \pr{E} - \pr{ME} + \pr{\brak{M+E}^{\prime}} = 1
 \end{align}
-
-Substitute the probabilities in terms of $N$:
+Substituting from 
+\eqref{eq:202-Prob_2-1}
+in 
+the above, 
 \begin{align}
-\frac{10}{N} + \frac{12}{N} - \frac{4}{N} + \frac{6}{N} = 1
+	\frac{10}{N} + \frac{12}{N} - \frac{4}{N} + \frac{6}{N} &= 1
+\\
+	\implies N &= 24
 \end{align}
-
-\begin{align}
-\frac{10 + 12 - 4 + 6}{N} = 1
-\end{align}
-\begin{align}
-\frac{24}{N} = 1 \implies N = 24
-\end{align}
-
-
-
 \item 
 Given a square of side $s=4\text{cm}$ and two circles, one with known radius $r_1=1\text{cm}$ and another with unknown radius $r_2$, such that both of them touch each other externally and also the square, find the value of $r_2$. Also describe how the figure in the problem can be constructed. \hfill (AE~2026)
 \begin{figure}[H]
-\begin{center}
+	\centering
 \input{figs/Circle.tex}
-    \label{fig:2}
-\end{center}
+\caption{}
+    \label{fig:202-2}
 \end{figure}
 \solution
-\begin{enumerate}
-\item Solving for $r_2$ - Let the side of the square be $s$, radius of the first circle be $r_1$ and that of the unknown circle be $r_2$. Clearly from the figure:
-     \begin{align}
-	     WO_1+ O_1T+ TO_2 +O_2Y= \sqrt{2}s \label{eq:Circle}
-     \end{align}
-     We know that:
-     \begin{align}
-     WO_1= \sqrt{2}r_1,    O_1T = r_1, TO_2 = r_2 , O_2W = \sqrt{2}r_2. 
-     \end{align}
-     Substituting this in our result from \eqref{eq:Circle}, we get:
-     \begin{align}
-     r_2 = \frac{\sqrt{2}s - \brak{\sqrt{2} + 1}r_1}{\sqrt{2} + 1}.
+   In \figref{fig:202-2}, using
+			\eqref{eq:202-2D-basis} and
+			\eqref{eq:202-2D-one},
+\begin{align}
+\vec{W} = \vec{0}, \vec{X} = s\vec{e}_1, \vec{Y} = s\vec{1},\vec{V} = s\vec{e}_2,
+\vec{O}_1 = r_1\vec{1},
+\vec{O}_2 = \brak{s-r_2}\vec{1}
+			\label{eq:202-vecs}
+\end{align}
+Upon substituting from 
+			\eqref{eq:202-vecs}
+			\begin{align}
+				\norm{\vec{O}_2-\vec{O}_1} = \brak{s-r_1-r_2}\vec{1}=r_1+r_2  
+				\\
+				\implies \sqrt{2}\brak{s-r_1-r_2} = r_1+r_2  
+				\\
+     \implies r_2 = \frac{\sqrt{2}s - \brak{\sqrt{2} + 1}r_1}{\sqrt{2} + 1}.
      \end{align}  
-     Substituting the values of $s$ and $r_1$, we get:
+     Substituting the values of $s$ and $r_1$, 
      \begin{align}
 	     r_2 = \brak{7-4\sqrt{2}}\text{cm} 
      \end{align}
-\item General method for construction - Vertices of the square:
-\begin{align}
-\vec{W} = \myvec{0\\0}, \quad \vec{X} = \myvec{s\\0}, \quad \vec{Y} = \myvec{s\\s}, \quad \vec{V} = \myvec{0\\s}
-\end{align}
-Circle $C_1$ ($r_1$):
-\begin{align}
-\vec{O}_1 = \myvec{r_1\\r_1}, \quad \vec{P} = \myvec{0\\r_1}, \quad \vec{Q} = \myvec{r_1\\0}
-\end{align}
-Circle $C_2$ ($r_2$):
-\begin{align}
-\vec{O}_2 = \myvec{s-r_2\\s-r_2}, \quad \vec{S} = \myvec{s-r_2\\s}, \quad \vec{R} = \myvec{s\\s-r_2}
-\end{align}
-Line of centers and contact point $\vec{T}$:
-\begin{align}
-\vec{O}_2 - \vec{O}_1 = \myvec{s-r_2-r_1\\s-r_2-r_1} = (s-r_2-r_1)\myvec{1\\1} \label{eq:line}
-\end{align}
-Now, given that the circles are touching, we know that:
-\begin{align}
-\frac{O_1T}{O_2T} = \frac{r_1}{r_2}
-\end{align}
-\begin{align}
-\frac{O_1T}{O_1O_2} = \frac{r_1}{r_1+r_2} \label{eq:Circles_1}
-\end{align}
-Hence, using \eqref{eq:Circles_1} in \eqref{eq:line} gives us:
-\begin{align}
-\vec{T} = \vec{O}_1 + \frac{r_1}{r_1+r_2}(\vec{O}_2 - \vec{O}_1)
-\end{align}
-The following code simulates the construction.
+The following code 
+    generates \figref{fig:202-3}.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Circle.py}@*)
 \end{lstlisting}
@@ -122,11 +96,8 @@ The following code simulates the construction.
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Circle.png}
     \caption{Square with Tangent Circles}
-    \label{fig:3}
+    \label{fig:202-3}
 \end{figure}
-\end{enumerate}
-
-
 \item Consider the contour $C$ shown in the figure below. For the vector $\vec{F} = \brak{x + 2y}\hat{e}_x + \brak{2x + 4y}\hat{e}_y$, the integral $\oint_{C} \vec{F} \cdot d\vec{l} = \underline{\hspace{2cm}}$.
 
 Here $d\vec{l}$ represents an infinitesimal length along the contour $C$.\hfill (AE~2026)
@@ -143,7 +114,7 @@ Here $d\vec{l}$ represents an infinitesimal length along the contour $C$.\hfill 
 \begin{center}
 \input{figs/Line_Integral.tex}
    \caption{Contour C}
-    \label{fig:4}
+    \label{fig:202-4}
 \end{center}
 \end{figure}
 \solution
@@ -234,7 +205,7 @@ The following code simulates the result.
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Line_Integral.png}
     \caption{Visualising the Cancellation of Integrals}
-    \label{fig:5}
+    \label{fig:202-5}
 \end{figure}
 \item The Fourier series representation of a square wave is shown in the figure below. The fluctuations seen near $x = \pm 1$ are named after which one of the following scientists? \hfill(AE~2026)
 
@@ -248,7 +219,7 @@ The following code simulates the result.
     \centering
 	\input{figs/Fourier.tex}
     \caption{Fourier Square Wave Representation}
-    \label{fig:6}
+    \label{fig:202-6}
 \end{figure}
 \solution
 \begin{enumerate}
@@ -262,18 +233,18 @@ The following code simulates the result.
 x\brak{t} = \begin{cases}
 1 & t \in (-1, 1) \\ 
 0 & \text{otherwise}	
-\end{cases} \label{eq:step_function}
+\end{cases} \label{eq:202-step_function}
 \end{align}
 Consider:
 \begin{align}
 f_0 = \frac{1}{4}
 \end{align}
 
-We will use the result \eqref{eq:Fourier_1}. Considering the interval $\brak{-\frac{1}{2f_0},\frac{1}{2f_0}}$
+We will use the result \eqref{eq:202-Fourier_1}. Considering the interval $\brak{-\frac{1}{2f_0},\frac{1}{2f_0}}$
 \begin{align}
 c_k &= \frac{1}{4} \int_{-2}^{2} x\brak{t} e^{-j \frac{\pi k t}{2}} \, dt
 \end{align}
-From \eqref{eq:step_function}, we have
+From \eqref{eq:202-step_function}, we have
 \begin{align}
 c_k &= \frac{1}{4} \int_{-1}^{1} e^{-j \frac{\pi k t}{2}} \, dt
 \end{align}
@@ -292,7 +263,7 @@ The following code verifies the result.
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Fourier.png}
     \caption{Verification With Plot}
-    \label{fig:7}
+    \label{fig:202-7}
 \end{figure}
 
 \end{enumerate}
@@ -360,10 +331,10 @@ As the inverse exists, we know that
 
 Taking the determinant of both sides of the given matrix equation:
 \begin{align}
-	\mydet{\vec{A^{\top}}} = \mydet{\vec{A^{-1}}} \label{eq:transpose}
+	\mydet{\vec{A^{\top}}} = \mydet{\vec{A^{-1}}} \label{eq:202-transpose}
 \end{align}
 
-Substituting results \eqref{eq:Matrices_1} and \eqref{eq:Matrices_inverse} in \eqref{eq:transpose}, we get:
+Substituting results \eqref{eq:202-Matrices_1} and \eqref{eq:202-Matrices_inverse} in \eqref{eq:202-transpose}, we get:
 \begin{align}
 \mydet{\vec{A}} = \frac{1}{\mydet{\vec{A}}}
 \end{align}
@@ -401,16 +372,16 @@ We are given :
 \begin{align}
 	\vec{r}=\myvec{8000\\9000}, \vec{v}=\myvec{-6\\6}
 \end{align}
-From \eqref{eq:Gravitation_1}, Specific Angular Momentum $h_0$
+From \eqref{eq:202-Gravitation_1}, Specific Angular Momentum $h_0$
 \begin{align}
 = |8000\brak{6} - 9000\brak{-6}| = 102000 \text{ km}^2/\text{s}
 \end{align}
 
-From \eqref{eq:Gravitation_2}, eccentricity squared $e^2$
+From \eqref{eq:202-Gravitation_2}, eccentricity squared $e^2$
 \begin{align}
 = 1 + \frac{2\brak{2.898}\brak{102000}^2}{\brak{398600}^2} \approx 1 + 0.3795 = 1.3795
 \end{align}
-From \eqref{eq:Gravitation_3}, we have:
+From \eqref{eq:202-Gravitation_3}, we have:
 \begin{align}
 \mydet{\vec{V}}=1-1.3795=-0.3795
 \end{align}
@@ -423,7 +394,7 @@ From \ref{item:Hyperbola}, we can conclude that the trajectory of the satellite 
     \centering
     \includegraphics[width=1.0\linewidth]{figs/Satellite.png}
     \caption{Trajectory of the Satellite}
-    \label{fig:8}
+    \label{fig:202-8}
 \end{figure}
 
 \item
@@ -438,7 +409,7 @@ For the matrix $\vec{A} = \myvec{ a & b \\ c & d }$, if the relation $a + b = c 
 \solution 
 Given:
 \begin{align}
-a + b = c + d = k \label{eq:matrices_relation}
+a + b = c + d = k \label{eq:202-matrices_relation}
 \end{align}
 Writing this in vector form:
 \begin{align}
@@ -449,7 +420,7 @@ Writing this in vector form:
 
 $\implies \myvec{ 1 \\ 1 }$ is an eigenvector and $a + b$ is an eigenvalue.
 
-From \eqref{eq:matrices_relation}, 
+From \eqref{eq:202-matrices_relation}, 
 \begin{align}
 a - c = d - b = -\brak{b - d} = l
 \end{align}
@@ -458,7 +429,7 @@ Evaluating the matrix-vector multiplication:
 \begin{align}
 \myvec{ a & c \\ b & d } \myvec{ 1 \\ -1 } &= \myvec{ a - c \\ b - d } = \myvec{ l \\ -l } = l \myvec{ 1 \\ -1 }
 \end{align}
-From \eqref{eq:eigenvalues}, $\myvec{ 1 \\ -1 }$ is an eigenvector and $d - b$ is the $2^{\text{nd}}$ eigenvalue. The following code simulates the result by plotting the eigenvectors.
+From \eqref{eq:202-eigenvalues}, $\myvec{ 1 \\ -1 }$ is an eigenvector and $d - b$ is the $2^{\text{nd}}$ eigenvalue. The following code simulates the result by plotting the eigenvectors.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Eigenvectors.py}@*)
 \end{lstlisting}
@@ -466,7 +437,7 @@ From \eqref{eq:eigenvalues}, $\myvec{ 1 \\ -1 }$ is an eigenvector and $d - b$ i
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.60\linewidth]{figs/Eigenvectors.png}
-    \label{fig:9}
+    \label{fig:202-9}
 \end{figure}
 
 \item 
@@ -474,7 +445,7 @@ From \eqref{eq:eigenvalues}, $\myvec{ 1 \\ -1 }$ is an eigenvector and $d - b$ i
 
 Consider the differential equation:
 \begin{align}
-	\frac{d^2 y}{dx^2} + 2\frac{dy}{dx} + y = 0 \label{eq:DE}
+	\frac{d^2 y}{dx^2} + 2\frac{dy}{dx} + y = 0 \label{eq:202-DE}
 \end{align}
 with initial conditions $\left.y\right|_{x=0} = 0$ and $\left.\frac{dy}{dx}\right|_{x=0} = 1$. Find the value of the slope $\frac{dy}{dx}$ at $x = \ln\brak{2}$ rounded off to three decimal places.
 \hfill (AE~2026) 
@@ -485,12 +456,12 @@ with initial conditions $\left.y\right|_{x=0} = 0$ and $\left.\frac{dy}{dx}\righ
 \begin{align}
 y\brak{x} \system{L} Y(s)
 \end{align}
-Taking the Laplace transform on both sides of \eqref{eq:DE}
+Taking the Laplace transform on both sides of \eqref{eq:202-DE}
 \begin{align}
 \mathcal{L}\left\{\frac{d^2 y}{dx^2}\right\} + 2\mathcal{L}\left\{\frac{dy}{dx}\right\} + \mathcal{L}\{y\} = 0
 \end{align}
 
-From equations \eqref{eq:Laplace_1} and \eqref{eq:Laplace_2}:
+From equations \eqref{eq:202-Laplace_1} and \eqref{eq:202-Laplace_2}:
 \begin{align}
 \big[s^2 Y(s) - s y\brak{0} - y'\brak{0}\big] + 2\big[s Y(s) - y\brak{0}\big] + Y(s) = 0
 \end{align}
@@ -508,7 +479,7 @@ y\brak{0} = 0 , y'\brak{0} = 1
 \begin{align}
 Y(s) = \frac{1}{(s+1)^2}
 \end{align}
-Taking the inverse Laplace transform by applying the first frequency shift theorem(\eqref{eq:Laplace_3}) on \eqref{eq:Laplace_4} gives the solution $y\brak{x}$:
+Taking the inverse Laplace transform by applying the first frequency shift theorem(\eqref{eq:202-Laplace_3}) on \eqref{eq:202-Laplace_4} gives the solution $y\brak{x}$:
 \begin{align}
 y\brak{x} = x e^{-x}
 \end{align}
@@ -525,7 +496,7 @@ y'\brak{ln\brak{2}}= \brak{1 - \ln\brak{2}} e^{-\ln\brak{2}}
 = \frac{1 - \ln\brak{2}}{2} \approx \frac{1 - 0.693147}{2} \approx 0.153
 \end{align}
 
-\item Numerical Solution - Substituting equations \eqref{eq:ED_1} and \eqref{eq:ED_2} into our differential equation, we obtain:
+\item Numerical Solution - Substituting equations \eqref{eq:202-ED_1} and \eqref{eq:202-ED_2} into our differential equation, we obtain:
 \begin{align}
 \frac{y_{n+2} - 2y_{n+1} + y_n}{h^2} + 2 \left( \frac{y_{n+1} - y_n}{h} \right) + y_n = 0
 \end{align}
@@ -549,7 +520,7 @@ Now, we continue this process until we find $y_{70}$ and $y_{71}$
 \begin{align}
 	y_{70}=0.3483, y_{71}=0.3499
 \end{align}
-From \eqref{eq:ED_1}, we get:
+From \eqref{eq:202-ED_1}, we get:
 \begin{align}
 	y_{70}'=\frac{y_{71}-y_{70}}{h} \approx 0.145
 \end{align}
@@ -561,7 +532,7 @@ The following code simulates the difference between the numerical and theoretica
     \centering
     \includegraphics[width=0.60\linewidth]{figs/Euler.png}
     \caption{Theoretical Plot vs Plot obtained with Euler's Forward Difference Method}
-    \label{fig:13}
+    \label{fig:202-13}
 \end{figure}
 \end{enumerate}
 
@@ -626,7 +597,7 @@ The following code plots the function.
     \centering
     \includegraphics[width=0.75\linewidth]{figs/Modulus_function.png}
     \caption{Plot of the function}
-    \label{fig:10}
+    \label{fig:202-10}
 \end{figure}
 
 \item
@@ -642,7 +613,7 @@ Find the natural frequency of free vibration $\omega_n$ in $\text{rad/s}$. Also 
 \begin{center}
 	\input{figs/Spring.tex}
 \caption{Diagram of the system}
-\label{fig:11}
+\label{fig:202-11}
 \end{center}
 \end{figure}
 
@@ -657,7 +628,7 @@ k_{\text{bar}} = \frac{10^{-4} \times 200 \times 10^9}{0.1} = 2 \times 10^8 \tex
 \begin{align}
 k = 200 \text{ kN/mm} = 2 \times 10^8 \text{ N/m}
 \end{align}
-Substituting the values of $k$ and $k_{\text{eq}}$ in \eqref{eq:springs_series} gives us
+Substituting the values of $k$ and $k_{\text{eq}}$ in \eqref{eq:202-springs_series} gives us
 \begin{align}
 k_{\text{eq}} = \frac{k_{\text{bar}} \cdot k}{k_{\text{bar}} + k} = \frac{\brak{2 \times 10^8}\brak{2 \times 10^8}}{2 \times 10^8 + 2 \times 10^8} = 10^8 \text{ N/m}
 \end{align}
@@ -666,11 +637,11 @@ The natural frequency of free vibration is:
 \begin{align}
 \omega_n = \sqrt{\frac{k_{\text{eq}}}{M}} = \sqrt{\frac{10^8}{100}} = \sqrt{10^6} = 1000 \text{ rad/s}
 \end{align}
-Now, to find the position of the system as a function of time, from \eqref{eq:vertical_shm}, we have:
+Now, to find the position of the system as a function of time, from \eqref{eq:202-vertical_shm}, we have:
 \begin{align}
 \frac{d^2 x}{d t^2} = \frac{-k}{M}x = -w_n^2x
 \end{align}
-Let the initial displacement of the system be $x_0$ and inital velocity be $v_0$. From result \eqref{eq:Laplace_7}, we get:
+Let the initial displacement of the system be $x_0$ and inital velocity be $v_0$. From result \eqref{eq:202-Laplace_7}, we get:
 
 \begin{align}
 x(t) &= x_0 \cos(w_nt) + \frac{v_0}{w_n} \sin(w_nt)
@@ -695,7 +666,7 @@ The following code simulates the result.
     \centering
     \includegraphics[width=0.65\linewidth]{figs/Spring.png}
     \caption{Accelaration, Velocity and Position of the System}
-    \label{fig:12}
+    \label{fig:202-12}
 \end{figure}
 \end{enumerate}
 
