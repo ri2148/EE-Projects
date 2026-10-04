@@ -1,25 +1,25 @@
 \begin{enumerate}[label=\thesubsection.\arabic*, ref=\thesubsection.\theenumi]
 \item 
 \begin{align}
-\pr{M} + \pr{E} - \pr{ME} + \pr{M + E}^{\prime} = 1 \label{eq:202-addition_theorem_probability}
+\pr{M} + \pr{E} - \pr{ME} + \pr{M + E}^{\prime} = 1 \label{eq:EE26BTECH11202-addition_theorem_probability}
 \end{align}
 \item 
 \begin{align}
-	A + A^{\prime} &= 1, \quad AA^{\prime} = 0 \label{eq:202-Prob_1}
+	A + A^{\prime} &= 1, \quad AA^{\prime} = 0 \label{eq:EE26BTECH11202-Prob_1}
 	\\
 	\implies \pr{A + A^{\prime}} = \pr{1}&= 1  \quad \pr{AA^{\prime}} =\pr{0}= 0
-\label{eq:202-Prob_2}
+\label{eq:EE26BTECH11202-Prob_2}
 \end{align}
 \item 
 \begin{align}
-	\pr{A + A^{\prime}} = \pr{A} + \pr{A^{\prime}} \label{eq:202-Prob_3}
+	\pr{A + A^{\prime}} = \pr{A} + \pr{A^{\prime}} \label{eq:EE26BTECH11202-Prob_3}
 \end{align}
 \item Difference rule of probability
 	\begin{align}
 {\pr{AB^{\prime}} = \pr{A} - \pr{AB}}
 	\end{align}
 \solution
-From \eqref{eq:202-Prob_1}
+From \eqref{eq:EE26BTECH11202-Prob_1}
 \begin{align}
 A = A \cdot 1 = A\brak{B + B^{\prime}}
  = AB + AB^{\prime}
@@ -28,7 +28,7 @@ Also,
 \begin{align}
 \brak{AB}\brak{AB^{\prime}} = 0
 \end{align}
-From \eqref{eq:202-Prob_3},
+From \eqref{eq:EE26BTECH11202-Prob_3},
 \begin{align}
 \pr{A} = \pr{AB + AB^{\prime}} = \pr{AB} + \pr{AB^{\prime}}
 \end{align}
@@ -43,7 +43,7 @@ Rearranging, we get:
 g\brak{t} \system{L} G(s) = \int_{0}^{\infty} e^{-st} g\brak{t} \, dt
 \end{align}
 \item \begin{align}
-g^{\prime}\brak{t} \system{L}s G\brak{s}-g\brak{0} \label{eq:202-Laplace_1}
+g^{\prime}\brak{t} \system{L}s G\brak{s}-g\brak{0} \label{eq:EE26BTECH11202-Laplace_1}
 \end{align}
 \solution 
 \iffalse
@@ -60,14 +60,14 @@ Applying integration by parts,
  \left[ e^{-st} g\brak{t} \right]_{0}^{\infty} - \int_{0}^{\infty} \brak{-s e^{-st}} g\brak{t} \, dt \\
 	  &=   - g\brak{0}  + s \int_{0}^{\infty} e^{-st} g\brak{t} \, dt 
 \end{align}
-yielding \eqref{eq:202-Laplace_1}.
+yielding \eqref{eq:EE26BTECH11202-Laplace_1}.
 \item 
 \begin{align}
-g^{\prime \prime}\brak{t} \system{L} s^2 G\brak{s} -sg\brak{0}-g^{\prime}\brak{0} \label{eq:202-Laplace_2}
+g^{\prime \prime}\brak{t} \system{L} s^2 G\brak{s} -sg\brak{0}-g^{\prime}\brak{0} \label{eq:EE26BTECH11202-Laplace_2}
 \end{align}
 \item 
 \begin{align}
-	e^{at} g\brak{t} \system{L} G\brak{s-a} \label{eq:202-Laplace_3}
+	e^{at} g\brak{t} \system{L} G\brak{s-a} \label{eq:EE26BTECH11202-Laplace_3}
 \end{align}
 \solution
 \begin{align}
@@ -76,7 +76,7 @@ g^{\prime \prime}\brak{t} \system{L} s^2 G\brak{s} -sg\brak{0}-g^{\prime}\brak{0
 				  &= \int_{0}^{\infty} e^{-\brak{s - a}t} g\brak{t} \, dt
 \end{align}
 yielding
-\eqref{eq:202-Laplace_3}.
+\eqref{eq:EE26BTECH11202-Laplace_3}.
 \item The unit step function is defined as
 \begin{align}
 	u(t) = 
@@ -84,26 +84,26 @@ yielding
 		1 & t > 0
 		\\
 		0 & t < 0
-	\end{cases}\label{eq:202-step-func}
+	\end{cases}\label{eq:EE26BTECH11202-step-func}
 \end{align}
 \item 
 \begin{align}
-	u(t) \system{L} \frac{1}{s} \label{eq:202-Laplace_4.1}
+	u(t) \system{L} \frac{1}{s} \label{eq:EE26BTECH11202-Laplace_4.1}
 \end{align}
 \solution
 \begin{align}
  \int_{0}^{\infty}  e^{-st} \, dt 
  = \brak{-\frac{e^{-st}}{s}}_{0}^{\infty}  = \frac{1}{s} \quad \Re\brak{s} > 0
-\label{eq:202-Laplace_4.1-step}
+\label{eq:EE26BTECH11202-Laplace_4.1-step}
 \end{align}
 \item 
 \begin{align}
-	tu(t) \system{L} \frac{1}{s^2} \label{eq:202-Laplace_4}
+	tu(t) \system{L} \frac{1}{s^2} \label{eq:EE26BTECH11202-Laplace_4}
 \end{align}
 \solution Differentiating
-\eqref{eq:202-Laplace_4.1-step}
+\eqref{eq:EE26BTECH11202-Laplace_4.1-step}
 with respect to $s$ results in 
-\eqref{eq:202-Laplace_4}.
+\eqref{eq:EE26BTECH11202-Laplace_4}.
 \begin{align}
 \begin{split}
 	\cos(at) u(t)\system{L} \frac{s}{s^2 + a^2} 
@@ -112,10 +112,10 @@ with respect to $s$ results in
 \end{split}
 \quad 
 \Re\brak{s}>a 
-\label{eq:202-Laplace_5}
+\label{eq:EE26BTECH11202-Laplace_5}
 \end{align}
 \solution
-From \eqref{eq:202-Laplace_3} and \eqref{eq:202-Laplace_4.1},
+From \eqref{eq:EE26BTECH11202-Laplace_3} and \eqref{eq:EE26BTECH11202-Laplace_4.1},
 \begin{align}
 	e^{\j at} u(t)&\system{L}  \frac{1}{s-\j a}, \quad  \Re\brak{s}>a \\
 	\implies {\cos(at)u(t) + \j\sin(at)u(t)} &\system{L}
@@ -123,23 +123,23 @@ From \eqref{eq:202-Laplace_3} and \eqref{eq:202-Laplace_4.1},
 						 \\
 						 &= \frac{s}{s^2 + a^2} + \j \frac{a}{s^2 + a^2}
 \end{align}
-resulting in \eqref{eq:202-Laplace_5}.
+resulting in \eqref{eq:EE26BTECH11202-Laplace_5}.
 \item Solve 
 \begin{align}
 	\frac{d^2 y}{d x^2}= -\alpha^2 y, \alpha \neq 0
-\label{eq:202-Laplace_5-diff}
+\label{eq:EE26BTECH11202-Laplace_5-diff}
 \end{align}
 \solution 
-Applying the Laplace transform on both sides, and using \eqref{eq:202-Laplace_2},
+Applying the Laplace transform on both sides, and using \eqref{eq:EE26BTECH11202-Laplace_2},
 \begin{align}
 	s^2Y(s)-sy(0)-y^{\prime}(0)=-\alpha^2 Y(s)
-\label{eq:202-Laplace_5-diff-1}
+\label{eq:EE26BTECH11202-Laplace_5-diff-1}
 \end{align}
 Substituting
 \begin{align}
 y\brak{0} = \beta, y^{\prime}\brak{0} = \gamma
 \end{align}
-in \eqref{eq:202-Laplace_5-diff-1},
+in \eqref{eq:EE26BTECH11202-Laplace_5-diff-1},
 \begin{align}
 	Y(s)&=\frac{s\beta + \gamma}{s^2 + \alpha^2}
 \\
@@ -147,9 +147,9 @@ in \eqref{eq:202-Laplace_5-diff-1},
 \end{align}
 yielding
 \begin{align}
-	y(t)=\beta \cos(\alpha t) + \frac{\gamma}{\alpha}\sin(\alpha t) \label{eq:202-Laplace_7}
+	y(t)=\beta \cos(\alpha t) + \frac{\gamma}{\alpha}\sin(\alpha t) \label{eq:EE26BTECH11202-Laplace_7}
 \end{align}
-from \eqref{eq:202-Laplace_5}.
+from \eqref{eq:EE26BTECH11202-Laplace_5}.
 \item Euler's Method of Forward Differences.  Numerically solve 
 \begin{align}
 	\frac{dy}{dx}=f\brak{x,y}, y\brak{x_0}=y_0
@@ -160,7 +160,7 @@ from \eqref{eq:202-Laplace_5}.
 \end{align}
 which can be expressed using the notation
 \begin{align}
-	y^{\prime}_0=\frac{y_{1}-y_0}{h} \label{eq:202-ED_1}
+	y^{\prime}_0=\frac{y_{1}-y_0}{h} \label{eq:EE26BTECH11202-ED_1}
 \end{align}
 \iffalse
 \begin{itemize}
@@ -187,66 +187,121 @@ y_1=y_0+mh
 \end{align}
 Here, $h$ is the step size(or small increment in $x$). Generalising the above result, we get the derivative $y^{\prime}_n$:
 \begin{align}
-	y^{\prime}_n=\frac{y_{n+1}-y_n}{h} \label{eq:202-ED_1}
+	y^{\prime}_n=\frac{y_{n+1}-y_n}{h} \label{eq:EE26BTECH11202-ED_1}
 \end{align}
 \end{itemize}
 \fi
-%\item Second Forward Difference - Differentiating the equation \eqref{eq:202-ED_1}, we obtain:
+%\item Second Forward Difference - Differentiating the equation \eqref{eq:EE26BTECH11202-ED_1}, we obtain:
 Similarly,
 \begin{align}
 	y_n^{\prime \prime}=\frac{y_{n+1}^{\prime}-y_n^{\prime}}{h}
 \end{align}
-		From \eqref{eq:202-ED_1}, 
+		From \eqref{eq:EE26BTECH11202-ED_1}, 
 		\begin{align}
 			y_{n+1}^{\prime}=\frac{y_{n+2}-y_{n+1}}{h}, y_n^{\prime}=\frac{y_{n+1}-y_n}{h}
 		\end{align}
 		yielding
 \begin{align}
-	y_n^{\prime \prime}=\frac{y_{n+2}-2y_{n+1}+y_n}{h^2} \label{eq:202-ED_2}
+	y_n^{\prime \prime}=\frac{y_{n+2}-2y_{n+1}+y_n}{h^2} \label{eq:EE26BTECH11202-ED_2}
 \end{align}
 upon simplification.
 
-\item The Fourier Series. Any continuous or piecewise-continuous periodic function can be expressed as an infinite sum of complex exponentials.
+\item The Fourier Series. Let
 \begin{align}
-x\brak{t} &= \sum_{k=-\infty}^{\infty} c_k e^{\j 2\pi k f_0 t} 
+	x\brak{t} &= \sum_{k=-\infty}^{\infty} x_0(t)\brak{t-nT_0} 
 \end{align}
-Obtain $c_k$ in terms of $x(t)$.
+be a periodic signal
+with 
+\begin{align}
+	x\brak{t} &=  \begin{cases}
+		x_0\brak{t}, & t \in \brak{-\frac{T_0}{2},\frac{T_0}{2}}
+		\\
+		0 & \text{otherwise}
+\end{cases}
+.
+\end{align}
+  Then, 
+\begin{align}
+	x\brak{t} &= \sum_{k=-\infty}^{\infty} c_k e^{\j 2\pi k f_0 t} , \quad f_0 = \frac{1}{T_0}
+\end{align}
+Obtain $c_k$ in terms of $x_0(t)$.
 \\
 \solution
 \begin{align}
+	\begin{split}
 \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-\j 2\pi m f_0 t} \, dt
 &= \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} \brak{\sum_{k=-\infty}^{\infty} c_k e^{\j 2\pi k f_0 t}} e^{-\j 2\pi m f_0 t} \, dt 
 \\
 &=\sum_{k=-\infty}^{\infty} c_k \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} e^{\j 2\pi \brak{k - m} f_0 t} \, dt
-\end{align}
-Since
-\begin{align}
-\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} e^{\j 2\pi \brak{k - m} f_0 t} \, dt = 
+\\
+\because
+		\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} e^{\j 2\pi \brak{k - m} f_0 t} \, dt &= 
 \begin{cases} 
 \frac{1}{f_0}, & k = m \\ 
 0, & k \neq m 
 \end{cases}
 ,
+	\end{split}
 \\
-\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-\j 2\pi m f_0 t} \, dt = \frac{c_m}{f_0} 
+\begin{split}
+	\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x_0\brak{t} e^{-\j 2\pi m f_0 t} \, dt = \frac{c_m}{f_0} 
 \\
-\implies	c_k = f_0 \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-\j 2\pi k f_0 t} \, dt \label{eq:202-Fourier_1}
+	\implies	c_k = f_0 \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-\j 2\pi k f_0 t} \, dt \label{eq:EE26BTECH11202-Fourier_1}
+\end{split}
 \end{align}
 %
+\item Square Wave.  
+	Let
+\begin{align}
+\rect\brak{t} = \begin{cases}
+1 & t \in (-1, 1) \\ 
+0 & \text{otherwise}	
+\end{cases} \label{eq:EE26BTECH11202-step_function}
+\end{align}
+Consider:
+\begin{align}
+f_0 = \frac{1}{4}
+\end{align}
+
+We will use the result \eqref{eq:EE26BTECH11202-Fourier_1}. Considering the interval $\brak{-\frac{1}{2f_0},\frac{1}{2f_0}}$
+\begin{align}
+c_k &= \frac{1}{4} \int_{-2}^{2} x\brak{t} e^{-j \frac{\pi k t}{2}} \, dt
+\end{align}
+From \eqref{eq:EE26BTECH11202-step_function}, we have
+\begin{align}
+c_k &= \frac{1}{4} \int_{-1}^{1} e^{-j \frac{\pi k t}{2}} \, dt
+\end{align}
+\begin{align}
+c_k = 
+\begin{cases}
+    \frac{1}{4} \int_{-1}^{1} 1 \, dt = \frac{1}{2}, & k = 0 \\[12pt]
+    \frac{1}{4} \left[ \frac{e^{-j \frac{\pi k t}{2}}}{-j \frac{\pi k}{2}} \right]_{-1}^{1} = \frac{1}{2} \sinc\brak{\frac{\pi k}{2}}, & k \neq 0
+\end{cases}
+\end{align}
+The following code verifies the result.
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Fourier.py}@*)
+\end{lstlisting}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{figs/Fourier.png}
+    \caption{Verification With Plot}
+    \label{fig:EE26BTECH11202-7}
+\end{figure}
 	\item The standard 2-D basis vectors are defined as
 		\begin{align}
 			\vec{e}_1 = \myvec{1 \\ 0},
 			\vec{e}_2 = \myvec{0 \\ 1}.
-			\label{eq:202-2D-basis}
+			\label{eq:EE26BTECH11202-2D-basis}
 		\end{align}
 		Also, 
 		\begin{align}
 			\vec{1} = \myvec{1 \\ 1}
-			\label{eq:202-2D-one}
+			\label{eq:EE26BTECH11202-2D-one}
 		\end{align}
 	\item 
 	\begin{align}
-	\mydet{\vec{A^{\top}}} = \mydet{\vec{A}} \label{eq:202-Matrices_1} 
+	\mydet{\vec{A^{\top}}} = \mydet{\vec{A}} \label{eq:EE26BTECH11202-Matrices_1} 
 	\end{align}
 \item 
 	\begin{align}
@@ -266,31 +321,31 @@ For any single elementary matrix $\vec{E}$, it is easy to verify that
 \mydet{\vec{A}\vec{B}} &= \mydet{\vec{E}_1 \vec{E}_2 \cdots \vec{E}_k \vec{B}} \\
 &= \mydet{\vec{E}_1} \mydet{\vec{E}_2 \cdots \vec{E}_k \vec{B}} \\
 &= \mydet{\vec{E}_1} \mydet{\vec{E}_2} \cdots \mydet{\vec{E}_k} \mydet{\vec{B}}
-\label{eq:202-Matrices_1-AB} 
+\label{eq:EE26BTECH11202-Matrices_1-AB} 
 \end{align}
 For $\vec{B}=\vec{I}$, 
 \begin{align}
 \mydet{\vec{A}} = \mydet{\vec{E}_1} \mydet{\vec{E}_2} \cdots \mydet{\vec{E}_k}
 \end{align}
 which upon substituting in 
-\eqref{eq:202-Matrices_1-AB} 
+\eqref{eq:EE26BTECH11202-Matrices_1-AB} 
 yields
 \begin{align}
-	\mydet{\vec{A}\vec{B}} = \mydet{\vec{A}}\mydet{\vec{B}} \label{eq:202-product_determinant}
+	\mydet{\vec{A}\vec{B}} = \mydet{\vec{A}}\mydet{\vec{B}} \label{eq:EE26BTECH11202-product_determinant}
 \end{align}
 \item 
 \begin{align}
-\mydet{\vec{A^{-1}}} = \frac{1}{\mydet{\vec{A}}} \label{eq:202-Matrices_inverse}
+\mydet{\vec{A^{-1}}} = \frac{1}{\mydet{\vec{A}}} \label{eq:EE26BTECH11202-Matrices_inverse}
 \end{align}
 \item Let $\lambda_1, \lambda_2, .... , \lambda_i$ be the eigenvalues of a matrix $\vec{A}$. Then, 
 \begin{align}
-	\sum_{i=1}^{n} \lambda_i &= \text{Tr}\brak{\vec{A}} \label{eq:202-Matrices_2}
+	\sum_{i=1}^{n} \lambda_i &= \text{Tr}\brak{\vec{A}} \label{eq:EE26BTECH11202-Matrices_2}
 	\\
-	\prod_{i=1}^{n} \lambda_1 &= \mydet{\vec{A}} \label{eq:202-Matrices_3}
+	\prod_{i=1}^{n} \lambda_1 &= \mydet{\vec{A}} \label{eq:EE26BTECH11202-Matrices_3}
 \end{align}
 \item $\vec{A}$ and $\vec{A}^{\top}$ have the same eigenvalues.
 	\\
-	\solution From  \eqref{eq:202-Matrices_inverse},
+	\solution From  \eqref{eq:EE26BTECH11202-Matrices_inverse},
 \begin{align}
 \mydet{\vec{A} - \lambda \vec{I}}
 &=
@@ -305,18 +360,18 @@ completing the proof.
 \item
 The equation of  a conic with directrix $\vec{n}^{\top}\vec{x} = c$, eccentricity $e$ and focus $\vec{F}$ is given by 
 \begin{align}
-    \label{eq:202-app-conic_quad_form}
+    \label{eq:EE26BTECH11202-app-conic_quad_form}
 	\text{g}\brak{\vec{x}} = \vec{x}^{\top}\vec{V}\vec{x}+2\vec{u}^{\top}\vec{x}+f=0
     \end{align}
 where     
 \begin{align}
-  \label{eq:202-app-conic_quad_form_v}
+  \label{eq:EE26BTECH11202-app-conic_quad_form_v}
 \vec{V} &=\norm{\vec{n}}^2\vec{I}-e^2\vec{n}\vec{n}^{\top}, 
 \\
-\label{eq:202-app-conic_quad_form_u}
+\label{eq:EE26BTECH11202-app-conic_quad_form_u}
 \vec{u} &= ce^2\vec{n}-\norm{\vec{n}}^2\vec{F}, 
 \\
-\label{eq:202-app-conic_quad_form_f}
+\label{eq:EE26BTECH11202-app-conic_quad_form_f}
 f &= \norm{\vec{n}}^2\norm{\vec{F}}^2-c^2e^2
     \end{align}
 \solution
@@ -333,11 +388,11 @@ f &= \norm{\vec{n}}^2\norm{\vec{F}}^2-c^2e^2
 \begin{align}
 = e^2 \left(c^2 + \left(\vec{x}^\top \vec{n}\vec{n}^\top \vec{x}\right) - 2c\vec{n}^\top \vec{x}\right)
 \end{align}
-which can be expressed as \eqref{eq:202-app-conic_quad_form} after simplification.
+which can be expressed as \eqref{eq:EE26BTECH11202-app-conic_quad_form} after simplification.
 \item
-  The eccentricity of \eqref{eq:202-app-conic_quad_form} is given by 
+  The eccentricity of \eqref{eq:EE26BTECH11202-app-conic_quad_form} is given by 
 \begin{align}
-  \label{eq:202-app-conic_quad_form_e} 
+  \label{eq:EE26BTECH11202-app-conic_quad_form_e} 
   e&= \sqrt{1-\frac{\lambda_1}{\lambda_2}}
 \end{align} 
 Here, $\lambda_1$ and $\lambda_2$ are the eigenvalues of $\vec{V}$ 
@@ -345,7 +400,7 @@ Here, $\lambda_1$ and $\lambda_2$ are the eigenvalues of $\vec{V}$
 
 \solution
 
-From \eqref{eq:202-app-conic_quad_form_v}, using the fact that $\vec{V}$ is symmetric, 
+From \eqref{eq:EE26BTECH11202-app-conic_quad_form_v}, using the fact that $\vec{V}$ is symmetric, 
   \begin{align}
 	  \vec{V}^{\top} \vec{V}&=\brak{\norm{\vec{n}}^2\vec{I}-e^2\vec{n}\vec{n}^{\top}}^{\top}
 	  \brak{\norm{\vec{n}}^2\vec{I}-e^2\vec{n}\vec{n}^{\top}}
@@ -365,10 +420,10 @@ From \eqref{eq:202-app-conic_quad_form_v}, using the fact that $\vec{V}$ is symm
 which can be expressed as
 \begin{align}
   \vec{V}^{2} + \brak{e^2 - 2}\norm{\vec{n}}^2\vec{V} - \brak{e^2 - 1}\norm{\vec{n}}^4\vec{I}=0
-  \label{eq:202-app-conic_quad_form_e_cayley}
+  \label{eq:EE26BTECH11202-app-conic_quad_form_e_cayley}
 \end{align}
 	Using the Cayley-Hamilton theorem,
-	\eqref{eq:202-app-conic_quad_form_e_cayley} results in the characteristic equation, 
+	\eqref{eq:EE26BTECH11202-app-conic_quad_form_e_cayley} results in the characteristic equation, 
 \begin{align}
   \lambda^{2} - \brak{2-e^2}\norm{\vec{n}}^2\lambda + \brak{1-e^2 }\norm{\vec{n}}^4=0
 \end{align}
@@ -380,27 +435,27 @@ which can be expressed as
 	\implies \frac{\lambda}{\norm{\vec{n}}^2} = 1-e^2, 1
   \\
 	\text{or, }\lambda_2 = \norm{\vec{n}}^2, \lambda_1 = \brak{1-e^2}\lambda_2 
-  \label{eq:202-app-conic_quad_form_lam_cayley}
+  \label{eq:EE26BTECH11202-app-conic_quad_form_lam_cayley}
 \end{align}
 \item
-\eqref{eq:202-app-conic_quad_form} represents 
+\eqref{eq:EE26BTECH11202-app-conic_quad_form} represents 
 	\begin{enumerate}
 		\item a parabola for $\mydet{\vec{V}} = 0 $,
 		\item ellipse for $\mydet{\vec{V}} > 0 $ and 
 		\item hyperbola for $\mydet{\vec{V}} < 0 $. \label{item:Hyperbola}
 	\end{enumerate}
-This is a direct result of the following two equations - From \eqref{eq:202-app-conic_quad_form_e}, we have
+This is a direct result of the following two equations - From \eqref{eq:EE26BTECH11202-app-conic_quad_form_e}, we have
 \begin{align}
 \frac{\lambda_1}{\lambda_2}=1-e^2
 \end{align}
-From \eqref{eq:202-Matrices_3}, we have
+From \eqref{eq:EE26BTECH11202-Matrices_3}, we have
 \begin{align}
 \mydet{\vec{V}}=\lambda_1 \lambda_2
 \end{align}
 \end{enumerate}
 \item Matrix Determinant Lemma - Consider two column vectors $\vec{u}$ and $\vec{v}$
 \begin{align}
-	\mydet{\vec{I+uv^{\top}}}=1+\vec{v^{\top}u}	\label{eq:202-mat_det_lemma}
+	\mydet{\vec{I+uv^{\top}}}=1+\vec{v^{\top}u}	\label{eq:EE26BTECH11202-mat_det_lemma}
 \end{align}
 \item SHM
 \begin{itemize}
@@ -415,13 +470,13 @@ x_{\text{total}} &= \frac{F}{k_{\text{eq}}}
 \end{align}
 We know that
 \begin{align}
-	x_{\text{total}} = \sum_{i=1}^{n} x_{i} \label{eq:202-displacement_relation}
+	x_{\text{total}} = \sum_{i=1}^{n} x_{i} \label{eq:EE26BTECH11202-displacement_relation}
 \end{align}
-Substituting $x_1$, $x_2$, .... , $x_{n}$ and $x_{\text{total}}$ into \eqref{eq:202-displacement_relation}
+Substituting $x_1$, $x_2$, .... , $x_{n}$ and $x_{\text{total}}$ into \eqref{eq:EE26BTECH11202-displacement_relation}
 \begin{align}
 \frac{F}{k_{\text{eq}}} &=\sum_{i=1}^{n}\frac{F}{k_{i}} \\
 F \brak{\frac{1}{k_{\text{eq}}}} &= F \sum_{i=1}^{n} \brak{\frac{1}{k_i}} \\
-\frac{1}{k_{\text{eq}}} &= \sum_{i=1}^{n}\frac{1}{k_{i}} \label{eq:202-springs_series}
+\frac{1}{k_{\text{eq}}} &= \sum_{i=1}^{n}\frac{1}{k_{i}} \label{eq:EE26BTECH11202-springs_series}
 \end{align}
 \item General case of vertical SHM: Consider the following diagram. We need to find out the equation of SHM.
 When the mass $M$ is at rest, let the system stretch by $\delta_{\text{st}}$. Let $w$ be the angular frequency of oscillation.
@@ -443,14 +498,14 @@ When the mass is displaced downward by $x(t)$, applying Newton' second law,
 \end{align}
 \begin{align}
 \implies M \frac{d^2 x}{d t^2} &= M g - k(\delta_{\text{st}} + x) \\
-\implies M \frac{d^2 x}{d t^2} &= M g - k\delta_{\text{st}} - kx \label{eq:202-spring_eqn}
+\implies M \frac{d^2 x}{d t^2} &= M g - k\delta_{\text{st}} - kx \label{eq:EE26BTECH11202-spring_eqn}
 \end{align}
 
 The static equilibrium condition is:
 \begin{align}
 M g =k\delta_{\text{st}}
 \end{align}
-Substituting this into \eqref{eq:202-spring_eqn}
+Substituting this into \eqref{eq:EE26BTECH11202-spring_eqn}
 \begin{align}
 M \frac{d^2 x}{d t^2} &= (k\delta_{\text{st}}) - k\delta_{\text{st}} - kx 
 \end{align}
@@ -458,7 +513,7 @@ M \frac{d^2 x}{d t^2} &= (k\delta_{\text{st}}) - k\delta_{\text{st}} - kx
 M \frac{d^2 x}{d t^2} &= -kx 
 \end{align}
 \begin{align}
-	\frac{d^2 x}{d t^2} = \frac{-k}{M}x = -w^2x \label{eq:202-vertical_shm}
+	\frac{d^2 x}{d t^2} = \frac{-k}{M}x = -w^2x \label{eq:EE26BTECH11202-vertical_shm}
 \end{align}
 
 \end{itemize}
@@ -466,27 +521,27 @@ M \frac{d^2 x}{d t^2} &= -kx
 \begin{itemize}
 \item Specific angular momentum - Consider a satellite with position vector $\vec{\vec{r}}$ and velocity vector $\vec{\vec{v}}$
 \begin{align}
-	h_0 = |\vec{r} \times \vec{v}| \label{eq:202-Gravitation_1}
+	h_0 = |\vec{r} \times \vec{v}| \label{eq:EE26BTECH11202-Gravitation_1}
 \end{align}
 \item Eccentricity of trajectory
 \begin{align}
-	e^2 = 1 + \frac{2\varepsilon h_0^2}{\mu^2} \label{eq:202-Gravitation_2}
+	e^2 = 1 + \frac{2\varepsilon h_0^2}{\mu^2} \label{eq:EE26BTECH11202-Gravitation_2}
 \end{align}
 
 \item Trajectory of a satellite given its position vector, velocity vector, and gravitational parameter $\mu$: The polar trajectory of a satellite with eccentricity vector $\vec{e}$ and semi-latus rectum $p_{\text{orb}}$ is given by:
 \begin{align}
-	r = \frac{p_{\text{orb}}}{1 + e \cos \theta} \label{eq:202-traj_1}
+	r = \frac{p_{\text{orb}}}{1 + e \cos \theta} \label{eq:EE26BTECH11202-traj_1}
 \end{align}
 
 In vector form: 
 \begin{align}
-	e \cos \theta = \frac{\vec{e}^\top \vec{x}}{r} \label{eq:202-traj_2}
+	e \cos \theta = \frac{\vec{e}^\top \vec{x}}{r} \label{eq:EE26BTECH11202-traj_2}
 \end{align}
 Where: 
 \begin{align}
 \vec{x} = \myvec{r\cos{\theta} \\ r\sin{\theta}}.
 \end{align}
-From \eqref{eq:202-traj_1} and \eqref{eq:202-traj_2}, we have:
+From \eqref{eq:EE26BTECH11202-traj_1} and \eqref{eq:EE26BTECH11202-traj_2}, we have:
 \begin{align}
 r + \vec{e}^\top \vec{x} = p_{\text{orb}} \implies r = p_{\text{orb}} - \vec{e}^\top \vec{x}
 \end{align}
@@ -501,15 +556,15 @@ Rearranging yields:
 \vec{x}^\top (\vec{I} - \vec{e}\vec{e}^\top)\vec{x} + 2(p_{\text{orb}}\vec{e})^\top \vec{x} - p_{\text{orb}}^2 = 0
 \end{align}
 
-Comparing this with \eqref{eq:202-app-conic_quad_form}:
+Comparing this with \eqref{eq:EE26BTECH11202-app-conic_quad_form}:
 \begin{itemize}
     \item Matrix $\vec{V}$: $\vec{V} = \vec{I} - \vec{e}\vec{e}^\top$
     \item Vector $\vec{u}$: $\vec{u} = p_{\text{orb}}\vec{e}$
     \item Scalar $f$: $f = -p_{\text{orb}}^2$
 \end{itemize}
-From result \eqref{eq:202-mat_det_lemma}, we have:
+From result \eqref{eq:EE26BTECH11202-mat_det_lemma}, we have:
 \begin{align}
-	\mydet{\vec{V}}=1-\vec{e^{\top}e}=1-e^2 \label{eq:202-Gravitation_3}
+	\mydet{\vec{V}}=1-\vec{e^{\top}e}=1-e^2 \label{eq:EE26BTECH11202-Gravitation_3}
 \end{align}
 From the sign of $\mydet{\vec{V}}$, we get the trajectory.
 

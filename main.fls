@@ -608,6 +608,11 @@ INPUT ./chapters/ae-2026_formulae.tex
 INPUT chapters/ae-2026_formulae.tex
 INPUT /data/data/com.termux/files/usr/share/texlive/2026/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf
 INPUT /data/data/com.termux/files/usr/share/texlive/2026/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
+INPUT ./figs/Fourier.png
+INPUT ./figs/Fourier.png
+INPUT ./figs/Fourier.png
+INPUT ./figs/Fourier.png
+INPUT ./figs/Fourier.png
 INPUT ./figs/spring_deriv.tex
 INPUT ./figs/spring_deriv.tex
 INPUT figs/spring_deriv.tex
@@ -656,11 +661,6 @@ INPUT ./figs/Line_Integral.png
 INPUT ./figs/Fourier.tex
 INPUT ./figs/Fourier.tex
 INPUT figs/Fourier.tex
-INPUT ./figs/Fourier.png
-INPUT ./figs/Fourier.png
-INPUT ./figs/Fourier.png
-INPUT ./figs/Fourier.png
-INPUT ./figs/Fourier.png
 INPUT ./figs/Satellite.png
 INPUT ./figs/Satellite.png
 INPUT ./figs/Satellite.png
