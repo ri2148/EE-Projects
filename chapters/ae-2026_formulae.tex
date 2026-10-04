@@ -273,11 +273,7 @@ yielding \eqref{eq:EE26BTECH11202-Fourier_1}.
 \item Square Wave.  
 	Consider the Fourier series with
 \begin{align}
-	x_0(t)=
-	\begin{cases}
-		1 & t \in \brak{-\frac{1}{2} < t < \frac{1}{2}} \\
-		0 & \text{otherwise}
-\end{cases}
+	x_0(t)= \rect\brak{t}
 	, \quad T_0 = 2.
 \label{eq:EE26BTECH11202-square}
 \end{align}
@@ -289,16 +285,12 @@ Substituting $f_0 = \frac{1}{2}$ in
 \begin{align}
 c_n &= \frac{1}{2} \int_{-1}^{1} e^{-j \pi k t} \, dt
 \\
-    &=
+    &=\sbrak{\frac{\sin\brak{\pi k t}}{2\pi k}}_{-\frac{1}{2}}^{\frac{1}{2}}
+\\
+    &=\frac{\sin\brak{\frac{\pi k}{2} }}{\pi k}
 \end{align}
-\begin{align}
-c_k = 
-\begin{cases}
-    \frac{1}{4} \int_{-1}^{1} 1 \, dt = \frac{1}{2}, & k = 0 \\[12pt]
-    \frac{1}{4} \left[ \frac{e^{-j \frac{\pi k t}{2}}}{-j \frac{\pi k}{2}} \right]_{-1}^{1} = \frac{1}{2} \sinc\brak{\frac{\pi k}{2}}, & k \neq 0
-\end{cases}
-\end{align}
-The following code verifies the result.
+The following code verifies the result in 
+\figref{fig:EE26BTECH11202-7}.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Fourier.py}@*)
 \end{lstlisting}
