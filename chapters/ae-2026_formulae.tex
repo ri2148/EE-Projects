@@ -206,13 +206,30 @@ Similarly,
 \end{align}
 upon simplification.
 
+\item Kronecker delta function
+\begin{align}
+\label{eq:EE26BTECH11202-kronecker}
+\delta_{n}= 
+\begin{cases} 
+1, & n = 0 \\ 
+0, & \text{otherwise}
+\end{cases}
+\end{align}
+\item 
+\begin{align}
+f_0\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} e^{\j 2\pi n f_0 t} \, dt &= 
+\delta_{n}
+\label{eq:EE26BTECH11202-kronecker-exp-int}
+\end{align}
 \item The Fourier Series. Let
 \begin{align}
+\label{eq:EE26BTECH11202-fourier-periodic}
 	x\brak{t} &= \sum_{k=-\infty}^{\infty} x_0(t)\brak{t-nT_0} 
 \end{align}
 be a periodic signal
 with 
 \begin{align}
+\label{eq:EE26BTECH11202-fourier-fund}
 	x\brak{t} &=  \begin{cases}
 		x_0\brak{t}, & t \in \brak{-\frac{T_0}{2},\frac{T_0}{2}}
 		\\
@@ -222,54 +239,57 @@ with
 \end{align}
   Then, 
 \begin{align}
-	x\brak{t} &= \sum_{k=-\infty}^{\infty} c_k e^{\j 2\pi k f_0 t} , \quad f_0 = \frac{1}{T_0}
+\label{eq:EE26BTECH11202-fourier-comp}
+	x\brak{t} &= \sum_{n=-\infty}^{\infty} c_n e^{\j 2\pi n f_0 t} , \quad f_0 = \frac{1}{T_0}
 \end{align}
-Obtain $c_k$ in terms of $x_0(t)$.
-\\
-\solution
+Show that 
 \begin{align}
-	\begin{split}
-\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-\j 2\pi m f_0 t} \, dt
-&= \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} \brak{\sum_{k=-\infty}^{\infty} c_k e^{\j 2\pi k f_0 t}} e^{-\j 2\pi m f_0 t} \, dt 
+c_n = f_0 \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x_0\brak{t} e^{-\j 2\pi n f_0 t} \, dt 
+\label{eq:EE26BTECH11202-Fourier_1}
+\end{align}
+\solution
+From \eqref{eq:EE26BTECH11202-fourier-comp},
+\begin{align}
+\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-\j 2\pi n f_0 t} \, dt
+&= \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} \brak{\sum_{k=-\infty}^{\infty} c_k e^{\j 2\pi k f_0 t}} e^{-\j 2\pi n f_0 t} \, dt 
 \\
-&=\sum_{k=-\infty}^{\infty} c_k \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} e^{\j 2\pi \brak{k - m} f_0 t} \, dt
+\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x_0\brak{t} e^{-\j 2\pi n f_0 t} \, dt&=\sum_{k=-\infty}^{\infty} c_k \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} e^{\j 2\pi \brak{k - n} f_0 t} \, dt
 \\
-\because
-		\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} e^{\j 2\pi \brak{k - m} f_0 t} \, dt &= 
-\begin{cases} 
-\frac{1}{f_0}, & k = m \\ 
-0, & k \neq m 
-\end{cases}
-,
-	\end{split}
-\\
-\begin{split}
-	\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x_0\brak{t} e^{-\j 2\pi m f_0 t} \, dt = \frac{c_m}{f_0} 
-\\
-	\implies	c_k = f_0 \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x\brak{t} e^{-\j 2\pi k f_0 t} \, dt \label{eq:EE26BTECH11202-Fourier_1}
-\end{split}
+									      &									      = \frac{1}{f_0}\sum_{k=-\infty}^{\infty} c_k  \delta_{k - n} 
 \end{align}
 %
-\item Square Wave.  
-	Let
+upon substituting from \eqref{eq:EE26BTECH11202-fourier-fund}
+and 
+\eqref{eq:EE26BTECH11202-kronecker-exp-int},
+yielding \eqref{eq:EE26BTECH11202-Fourier_1}.
+\item The rectangular function.  The unit rectangular function is defined as
 \begin{align}
 \rect\brak{t} = \begin{cases}
-1 & t \in (-1, 1) \\ 
+	1 & t \in \brak{-\frac{1}{2}, \frac{1}{2}} \\ 
 0 & \text{otherwise}	
-\end{cases} \label{eq:EE26BTECH11202-step_function}
+\end{cases}
+\label{eq:EE26BTECH11202-rect}
 \end{align}
-Consider:
+\item Square Wave.  
+	Consider the Fourier series with
 \begin{align}
-f_0 = \frac{1}{4}
+	x_0(t)=
+	\begin{cases}
+		1 & t \in \brak{-\frac{1}{2} < t < \frac{1}{2}} \\
+		0 & \text{otherwise}
+\end{cases}
+	, \quad T_0 = 2.
+\label{eq:EE26BTECH11202-square}
 \end{align}
-
-We will use the result \eqref{eq:EE26BTECH11202-Fourier_1}. Considering the interval $\brak{-\frac{1}{2f_0},\frac{1}{2f_0}}$
+Find $c_n$.
+\\
+\solution 
+Substituting $f_0 = \frac{1}{2}$ in 
+\eqref{eq:EE26BTECH11202-Fourier_1},
 \begin{align}
-c_k &= \frac{1}{4} \int_{-2}^{2} x\brak{t} e^{-j \frac{\pi k t}{2}} \, dt
-\end{align}
-From \eqref{eq:EE26BTECH11202-step_function}, we have
-\begin{align}
-c_k &= \frac{1}{4} \int_{-1}^{1} e^{-j \frac{\pi k t}{2}} \, dt
+c_n &= \frac{1}{2} \int_{-1}^{1} e^{-j \pi k t} \, dt
+\\
+    &=
 \end{align}
 \begin{align}
 c_k = 
