@@ -210,59 +210,6 @@ From the given information,
 \end{align}
 substituting \eqref{eq:EE26BTECH11202-Matrices_1} and \eqref{eq:EE26BTECH11202-Matrices_inverse} in \eqref{eq:EE26BTECH11202-transpose}
 \item
-	
-Given the velocity and position vectors of a satellite along with its gravitational parameter $\mu=GM$, determine the trajectory of the satellite. \hfill (GATE AE 2026) 
-\begin{enumerate}
-    \item Circle
-    \item Hyperbola
-    \item Parabola
-    \item Straight Line
-\end{enumerate} 
-
-Position vector: 
-    \begin{align}
-    \vec{r} = 8000\hat{p} + 9000\hat{q} \text{ km}
-    \end{align}
-Velocity vector:
-    \begin{align}
-    \vec{v} = -6\hat{p} + 6\hat{q} \text{ km/s}
-    \end{align}
-Gravitational parameter: 
-    \begin{align}
-    \mu = 398600 \text{ km}^3/\text{s}^2
-    \end{align}
-
-\solution 
-We are given :
-\begin{align}
-	\vec{r}=\myvec{8000\\9000}, \vec{v}=\myvec{-6\\6}
-\end{align}
-From \eqref{eq:EE26BTECH11202-Gravitation_1}, Specific Angular Momentum $h_0$
-\begin{align}
-= |8000\brak{6} - 9000\brak{-6}| = 102000 \text{ km}^2/\text{s}
-\end{align}
-
-From \eqref{eq:EE26BTECH11202-Gravitation_2}, eccentricity squared $e^2$
-\begin{align}
-= 1 + \frac{2\brak{2.898}\brak{102000}^2}{\brak{398600}^2} \approx 1 + 0.3795 = 1.3795
-\end{align}
-From \eqref{eq:EE26BTECH11202-Gravitation_3}, we have:
-\begin{align}
-\mydet{\vec{V}}=1-1.3795=-0.3795
-\end{align}
-From \ref{item:Hyperbola}, we can conclude that the trajectory of the satellite is a Hyperbola. The following code simulates the result.
-
-\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
-(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Satellite.py}@*)
-\end{lstlisting}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1.0\linewidth]{figs/Satellite.png}
-    \caption{Trajectory of the Satellite}
-    \label{fig:EE26BTECH11202-8}
-\end{figure}
-
-\item
 For the matrix $\vec{A} = \myvec{ a & b \\ c & d }$, if the relation $a + b = c + d$ holds and $a, b, c, d \neq 0$, then which one of the following statements about $A$ is FALSE? \hfill (AE~2026)
 \begin{enumerate}
 	\begin{multicols}{2}
@@ -323,144 +270,67 @@ with initial conditions $\left.y\right|_{x=0} = 0$ and $\left.\frac{dy}{dx}\righ
 
 \solution
 \begin{enumerate}
-\item Theoretical solution - Let
+\item  
+Taking the Laplace transform of \eqref{eq:EE26BTECH11202-DE},
+from \eqref{eq:EE26BTECH11202-Laplace_1} and \eqref{eq:EE26BTECH11202-Laplace_2},
 \begin{align}
-y\brak{x} \system{L} Y(s)
+\sbrak{s^2 Y(s) - s y\brak{0} - y'\brak{0}} + 2\sbrak{s Y(s) - y\brak{0}} + Y(s) = 0
 \end{align}
-Taking the Laplace transform on both sides of \eqref{eq:EE26BTECH11202-DE}
+Substituting 
+$y\brak{0} = 0 , y^{\prime}\brak{0} = 1$ in the above, 
 \begin{align}
-\mathcal{L}\left\{\frac{d^2 y}{dx^2}\right\} + 2\mathcal{L}\left\{\frac{dy}{dx}\right\} + \mathcal{L}\{y\} = 0
+	\brak{s^2 Y(s) - 1} + 2s Y(s) + Y(s) &= 0
+	\\
+	\implies Y(s) &= \frac{1}{(s+1)^2}
 \end{align}
-
-From equations \eqref{eq:EE26BTECH11202-Laplace_1} and \eqref{eq:EE26BTECH11202-Laplace_2}:
+Taking the inverse Laplace transform, from \eqref{eq:EE26BTECH11202-Laplace_3} and \eqref{eq:EE26BTECH11202-Laplace_4}, 
 \begin{align}
-\big[s^2 Y(s) - s y\brak{0} - y'\brak{0}\big] + 2\big[s Y(s) - y\brak{0}\big] + Y(s) = 0
+\label{eq:EE26BTECH11202-DE-theory}
+y\brak{x} &= x e^{-x}  x \ge 0
+\\
+\implies
+y^{\prime}\brak{x}\frac{dy}{dx} &=  \brak{1 - x}e^{-x}
+\\
+\text{or, }
+y'\brak{\ln\brak{2}}&= \brak{1 - \ln\brak{2}} e^{-\ln\brak{2}}
+{2} \approx 0.153
 \end{align}
-
-Substituting the given initial conditions:
-\begin{align}
-y\brak{0} = 0 , y'\brak{0} = 1
-\end{align}
-\begin{align}
-(s^2 Y(s) - 1) + 2s Y(s) + Y(s) = 0
-\end{align}
-\begin{align}
-(s^2 + 2s + 1) Y(s) = 1
-\end{align}
-\begin{align}
-Y(s) = \frac{1}{(s+1)^2}
-\end{align}
-Taking the inverse Laplace transform by applying the first frequency shift theorem(\eqref{eq:EE26BTECH11202-Laplace_3}) on \eqref{eq:EE26BTECH11202-Laplace_4} gives the solution $y\brak{x}$:
-\begin{align}
-y\brak{x} = x e^{-x}
-\end{align}
-Differentiating $y\brak{x}$ with respect to $x$:
-\begin{align}
-\frac{dy}{dx} = \frac{d}{dx}\brak{x e^{-x}} = \brak{1 - x}e^{-x}
-\end{align}
-
-\begin{align}
-y'\brak{ln\brak{2}}= \brak{1 - \ln\brak{2}} e^{-\ln\brak{2}}
-\end{align}
-
-\begin{align}
-= \frac{1 - \ln\brak{2}}{2} \approx \frac{1 - 0.693147}{2} \approx 0.153
-\end{align}
-
-\item Numerical Solution - Substituting equations \eqref{eq:EE26BTECH11202-ED_1} and \eqref{eq:EE26BTECH11202-ED_2} into our differential equation, we obtain:
+\item From \eqref{eq:EE26BTECH11202-ED_1} and \eqref{eq:EE26BTECH11202-ED_2},  \eqref{eq:EE26BTECH11202-DE} can be expressed as
 \begin{align}
 \frac{y_{n+2} - 2y_{n+1} + y_n}{h^2} + 2 \left( \frac{y_{n+1} - y_n}{h} \right) + y_n = 0
-\end{align}
-Rearranging, we get:
-\begin{align}
+\\
+\implies
 y_{n+2} = 2(1 - h)y_{n+1} - (1 - h)^2 y_n
+\label{eq:EE26BTECH11202-DE-euler}
 \end{align}
-Our initial conditions are:
+For $h=0.01$,
 \begin{align}
-y_0=y\brak{0}=0, y_1=y_0+h(y'\brak{0})
+	y_1=y_0+h\cbrak{y^{\prime}\brak{0}}
+	=0.01
 \end{align}
-We assume the following:
-\begin{align}
-ln2=0.7, h=0.01
-\end{align}
-Then:
-\begin{align}
-	y_1=0+0.01\brak{1}=0.01
-\end{align}
-Now, we continue this process until we find $y_{70}$ and $y_{71}$
-\begin{align}
-	y_{70}=0.3483, y_{71}=0.3499
-\end{align}
-From \eqref{eq:EE26BTECH11202-ED_1}, we get:
-\begin{align}
-	y_{70}'=\frac{y_{71}-y_{70}}{h} \approx 0.145
-\end{align}
-The following code simulates the difference between the numerical and theoretical solutions.
+The following code computes 
+\eqref{eq:EE26BTECH11202-DE-euler}
+and generates
+    \figref{fig:EE26BTECH11202-13}.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Euler.py}@*)
 \end{lstlisting}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.60\linewidth]{figs/Euler.png}
-    \caption{Theoretical Plot vs Plot obtained with Euler's Forward Difference Method}
+    \caption{
+\eqref{eq:EE26BTECH11202-DE-theory}
+vs
+\eqref{eq:EE26BTECH11202-DE-euler}}
     \label{fig:EE26BTECH11202-13}
 \end{figure}
 \end{enumerate}
-
 \item 
 Find the minimum value of the function $f\brak{x} = \abs{x} + \abs{2x+3}$ for real $x$. \hfill (AE~2026)
 
 \solution 
-The critical points occur where the expressions inside the absolute values equal zero:
-\begin{align}
-x &= 0 \\[0.5ex]
-2x + 3 = 0 &\implies x = -\frac{3}{2} = -1.5
-\end{align}
-
-These two critical points divide the real line into three sub-intervals:
-\begin{align}
-\brak{-\infty, -1.5}, \quad [-1.5, 0), \quad \text{and} \quad [0, \infty)
-\end{align}
-
-
-\begin{itemize}
-    \item For $x < -1.5$, both expressions inside the absolute values are negative:
-    \begin{align}
-    f\brak{x} = -x - \brak{2x + 3} = -3x - 3
-    \end{align}
-
-    \item For $-1.5 \le x < 0$, the term $x$ is negative  while $2x+3$ is non-negative:
-    \begin{align}
-    f\brak{x} = -x + \brak{2x + 3} = x + 3
-    \end{align}
-
-    \item For $x \ge 0$, both expressions are non-negative:
-    \begin{align}
-    f\brak{x} = x + \brak{2x + 3} = 3x + 3
-    \end{align}
-\end{itemize}
-
-Combining these cases gives the complete piecewise definition:
-\begin{align}
-f\brak{x} = \begin{cases} 
--3x - 3, & \text{if } x < -1.5 \\
-x + 3, & \text{if } -1.5 \le x < 0 \\
-3x + 3, & \text{if } x \ge 0 
-\end{cases}
-\end{align}
-
-Analyzing the behavior of each linear segment:
-\begin{itemize}
-    \item On $\brak{-\infty, -1.5}$, the line $f\brak{x}$ has a negative slope ($-3$), so $f\brak{x}$ strictly decreases as $x$ approaches $-1.5$.
-    \item On $[-1.5, 0)$, the line $f\brak{x}$ has a positive slope ($+1$), so $f\brak{x}$ strictly increases as $x$ moves away from $-1.5$.
-    \item On $[0, \infty)$, the line $f\brak{x}$ has a positive slope ($+3$), so $f\brak{x}$ continues to increase.
-\end{itemize}
-
-Since $f\brak{x}$ decreases for $x < -1.5$ and increases for $x > -1.5$, the minimum value occurs at $x = -1.5$:
-\begin{align}
-f\brak{-1.5} = -1.5 + 3 = 1.5
-\end{align}
-The following code plots the function.
+The following code plots the given function in 
+    \figref{fig:EE26BTECH11202-10} and also finds the minimum values.  
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Modulus\_function.py}@*)
 \end{lstlisting}
@@ -539,5 +409,58 @@ The following code simulates the result.
     \caption{Accelaration, Velocity and Position of the System}
     \label{fig:EE26BTECH11202-12}
 \end{figure}
+\item
+	
+Given the velocity and position vectors of a satellite along with its gravitational parameter $\mu=GM$, determine the trajectory of the satellite. \hfill (GATE AE 2026) 
+\begin{enumerate}
+    \item Circle
+    \item Hyperbola
+    \item Parabola
+    \item Straight Line
+\end{enumerate} 
+
+Position vector: 
+    \begin{align}
+    \vec{r} = 8000\hat{p} + 9000\hat{q} \text{ km}
+    \end{align}
+Velocity vector:
+    \begin{align}
+    \vec{v} = -6\hat{p} + 6\hat{q} \text{ km/s}
+    \end{align}
+Gravitational parameter: 
+    \begin{align}
+    \mu = 398600 \text{ km}^3/\text{s}^2
+    \end{align}
+
+\solution 
+We are given :
+\begin{align}
+	\vec{r}=\myvec{8000\\9000}, \vec{v}=\myvec{-6\\6}
+\end{align}
+From \eqref{eq:EE26BTECH11202-Gravitation_1}, Specific Angular Momentum $h_0$
+\begin{align}
+= |8000\brak{6} - 9000\brak{-6}| = 102000 \text{ km}^2/\text{s}
+\end{align}
+
+From \eqref{eq:EE26BTECH11202-Gravitation_2}, eccentricity squared $e^2$
+\begin{align}
+= 1 + \frac{2\brak{2.898}\brak{102000}^2}{\brak{398600}^2} \approx 1 + 0.3795 = 1.3795
+\end{align}
+From \eqref{eq:EE26BTECH11202-Gravitation_3}, we have:
+\begin{align}
+\mydet{\vec{V}}=1-1.3795=-0.3795
+\end{align}
+From \ref{item:Hyperbola}, we can conclude that the trajectory of the satellite is a Hyperbola. The following code simulates the result.
+
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Satellite.py}@*)
+\end{lstlisting}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{figs/Satellite.png}
+    \caption{Trajectory of the Satellite}
+    \label{fig:EE26BTECH11202-8}
+\end{figure}
+
 \end{enumerate}
 

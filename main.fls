@@ -661,11 +661,6 @@ INPUT ./figs/Line_Integral.png
 INPUT ./figs/Fourier.tex
 INPUT ./figs/Fourier.tex
 INPUT figs/Fourier.tex
-INPUT ./figs/Satellite.png
-INPUT ./figs/Satellite.png
-INPUT ./figs/Satellite.png
-INPUT ./figs/Satellite.png
-INPUT ./figs/Satellite.png
 INPUT ./figs/Euler.png
 INPUT ./figs/Euler.png
 INPUT ./figs/Euler.png
@@ -684,6 +679,11 @@ INPUT ./figs/Spring.png
 INPUT ./figs/Spring.png
 INPUT ./figs/Spring.png
 INPUT ./figs/Spring.png
+INPUT ./figs/Satellite.png
+INPUT ./figs/Satellite.png
+INPUT ./figs/Satellite.png
+INPUT ./figs/Satellite.png
+INPUT ./figs/Satellite.png
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
