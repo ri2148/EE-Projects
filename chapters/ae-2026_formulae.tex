@@ -277,7 +277,11 @@ yielding \eqref{eq:EE26BTECH11202-Fourier_1}.
 	, \quad T_0 = 2.
 \label{eq:EE26BTECH11202-square}
 \end{align}
-Find $c_n$.
+Show that 
+\begin{align}
+c_n &=\frac{\sin\brak{\frac{\pi k}{2} }}{\pi k}
+\label{eq:EE26BTECH11202-square-c}
+\end{align}
 \\
 \solution 
 Substituting $f_0 = \frac{1}{2}$ in 
@@ -286,11 +290,12 @@ Substituting $f_0 = \frac{1}{2}$ in
 c_n &= \frac{1}{2} \int_{-1}^{1} e^{-j \pi k t} \, dt
 \\
     &=\sbrak{\frac{\sin\brak{\pi k t}}{2\pi k}}_{-\frac{1}{2}}^{\frac{1}{2}}
-\\
-    &=\frac{\sin\brak{\frac{\pi k}{2} }}{\pi k}
 \end{align}
 The following code verifies the result in 
 \figref{fig:EE26BTECH11202-7}.
+    Note that \figref{fig:EE26BTECH11202-7} is continuous while 
+\eqref{eq:EE26BTECH11202-square} is discontinuous.  So 
+\eqref{eq:EE26BTECH11202-square-c} provides only an approximation.  This is known as the Gibbs' phenomenon.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Fourier.py}@*)
 \end{lstlisting}
@@ -307,7 +312,22 @@ The following code verifies the result in
 		show that 
 		\begin{align}
 			x(t-t_0) \system{F} c_ne^{-\j 2\pi n t_0},
+\label{eq:EE26BTECH11202-Fourier-shift-time}
 		\end{align}
+		\solution 
+\begin{align}
+ \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x_0\brak{t-t_0} e^{-\j 2\pi n f_0 t} \, dt 
+ &=
+ \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x_0\brak{t} e^{-\j 2\pi n f_0 \brak{t+t_0}} \, dt 
+ \\
+ &=
+e^{\j 2\pi n f_0 t_0} \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x_0\brak{t} e^{-\j 2\pi n f_0 t} \, dt 
+%c_n = f_0 \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}} x_0\brak{t} e^{-\j 2\pi n f_0 t} \, dt 
+\label{eq:EE26BTECH11202-Fourier-shift-time-1}
+\end{align}
+after a change of variables.  Note that the limits of integration are unchanged due the periodicity of $x(t)$.
+Transferring the exponential term in \eqref{eq:EE26BTECH11202-Fourier-shift-time-1} to the L.H.S yields
+\eqref{eq:EE26BTECH11202-Fourier-shift-time}.
 	\item The standard 2-D basis vectors are defined as
 		\begin{align}
 			\vec{e}_1 = \myvec{1 \\ 0},
@@ -319,6 +339,43 @@ The following code verifies the result in
 			\vec{1} = \myvec{1 \\ 1}
 			\label{eq:EE26BTECH11202-2D-one}
 		\end{align}
+\item For
+	\begin{align}
+			\label{eq:EE26BTECH11202-rank-one}
+		\vec{A} = \vec{uv}^{\top}, \rank\brak{A} = 1.
+\end{align}
+	 where both $u$ and $v$ are $n$-dimensional real-valued non-zero column vectors. 
+	 \\
+	 \solution 
+	 Let
+\begin{align}
+\vec{u} = \myvec{1 \\ 2 \\ 3}, \vec{v} = \myvec{1 \\ 4 \\ 2}.
+\end{align}
+Then
+\begin{align}
+\vec{A} = \vec{uv}^{\top} &= \myvec{1 \\ 2 \\ 3} \myvec{1 & 4 & 2} 
+\\
+			  &= \myvec{
+1 & 4 & 2 \\
+2 & 8 & 4 \\
+3 & 12 & 6
+}
+\end{align}
+Following row reduction, 
+\begin{align}
+\vec{A} \xrightarrow{R_2 \to R_2 - 2R_1} \myvec{
+1 & 4 & 2 \\
+0 & 0 & 0 \\
+3 & 12 & 6
+}
+\xrightarrow{R_3 \to R_3 - 3R_1} \myvec{
+1 & 4 & 2 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+}
+\end{align}
+yielding
+			\eqref{eq:EE26BTECH11202-rank-one}.
 	\item 
 	\begin{align}
 	\mydet{\vec{A^{\top}}} = \mydet{\vec{A}} \label{eq:EE26BTECH11202-Matrices_1} 
@@ -357,6 +414,18 @@ yields
 \begin{align}
 \mydet{\vec{A^{-1}}} = \frac{1}{\mydet{\vec{A}}} \label{eq:EE26BTECH11202-Matrices_inverse}
 \end{align}
+\item If
+\begin{align}
+\vec{A}
+\vec{x}
+=\lambda\vec{x},
+\label{eq:EE26BTECH11202-eig-def}
+\end{align}
+then 
+	$\lambda$ is an eigenvalue 
+$\vec{x}$
+of 
+$\vec{A}$.
 \item Let $\lambda_1, \lambda_2, .... , \lambda_i$ be the eigenvalues of a matrix $\vec{A}$. Then, 
 \begin{align}
 	\sum_{i=1}^{n} \lambda_i &= \text{Tr}\brak{\vec{A}} \label{eq:EE26BTECH11202-Matrices_2}

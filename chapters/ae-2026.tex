@@ -177,91 +177,38 @@ can  be expressed as a periodic function with parameters
 \begin{align}
 	x_0(t) = \rect\brak{t-\frac{1}{2}}, T_0 = 2
 \end{align}
-\begin{enumerate}
-\item Gibbs Phenomenon
-\begin{itemize}
-	\item Explanation of Gibbs Phenomenon: Every periodic function can be expressed as a sum of sines and cosines. Gibbs phenomenon is the overshoot and high-frequency oscillation ("ringing") that occurs when approximating a function with jump discontinuities using a finite (truncated) Fourier series. Even as the number of terms $N$ approaches infinity, the overshoot near the jump discontinuity does not vanish; instead, it narrows in width while maintaining a fixed percentage height relative to the size of the jump.
-	\item Reason: When approximating a step function or square wave, Fourier series synthesize the shape using smooth, continuous sinusoids ($\sin$ and $\cos$). Because continuous functions cannot instantaneously step from one value to another, the Fourier series overcompensates near the vertical edge.
-\end{itemize}
-
-\end{enumerate}
+From \eqref{eq:EE26BTECH11202-Fourier-shift-time} and 
+\eqref{eq:EE26BTECH11202-square-c}, substituting $t_0 =\frac{1}{2}$, 
+\begin{align}
+c_n =\frac{\sin\brak{\frac{\pi k}{2} }}{\pi k}e^{-\j \pi n }
+\label{eq:EE26BTECH11202-square-c-shift}
+\end{align}
+The Gibbs phenomenon is explained in 
+\figref{fig:EE26BTECH11202-7}.
 \item If a matrix can be written as $\vec{A} = \vec{uv^{\top}}$, where both $u$ and $v$ are $n$-dimensional real-valued non-zero column vectors, then the rank of the matrix $\vec{A}$ is? 
 \hfill (AE~2026)
-
 \solution 
-We will solve the above problem with an example. Consider $3$-dimensional non-zero vectors:
-\begin{align}
-\vec{u} = \myvec{1 \\ 2 \\ 3} , \vec{v} = \myvec{1 \\ 4 \\ 2}
-\end{align}
-
-The matrix $\vec{A}$ is formed as:
-\begin{align}
-\vec{A} = \vec{uv^{\top}} &= \myvec{1 \\ 2 \\ 3} \myvec{1 & 4 & 2} 
-\end{align}
-
-\begin{align}
-= \myvec{
-1 & 4 & 2 \\
-2 & 8 & 4 \\
-3 & 12 & 6
-}
-\end{align}
-
-We will now apply elementary row transformations step by step. First we eliminate the non-zero entry in the second row using 
-\begin{align}
-\vec{A} \xrightarrow{R_2 \to R_2 - 2R_1} \myvec{
-1 & 4 & 2 \\
-0 & 0 & 0 \\
-3 & 12 & 6
-}
-\end{align}
-
-Now we eliminate the non-zero entry in the third row.
-\begin{align}
-\xrightarrow{R_3 \to R_3 - 3R_1} \myvec{
-1 & 4 & 2 \\
-0 & 0 & 0 \\
-0 & 0 & 0
-}
-\end{align}
-The matrix is now in row echelon form with only $1$ non-zero row. Hence,
-\begin{align}
-\text{rank}\brak{\vec{A}} = 1
-\end{align}
+	From		\eqref{eq:EE26BTECH11202-rank-one}, the rank is 1.
 \item
 An $n \times n$ square matrix $\vec{A}$ satisfies $\vec{A^{\top}} = \vec{A^{-1}}$. The determinant of this matrix may take which of the following value(s)? \hfill (AE~2026)
 \begin{enumerate}
+	\begin{multicols}{4}
 	\item $1$
 	\item $-1$
 	\item $n$
 	\item $0$
+	\end{multicols}
 \end{enumerate}
-
 \solution 
-We are given that matrix $A$ satisfies:
+From the given information,
 \begin{align}
-\vec{A^{\top} = A^{-1}} 
+	\mydet{\vec{A}^{\top}} &= \mydet{\vec{A}^{-1}} \label{eq:EE26BTECH11202-transpose}
+	\\
+	\implies \mydet{\vec{A}} &= \frac{1}{\mydet{\vec{A}}}
+	\\
+	\therefore \mydet{\vec{A}} &= \pm 1
 \end{align}
-As the inverse exists, we know that
-\begin{align}
-\mydet{\vec{A}} \neq 0
-\end{align}
-
-Taking the determinant of both sides of the given matrix equation:
-\begin{align}
-	\mydet{\vec{A^{\top}}} = \mydet{\vec{A^{-1}}} \label{eq:EE26BTECH11202-transpose}
-\end{align}
-
-Substituting results \eqref{eq:EE26BTECH11202-Matrices_1} and \eqref{eq:EE26BTECH11202-Matrices_inverse} in \eqref{eq:EE26BTECH11202-transpose}, we get:
-\begin{align}
-\mydet{\vec{A}} = \frac{1}{\mydet{\vec{A}}}
-\end{align}
-
-Multiplying both sides by $\mydet{\vec{A}}$:
- \begin{align}
-\brak{\mydet{\vec{A}}}^2 = 1 \implies \mydet{\vec{A}} = \pm 1
-\end{align} 
-
+substituting \eqref{eq:EE26BTECH11202-Matrices_1} and \eqref{eq:EE26BTECH11202-Matrices_inverse} in \eqref{eq:EE26BTECH11202-transpose}
 \item
 	
 Given the velocity and position vectors of a satellite along with its gravitational parameter $\mu=GM$, determine the trajectory of the satellite. \hfill (GATE AE 2026) 
@@ -318,36 +265,44 @@ From \ref{item:Hyperbola}, we can conclude that the trajectory of the satellite 
 \item
 For the matrix $\vec{A} = \myvec{ a & b \\ c & d }$, if the relation $a + b = c + d$ holds and $a, b, c, d \neq 0$, then which one of the following statements about $A$ is FALSE? \hfill (AE~2026)
 \begin{enumerate}
+	\begin{multicols}{2}
     \item $\myvec{ 1 \\ 1 }$ is an eigenvector
     \item $\lambda = a + b$ is an eigenvalue
     \item $\lambda = d - b$ is an eigenvalue
     \item $\lambda = d + b$ is an eigenvalue
+    \end{multicols}
 \end{enumerate}
-
 \solution 
-Given:
+Let 
 \begin{align}
 a + b = c + d = k \label{eq:EE26BTECH11202-matrices_relation}
 \end{align}
-Writing this in vector form:
+Then, 
 \begin{align}
-\myvec{ a & b } \myvec{ 1 \\ 1 } &= k = \myvec{ c & d } \myvec{ 1 \\ 1 } \\
-\implies \myvec{ a & b \\ c & d } \myvec{ 1 \\ 1 } &= \myvec{ k \\ k } \\
-\implies \myvec{ a & b \\ c & d } \myvec{ 1 \\ 1 } &= k \myvec{ 1 \\ 1 }
+\begin{split}
+\myvec{ a & b } \myvec{ 1 \\ 1 } &= k 
+\\
+ \myvec{ c & d } \myvec{ 1 \\ 1 }&= k  
+\end{split}
 \end{align}
-
-$\implies \myvec{ 1 \\ 1 }$ is an eigenvector and $a + b$ is an eigenvalue.
-
+yielding
+\begin{align}
+\myvec{ a & b \\ c & d } \myvec{ 1 \\ 1 } &= k \myvec{ 1 \\ 1 }
+\end{align}
+$\therefore \myvec{ 1 \\ 1 }$ is an eigenvector and $a + b$ is an eigenvalue from 
+\eqref{eq:EE26BTECH11202-eig-def}
+.
 From \eqref{eq:EE26BTECH11202-matrices_relation}, 
 \begin{align}
 a - c = d - b = -\brak{b - d} = l
 \end{align}
-
-Evaluating the matrix-vector multiplication:
+Then, 
 \begin{align}
-\myvec{ a & c \\ b & d } \myvec{ 1 \\ -1 } &= \myvec{ a - c \\ b - d } = \myvec{ l \\ -l } = l \myvec{ 1 \\ -1 }
+\myvec{ a & c \\ b & d } \myvec{ 1 \\ -1 } =  l \myvec{ 1 \\ -1 }
 \end{align}
-From \eqref{eq:EE26BTECH11202-eigenvalues}, $\myvec{ 1 \\ -1 }$ is an eigenvector and $d - b$ is the $2^{\text{nd}}$ eigenvalue. The following code simulates the result by plotting the eigenvectors.
+Thus,  $\myvec{ 1 \\ -1 }$ is an eigenvector and $d - b$ is the $2^{\text{nd}}$ eigenvalue. 
+\iffalse
+The following code simulates the result by plotting the eigenvectors.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Eigenvectors.py}@*)
 \end{lstlisting}
@@ -357,10 +312,8 @@ From \eqref{eq:EE26BTECH11202-eigenvalues}, $\myvec{ 1 \\ -1 }$ is an eigenvecto
     \includegraphics[width=0.60\linewidth]{figs/Eigenvectors.png}
     \label{fig:EE26BTECH11202-9}
 \end{figure}
-
+\fi
 \item 
-
-
 Consider the differential equation:
 \begin{align}
 	\frac{d^2 y}{dx^2} + 2\frac{dy}{dx} + y = 0 \label{eq:EE26BTECH11202-DE}
