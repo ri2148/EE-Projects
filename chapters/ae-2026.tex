@@ -210,7 +210,7 @@ From the given information,
 \end{align}
 substituting \eqref{eq:EE26BTECH11202-Matrices_1} and \eqref{eq:EE26BTECH11202-Matrices_inverse} in \eqref{eq:EE26BTECH11202-transpose}
 \item
-For the matrix $\vec{A} = \myvec{ a & b \\ c & d }$, if the relation $a + b = c + d$ holds and $a, b, c, d \neq 0$, then which one of the following statements about $A$ is FALSE? \hfill (AE~2026)
+	For the matrix $\vec{A} = \myvec{ a & b \\ c & d }$, if the relation $a + b = c + d$ holds and $a, b, c, d \neq 0$, then which one of the following statements about $\vec{A}$ is FALSE? \hfill (AE~2026)
 \begin{enumerate}
 	\begin{multicols}{2}
     \item $\myvec{ 1 \\ 1 }$ is an eigenvector
@@ -342,42 +342,44 @@ The following code plots the given function in
 \end{figure}
 
 \item
-A bar, spring, and mass system is arranged in series.
+	Consider the system 
+	in
+\figref{fig:EE26BTECH11202-11}.
+For the following parameters,
 \begin{itemize}
     \item Bar: $E = 200\text{ GPa}$, $A = 100\text{ mm}^2$, $L = 100\text{ mm}$
     \item Spring Stiffness: $k = 200\text{ kN/mm}$
     \item Mass: $M = 100\text{ kg}$
 \end{itemize}
-Find the natural frequency of free vibration $\omega_n$ in $\text{rad/s}$. Also solve the differential equation obtained to obtain the position, velocity and accelaration of the system.
+find the natural frequency of free vibration of the system. 
 \hfill (AE~2026)
-\begin{figure}[H]
-\begin{center}
-	\input{figs/Spring.tex}
-\caption{Diagram of the system}
-\label{fig:EE26BTECH11202-11}
-\end{center}
-\end{figure}
-
+\\
 \solution 
-The axial stiffness of the uniform bar is:
+From 
+\eqref{fig:EE26BTECH11202-11-stiffness},  
 \begin{align}
-k_{\text{bar}} = \frac{AE}{L}
-\end{align}
-\begin{align}
-k_{\text{bar}} = \frac{10^{-4} \times 200 \times 10^9}{0.1} = 2 \times 10^8 \text{ N/m}
+k_{b} = \frac{10^{-4} \times 200 \times 10^9}{0.1} = 2 \times 10^8 \text{ N/m}
 \end{align}
 \begin{align}
 k = 200 \text{ kN/mm} = 2 \times 10^8 \text{ N/m}
 \end{align}
-Substituting the values of $k$ and $k_{\text{eq}}$ in \eqref{eq:EE26BTECH11202-springs_series} gives us
+Substituting the above  in \eqref{eq:EE26BTECH11202-springs_series}, 
 \begin{align}
-k_{\text{eq}} = \frac{k_{\text{bar}} \cdot k}{k_{\text{bar}} + k} = \frac{\brak{2 \times 10^8}\brak{2 \times 10^8}}{2 \times 10^8 + 2 \times 10^8} = 10^8 \text{ N/m}
+k_t = \frac{\brak{2 \times 10^8}\brak{2 \times 10^8}}{2 \times 10^8 + 2 \times 10^8} = 10^8 \text{ N/m}
 \end{align}
-
-The natural frequency of free vibration is:
+From 
+	\eqref{eq:EE26BTECH11202-vertical_shm}
+and
+\eqref{eq:EE26BTECH11202-Laplace_7}, 
 \begin{align}
-\omega_n = \sqrt{\frac{k_{\text{eq}}}{M}} = \sqrt{\frac{10^8}{100}} = \sqrt{10^6} = 1000 \text{ rad/s}
+	x\brak{t}=\beta \cos\brak{\sqrt{\frac{k_t}{m}} t} + \frac{\gamma}{\sqrt{\frac{k_t}{m}}}\sin\brak{\sqrt{\frac{k_t}{m}} t} 
 \end{align}
+$\therefore$ the natural frequency of free vibration is
+\begin{align}
+ \sqrt{\frac{k_{\text{eq}}}{M}} =  1000\, rad/s
+\end{align}
+upon substituting numerical values.
+\iffalse
 Now, to find the position of the system as a function of time, from \eqref{eq:EE26BTECH11202-vertical_shm}, we have:
 \begin{align}
 \frac{d^2 x}{d t^2} = \frac{-k}{M}x = -w_n^2x
@@ -399,7 +401,9 @@ Differentiating again to get the accelaration:
 \begin{align}
    a(t) &= -10^6x_0 \cos(1000t) - 1000v_0 \sin(1000t)
 \end{align}
-The following code simulates the result.
+\fi
+The following code 
+    generates \figref{fig:EE26BTECH11202-12}.
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Spring.py}@*)
 \end{lstlisting}
@@ -410,8 +414,12 @@ The following code simulates the result.
     \label{fig:EE26BTECH11202-12}
 \end{figure}
 \item
-	
-Given the velocity and position vectors of a satellite along with its gravitational parameter $\mu=GM$, determine the trajectory of the satellite. \hfill (GATE AE 2026) 
+	An earth satellite has the instantaneous position vector $\vec{r}$ and velocity vector $\vec{v}$ as given below. Here $\vec{p}$ and $\vec{q}$ denote the unit vectors along the x and y axes of the perifocal frame, respectively. Assume that the value of gravitational parameter is 398600 $km^3/s^2$. Which one of the following trajectories does the satellite follow?
+\hfill (AE 2026) 
+    \begin{align}
+	    \vec{r}=\brak{8000\vec{p} + 9000\vec{q}}, \,km \, \vec{v}= \brak{-6 \vec{p}+ 6\vec{q}} \,km/s
+\end{align}
+%Given the velocity and position vectors of a satellite along with its gravitational parameter $\mu=GM$, determine the trajectory of the satellite. 
 \begin{enumerate}
     \item Circle
     \item Hyperbola

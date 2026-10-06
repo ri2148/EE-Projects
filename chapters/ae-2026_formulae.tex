@@ -546,66 +546,71 @@ From \eqref{eq:EE26BTECH11202-Matrices_3}, we have
 \begin{align}
 	\mydet{\vec{I+uv^{\top}}}=1+\vec{v^{\top}u}	\label{eq:EE26BTECH11202-mat_det_lemma}
 \end{align}
-\item SHM
-\begin{itemize}
-\item Springs in series: For $ n$ springs with spring constants $k_1, k_2, ....., k_{n}$ connected in series under an applied tensile force $F$. - By Hooke's Law, the individual displacements are given by:
+\item 
+	Consider the system 
+	A system comprising a bar, spring and mass is shown in the figure 
+\figref{fig:EE26BTECH11202-11}
+	 The bar, having negligible mass, is made of a material having Young’s modulus $E$, cross-sectional area $A$ and length $L$.   The spring stiffness is $k$ and the mass is $M$ kg. 
+Find the axial stiffness of the bar.
+\begin{figure}[H]
+\begin{center}
+	\input{figs/Spring.tex}
+\caption{Spring mass system}
+\label{fig:EE26BTECH11202-11}
+\end{center}
+\end{figure}
+\solution 
+The axial stiffness of the bar is
 \begin{align}
-x_i = \frac{F}{k_{i}} \forall i \in \{1, 2, \dots, n\}
+\label{fig:EE26BTECH11202-11-stiffness}
+k_{b} = \frac{AE}{L}
 \end{align}
-
-The total displacement in terms of the equivalent spring constant $k_{\text{eq}}$ is:
+\item Find the overall spring constant in
+\figref{fig:EE26BTECH11202-11}.
+\\
+\solution Using Hooke's law, by balancing the displacements,
 \begin{align}
-x_{\text{total}} &= \frac{F}{k_{\text{eq}}}
+	\frac{Mg}{k_{t}}
+	&=
+	\frac{Mg}{k_{b}}
+	+\frac{Mg}{k}
+	\\
+	\implies k_{{eq}} &= \frac{k_{b} k}{k_{b} + k}
+\label{eq:EE26BTECH11202-springs_series}
 \end{align}
-We know that
+where $k_t$ is the overall spring constant. 
+\item 
+Show that the equation for motion for the mass in 
+    \figref{fig:EE26BTECH11202-2_} is
 \begin{align}
-	x_{\text{total}} = \sum_{i=1}^{n} x_{i} \label{eq:EE26BTECH11202-displacement_relation}
+	\frac{d^2 x}{d t^2} = -\frac{k}{M}x 
+	\label{eq:EE26BTECH11202-vertical_shm}
 \end{align}
-Substituting $x_1$, $x_2$, .... , $x_{n}$ and $x_{\text{total}}$ into \eqref{eq:EE26BTECH11202-displacement_relation}
-\begin{align}
-\frac{F}{k_{\text{eq}}} &=\sum_{i=1}^{n}\frac{F}{k_{i}} \\
-F \brak{\frac{1}{k_{\text{eq}}}} &= F \sum_{i=1}^{n} \brak{\frac{1}{k_i}} \\
-\frac{1}{k_{\text{eq}}} &= \sum_{i=1}^{n}\frac{1}{k_{i}} \label{eq:EE26BTECH11202-springs_series}
-\end{align}
-\item General case of vertical SHM: Consider the following diagram. We need to find out the equation of SHM.
-When the mass $M$ is at rest, let the system stretch by $\delta_{\text{st}}$. Let $w$ be the angular frequency of oscillation.
 \begin{figure}[H]
 \begin{center}
 \input{figs/spring_deriv.tex}
     \caption{Spring Mass system in vertical plane}
-    \label{fig:2_}
+    \label{fig:EE26BTECH11202-2_}
 
 \end{center}
 \end{figure}
-
+\solution 
+When the mass $M$ is at rest, let the system stretch by $\delta_{{st}}$.% Let $w$ be the angular frequency of oscillation.
+Then, 
 \begin{align}
-\sum F = 0 \implies Mg - k\delta_{\text{st}} = 0 \implies Mg = k\delta_{\text{st}}
+Mg - k\delta_{{st}} = 0 \implies Mg = k\delta_{{st}}
+\label{eq:EE26BTECH11202-spring_eqn-rest}
 \end{align}
-When the mass is displaced downward by $x(t)$, applying Newton' second law, 
+When the mass is displaced downward by $x(t)$, using Hooke's law,
 \begin{align}
-\sum F = Ma
+M \frac{d^2 x}{d t^2} &= M g - k(\delta_{\text{st}} + x) \\
+\label{eq:EE26BTECH11202-spring_eqn}
 \end{align}
-\begin{align}
-\implies M \frac{d^2 x}{d t^2} &= M g - k(\delta_{\text{st}} + x) \\
-\implies M \frac{d^2 x}{d t^2} &= M g - k\delta_{\text{st}} - kx \label{eq:EE26BTECH11202-spring_eqn}
-\end{align}
-
-The static equilibrium condition is:
-\begin{align}
-M g =k\delta_{\text{st}}
-\end{align}
-Substituting this into \eqref{eq:EE26BTECH11202-spring_eqn}
-\begin{align}
-M \frac{d^2 x}{d t^2} &= (k\delta_{\text{st}}) - k\delta_{\text{st}} - kx 
-\end{align}
-\begin{align}
-M \frac{d^2 x}{d t^2} &= -kx 
-\end{align}
-\begin{align}
-	\frac{d^2 x}{d t^2} = \frac{-k}{M}x = -w^2x \label{eq:EE26BTECH11202-vertical_shm}
-\end{align}
-
-\end{itemize}
+	yielding \eqref{eq:EE26BTECH11202-vertical_shm},
+upon substituting from \eqref{eq:EE26BTECH11202-spring_eqn-rest}.
+\item Find the natural frequency of free vibration of the system. 
+	\\
+	\solution 
 \item Results on Gravitation
 \begin{itemize}
 \item Specific angular momentum - Consider a satellite with position vector $\vec{\vec{r}}$ and velocity vector $\vec{\vec{v}}$

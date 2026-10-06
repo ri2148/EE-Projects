@@ -613,6 +613,9 @@ INPUT ./figs/Fourier.png
 INPUT ./figs/Fourier.png
 INPUT ./figs/Fourier.png
 INPUT ./figs/Fourier.png
+INPUT ./figs/Spring.tex
+INPUT ./figs/Spring.tex
+INPUT figs/Spring.tex
 INPUT ./figs/spring_deriv.tex
 INPUT ./figs/spring_deriv.tex
 INPUT figs/spring_deriv.tex
@@ -671,9 +674,6 @@ INPUT ./figs/Modulus_function.png
 INPUT ./figs/Modulus_function.png
 INPUT ./figs/Modulus_function.png
 INPUT ./figs/Modulus_function.png
-INPUT ./figs/Spring.tex
-INPUT ./figs/Spring.tex
-INPUT figs/Spring.tex
 INPUT ./figs/Spring.png
 INPUT ./figs/Spring.png
 INPUT ./figs/Spring.png
