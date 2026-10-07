@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Termux) (preloaded format=pdflatex 2026.5.4)  6 OCT 2026 14:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Termux) (preloaded format=pdflatex 2026.5.4)  7 OCT 2026 12:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1836,7 +1836,7 @@ LaTeX Warning: Command \j invalid in math mode on input line 327.
 LaTeX Warning: Command \j invalid in math mode on input line 327.
 
 [8 <./figs/Fourier.png>] [9] [10] [11] (./figs/Spring.tex) [12] (./figs/spring_
-deriv.tex) [13] [14]) (./chapters/ae-2026.tex
+deriv.tex) [13]) (./chapters/ae-2026.tex
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1.1}
 ) has been already used, duplicate ignored
 <to be read again> 
@@ -1854,19 +1854,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2}
 <to be read again> 
                    \relax 
 l.45 \end{align}
-                 (./figs/Circle.tex) [15]
+                 (./figs/Circle.tex) [14]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.76 \end{align}
                 
-<figs/Circle.png, id=359, 650.43pt x 433.62pt>
+<figs/Circle.png, id=339, 650.43pt x 433.62pt>
 File: figs/Circle.png Graphic file (type png)
 <use figs/Circle.png>
 Package pdftex.def Info: figs/Circle.png  used on input line 97.
 (pdftex.def)             Requested size: 273.14647pt x 182.0993pt.
-[16] (./figs/Line_Integral.tex)
+[15] (./figs/Line_Integral.tex)
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.1}
 ) has been already used, duplicate ignored
 <to be read again> 
@@ -1896,13 +1896,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.4.5}
 <to be read again> 
                    \relax 
 l.146 \end{align}
-                  [17 <./figs/Circle.png>]
-<figs/Line_Integral.png, id=388, 578.16pt x 433.62pt>
+                  [16 <./figs/Circle.png>]
+<figs/Line_Integral.png, id=368, 578.16pt x 433.62pt>
 File: figs/Line_Integral.png Graphic file (type png)
 <use figs/Line_Integral.png>
 Package pdftex.def Info: figs/Line_Integral.png  used on input line 155.
 (pdftex.def)             Requested size: 273.14647pt x 204.86006pt.
-[18] (./figs/Fourier.tex)
+[17] (./figs/Fourier.tex)
 pdfTeX warning (ext4): destination with the same identifier (name{equation.5.1}
 ) has been already used, duplicate ignored
 <to be read again> 
@@ -1915,7 +1915,7 @@ LaTeX Warning: Command \j invalid in math mode on input line 185.
 
 LaTeX Warning: Command \j invalid in math mode on input line 185.
 
-[19 <./figs/Line_Integral.png>]
+[18 <./figs/Line_Integral.png>]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.7.1}
 ) has been already used, duplicate ignored
 <to be read again> 
@@ -1939,25 +1939,25 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.8.3}
 <to be read again> 
                    \relax 
 l.238 \end{align}
-                  [20]
+                  [19]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.9.1}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.267 \end{align}
                  
-<figs/Euler.png, id=452, 722.7pt x 578.16pt>
+<figs/Euler.png, id=433, 722.7pt x 578.16pt>
 File: figs/Euler.png Graphic file (type png)
 <use figs/Euler.png>
 Package pdftex.def Info: figs/Euler.png  used on input line 320.
 (pdftex.def)             Requested size: 218.5194pt x 174.81674pt.
-[21]
-<figs/Modulus_function.png, id=478, 1606.0pt x 1204.5pt>
+[20]
+<figs/Modulus_function.png, id=459, 1606.0pt x 1204.5pt>
 File: figs/Modulus_function.png Graphic file (type png)
 <use figs/Modulus_function.png>
 Package pdftex.def Info: figs/Modulus_function.png  used on input line 339.
 (pdftex.def)             Requested size: 273.14647pt x 204.85419pt.
-[22 <./figs/Euler.png> <./figs/Modulus_function.png>]
+[21 <./figs/Euler.png> <./figs/Modulus_function.png>]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.11.1
 }) has been already used, duplicate ignored
 <to be read again> 
@@ -1988,54 +1988,18 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.11.5
                    \relax 
 l.380 \end{align}
                  
-<figs/Spring.png, id=496, 650.43pt x 578.16pt>
+<figs/Spring.png, id=476, 650.43pt x 578.16pt>
 File: figs/Spring.png Graphic file (type png)
 <use figs/Spring.png>
 Package pdftex.def Info: figs/Spring.png  used on input line 412.
 (pdftex.def)             Requested size: 236.72472pt x 210.42233pt.
-[23]
+[22]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.12.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.421 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.12.2
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.433     \end{align}
-                     
-pdfTeX warning (ext4): destination with the same identifier (name{equation.12.3
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.437     \end{align}
-                     
-pdfTeX warning (ext4): destination with the same identifier (name{equation.12.4
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.441     \end{align}
-                     
-pdfTeX warning (ext4): destination with the same identifier (name{equation.12.5
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.447 \end{align}
-                 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.12.6
-}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.451 \end{align}
-                  [24 <./figs/Spring.png>]
-<figs/Satellite.png, id=518, 1156.32pt x 541.3023pt>
-File: figs/Satellite.png Graphic file (type png)
-<use figs/Satellite.png>
-Package pdftex.def Info: figs/Satellite.png  used on input line 468.
-(pdftex.def)             Requested size: 364.1953pt x 170.48634pt.
-) [25 <./figs/Satellite.png>] (./main.aux)
+                 ) [23 <./figs/Spring.png>] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -2044,10 +2008,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4D3B30D4AC28D882CD32A064F1EC2A5C;303.
  ) 
 Here is how much of TeX's memory you used:
- 55530 strings out of 467349
- 1349161 string characters out of 5401406
- 1979562 words of memory out of 5000000
- 83539 multiletter control sequences out of 15000+600000
+ 55499 strings out of 467349
+ 1348599 string characters out of 5401406
+ 1979268 words of memory out of 5000000
+ 83526 multiletter control sequences out of 15000+600000
  668883 words of font info for 130 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  109i,19n,118p,1194b,1493s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2076,10 +2040,10 @@ s/msam10.pfb></data/data/com.termux/files/usr/share/texlive/2026/texmf-dist/fon
 ts/type1/urw/times/utmb8a.pfb></data/data/com.termux/files/usr/share/texlive/20
 26/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></data/data/com.termux/files/usr
 /share/texlive/2026/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (25 pages, 1055010 bytes).
+Output written on main.pdf (23 pages, 954938 bytes).
 PDF statistics:
- 671 PDF objects out of 1000 (max. 8388607)
- 567 compressed objects within 6 object streams
- 282 named destinations out of 1000 (max. 500000)
- 177 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 633 PDF objects out of 1000 (max. 8388607)
+ 533 compressed objects within 6 object streams
+ 264 named destinations out of 1000 (max. 500000)
+ 172 words of extra memory for PDF output out of 10000 (max. 10000000)
 

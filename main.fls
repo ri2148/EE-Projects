@@ -679,11 +679,6 @@ INPUT ./figs/Spring.png
 INPUT ./figs/Spring.png
 INPUT ./figs/Spring.png
 INPUT ./figs/Spring.png
-INPUT ./figs/Satellite.png
-INPUT ./figs/Satellite.png
-INPUT ./figs/Satellite.png
-INPUT ./figs/Satellite.png
-INPUT ./figs/Satellite.png
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
