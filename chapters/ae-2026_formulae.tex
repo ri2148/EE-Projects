@@ -430,7 +430,7 @@ $\vec{A}$.
 \begin{align}
 	\sum_{i=1}^{n} \lambda_i &= \text{Tr}\brak{\vec{A}} \label{eq:EE26BTECH11202-Matrices_2}
 	\\
-	\prod_{i=1}^{n} \lambda_1 &= \mydet{\vec{A}} \label{eq:EE26BTECH11202-Matrices_3}
+	\prod_{i=1}^{n} \lambda_i &= \mydet{\vec{A}} \label{eq:EE26BTECH11202-Matrices_3}
 \end{align}
 \item $\vec{A}$ and $\vec{A}^{\top}$ have the same eigenvalues.
 	\\
@@ -444,8 +444,6 @@ $\vec{A}$.
 \mydet{\vec{A}^{\top} - \lambda \vec{I}},
 \end{align}
 completing the proof.
-\item Results on the conic sections
-\begin{enumerate}
 \item
 The equation of  a conic with directrix $\vec{n}^{\top}\vec{x} = c$, eccentricity $e$ and focus $\vec{F}$ is given by 
 \begin{align}
@@ -464,7 +462,6 @@ where
 f &= \norm{\vec{n}}^2\norm{\vec{F}}^2-c^2e^2
     \end{align}
 \solution
-
 \begin{align}
 \|\vec{x} - \vec{F}\|^2 &= e^2 \frac{(\vec{n}^\top \vec{x} - c)^2}{\|\vec{n}\|^2} 
 \end{align}
@@ -478,73 +475,170 @@ f &= \norm{\vec{n}}^2\norm{\vec{F}}^2-c^2e^2
 = e^2 \left(c^2 + \left(\vec{x}^\top \vec{n}\vec{n}^\top \vec{x}\right) - 2c\vec{n}^\top \vec{x}\right)
 \end{align}
 which can be expressed as \eqref{eq:EE26BTECH11202-app-conic_quad_form} after simplification.
-\item
-  The eccentricity of \eqref{eq:EE26BTECH11202-app-conic_quad_form} is given by 
+\item The polar form of a conic section is given as: 
 \begin{align}
-  \label{eq:EE26BTECH11202-app-conic_quad_form_e} 
-  e&= \sqrt{1-\frac{\lambda_1}{\lambda_2}}
-\end{align} 
-Here, $\lambda_1$ and $\lambda_2$ are the eigenvalues of $\vec{V}$ 
-	\label{app:conic-parameters}
-
+	r = \frac{ep}{1 + e\cos\brak{\theta - \theta_0}} \label{eq:EE26BTECH11202-polar_conic}
+\end{align}
+where
+\begin{itemize}
+	\item $r$ is the distance from the focus(origin) to a point on the curve.
+	\item $e$ is the eccentricity of the conic
+	\item $p$ is the distance from the focus to the directrix
+	\item $\theta _{0}$ is the angle that defines the orientation of the major axis of the conic section relative to the polar reference axis ($\theta = 0$).
+\end{itemize}
 \solution
+From \eqref{eq:EE26BTECH11202-app-conic_quad_form}, the general equation of a conic in matrix form is given by
+\begin{align}
+    \vec{x}^{\top}\vec{V}\vec{x} + 2\vec{u}^{\top}\vec{x} + f = 0
+    \label{eq:EE26BTECH11202-conic_matrix}
+\end{align}
+For a conic with a focus at the origin ($\vec{F} = \vec{0}$), unit normal vector $\vec{n} = \myvec{\cos\theta_0 \\ \sin\theta_0}$, eccentricity $e$, and directrix distance parameter $c = -p$, substituting into \eqref{eq:EE26BTECH11202-app-conic_quad_form_v}--\eqref{eq:EE26BTECH11202-app-conic_quad_form_f} yields:
+\begin{align}
+\vec{V} &= \vec{I} - e^2\vec{n}\vec{n}^{\top}, \label{eq:EE26BTECH11202-V_param} \\
+\vec{u} &= -p e^2\vec{n}, \label{eq:EE26BTECH11202-u_param} \\
+f &= -p^2 e^2 \label{eq:EE26BTECH11202-f_param}
+\end{align}
+Expressing $\vec{x}$ directly in polar coordinates yields
+\begin{align}
+\vec{x} = r \vec{r}\brak{\theta}, \quad \text{where } \vec{r}\brak{\theta} = \myvec{\cos\theta \\ \sin\theta}
+\end{align}
+Substituting into \eqref{eq:EE26BTECH11202-conic_matrix} yields
+\begin{align}
+r^2 \brak{\vec{r}\brak{\theta}^{\top}\vec{V}\vec{r}\brak{\theta}} + 2r \brak{\vec{u}^{\top}\vec{r}\brak{\theta}} + f = 0
+\label{eq:EE26BTECH11202-polar_quad}
+\end{align}
+Evaluating the inner products:
+\begin{align}
+\vec{n}^{\top}\vec{r}\brak{\theta} &= \myvec{\cos\theta_0 & \sin\theta_0}\myvec{\cos\theta \\ \sin\theta} = \cos\brak{\theta - \theta_0}
+\\
+\vec{r}\brak{\theta}^{\top}\vec{V}\vec{r}\brak{\theta} &= \vec{r}\brak{\theta}^{\top}\brak{\vec{I} - e^2\vec{n}\vec{n}^{\top}}\vec{r}\brak{\theta} = 1 - e^2 \cos^2\brak{\theta - \theta_0}
+\\
+\vec{u}^{\top}\vec{r}\brak{\theta} &= -p e^2 \cos\brak{\theta - \theta_0}
+\end{align}
+Substituting these into \eqref{eq:EE26BTECH11202-polar_quad}:
+\begin{align}
+r^2 \sbrak{1 - e^2 \cos^2\brak{\theta - \theta_0}} - 2r p e^2 \cos\brak{\theta - \theta_0} - p^2 e^2 = 0
+\end{align}
+Factoring the quadratic expression:
+\begin{align}
+\sbrak{r\brak{1 + e\cos\brak{\theta - \theta_0}} - ep} \sbrak{r\brak{1 - e\cos\brak{\theta - \theta_0}} + ep} = 0
+\end{align}
+Taking the positive real root for radial distance $r > 0$:
+\begin{align}
+r\brak{1 + e\cos\brak{\theta - \theta_0}} = ep
+\end{align}
+yielding \eqref{eq:EE26BTECH11202-polar_conic}
+\item Gravitational parameter of a body $\mu$ is defined as
+\begin{align}
+	\mu=GM
+\end{align}
+where $M$ is the mass of the body
+\item Specific angular momentum for a satellite with position vector $\vec{\vec{r}}$ and velocity vector $\vec{\vec{v}}$ is 
+\begin{align}
+	h= \norm{\vec{r} \times \vec{v}} \label{eq:EE26BTECH11202-ang-moment}
+\end{align}
+\item Specific Energy for a satellite with position vector $\vec{\vec{r}}$, velocity vector $\vec{\vec{v}}$ and gravitational parameter $\mu$ is 
+\begin{align}
+\varepsilon = \frac{v^2}{2} - \frac{\mu}{r} \label{eq:EE26BTECH11202-energy}
+\end{align}
+Where
+\begin{align}
+	r=\norm{\vec{r}}, v=\norm{\vec{v}}
+\end{align}
+\item The trajectory of a satellite under a central gravitational force is always a conic section. \\
+\solution
+The gravitational acceleration $\vec{a}$ acting on a satellite is given by Newton's law of gravitation:
+\begin{align}
+\vec{a} = -\frac{\mu}{r^3}\vec{r}
+\label{eq:EE26BTECH11202-grav_acc}
+\end{align}
+Taking the cross product of $\vec{r}$ with $\vec{a}$:
+\begin{align}
+	\vec{r} \times \vec{a} = \vec{r} \times \brak{-\frac{\mu}{r^3}\vec{r}} = \vec{0} \label{eq:EE26BTECH11202-grav-intermediate}
+\end{align}
+From \eqref{eq:EE26BTECH11202-grav-intermediate}
+\begin{align}\frac{d}{dt}\brak{\vec{r} \times \vec{v}} = \vec{v} \times \vec{v} + \vec{r} \times \vec{a} = \vec{0}
+\end{align}
+Hence, the specific angular momentum vector $\vec{h}$ is conserved:
+\begin{align}
+\vec{h} = \vec{r} \times \vec{v} = \text{constant}
+\label{eq:EE26BTECH11202-ang_mom}
+\end{align}
 
-From \eqref{eq:EE26BTECH11202-app-conic_quad_form_v}, using the fact that $\vec{V}$ is symmetric, 
-  \begin{align}
-	  \vec{V}^{\top} \vec{V}&=\brak{\norm{\vec{n}}^2\vec{I}-e^2\vec{n}\vec{n}^{\top}}^{\top}
-	  \brak{\norm{\vec{n}}^2\vec{I}-e^2\vec{n}\vec{n}^{\top}}
-    \\
-	  \implies \vec{V}^{2} &= \norm{\vec{n}}^4\vec{I}+e^4\vec{n}\vec{n}^{\top}\vec{n}\vec{n}^{\top}
-	  -2e^2\norm{\vec{n}}^2\vec{n}\vec{n}^{\top}
-    \\
-	  &= \norm{\vec{n}}^4\vec{I} + e^4\norm{\vec{n}}^2\vec{n}\vec{n}^{\top}
-	%  \\
-	  - 2e^2\norm{\vec{n}}^2\vec{n}\vec{n}^{\top}
-    \\
-	  &= \norm{\vec{n}}^4\vec{I} + e^2\brak{e^2 - 2}\norm{\vec{n}}^2\vec{n}\vec{n}^{\top}
-    \\
-	  &= \norm{\vec{n}}^4\vec{I} + \brak{e^2 - 2}\norm{\vec{n}}^2\brak{\norm{\vec{n}}^2\vec{I}- \vec{V}}
-    \end{align}
-%    
-which can be expressed as
+Crossing the acceleration $\vec{a}$ with $\vec{h}$:
 \begin{align}
-  \vec{V}^{2} + \brak{e^2 - 2}\norm{\vec{n}}^2\vec{V} - \brak{e^2 - 1}\norm{\vec{n}}^4\vec{I}=0
-  \label{eq:EE26BTECH11202-app-conic_quad_form_e_cayley}
+\vec{a} \times \vec{h} &= \brak{-\frac{\mu}{r^3}\vec{r}} \times \brak{\vec{r} \times \vec{v}} 
+\\
+&= -\frac{\mu}{r^3} \sbrak{\brak{\vec{r} \cdot \vec{v}}\vec{r} - \brak{\vec{r} \cdot \vec{r}}\vec{v}} 
+\\
+&= \frac{\mu}{r^3} \sbrak{r^2\vec{v} - \brak{\vec{r} \cdot \vec{v}}\vec{r}}
 \end{align}
-	Using the Cayley-Hamilton theorem,
-	\eqref{eq:EE26BTECH11202-app-conic_quad_form_e_cayley} results in the characteristic equation, 
+Using $\vec{r} \cdot \vec{v} = r \frac{dr}{dt}$, this simplifies to:
 \begin{align}
-  \lambda^{2} - \brak{2-e^2}\norm{\vec{n}}^2\lambda + \brak{1-e^2 }\norm{\vec{n}}^4=0
+\vec{a} \times \vec{h} = \mu \sbrak{\frac{\vec{v}}{r} - \frac{1}{r^2}\frac{dr}{dt}\vec{r}} = \mu \frac{d}{dt}\brak{\frac{\vec{r}}{r}}
 \end{align}
-which can be expressed as
+Integrating with respect to time $t$:
 \begin{align}
-\brak{\frac{\lambda}{\norm{\vec{n}}^2}}^2 - \brak{2-e^2 }\brak{\frac{\lambda}{\norm{\vec{n}}^2}} 
-	+ \brak{1-e^2 } = 0
-	\\
-	\implies \frac{\lambda}{\norm{\vec{n}}^2} = 1-e^2, 1
-  \\
-	\text{or, }\lambda_2 = \norm{\vec{n}}^2, \lambda_1 = \brak{1-e^2}\lambda_2 
-  \label{eq:EE26BTECH11202-app-conic_quad_form_lam_cayley}
+\vec{v} \times \vec{h} = \mu \brak{\frac{\vec{r}}{r} + \vec{C}}
+\label{eq:EE26BTECH11202-v_cross_h}
 \end{align}
-\item
-\eqref{eq:EE26BTECH11202-app-conic_quad_form} represents 
-	\begin{enumerate}
-		\item a parabola for $\mydet{\vec{V}} = 0 $,
-		\item ellipse for $\mydet{\vec{V}} > 0 $ and 
-		\item hyperbola for $\mydet{\vec{V}} < 0 $. \label{item:Hyperbola}
-	\end{enumerate}
-This is a direct result of the following two equations - From \eqref{eq:EE26BTECH11202-app-conic_quad_form_e}, we have
+where $\vec{C}$ is the integration constant. Taking the scalar product of \eqref{eq:EE26BTECH11202-v_cross_h} with $\vec{r}$:
 \begin{align}
-\frac{\lambda_1}{\lambda_2}=1-e^2
+\vec{r} \cdot \brak{\vec{v} \times \vec{h}} &= \mu \vec{r} \cdot \brak{\frac{\vec{r}}{r} + \vec{C}}
+\\
+\implies \brak{\vec{r} \times \vec{v}} \cdot \vec{h} &= \mu \brak{r + r C \cos\theta}
+\\
+\implies \norm{\vec{h}}^2 &= \mu r \brak{1 + C \cos\theta}
 \end{align}
-From \eqref{eq:EE26BTECH11202-Matrices_3}, we have
+where $\theta$ is the angle between $\vec{r}$ and $\vec{C}$. Rearranging for $r$ yields 
 \begin{align}
-\mydet{\vec{V}}=\lambda_1 \lambda_2
+	r = \frac{\frac{\norm{\vec{h}}^2}{\mu}}{1 + C \cos\theta} = \frac{ep}{1 + e \cos\theta}
 \end{align}
-\end{enumerate}
-\item Matrix Determinant Lemma - Consider two column vectors $\vec{u}$ and $\vec{v}$
+This is the same equation as \eqref{eq:EE26BTECH11202-polar_conic} where
 \begin{align}
-	\mydet{\vec{I+uv^{\top}}}=1+\vec{v^{\top}u}	\label{eq:EE26BTECH11202-mat_det_lemma}
+ep = \frac{\norm{\vec{h}}^2}{\mu}
+\end{align}
+\begin{align}
+	\vec{e}=\vec{C} \label{eq:EE26BTECH11202-eccentricity_vector}
+\end{align}
+\item The squared eccentricity $e^2$ of a satellite's trajectory is related to its specific orbital energy $\varepsilon$ and specific angular momentum magnitude $h$ by
+\begin{align}
+	e^2 = 1 + \frac{2\varepsilon h^2}{\mu^2} \label{eq:EE26BTECH11202-eccentricity}
+\end{align}
+\solution
+From \eqref{eq:EE26BTECH11202-v_cross_h} and \eqref{eq:EE26BTECH11202-eccentricity_vector},
+\begin{align}
+\vec{e} = \frac{\vec{v} \times \vec{h}}{\mu} - \frac{\vec{r}}{r}
+\end{align}
+Taking the magnitude squared of both sides using $\norm{\vec{e}}^2 = \vec{e} \cdot \vec{e}$:
+\begin{align}
+e^2 = \norm{\vec{e}}^2 = \brak{\frac{\vec{v} \times \vec{h}}{\mu} - \frac{\vec{r}}{r}} \cdot \brak{\frac{\vec{v} \times \vec{h}}{\mu} - \frac{\vec{r}}{r}}
+\end{align}
+Expanding the inner product:
+\begin{align}
+e^2 = \frac{\norm{\vec{v} \times \vec{h}}^2}{\mu^2} - \frac{2}{\mu r} \sbrak{\vec{r} \cdot \brak{\vec{v} \times \vec{h}}} + \frac{\vec{r} \cdot \vec{r}}{r^2}
+\label{eq:EE26BTECH11202-ecc_expanded}
+\end{align}
+
+We know that
+\begin{align}
+\vec{r} \cdot \brak{\vec{v} \times \vec{h}} = \brak{\vec{r} \times \vec{v}} \cdot \vec{h} = \vec{h} \cdot \vec{h} = h^2
+\end{align}
+And,
+\begin{align}
+\vec{r} \cdot \vec{r} = r^2
+\end{align}
+Substituting these back into \eqref{eq:EE26BTECH11202-ecc_expanded} yields
+\begin{align}
+e^2 &= \frac{v^2 h^2}{\mu^2} - \frac{2 h^2}{\mu r} + 1 
+\\
+&= 1 + \frac{2 h^2}{\mu^2} \brak{\frac{v^2}{2} - \frac{\mu}{r}}
+\label{eq:EE26BTECH11202-ecc_energy_sub}
+\end{align}
+
+Substituting \eqref{eq:EE26BTECH11202-energy} into \eqref{eq:EE26BTECH11202-ecc_energy_sub} yields:
+\begin{align}
+e^2 = 1 + \frac{2\varepsilon h^2}{\mu^2}
 \end{align}
 \item 
 	Consider the system 
@@ -608,58 +702,3 @@ M \frac{d^2 x}{d t^2} &= M g - k(\delta_{\text{st}} + x) \\
 \end{align}
 	yielding \eqref{eq:EE26BTECH11202-vertical_shm},
 upon substituting from \eqref{eq:EE26BTECH11202-spring_eqn-rest}.
-\iffalse
-\item Specific angular momentum for a satellite with position vector $\vec{\vec{r}}$ and velocity vector $\vec{\vec{v}}$ is 
-\begin{align}
-	h_0 = \norm{\vec{r} \times \vec{v}} \label{eq:EE26BTECH11202-Gravitation_1}
-\end{align}
-\item Results on Gravitation
-\begin{itemize}
-\item Eccentricity of trajectory
-\begin{align}
-	e^2 = 1 + \frac{2\varepsilon h_0^2}{\mu^2} \label{eq:EE26BTECH11202-Gravitation_2}
-\end{align}
-
-\item Trajectory of a satellite given its position vector, velocity vector, and gravitational parameter $\mu$: The polar trajectory of a satellite with eccentricity vector $\vec{e}$ and semi-latus rectum $p_{\text{orb}}$ is given by:
-\begin{align}
-	r = \frac{p_{\text{orb}}}{1 + e \cos \theta} \label{eq:EE26BTECH11202-traj_1}
-\end{align}
-
-In vector form: 
-\begin{align}
-	e \cos \theta = \frac{\vec{e}^\top \vec{x}}{r} \label{eq:EE26BTECH11202-traj_2}
-\end{align}
-Where: 
-\begin{align}
-\vec{x} = \myvec{r\cos{\theta} \\ r\sin{\theta}}.
-\end{align}
-From \eqref{eq:EE26BTECH11202-traj_1} and \eqref{eq:EE26BTECH11202-traj_2}, we have:
-\begin{align}
-r + \vec{e}^\top \vec{x} = p_{\text{orb}} \implies r = p_{\text{orb}} - \vec{e}^\top \vec{x}
-\end{align}
-
-Squaring both sides :
-\begin{align}
-r^2 = \vec{x}^\top \vec{x} = (p_{\text{orb}} - \vec{e}^\top \vec{x})^2 = p_{\text{orb}}^2 - 2 p_{\text{orb}} \vec{e}^\top \vec{x} + (\vec{e}^\top \vec{x})^2
-\end{align}
-
-Rearranging yields:
-\begin{align}
-\vec{x}^\top (\vec{I} - \vec{e}\vec{e}^\top)\vec{x} + 2(p_{\text{orb}}\vec{e})^\top \vec{x} - p_{\text{orb}}^2 = 0
-\end{align}
-
-Comparing this with \eqref{eq:EE26BTECH11202-app-conic_quad_form}:
-\begin{itemize}
-    \item Matrix $\vec{V}$: $\vec{V} = \vec{I} - \vec{e}\vec{e}^\top$
-    \item Vector $\vec{u}$: $\vec{u} = p_{\text{orb}}\vec{e}$
-    \item Scalar $f$: $f = -p_{\text{orb}}^2$
-\end{itemize}
-From result \eqref{eq:EE26BTECH11202-mat_det_lemma}, we have:
-\begin{align}
-	\mydet{\vec{V}}=1-\vec{e^{\top}e}=1-e^2 \label{eq:EE26BTECH11202-Gravitation_3}
-\end{align}
-From the sign of $\mydet{\vec{V}}$, we get the trajectory.
-
-\end{itemize}
-\fi
-\end{enumerate}

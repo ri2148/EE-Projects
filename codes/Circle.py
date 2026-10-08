@@ -1,55 +1,62 @@
+import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.patches as patches
+#If using termux
+import subprocess
+import shlex
+#end if
 
-# Initialize figure with constrained layout to prevent legend clipping
+# Import custom matrix and vector modules
+from CoordGeo.conics.funcs import circ_gen
+from CoordGeo.line.funcs import line_gen
+from CoordGeo.plotting.funcs import label_pts
+
+# Initialize figure
 fig, ax = plt.subplots(figsize=(9, 6), layout='constrained')
 
 # Parameters
 s = 4.0
 r1 = 1.0
-c1 = (1.0, 1.0)
+c1 = np.array([1.0, 1.0]).reshape(-1, 1)
 
 R = 1.343
-c2 = (2.657, 2.657)
+c2 = np.array([2.657, 2.657]).reshape(-1, 1)
 
-# 1. Square
-square = patches.Rectangle(
-    (0, 0), s, s, 
-    linewidth=2, 
-    edgecolor='black', 
-    facecolor='none', 
-    label='Square (s=4.0 cm)'
-)
-ax.add_patch(square)
+# 1. Square Vertices & Side Generation
+A_sq = np.array([0.0, 0.0]).reshape(-1, 1)
+B_sq = np.array([s, 0.0]).reshape(-1, 1)
+C_sq = np.array([s, s]).reshape(-1, 1)
+D_sq = np.array([0.0, s]).reshape(-1, 1)
+
+x_AB = line_gen(A_sq, B_sq)
+x_BC = line_gen(B_sq, C_sq)
+x_CD = line_gen(C_sq, D_sq)
+x_DA = line_gen(D_sq, A_sq)
+
+# Plot Square using line points
+ax.plot(x_AB[0, :], x_AB[1, :], 'k-', linewidth=2, label='Square (s=4.0 cm)')
+ax.plot(x_BC[0, :], x_BC[1, :], 'k-', linewidth=2)
+ax.plot(x_CD[0, :], x_CD[1, :], 'k-', linewidth=2)
+ax.plot(x_DA[0, :], x_DA[1, :], 'k-', linewidth=2)
 
 # 2. Circle 1
-circle1 = patches.Circle(
-    c1, r1, 
-    linewidth=1.5, 
-    edgecolor='blue', 
-    facecolor='#a6d5ff', 
-    alpha=0.8, 
-    label=r'Circle 1 ($r_1=1.0$ cm)'
-)
-ax.add_patch(circle1)
+x_circ1 = circ_gen(c1, r1)
+ax.plot(x_circ1[0, :], x_circ1[1, :], 'b-', linewidth=1.5, label=r'Circle 1 ($r_1=1.0$ cm)')
+ax.fill(x_circ1[0, :], x_circ1[1, :], color='#a6d5ff', alpha=0.8)
 
 # 3. Circle 2
-circle2 = patches.Circle(
-    c2, R, 
-    linewidth=1.5, 
-    edgecolor='red', 
-    facecolor='#fcaeae', 
-    alpha=0.7, 
-    label=r'Circle 2 (R=1.343 cm)'
-)
-ax.add_patch(circle2)
+x_circ2 = circ_gen(c2, R)
+ax.plot(x_circ2[0, :], x_circ2[1, :], 'r-', linewidth=1.5, label=r'Circle 2 (R=1.343 cm)')
+ax.fill(x_circ2[0, :], x_circ2[1, :], color='#fcaeae', alpha=0.7)
 
-# 4. Center Points
-ax.plot(c1[0], c1[1], 'bo', markersize=6, label='Center 1: (1.0, 1.0)')
-ax.plot(c2[0], c2[1], 'ro', markersize=6, label='Center 2: (2.657, 2.657)')
+# 4. Center Points & Labeling
+centers = np.block([c1, c2])
+ax.plot(c1[0, 0], c1[1, 0], 'bo', markersize=6, label='Center 1: (1.0, 1.0)')
+ax.plot(c2[0, 0], c2[1, 0], 'ro', markersize=6, label='Center 2: (2.657, 2.657)')
+label_pts(centers, ['C1', 'C2'])
 
 # 5. Diagonal Line
-ax.plot([0, s], [0, s], '--', color='gray', linewidth=1.5, label=r'Diagonal ($y = x$)')
+x_diag = line_gen(A_sq, C_sq)
+ax.plot(x_diag[0, :], x_diag[1, :], '--', color='gray', linewidth=1.5, label=r'Diagonal ($y = x$)')
 
 # Formatting plot area
 ax.set_xlim(-0.5, 4.5)
@@ -65,10 +72,12 @@ for spine in ax.spines.values():
 ax.set_xlabel('X (cm)')
 ax.set_ylabel('Y (cm)')
 
-# Legend placed outside with fully visible frame
+# Legend
 ax.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0., frameon=True)
 
-# Save figure with tight bounding box
-plt.savefig('circle_plot.png', dpi=300, bbox_inches='tight')
+#If using termux
+plt.savefig('figs/Circle.png')
+subprocess.run(shlex.split("termux-open figs/Circle.png"))
 
-plt.show()
+#else
+#plt.show()

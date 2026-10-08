@@ -1,7 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
-
+#if using termux
+import subprocess
+import shlex
+#end if
 # --- Constants & Initial Conditions ---
 mu = 398600.0  # km^3/s^2
 r0 = np.array([8000.0, 9000.0])  # km
@@ -98,4 +101,8 @@ ax2.set_ylim(-140000, 40000)
 ax2.legend(loc='upper left', fontsize=9, framealpha=0.9)
 
 plt.tight_layout()
-plt.show()
+#if using termux
+plt.savefig("figs/Satellite.png")
+subprocess.run(shlex.split("termux-open Satellite.png"))
+#else
+#plt.show()

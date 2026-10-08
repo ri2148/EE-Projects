@@ -15,6 +15,11 @@ There are 4 single digit prime numbers: 2,3,5 and 7. The desired numbers are giv
  \begin{align}
 	 \perm{4}{3} = \frac{4!}{1!} = 24
  \end{align}
+The following code verifies the solution
+\begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
+(*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/PNC.c}@*)
+\end{lstlisting}
+
 \item
 In a group of students, 10 students like Mathematics, 12 students like English, 4 students like both Mathematics and English, and 6 students like neither Mathematics nor English. The number of students in the group is \underline{\hspace{1cm}}.
 \hfill (AE~2026)
@@ -119,7 +124,7 @@ Here $d\vec{l}$ represents an infinitesimal length along the contour $C$.\hfill 
 \solution
 \begin{align}
 \because \vec{F}^{\top} d\vec{l} 
-%= \myvec{x + 2y \\ 2x + 4y}^{\top} \myvec{dx \\ dy} = \myvec{x + 2y & 2x + 4y} \myvec{dx \\ dy}
+%=\myvec{x + 2y \\ 2x + 4y}^{\top} \myvec{dx \\ dy} = \myvec{x + 2y & 2x + 4y} \myvec{dx \\ dy}
 &=(x + 2y)dx + (2x + 4y)dy,
 \\
 \int \vec{F} \cdot d\vec{l} 
@@ -142,7 +147,7 @@ Here $d\vec{l}$ represents an infinitesimal length along the contour $C$.\hfill 
 \int^{\brak{0,0}}_{\brak{-1,1}} \vec{F} \cdot d\vec{l} 
 &=\sbrak{\frac{x^2}{2}}^{0}_{-1}  + 2\sbrak{xy}^{\brak{0,0}}_{\brak{-1,1}}+ \sbrak{2y^2}^{0}_{1}= -\frac{1}{2}
 \\
-\therefore, \oint_{C} \vec{F} \cdot d\vec{l} = 0
+\therefore, \oint_{C} \vec{F} \cdot d\vec{l} &= 0
 \end{align}
 upon summing up the above integrals.
 The following code simulates the result.
@@ -286,14 +291,13 @@ $y\brak{0} = 0 , y^{\prime}\brak{0} = 1$ in the above,
 Taking the inverse Laplace transform, from \eqref{eq:EE26BTECH11202-Laplace_3} and \eqref{eq:EE26BTECH11202-Laplace_4}, 
 \begin{align}
 \label{eq:EE26BTECH11202-DE-theory}
-y\brak{x} &= x e^{-x}  x \ge 0
+y\brak{x} &= x e^{-x}, \quad x \ge 0
 \\
 \implies
-y^{\prime}\brak{x}\frac{dy}{dx} &=  \brak{1 - x}e^{-x}
+y^{\prime}\brak{x} &= \brak{1 - x}e^{-x}
 \\
 \text{or, }
-y'\brak{\ln\brak{2}}&= \brak{1 - \ln\brak{2}} e^{-\ln\brak{2}}
-{2} \approx 0.153
+y'\brak{\ln\brak{2}}&= \brak{1 - \ln\brak{2}} e^{-\ln\brak{2}} \approx 0.153
 \end{align}
 \item From \eqref{eq:EE26BTECH11202-ED_1} and \eqref{eq:EE26BTECH11202-ED_2},  \eqref{eq:EE26BTECH11202-DE} can be expressed as
 \begin{align}
@@ -324,6 +328,7 @@ vs
 \eqref{eq:EE26BTECH11202-DE-euler}}
     \label{fig:EE26BTECH11202-13}
 \end{figure}
+\end{enumerate} % <--- Closed unclosed sub-enumerate block here
 \end{enumerate}
 \item 
 Find the minimum value of the function $f\brak{x} = \abs{x} + \abs{2x+3}$ for real $x$. \hfill (AE~2026)
@@ -376,7 +381,7 @@ and
 \end{align}
 $\therefore$ the natural frequency of free vibration is
 \begin{align}
- \sqrt{\frac{k_{\text{eq}}}{M}} =  1000\, rad/s
+ \sqrt{\frac{k_{\text{eq}}}{M}} =  1000\, \text{rad/s}
 \end{align}
 upon substituting numerical values.
 \iffalse
@@ -419,7 +424,6 @@ The following code
     \begin{align}
 	    \vec{r}=\brak{8000\vec{p} + 9000\vec{q}}, \,km \, \vec{v}= \brak{-6 \vec{p}+ 6\vec{q}} \,km/s
 \end{align}
-%Given the velocity and position vectors of a satellite along with its gravitational parameter $\mu=GM$, determine the trajectory of the satellite. 
 \begin{enumerate}
 	\begin{multicols}{4}
     \item Circle
@@ -428,49 +432,32 @@ The following code
     \item Straight Line
     \end{multicols}
 \end{enumerate} 
-\iffalse
-Position vector: 
-    \begin{align}
-    \vec{r} = 8000\hat{p} + 9000\hat{q} \text{ km}
-    \end{align}
-Velocity vector:
-    \begin{align}
-    \vec{v} = -6\hat{p} + 6\hat{q} \text{ km/s}
-    \end{align}
-Gravitational parameter: 
-    \begin{align}
-    \mu = 398600 \text{ km}^3/\text{s}^2
-    \end{align}
-\solution 
+\solution
 We are given :
 \begin{align}
 	\vec{r}=\myvec{8000\\9000}, \vec{v}=\myvec{-6\\6}
 \end{align}
-From \eqref{eq:EE26BTECH11202-Gravitation_1}, Specific Angular Momentum $h_0$
+From \eqref{eq:EE26BTECH11202-ang-moment}, Specific Angular Momentum $h$
 \begin{align}
 = |8000\brak{6} - 9000\brak{-6}| = 102000 \text{ km}^2/\text{s}
 \end{align}
+From \eqref{eq:EE26BTECH11202-energy}, Specific Energy $\varepsilon$
+\begin{align}
+	= \frac{72}{2}-\frac{398000}{\sqrt{8000^2+9000^2}} \approx 2.898
+\end{align}
 
-From \eqref{eq:EE26BTECH11202-Gravitation_2}, eccentricity squared $e^2$
+From \eqref{eq:EE26BTECH11202-eccentricity}, eccentricity squared $e^2$
 \begin{align}
 = 1 + \frac{2\brak{2.898}\brak{102000}^2}{\brak{398600}^2} \approx 1 + 0.3795 = 1.3795
 \end{align}
-From \eqref{eq:EE26BTECH11202-Gravitation_3}, we have:
-\begin{align}
-\mydet{\vec{V}}=1-1.3795=-0.3795
-\end{align}
-From \ref{item:Hyperbola}, we can conclude that the trajectory of the satellite is a Hyperbola. The following code simulates the result.
-
+Since $e>1$, the trajectory is a Hyperbola. The following code verifies the solution through a plot
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]
 (*@\makebox[\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax][c]{codes/Satellite.py}@*)
 \end{lstlisting}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\linewidth]{figs/Satellite.png}
-    \caption{Trajectory of the Satellite}
-    \label{fig:EE26BTECH11202-8}
+    \includegraphics[width=0.90\linewidth]{figs/Satellite.png}
+    \caption{Trajectory of satellite}
+    \label{fig:EE26BTECH11202-13-satellite}
 \end{figure}
-\fi
-
 \end{enumerate}
-
